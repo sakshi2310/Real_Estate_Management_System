@@ -1,0 +1,25 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root{
+    --theme-color-light:#F7FBFE;
+    --theme-color:#6192E6;
+    --text-white:#fff;
+}
+
+
+.theme-light{
+    background-color: var(--theme-color-light);
+}
+
+.light-text{
+    color: var(--theme-color) !important;
+}
+
+.bars-tabs ul li:hover {
+    background-color: var(--theme-color);
+}
+.bars-tabs ul li:hover a{
+    color: var(--text-white) !important;
+}
+
+
