@@ -1,19 +1,17 @@
 <?php 
 
 $con=mysqli_connect("localhost","root","","real_estate");
-$sql = "select * from property_type";
+$sql = "select * from property_area";
 $res = mysqli_query($con,$sql);
 
-// Del the row
+// del the row
 if(isset($_GET['del_id']))
 {
   $del_id = $_GET['del_id'];
-  $sql_del ="delete from property_type where id=".$del_id;
+  $sql_del ="delete from property_area where id=".$del_id;
   mysqli_query($con,$sql_del);
-  header('location:View_type.php');
+  header('location:View_area.php');
 }
-
-
 
  ?>
 <div class="wrapper">
@@ -74,9 +72,9 @@ if(isset($_GET['del_id']))
                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                         <tr>
                           <td><?php echo $row['id']; ?></td>
-                          <td><?php echo $row['Property_type']; ?></td>
+                          <td><?php echo $row['Property_area']; ?></td>
                           
-                          <td>  <a href="Add_type.php?edit_id=<?php echo $row['id']; ?>" class="text-theme"><i class="far fa-edit"></i> &nbsp;</a> | <a href="View_type.php?del_id=<?php echo $row['id']; ?>" class="text-theme"> &nbsp;<i class="fas fa-trash-alt"></i></a>
+                          <td>  <a href="Add_area.php?edit_id=<?php echo $row['id']; ?>" class="text-theme"><i class="far fa-edit"></i> &nbsp;</a> | <a href="View_area.php?del_id=<?php echo $row['id']; ?>" class="text-theme"> &nbsp;<i class="fas fa-trash-alt"></i></a>
 </td>
                         </tr>
                       <?php } ?>

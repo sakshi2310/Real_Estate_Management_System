@@ -4,12 +4,11 @@ $con = mysqli_connect('localhost','root','','real_estate');
 echo "hyyyyyyyyyyyyyys";
 if(isset($_POST['Register']))
 {
-    echo "hyyyyyyyyyyyyyys";
 	$User_name = $_POST['User_name'];
 	$Email = $_POST['Email'];
     $Password = $_POST['Password'];
 
-    $sql = "insert into admin (User_name,Email,Password) values ('$User_name','$Email','$Password');";
+    $sql = "insert into users (User_name,Email,Password) values ('$User_name','$Email','$Password');";
     mysqli_query($con,$sql);
     header("location:index.php");
 }

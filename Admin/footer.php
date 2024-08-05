@@ -1,4 +1,4 @@
-<footer class="footer">
+<!-- <footer class="footer">
           <div class="container-fluid d-flex justify-content-between">
             <nav class="pull-left">
               <ul class="nav">
@@ -25,7 +25,7 @@
             </div>
           </div>
         </footer>
-
+ -->
         <script src="assets/js/core/jquery-3.7.1.min.js"></script>
     <script src="assets/js/core/popper.min.js"></script>
     <script src="assets/js/core/bootstrap.min.js"></script>
@@ -46,17 +46,17 @@
     <script src="assets/js/plugin/datatables/datatables.min.js"></script>
 
     <!-- Bootstrap Notify -->
-    <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <!-- <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script> -->
 
     <!-- jQuery Vector Maps -->
     <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
     <script src="assets/js/plugin/jsvectormap/world.js"></script>
 
     <!-- Sweet Alert -->
-    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+    <!-- <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script> -->
 
     <!-- Kaiadmin JS -->
-    <script src="assets/js/kaiadmin.min.js"></script>
+    <script src="\assets/js/kaiadmin.min.js"></script>
 
     <!-- Kaiadmin DEMO methods, don't include it in your project! -->
     <script src="assets/js/setting-demo.js"></script>

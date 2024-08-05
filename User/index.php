@@ -3,14 +3,14 @@ $con = mysqli_connect('localhost','root','','real_estate');
 session_start();
 if(isset($_SESSION['user_id']))
 {
-  header("location:dashboard.php");
+  header("location:View_property.php");
 }
 if(isset($_POST['Login']))
 {
     $User_name = $_POST['User_name'];
     $Password = $_POST['Password'];
 
-    $sql = "select * from admin where User_name ='$User_name' and Password='$Password'";
+    $sql = "select * from users where User_name ='$User_name' and Password='$Password'";
     echo $sql;
     $res=mysqli_query($con,$sql);
 
@@ -22,7 +22,7 @@ if(isset($_POST['Login']))
     {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['user_id']=$row['id'];
-        header("location:dashboard.php");
+        header("location:View_property.php");
         
     }
    
