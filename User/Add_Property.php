@@ -72,59 +72,50 @@ if (isset($_POST['submit'])) {
 
   if(isset($_GET['edit_id']))
   { 
-    if($_FILES['Image1']['name']=="")
-		{
-			$image1=$proprty_row['Image1'];
-		}else
-		{
-			unlink('upload/'.$proprty_row['Image1']);
-			move_uploaded_file($_FILES['Image1']['tmp_name'],'upload/'.$image1);
-		}
+    if (!empty($image1)) {
+      unlink('upload/' . $proprty_row['Image1']);
+      move_uploaded_file($_FILES['Image1']['tmp_name'], 'upload/' . $image1);
+    } else {
+      $image1 = $proprty_row['Image1'];
+    }
 
-    if($_FILES['Image2']['name']=="")
-		{
-			$image2=$proprty_row['Image2'];
-		}else
-		{
-			unlink('upload/'.$proprty_row['Image2']);
-			move_uploaded_file($_FILES['Image2']['tmp_name'],'upload/'.$image2);
-		}
-    if($_FILES['Image3']['name']=="")
-		{
-			$image3=$proprty_row['Image3'];
-		}else
-		{
-			unlink('upload/'.$proprty_row['Image3']);
-			move_uploaded_file($_FILES['Image3']['tmp_name'],'upload/'.$image3);
-		}
-    if($_FILES['Image4']['name']=="")
-		{
-			$image1=$proprty_row['Image4'];
-		}else
-		{
-			unlink('upload/'.$proprty_row['Image4']);
-			move_uploaded_file($_FILES['Image4']['tmp_name'],'upload/'.$image4);
-		}
-    if($_FILES['Image5']['name']=="")
-		{
-			$image1=$proprty_row['Image5'];
-		}else
-		{
-			unlink('upload/'.$proprty_row['Image1']);
-			move_uploaded_file($_FILES['Image5']['tmp_name'],'upload/'.$image5);
-		}
-    if($_FILES['Image6']['name']=="")
-		{
-			$image1=$proprty_row['Image6'];
-		}else
-		{
-			unlink('upload/'.$proprty_row['Image6']);
-			move_uploaded_file($_FILES['Image6']['tmp_name'],'upload/'.$image6);
-		}
+    if (!empty($image2)) {
+      unlink('upload/' . $proprty_row['Image2']);
+      move_uploaded_file($_FILES['Image2']['tmp_name'], 'upload/' . $image2);
+    } else {
+      $image2 = $proprty_row['Image2'];
+    }
 
+    if (!empty($image3)) {
+      unlink('upload/' . $proprty_row['Image3']);
+      move_uploaded_file($_FILES['Image3']['tmp_name'], 'upload/' . $image3);
+    } else {
+      $image3 = $proprty_row['Image3'];
+    }
+
+    if (!empty($image4)) {
+      unlink('upload/' . $proprty_row['Image4']);
+      move_uploaded_file($_FILES['Image4']['tmp_name'], 'upload/' . $image4);
+    } else {
+      $image4 = $proprty_row['Image4'];
+    }
+
+    if (!empty($image5)) {
+      unlink('upload/' . $proprty_row['Image5']);
+      move_uploaded_file($_FILES['Image5']['tmp_name'], 'upload/' . $image5);
+    } else {
+      $image5 = $proprty_row['Image5'];
+    }
+
+    if (!empty($image6)) {
+      unlink('upload/' . $proprty_row['Image6']);
+      move_uploaded_file($_FILES['Image6']['tmp_name'], 'upload/' . $image6);
+    } else {
+      $image6 = $proprty_row['Image6'];
+    }
     $sql_update = "update property_register set Property_title='$property_title',Description='$des',Type='$type',Status='$status',Price='$price',Sec_price='$sec_price',Land_price='$land_price',Land_postfix='$land_postfix',Image1='$image1',Image2='$image2',Image3='$image3',Image4='$image4',Image5='$image5',Image6='$image6',Feature='$featurs_str',Address='$address',Area_name='$area_name',Area_type='$area_type',City='$city',Badrooms='$badrooms',Bathroom='$bathrooms',Balcony='$balcony',BHK_plot='$BHK_plot',Total_floors='$total_floors',Your_floors='$your_floors',Property_age='$property_age',Approval_status='$Approval_status'  where id =".$edit_id;
     mysqli_query($con, $sql_update);
-    header("location:View_property.php");
+    // header("location:View_property.php");
 
   }else{
 
@@ -243,7 +234,7 @@ if (isset($_POST['submit'])) {
                                         echo "selected";
                                       } ?>>Rent</option>
                 <option value="Sale" <?php if (@$proprty_row['Status'] == "Sale") {
-                                        echo "";
+                                        echo "selected";
                                       } ?>>Sale</option>
               </select>
             </div>
@@ -254,7 +245,7 @@ if (isset($_POST['submit'])) {
             </div>
             <div class="col-4">
               <label for="exampleInputEmail1" class="form-label">Sale the Rent </label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Sale the Rent " name="Price" value="<?php echo @$proprty_row['Description']; ?>">
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Sale the Rent " name="Price" value="<?php echo @$proprty_row['Price']; ?>">
             </div>
             <div class="col-4">
               <label for="exampleInput" class="form-label">Secount Price </label>
@@ -342,7 +333,7 @@ if (isset($_POST['submit'])) {
 
             <div class="col-4">
               <label class="form-label">Address</label>
-              <input type="text" class="form-control" id="exampleInput" placeholder="Address " name="Address" value="<?php echo @$proprty_row['Sec_price']; ?>">
+              <input type="text" class="form-control" id="exampleInput" placeholder="Address " name="Address" value="<?php echo @$proprty_row['Address']; ?>">
             </div>
             <div class="col-4">
               <label class="form-label">Area Name </label>

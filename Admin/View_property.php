@@ -75,7 +75,7 @@ $res = mysqli_query($con,$sql);
                              <td><?php echo $row['id']; ?></td>
                               <td>
                                   <div class="img-data" style="width:150px; height: 150px;">
-                                      <img src="upload/<?php echo $row['Image6']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                                      <img src="../User/upload/<?php echo $row['Image6']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
                                   </div>
                               </td>
                               <td><?php echo $row['Property_title'];  ?></td>
@@ -91,6 +91,9 @@ $res = mysqli_query($con,$sql);
                               <td>
                                 <div class="action-icn">
                                   <div class="form-button-action d-flex gap-2">
+                                    <!-- <a href="" class="edit-btn"> <i class="fa fa-times"></i></a> -->
+                                    <!-- <a href="" class="edit-btn"> <i class="fa fa-times"></i></a> -->
+                                      
                                       <button type="button"
                                               data-bs-toggle="tooltip"
                                               title=""
@@ -111,6 +114,7 @@ $res = mysqli_query($con,$sql);
                                 </div>
                               </td>
                                 <td>
+                                <!-- <a href="" class="edit-btn">  <i class="far fa-eye"></i></a> -->
                                     <button type="button"
                                               data-bs-toggle="tooltip"
                                               class="prev-btn"
