@@ -1,7 +1,7 @@
 <!-- sidebar start-->
 
-<div class="col-2 p-0 position-fixed start-0 sidebar">
-          <div class="bottom-0 position-relative bg-white sidebar-menu"  style=" height: 648px;">
+ <div class="col-2 p-0 position-fixed start-0 sidebar">
+          <div class="bottom-0 position-relative bg-white sidebar-menus" >
             <div class="d-flex flex-column flex-shrink-0 bars-tabs">
                 <ul class="nav flex-column mb-auto sidebar-menu">
                   <li class="nav-item py-1">
@@ -36,9 +36,9 @@
                      View Property
                     </a>
                   </li>
-                  <div class="collapse border-0" id="collapseExample">
+                  <div class="collapse border-0 h-100" id="collapseExample">
 
-                  <div class="card card-body">
+                  <div class="card card-body py-1">
                         <ul class="sub-menu">
                           <li>
                             <a href="View_pending_property.php">Pending property</a>
@@ -70,9 +70,13 @@
                         Logout
                     </a>
                   </li>
-                  
                 </ul>
             </div>
         </div>
-</div>
+</div> 
+
+
 <!-- sidebar start-->
+
+
+

@@ -339,8 +339,8 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   justify-content: center;
   align-items: center;
 }
-form{
-  /* width: 420px;
+.forms_design{
+  width: 420px;
   padding: 50px 40px;
   color: #444;
   background-color: #fff;
@@ -351,11 +351,13 @@ form{
   -moz-border-radius: 15px;
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
-  font-weight: 700 !important; */
+  font-weight: 700 !important;
 }
 .forms_design h1{
   color: #6861CE;
   text-align: center;
+  font-weight: 600 !important;
+  margin-bottom: 20px !important;
 }
 .inputs_group{
   position: relative;
@@ -365,7 +367,7 @@ form{
 }
 .inputs_group > input{
   width: 100%;
-  padding: 24px 0px 10px 16px;
+  padding: 28px 0px 10px 16px;
   font-size: 14px;
   outline: none;
   background-color: #6861ce12;
@@ -409,7 +411,7 @@ form{
   border: none;
 }
 .forget_link{
-  font-size: 14px;
+  font-size: 12px;
   color: #999;
   text-decoration: underline !important;
   text-align: center;
@@ -421,7 +423,7 @@ form{
   -ms-transition: .3s;
   -o-transition: .3s;
   &:hover{
-      color: #4f4f4f;
+      color: #6861CE;
   }
 }
 
