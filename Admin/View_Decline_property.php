@@ -3,25 +3,17 @@
 
 $con=mysqli_connect("localhost","root","","real_estate");
 // $status = "Pending";
-$sql = "select * from property_register where Approval_status='Pending'";
+$sql = "select * from property_register where Approval_status='Decline'";
 $res = mysqli_query($con,$sql);
 
-if(isset($_GET['Approved_id']))
-{
-  $approved_id = $_GET['Approved_id'];
-  $approval_status = "Approved";
-  $sql_update = "update property_register set Approval_status='$approval_status' where id =".$approved_id;
-  mysqli_query($con,$sql_update);
-  header("location:View_Approved_property.php");
-}
-if(isset($_GET['Decline_id']))
-{
-  $approved_id = $_GET['Decline_id'];
-  $approval_status = "Decline";
-  $sql_update = "update property_register set Approval_status='$approval_status' where id =".$approved_id;
-  mysqli_query($con,$sql_update);
-  header("location:View_Decline_property.php");
-}
+// if(isset($_GET['Decline_id']))
+// {
+//   $approved_id = $_GET['Decline_id'];
+//   $approval_status = "Decline";
+//   $sql_update = "update property_register set Approval_status='$approval_status' where id =".$approved_id;
+//   mysqli_query($con,$sql_update);
+//   header("location:View_property.php");
+// }
 
 
 
@@ -122,7 +114,7 @@ if(isset($_GET['del_id']))
                               <td>
                                   <!-- <?php echo $row['Approval_status']; ?> -->
                                    <div class="approve_status d-flex gap-2">
-                                    <a href="Add_Decline_notice.php?Decline_id=<?php echo $row['id']; ?>" class="bg-danger"> Decline</a>
+                                    <a href="" class="bg-danger"> Decline</a>
                                     <a href="View_property.php?Approved_id=<?php echo $row['id']; ?>" class="bg-warning">Approved</a>
                                     <!-- <button class="bg-danger" name="Decline" value="Decline">Decline</button> -->
                                     <!-- <button class="bg-warning " name="Approved" value="Approved">Approved</button> -->

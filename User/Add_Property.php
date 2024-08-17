@@ -396,10 +396,11 @@ if (isset($_POST['submit'])) {
               <label for="exampleInput" class="form-label">Property Age</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Property Age" name="Property_age" value="<?php echo @$proprty_row['Property_age']; ?>">
             </div>
+
+
           </div>
-          <div class="row main-Borad bg-white p-4 mt-4 d-flex gap-4">
-            <button type="submit" name="submit" value="submit" class="py-2 submit-btn action-btn">Submit</button>
-            <button type="submit" name="submit" value="submit" class="py-2 cancel-btn action-btn">Cancel</button>
+          <div>
+            <input type="submit" name="submit" value="submit">
           </div>
       </form>
     </div>

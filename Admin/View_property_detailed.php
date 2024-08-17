@@ -8,6 +8,19 @@ if(isset($_GET['view_id']))
   $res = mysqli_query($con, $sql);
   $row = mysqli_fetch_assoc($res);
   
+  // $sql_deline = "select * from deline_notice where Property_id =".$view_id;
+  // $res_decline = mysqli_query($con,$sql_deline);
+  // $cnt = mysqli_num_rows($row_decline);
+  // $row_decline = '';
+  // if($cnt == 0)
+  // {
+  //   echo "Not value";
+    
+  // }else{
+  
+  //   $row_decline = mysqli_fetch_assoc($res_decline);
+
+  // }
 }
 
 
@@ -201,6 +214,41 @@ if(isset($_GET['view_id']))
         include('footer.php');
        ?>
       </div>
+
+
+<!--       
+      <div class="container">
+          <div class="page-inner">
+          
+            <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h4 class="card-title">Admin Data</h4>
+                  </div>
+                  <div class="card-body">
+                    <div class="table-responsive">
+                    <table
+                        id="basic-datatables"
+                        class="display table table-striped table-hover">
+                        
+                    <tr>
+                      <th>Title</th>
+                      <td colspan="3"><?php echo $row_decline['Pro_title']; ?></td>
+                    </tr>
+                  </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+
+       <?php 
+        include('footer.php');
+       ?>
+      </div> -->
      
       <!-- End Custom template -->
     </div>

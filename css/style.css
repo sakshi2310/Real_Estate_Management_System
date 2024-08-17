@@ -1933,20 +1933,3 @@ body .is-layout-grid>* {
 .bg-slider{
     background-color: black !important;
 }
-
-.light-header{
-    background-color: #fff;
-}
-
-.light-header .main-nav li a{
-    color: #666 !important;
-}
-
-.btn-create-listing{
-    border: 1px solid #00AEEF !important;
-    color: #00AEEF !important;
-    &:hover{
-        color: #fff !important;
-        background-color: #00AEEF !important;
-    }
-}

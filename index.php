@@ -34,8 +34,8 @@
                                                     data-widget_type="houzez_elementor_section_title.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
-                                                            <h2 class="houzez_section_title">Welcome To Dreamwell</h2>
-                                                            <p class="houzez_section_subtitle">Dreamwell is an innovative
+                                                            <h2 class="houzez_section_title">Welcome To Houzez</h2>
+                                                            <p class="houzez_section_subtitle">Houzez is an innovative
                                                                 real estate WordPress theme that helps to ensure your
                                                                 website’s success in this super-competitive market.</p>
                                                         </div>
@@ -313,7 +313,7 @@
                                                                                         class="label-featured label">Featured</span>
                                                                                     <div
                                                                                         class="labels-wrap labels-right">
-                                                                                        <a href="#"
+                                                                                        <a href="https://demo01.houzez.co/status/for-rent/"
                                                                                             class="label-status label status-color-34">
                                                                                             For Rent
                                                                                         </a>
@@ -382,7 +382,7 @@
                                                                                 <div class="item-body flex-grow-1">
                                                                                     <div
                                                                                         class="labels-wrap labels-right">
-                                                                                        <a href="#"
+                                                                                        <a href="https://demo01.houzez.co/status/for-rent/"
                                                                                             class="label-status label status-color-34">
                                                                                             For Rent
                                                                                         </a>
@@ -431,13 +431,13 @@
                                                                                     </ul> <a
                                                                                         class="btn btn-primary btn-item "
                                                                                         target="_self"
-                                                                                        href="#">
+                                                                                        href="https://demo01.houzez.co/property/modern-apartment-on-the-bay/">
                                                                                         Details</a>
                                                                                     <div class="item-author">
                                                                                         <i
                                                                                             class="las la-user mr-1"></i>
                                                                                         <a
-                                                                                            href="#">Samuel
+                                                                                            href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
                                                                                             Palmer</a>
                                                                                     </div>
                                                                                     <div class="item-date">
@@ -451,7 +451,7 @@
                                                                                         <i
                                                                                             class="las la-user mr-1"></i>
                                                                                         <a
-                                                                                            href="#">Samuel
+                                                                                            href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
                                                                                             Palmer</a>
                                                                                     </div>
                                                                                     <div class="item-date">
@@ -475,7 +475,7 @@
                                                                                         class="label-featured label">Featured</span>
                                                                                     <div
                                                                                         class="labels-wrap labels-right">
-                                                                                        <a href="#"
+                                                                                        <a href="https://demo01.houzez.co/status/for-sale/"
                                                                                             class="label-status label status-color-18">
                                                                                             For Sale
                                                                                         </a>

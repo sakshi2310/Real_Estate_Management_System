@@ -2,14 +2,14 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-            <a href="index.html" class="logo">
+          <a href="index.html" class="logo">
               <img
                 src="assets/img/logo-dash.png"
                 alt="navbar brand"
                 class="navbar-brand"
                 height="55"
               />
-            </a>
+            </a>
             <div class="nav-toggle">
               <button class="btn btn-toggle toggle-sidebar">
                 <i class="gg-menu-right"></i>
@@ -27,13 +27,13 @@
         <div class="sidebar-wrapper scrollbar scrollbar-inner">
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
-               <li class="nav-item">
+               <li class="nav-item active">
                 <a href="add_features.php">
                  <i class="fas fa-tachometer-alt"></i>
                   <p>Dashboard</p>
                 </a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a
                   data-bs-toggle="collapse"
                   href="#admin"
@@ -151,22 +151,17 @@
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="View_property.php">
-                        <span class="sub-item">View Property</span>
+                        <span class="sub-item">View All Property</span>
                       </a>
                     </li>
                     <li>
-                      <a href="View_area.php">
-                        <span class="sub-item">Pending Property</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="View_area.php">
+                      <a href="View_Approved_property.php">
                         <span class="sub-item">Approved Property</span>
                       </a>
                     </li>
                      <li>
-                      <a href="View_area.php">
-                        <span class="sub-item">Disaaproved Property</span>
+                      <a href="View_Decline_property.php">
+                        <span class="sub-item">Decline Property</span>
                       </a>
                     </li>
                   </ul>
@@ -214,7 +209,7 @@
                 </a>
               </li>
                 <li class="nav-item">
-                <a href="add_features.php">
+                <a href="logout.php">
                   <i class="fas fa-sign-out-alt"></i>
                   <p>Logout</p>
                 </a>

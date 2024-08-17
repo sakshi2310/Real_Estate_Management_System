@@ -3,7 +3,7 @@ $con = mysqli_connect('localhost','root','','real_estate');
 session_start();
 if(isset($_SESSION['user_id']))
 {
-  header("location:View_property.php");
+  header("location:View_approved_property.php");
 }
 if(isset($_POST['Login']))
 {
@@ -22,7 +22,7 @@ if(isset($_POST['Login']))
     {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['user_id']=$row['id'];
-        header("location:View_property.php");
+        header("location:View_approved_property.php");
         
     }
    

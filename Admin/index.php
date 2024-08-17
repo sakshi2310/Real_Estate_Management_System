@@ -22,7 +22,7 @@ if(isset($_POST['Login_admin']))
     }else
     {
         $row = mysqli_fetch_assoc($res);
-        $_SESSION['user_id']=$row['id'];
+        $_SESSION['admin_id']=$row['id'];
         header("location:View_admin.php");
         
     }
