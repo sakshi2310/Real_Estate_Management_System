@@ -44,10 +44,10 @@ if(isset($_POST['Register']))
                 <span>Enter Password</span>
             </div> 
             <div class="inputs_group">
-                <select>
+                <select name="User_type">
                     <option value="">User Type</option>
-                    <option value="1">Sellar</option>
-                    <option value="2">Buyer</option>
+                    <option value="Sellar">Sellar</option>
+                    <option value="Buyer">Buyer</option>
                 </select>
                 <span>User Type</span>
             </div> 
