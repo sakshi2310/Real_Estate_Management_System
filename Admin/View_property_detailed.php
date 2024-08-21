@@ -1,6 +1,14 @@
 <?php 
 
 $con = mysqli_connect("localhost", "root", "", "real_estate");
+// page session
+session_start();
+if(!isset($_SESSION['admin_id']))
+{
+  header("location:index.php");
+}
+
+
 if(isset($_GET['view_id']))
 {
   $view_id = $_GET['view_id'];

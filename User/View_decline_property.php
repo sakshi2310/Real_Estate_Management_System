@@ -2,6 +2,14 @@
 <?php 
 
 $con=mysqli_connect("localhost","root","","real_estate");
+
+// Page session
+session_start();
+if(!isset($_SESSION['user_id']))
+{
+  header("location:index.php");
+}
+
 // $status = "Pending";
 $sql = "select * from property_register where Approval_status='Decline'";
 $res = mysqli_query($con,$sql);
