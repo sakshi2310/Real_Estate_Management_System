@@ -41,7 +41,8 @@ form{
 .inputs_group:not(:first-child){
     margin-top: 10px;
 }
-.inputs_group > input{
+.inputs_group > input,
+.inputs_group > select{
     width: 100%;
     padding: 24px 0px 10px 16px;
     font-size: 14px;
@@ -87,6 +88,11 @@ form{
     border: none;
 }
 .forget_link{
+    display: flex;  
+    justify-content: end;
+    text-align: end;
+}
+.forget_link a{
     font-size: 14px;
     color: #ddd;
     text-decoration: underline;

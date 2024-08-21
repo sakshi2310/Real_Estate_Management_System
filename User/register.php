@@ -42,12 +42,22 @@ if(isset($_POST['Register']))
             <div class="inputs_group">
                 <input type="password" placeholder="Enter Your Password" name="Password">
                 <span>Enter Password</span>
-            </div>  
+            </div> 
+            <div class="inputs_group">
+                <select>
+                    <option value="">User Type</option>
+                    <option value="1">Sellar</option>
+                    <option value="2">Buyer</option>
+                </select>
+                <span>User Type</span>
+            </div> 
+            <div class="forget_link">
+                <a href="#">Forget Your Password ?</a>
+            </div>
            <div class="frm_btn">
                 <button  type="submit" name="Register">Submit</button>
             </div>
         </form>
-        <a href="#" class="forget_link">Forget Your Password ?</a>
     </div>
         
 </div>
