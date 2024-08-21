@@ -1,7 +1,6 @@
 <?php 	
 # Connect to data base
 $con = mysqli_connect('localhost','root','','real_estate');
-echo "hyyyyyyyyyyyyyys";
 if(isset($_POST['Register']))
 {
 	$User_name = $_POST['User_name'];
