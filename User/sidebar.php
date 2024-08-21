@@ -11,13 +11,13 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="nav-link text-dark py-2">
+                    <a href="View_profile.php" class="nav-link text-dark py-2">
                     <i class="bi bi-person-circle me-2 fs-5"></i>
                       Profile
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="nav-link text-dark py-2">
+                    <a href="change_password.php" class="nav-link text-dark py-2">
                     <i class="bi bi-person-fill-lock me-2 fs-5"></i>
                       Change Password
                     </a>

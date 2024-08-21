@@ -207,15 +207,15 @@ if (isset($_POST['submit'])) {
             <div class="col-12">
               <h4 class="frm-title">Description</h4>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Property Title</label>
               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Property Title" name="Property_title" value="<?php echo @$proprty_row['Property_title']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Description</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Description" name="Description" value="<?php echo @$proprty_row['Description']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Type</label>
               <select class="form-select" aria-label="Default select example" name="Type">
                 <option value="">Select Type</option>
@@ -226,7 +226,7 @@ if (isset($_POST['submit'])) {
                 <?php } ?>
               </select>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Status</label>
               <select class="form-select" aria-label="Default select example" name="Status">
                 <option selected>Status</option>
@@ -243,19 +243,19 @@ if (isset($_POST['submit'])) {
             <div class="col-12">
               <h4 class="frm-title">Price</h4>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Sale the Rent </label>
               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Sale the Rent " name="Price" value="<?php echo @$proprty_row['Price']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Secount Price </label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Secount Price " name="Sec_price" value="<?php echo @$proprty_row['Sec_price']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Land Price</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Land Price " name="Land_price" value="<?php echo @$proprty_row['Land_price']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Land post fix </label>
               <select class="form-select" aria-label="Default select example" name="Land_postfix">
                 <option selected>Land post fix </option>
@@ -275,34 +275,34 @@ if (isset($_POST['submit'])) {
             <div class="col-12">
               <h4 class="frm-title">Media</h4>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Select Image" name="Image1">
               <img src="upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail2" placeholder="Select Image" name="Image2">
               <img src="upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail3" placeholder="Select Image" name="Image3">
               <img src="upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 " id="page2">
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail4" placeholder="Select Image" name="Image4">
               <img src="upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail5" placeholder="Select Image" name="Image5">
               <img src="upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Imae</label>
               <input type="file" class="form-control" id="exampleInputEmail6" placeholder="Select Image" name="Image6">
               <img src="upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
@@ -331,11 +331,11 @@ if (isset($_POST['submit'])) {
               <h4 class="frm-title">Location</h4>
             </div>
 
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Address</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Address " name="Address" value="<?php echo @$proprty_row['Address']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Area Name </label>
               <select class="form-select" aria-label="Default select example" name="Area_name">
                 <option selected>Area Name</option>
@@ -344,7 +344,7 @@ if (isset($_POST['submit'])) {
                 <?php } ?>
               </select>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">Area Type </label>
               <select class="form-select" aria-label="Default select example" name="Area_type">
                 <option selected>Area Type</option>
@@ -359,7 +359,7 @@ if (isset($_POST['submit'])) {
                                             } ?>>Carpet area</option>
               </select>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label class="form-label">City</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="City" name="City" value="<?php echo @$proprty_row['City']; ?>">
             </div>
@@ -368,39 +368,42 @@ if (isset($_POST['submit'])) {
             <div class="col-12">
               <h4 class="frm-title">Other Details</h4>
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Badrooms</label>
               <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Badrooms " name="Badrooms" value="<?php echo @$proprty_row['Badrooms']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Bathrooms </label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Bathrooms " name="Bathrooms" value="<?php echo @$proprty_row['Bathroom']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Balcony </label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Balcony " name="Balcony" value="<?php echo @$proprty_row['Balcony']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">BHK / Plot</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="BHK / Plot" name="BHK_plot" value="<?php echo @$proprty_row['BHK_plot']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Total Floors </label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Total Floors" name="Total_floors" value="<?php echo @$proprty_row['Total_floors']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Your Floors </label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Your Floor" name="Your_floor" value="<?php echo @$proprty_row['Your_floors']; ?>">
             </div>
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInput" class="form-label">Property Age</label>
               <input type="text" class="form-control" id="exampleInput" placeholder="Property Age" name="Property_age" value="<?php echo @$proprty_row['Property_age']; ?>">
             </div>
 
 
           </div>
-          <div>
-            <input type="submit" name="submit" value="submit">
+          <div class="main-Borad bg-white p-4 mt-4 d-flex gap-4">
+                <div class="col-12">
+                    <button type="submit" name="submit" value="submit" class="py-2 submit-btn action-btn">Submit</button>
+                    <button type="submit" name="submit" value="submit" class="py-2 cancel-btn action-btn">Cancel</button>
+                </div>
           </div>
       </form>
     </div>
