@@ -264,6 +264,9 @@ table tr >td{
     display: inline-block;
 }
 
+table{
+    font-size: 14px !important;
+}
 
 
 
