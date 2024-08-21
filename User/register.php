@@ -6,8 +6,9 @@ if(isset($_POST['Register']))
 	$User_name = $_POST['User_name'];
 	$Email = $_POST['Email'];
     $Password = $_POST['Password'];
+    $user_type = $_POST['User_type'];
 
-    $sql = "insert into users (User_name,Email,Password) values ('$User_name','$Email','$Password');";
+    $sql = "insert into users (User_name,Email,Password,User_type) values ('$User_name','$Email','$Password','$user_type');";
     mysqli_query($con,$sql);
     header("location:index.php");
 }
