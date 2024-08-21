@@ -1,4 +1,23 @@
 
+<?php
+
+// Connention
+$con=mysqli_connect("localhost","root","","real_estate");
+// session_start();
+// fetch the current admin for the profile view
+if(isset($_SESSION['admin_id']))
+{
+  
+  // echo $_SESSION['admin_id'];
+  
+  $admin_id = $_SESSION['admin_id'];
+  $sql_profile = "select * from admin where id =".$admin_id;
+  $res_profile = mysqli_query($con,$sql_profile);
+  $row = mysqli_fetch_assoc($res_profile);
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -380,7 +399,7 @@
                     </div>
                     <span class="profile-username">
                       <span class="op-7">Hi,</span>
-                      <span class="fw-bold">Hizrian</span>
+                      <span class="fw-bold"><?php echo $row['User_name'];?></span>
                     </span>
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">

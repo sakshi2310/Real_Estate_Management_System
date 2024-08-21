@@ -3,6 +3,13 @@
 
 $con = mysqli_connect('localhost','root','','real_estate');
 
+// page session
+session_start();
+if(!isset($_SESSION['admin_id']))
+{
+  header("location:index.php");
+}
+
 if(isset($_GET['Decline_id']))
 {
   $decline_id = $_GET['Decline_id'];
