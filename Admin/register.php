@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Form</title>
-    <link rel="stylesheet" href="css/style.css">
+      <!-- CSS Files -->
+      <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    
+    <!-- <link rel="stylesheet" type="text/css" href="../User/cass/Login_style..css"> -->
 </head>
 <body>
 
@@ -24,11 +33,13 @@
                 <input type="password" placeholder="Enter Your Password">
                 <span>Enter Password</span>
             </div>
+            <div class="forget_link">
+                <a href="#">Forget Your Password ?</a>
+            </div>
             <div class="frm_btn">
                 <button>Submit</button>
             </div>
         </form>
-        <a href="#" class="forget_link">Forget Your Password ?</a>
     </div>
         
 </div>
