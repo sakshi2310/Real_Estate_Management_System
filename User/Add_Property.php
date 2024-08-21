@@ -1,12 +1,16 @@
 <?php
 
-// if(!isset($_SESSION['user_id']))
-// {
-//     header("location:dashboard.php");
-// }
 
 # Select the Area from admin
 $con = mysqli_connect("localhost", "root", "", "real_estate");
+
+// Page session
+session_start();
+if(!isset($_SESSION['user_id']))
+{
+  header("location:index.php");
+}
+
 $sql_area = "select * from property_area";
 $res_area = mysqli_query($con, $sql_area);
 

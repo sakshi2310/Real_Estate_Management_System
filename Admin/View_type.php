@@ -1,6 +1,15 @@
 <?php 
 
 $con=mysqli_connect("localhost","root","","real_estate");
+
+// page session
+session_start();
+if(!isset($_SESSION['admin_id']))
+{
+  header("location:index.php");
+}
+
+
 $sql = "select * from property_type";
 $res = mysqli_query($con,$sql);
 

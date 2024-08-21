@@ -2,7 +2,7 @@
 <?php 
 $con = mysqli_connect('localhost','root','','real_estate');
 session_start();
-if(isset($_SESSION['user_id']))
+if(isset($_SESSION['admin_id']))
 {
   header("location:View_admin.php");
 }

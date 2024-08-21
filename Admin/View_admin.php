@@ -1,13 +1,20 @@
 <?php 
 
+// Connention
 $con=mysqli_connect("localhost","root","","real_estate");
+
+// For fetch all admins
 $sql = "select * from admin";
 $res = mysqli_query($con,$sql);
 
-
+// page session
+session_start();
+if(!isset($_SESSION['admin_id']))
+{
+  header("location:index.php");
+}
 
 // status Update
-
 if(isset($_GET['U_id']))
 {
   $u_id = $_GET['U_id'];

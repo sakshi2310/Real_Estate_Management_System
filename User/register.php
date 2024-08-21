@@ -1,14 +1,14 @@
 <?php 	
 # Connect to data base
 $con = mysqli_connect('localhost','root','','real_estate');
-echo "hyyyyyyyyyyyyyys";
 if(isset($_POST['Register']))
 {
 	$User_name = $_POST['User_name'];
 	$Email = $_POST['Email'];
     $Password = $_POST['Password'];
+    $user_type = $_POST['User_type'];
 
-    $sql = "insert into users (User_name,Email,Password) values ('$User_name','$Email','$Password');";
+    $sql = "insert into users (User_name,Email,Password,User_type) values ('$User_name','$Email','$Password','$user_type');";
     mysqli_query($con,$sql);
     header("location:index.php");
 }
@@ -44,10 +44,10 @@ if(isset($_POST['Register']))
                 <span>Enter Password</span>
             </div> 
             <div class="inputs_group">
-                <select>
+                <select name="User_type">
                     <option value="">User Type</option>
-                    <option value="1">Sellar</option>
-                    <option value="2">Buyer</option>
+                    <option value="Sellar">Sellar</option>
+                    <option value="Buyer">Buyer</option>
                 </select>
                 <span>User Type</span>
             </div> 

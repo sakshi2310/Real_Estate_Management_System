@@ -62,7 +62,7 @@
             <li class="nav-item">
                 <a
                   data-bs-toggle="collapse"
-                  href="#admin"
+                  href="#Property_type"
                   class="collapsed"
                   aria-expanded="false"
                 >
@@ -70,7 +70,7 @@
                   <p>Property Type</p>
                   <span class="caret"></span>
                 </a>
-                <div class="collapse" id="admin">
+                <div class="collapse" id="Property_type">
                   <ul class="nav nav-collapse">
                     <li>
                       <a href="Add_type.php">
