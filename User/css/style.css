@@ -170,7 +170,7 @@ table tr >td{
 /* sidebar */
 
 .sidebar-menus{
-    height: 510px !important;
+    height: 605px !important;
     max-height: 100% !important;
     overflow-y: auto !important;
     padding-bottom:20px !important ;
@@ -263,6 +263,7 @@ table tr >td{
     -o-border-radius: 5px;
     display: inline-block;
 }
+
 
 
 
