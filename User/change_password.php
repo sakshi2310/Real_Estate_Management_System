@@ -1,18 +1,3 @@
-
-<?php 
-
-$con=mysqli_connect("localhost","root","","real_estate");
-
-// Page session
-session_start();
-if(!isset($_SESSION['user_id']))
-{
-  header("location:index.php");
-}
-
-
-
- ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,10 +8,9 @@ if(!isset($_SESSION['user_id']))
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css file -->
     <link rel="stylesheet" href="css/style.css">
-    
 </head>
 <body>
-
+    
     <!-- header start -->
     <?php
   include('header.php');
@@ -40,36 +24,33 @@ if(!isset($_SESSION['user_id']))
       ?>
         <div class="col-10 p-4 ms-auto">
           <div class="main-Borad p-5 bg-white">
-            <h5 class="page-title">View Data</h5>
-            <form method="post" enctype="multipart/form-data">
-               <div class="col-10 p-4 ms-auto">
-                    <div class="row main-Borad bg-white p-4" id="page1">
-                    <div class="col-12">
-                         
-                    </div>
-                    </div>
-               </div>
-            </form>
+            <div class="row">
+                <div class="col-12">
+                    <h5 class="page-title">Change Password</h5>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-lg-4 col-md-6 col-12">
+              <label for="exampleInputoldpassword" class="form-label">Old Passsword</label>
+              <input type="password" class="form-control" id="exampleInputoldpassword" placeholder="Old Passsword" name="Old_Passsword" >
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <label for="exampleInputnewpassword" class="form-label">New Passsword</label>
+              <input type="password" class="form-control" id="exampleInputnewpassword" placeholder="New Passsword" name="New_Passsword" >
+            </div>
+            <div class="col-lg-4 col-md-6 col-12">
+              <label for="exampleInputconpassword" class="form-label">Confirm Passsword</label>
+              <input type="password" class="form-control" id="exampleInputconpassword" placeholder="Con Passsword" name="Con_Passsword" >
+            </div>
+            </div>
           </div>
-         
-
-     
-
+          <div class="main-Borad bg-white p-4 mt-4 d-flex gap-4">
+                <div class="col-12">
+                    <button type="submit" name="submit" value="submit" class="py-2 submit-btn action-btn">Submit</button>
+                    <button type="submit" name="submit" value="submit" class="py-2 cancel-btn action-btn">Cancel</button>
+                </div>
+          </div>
         </div>
-      </div>
     </div>
-
-
-       
-    
-    
-
-
-    
-
-
-    <!-- bootstrap js -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 </body>
 </html>

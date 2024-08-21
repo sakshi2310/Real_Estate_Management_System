@@ -11,7 +11,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="nav-link text-dark py-2">
+                    <a href="View_profile.php" class="nav-link text-dark py-2">
                     <i class="bi bi-person-circle me-2 fs-5"></i>
                       Profile
                     </a>
