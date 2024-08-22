@@ -47,8 +47,16 @@ if(isset($_GET['view_id']))
       include('sidebar.php');
       ?>
         <div class="col-10 p-4 ms-auto">
-          <div class="main-Borad p-5 bg-white">
+          <div class="main-Borad p-5 bg-white  d-flex justify-content-center align-items-between">
             <h5 class="page-title">View Data</h5>
+            <div class="input-group Serach-input">
+                            <i class="bi bi-search"></i>
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                class="form-control"
+                            />
+                    </div>
              <!-- table start -->
            <table class="table bg-transparent">
             <tr>

@@ -349,6 +349,37 @@ table{
     color: #222;
 }
 
+/* serachbar */
+
+.Serach-input{
+    position: relative;
+    width: 350px !important;
+  }
+  
+  .Serach-input input{
+    border: 1px solid #ddd;
+    border-radius: 3px !important;
+    -webkit-border-radius: 3px !important;
+    -moz-border-radius: 3px !important;
+    -ms-border-radius: 3px !important;
+    -o-border-radius: 3px !important;
+    padding-left: 40px;
+  }
+  
+  .Serach-input i{
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    left: 12px;
+    position: relative;
+    z-index: 999;
+    font-size: 14px;
+  }
+
 
 
 /* custom scrollbar */

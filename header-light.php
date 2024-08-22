@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <meta name="format-detection" content="telephone=no">
-    <title>Grid Default &#8211; Houzez</title>
+    <title>DreamWell</title>
     <meta name="robots" content="max-image-preview:large" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -612,25 +612,21 @@
     <div class="nav-mobile nav-mobile-js">
         <div class="main-nav navbar slideout-menu slideout-menu-left" id="nav-mobile">
             <ul id="mobile-main-nav" class="navbar-nav mobile-navbar-nav">
-                <li
+            <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Home</a> 
+                    <a class="nav-link " href="index.php">Home</a> 
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Properties</a> 
+                    <a class="nav-link" href="about.php">About Us</a>
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Property</a>
+                    <a class="nav-link" href="contact_us.php">Contact Us</a>
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Realtor</a> 
-                </li>
-                <li
-                    class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Others</a> 
+                    <a class="nav-link " href="peoperty.php">Properties</a> 
                 </li>
             </ul>
         </div>
@@ -664,7 +660,7 @@
                                 <ul id="main-nav" class="navbar-nav justify-content-end">
                                     <li id="menu-item-60"
                                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children nav-item menu-item-60 menu-item-design-default dropdown">
-                                        <a class="nav-link" href="index.php">Home</a>
+                                        <a class="nav-link"  href="index.php">Home</a>
                                     </li>
                                     <li id="menu-item-71"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-71 menu-item-design-default dropdown">
