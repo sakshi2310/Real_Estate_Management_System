@@ -46,6 +46,7 @@ if(isset($_POST['Login_admin']))
 
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="assets/css/demo.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <!-- <link rel="stylesheet" type="text/css" href="../User/cass/Login_style..css"> -->
 </head>
 <body>

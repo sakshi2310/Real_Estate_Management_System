@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <meta name="format-detection" content="telephone=no">
-    <title>Houzez &#8211; Highly Customizable Real Estate </title>
+    <title>DreamWell</title>
     <meta name="robots" content="max-image-preview:large" />
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -442,35 +442,31 @@
             <ul id="mobile-main-nav" class="navbar-nav mobile-navbar-nav">
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Home</a> 
+                    <a class="nav-link " href="index.php">Home</a> 
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Properties</a> 
+                    <a class="nav-link" href="about.php">About Us</a>
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Property</a>
+                    <a class="nav-link" href="contact_us.php">Contact Us</a>
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Realtor</a> 
-                </li>
-                <li
-                    class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="#">Others</a> 
+                    <a class="nav-link " href="peoperty.php">Properties</a> 
                 </li>
             </ul>
         </div>
         <nav class="navi-login-register slideout-menu slideout-menu-right" id="navi-user">
-            <a class="btn btn-create-listing" href="https://demo01.houzez.co/create-listing/">Create a Listing</a>
+            <a class="btn btn-create-listing" href="#">Create a Listing</a>
             <ul class="logged-in-nav">
                 <li class="login-link">
                     <a href="#" data-toggle="modal" data-target="#login-register-form"><i
                             class="houzez-icon icon-lock-5 mr-1"></i> Login</a>
                 </li>
                 <li class="favorite-link">
-                    <a class="favorite-btn" href="https://demo01.houzez.co/favorite-properties/"><i class="las la-heart"></i> Favorites <span
+                    <a class="favorite-btn" href="#"><i class="las la-heart"></i> Favorites <span
                             class="btn-bubble frvt-count">0</span></a>
                 </li>
             </ul>
@@ -484,7 +480,7 @@
                     <div class="header-inner-wrap">
                         <div class="navbar d-flex align-items-center">
                             <div class="logo logo-splash">
-                                <a href="https://demo01.houzez.co/" class="logo-img">
+                                <a href="index.php" class="logo-img">
                                     <img src="assets/dreamwell-light.png" alt="">
                                 </a>
                             </div>

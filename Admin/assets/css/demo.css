@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
 .gg-check {
   box-sizing: border-box;
   position: relative;
@@ -549,4 +551,115 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   -o-border-radius: 5px;
   display: inline-block;
   color: #fff;
+}
+
+
+/* profile info start */
+.profile-pic{
+  padding: 8px;
+  width: 100%;
+  border: 1px dashed #999;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.file-profile{
+  opacity: 0;
+  height: 60px;
+  width: 60px;
+  z-index: 88;
+}
+.profile-pic-icn{
+  top: 8px;
+  left: 15px;
+  height: 60px;
+  width: 60px;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i{
+      color: #999;
+      font-size: 30px;
+  }
+}
+.profile-pic-view{
+  height: 150px;
+  width: 150px;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+.profile-pic-view img{
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+.pro-icon{
+  font-size: 18px;
+  align-self: center;
+}
+.pro-info span{
+  font-size: 12px;
+}
+.pro-info p{
+  margin-top: 5px;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+.cursor{
+  cursor: pointer;
+}
+.pro-detail .edit-icn{
+  align-self: center;
+  color: #333;
+}
+.profile-pic-view a{
+  font-size: 14px;
+  color: #222;
+}
+
+
+/* serachbar */
+
+.Serach-input{
+  position: relative;
+  width: 350px !important;
+}
+
+.Serach-input input{
+  border: 1px solid #ddd;
+  border-radius: 3px !important;
+  -webkit-border-radius: 3px !important;
+  -moz-border-radius: 3px !important;
+  -ms-border-radius: 3px !important;
+  -o-border-radius: 3px !important;
+  padding-left: 40px;
+}
+
+.Serach-input i{
+  position: absolute !important;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  left: 15px;
+  position: relative;
+  z-index: 999;
 }

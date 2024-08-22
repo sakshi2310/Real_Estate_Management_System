@@ -1,39 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashborad</title>
-    <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- css file -->
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    
-    <!-- header start -->
-    <?php
-  include('header.php');
-  ?>
-    <!-- header start -->
-
-    <div class="container-fluid">
-      <div class="row">
-      <?php
-      include('sidebar.php');
+<div class="wrapper">
+      <!-- Sidebar -->
+      <?php 
+        include('sidebar.php');
       ?>
-        <div class="col-10 p-4 ms-auto">
-          <div class="main-Borad p-5 bg-white">
-            <div class="row">
-                <div class="col-12 d-flex w-100 justify-content-between mb-4">
-                <h4 class="frm-title">View Profile</h4>
-                    <a href="edit_profile.php" class="py-2 submit-btn action-btn px-4 d-inline-flex w-auto" >Edit Profile <i class="bi bi-pencil-square ms-2"></i></a>
-                </div>
+
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        
+        <?php 
+          include('header.php');
+        ?>
+
+      <div class="container">
+          <div class="page-inner">
+            <div class="page-header">
+              <h3 class="fw-bold mb-3">Dashborad </h3>
+              <ul class="breadcrumbs mb-3">
+                <li class="nav-home">
+                  <a href="#">
+                    <i class="icon-home"></i>
+                  </a>
+                </li>
+                <li class="separator">
+                  <i class="icon-arrow-right"></i>
+                </li>
+                <li class="nav-item">
+                  <a href="#">View Profile</a>
+                </li>
+              </ul>
             </div>
             <div class="row">
+              <div class="col-md-12">
+                <div class="card">
+                  <div class="card-header">
+                  <div class="col-12 d-flex w-100 justify-content-between">
+                    <h5 class="page-title mb-0">View Profile</h5>
+                    <a href="Edit_profile.php" class="py-2 btn-submit btn action-btn px-4 d-inline-flex w-auto align-items-center" >Edit Profile <i class="bi bi-pencil-square ms-2"></i></a>
+                    </div>
+                  </div>
+                  <div class="card-body pb-5">
+                  <div class="row">
                 <div class="col-lg-6 col-md-8 col-12 mx-auto justify-content-center d-flex">
-                    <div class="profile-pic-view">
-                        <img src="img/profile1.jpg" alt="">
+                    <div class="profile-pic-view d-flex justify-content-center flex-wrap mb03">
+                        <img src="assets/img/profile1.jpg" alt="">
                         <a href="#" class="edit-icn text-center mt-2">
                             Edit Image
                             <i class="bi bi-pencil cursor ms-2"></i>
@@ -105,7 +115,18 @@
                     </div>
                 </div>
             </div>
+                  </div>
+                </div>
+              </div>
           </div>
+        </div>
+
+
+       <?php 
+        include('footer.php');
+       ?>
+      </div>
+     
+      <!-- End Custom template -->
     </div>
-</body>
-</html>
+    

@@ -203,7 +203,7 @@
               </li>
                  
                <li class="nav-item">
-                <a href="add_features.php">
+                <a href="View_profile.php">
                   <i class="fas fa-user-circle"></i>
                   <p>Profile</p>
                 </a>

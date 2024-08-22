@@ -25,8 +25,17 @@
         <div class="col-10 p-4 ms-auto">
           <div class="main-Borad p-5 bg-white">
             <div class="row">
-                <div class="col-12">
+                <div class="col-12  d-flex justify-content-between align-items-center">
                     <h5 class="page-title">Edit Profile Info</h5>
+                    
+                    <div class="input-group Serach-input">
+                            <i class="bi bi-search"></i>
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                class="form-control"
+                            />
+                    </div>
                 </div>
             </div>
             <div class="row">

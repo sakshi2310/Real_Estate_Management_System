@@ -1873,6 +1873,12 @@ body .is-layout-grid>* {
     -moz-border-radius: 50px !important;
     -ms-border-radius: 50px !important;
     -o-border-radius: 50px !important;
+    color: #00AEEF !important;
+    border:1px solid  #00AEEF !important;
+    &:hover{
+        background-color: #00AEEF !important;
+        color: #fff !important;
+    }
 }
 
 .widget ul:not(.item-amenities):not(.item-price-wrap):not(.contact-list):not(.dropdown-menu):not(.nav-tabs) li a:before{
@@ -1932,4 +1938,24 @@ body .is-layout-grid>* {
 
 .bg-slider{
     background-color: black !important;
+}
+
+.light-header{
+    background-color: white !important;
+}
+
+.light-header .menu-item a{
+    color: #666;
+    &:hover{
+        color: #666;
+    }
+}
+
+.light-header .btn-create-listing{
+    border:1px solid #00AEEF !important;
+    color: #00AEEF !important;
+    &:hover{
+        background-color: #00AEEF !important;
+        color: #fff !important;
+    }
 }

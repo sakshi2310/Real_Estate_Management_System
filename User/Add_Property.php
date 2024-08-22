@@ -208,7 +208,7 @@ if (isset($_POST['submit'])) {
       <form method="post" enctype="multipart/form-data">
         <div class="col-10 p-4 ms-auto">
           <div class="row main-Borad bg-white p-4" id="page1">
-            <div class="col-12">
+            <div class="col-12 ">
               <h4 class="frm-title">Description</h4>
             </div>
             <div class="col-lg-4 col-md-6 col-12">
