@@ -9,10 +9,10 @@
                             </div>
                             <div class="widget-body">
                                 <ul>
-                                    <li><a href="https://demo01.houzez.co/city/miami/">About Us</a></li>
-                                    <li><a href="https://demo01.houzez.co/city/los-angeles/">Contact Us</a></li>
-                                    <li><a href="https://demo01.houzez.co/city/chicago/">Property</a></li>
-                                    <li><a href="https://demo01.houzez.co/city/new-york/">Login</a></li>
+                                    <li><a href="about.php">About Us</a></li>
+                                    <li><a href="contact.php">Contact Us</a></li>
+                                    <li><a href="property.php">Property</a></li>
+                                    <li><a href="login.php">Login</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -81,8 +81,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <p class="mt-3">Houzez is a premium WordPress theme for Designers & Real Estate
-                                        Agents.</p>
                                 </div><label style="display: none !important;">Leave this field empty if you're human:
                                     <input type="text" name="_mc4wp_honeypot" value tabindex="-1"
                                         autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp"
@@ -100,12 +98,11 @@
             <div class="container">
                 <div class="d-flex justify-content-between">
                     <div class="footer-copyright">
-                        &copy; Houzez - All rights reserved</div>
+                        &copy; Dreamwell - All rights reserved</div>
                     <div class="footer_logo logo">
                         <img alt="logo"
-                            data-cfsrc="https://demo01.houzez.co/wp-content/themes/houzez/img/logo-houzez-white.png"
                             style="display:none;visibility:hidden;"><noscript><img
-                                src="https://demo01.houzez.co/wp-content/themes/houzez/img/logo-houzez-white.png"
+                                src="index.php"
                                 alt="logo"></noscript>
                     </div>
                     <div class="footer-social">

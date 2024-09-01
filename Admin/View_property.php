@@ -62,7 +62,7 @@ if(isset($_GET['del_id']))
       <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Admin Data </h3>
+              <h3 class="fw-bold mb-3">View Property </h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="#">
@@ -86,8 +86,17 @@ if(isset($_GET['del_id']))
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                  <div class="card-header">
-                    <h4 class="card-title">Admin Data</h4>
+                  <div class="card-header  d-flex justify-content-between align-items-center">
+                    <h4 class="card-title">View Property</h4>
+                    
+                    <div class="input-group Serach-input">
+                            <i class="fa fa-search search-icon"></i>
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                class="form-control"
+                            />
+                    </div>
                   </div>
                   <div class="card-body">
                     <div class="table-responsive">
