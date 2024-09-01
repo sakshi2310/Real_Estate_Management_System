@@ -11,7 +11,6 @@ if(isset($_POST['Login']))
     $Password = $_POST['Password'];
 
     $sql = "select * from users where User_name ='$User_name' and Password='$Password'";
-    echo $sql;
     $res=mysqli_query($con,$sql);
 
     $cnt = mysqli_num_rows($res);

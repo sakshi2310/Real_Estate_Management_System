@@ -1,4 +1,21 @@
  <!-- header start -->
+ <?php 
+ 
+ $con=mysqli_connect("localhost","root","","real_estate");  
+ // Page session
+session_start();
+if(!isset($_SESSION['user_id']))
+{
+  header("location:index.php");
+}
+$user_id = $_SESSION['user_id'];
+$sql = "select * from users where id =".$user_id;
+$res = mysqli_query($con,$sql);
+$row = mysqli_fetch_assoc($res); 
+ 
+ ?>
+ 
+ 
  <header class="py-3 bg-white border-bottom position-sticky top-0">
         <div class="container-fluid d-flex align-items-center px-5 justify-content-between" style="grid-template-columns: 1fr 2fr;">
             <div class="left-info">
@@ -12,7 +29,7 @@
             <i class="bi bi-bell-fill fs-5 me-3"></i>
             <div class="flex-shrink-0 dropdown profile-edit border-1 ">
               <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                <img src="upload/<?php echo $row['Image'];?>" alt="mdo" width="32" height="32" class="rounded-circle">
               </a>
               <ul class="dropdown-menu text-small shadow">
                 <li><a class="dropdown-item" href="#">Home</a></li>

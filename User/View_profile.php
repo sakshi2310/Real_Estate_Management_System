@@ -1,3 +1,23 @@
+<?php 
+
+
+$con=mysqli_connect("localhost","root","","real_estate");
+
+// Page session
+include('header.php');
+if(!isset($_SESSION['user_id']))
+{
+  header("location:index.php");
+}
+
+$user_id = $_SESSION['user_id'];
+
+$sql = "select * from users where id=".$user_id;
+$res = mysqli_query($con,$sql);
+$row = mysqli_fetch_assoc($res);
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,9 +32,7 @@
 <body>
     
     <!-- header start -->
-    <?php
-  include('header.php');
-  ?>
+
     <!-- header start -->
 
     <div class="container-fluid">
@@ -27,13 +45,13 @@
             <div class="row">
                 <div class="col-12 d-flex w-100 justify-content-between mb-4">
                 <h4 class="frm-title">View Profile</h4>
-                    <a href="edit_profile.php" class="py-2 submit-btn action-btn px-4 d-inline-flex w-auto" >Edit Profile <i class="bi bi-pencil-square ms-2"></i></a>
+                    <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="py-2 submit-btn action-btn px-4 d-inline-flex w-auto" >Edit Profile <i class="bi bi-pencil-square ms-2"></i></a>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-12 mx-auto justify-content-center d-flex">
                     <div class="profile-pic-view">
-                        <img src="img/profile1.jpg" alt="">
+                        <img src="upload/<?php echo $row['Image']; ?>" alt="">
                         <a href="#" class="edit-icn text-center mt-2">
                             Edit Image
                             <i class="bi bi-pencil cursor ms-2"></i>
@@ -49,9 +67,9 @@
                         </div>
                         <div class="pro-info me-5">
                             <span>Username</span>
-                            <p>Admin</p>
+                            <p><?php echo $row['User_name'];?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>
@@ -65,9 +83,9 @@
                         </div>
                         <div class="pro-info me-5">
                             <span>Email</span>
-                            <p>admin123@gmail.com</p>
+                            <p><?php echo $row['Email'];?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>
@@ -81,9 +99,9 @@
                         </div>
                         <div class="pro-info me-5">
                             <span>User Type</span>
-                            <p>Buyer</p>
+                            <p><?php echo $row['User_type'];?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto disabled-link"  onclick="return false;">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>
@@ -97,9 +115,9 @@
                         </div>
                         <div class="pro-info me-5">
                             <span>Mobile Number</span>
-                            <p>+91 99887 23456</p>
+                            <p>+91 <?php echo $row['Mb_num']; ?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>
