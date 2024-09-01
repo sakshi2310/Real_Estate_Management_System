@@ -3,14 +3,15 @@
 
 $con=mysqli_connect("localhost","root","","real_estate");
 
+// Header start
+include('header.php');
 // Page session
-session_start();
 if(!isset($_SESSION['user_id']))
 {
   header("location:index.php");
 }
-
-$sql = "select * from property_register where Approval_status='Approved'";
+$user_id = $_SESSION['user_id'];
+$sql = "select * from property_register where Approval_status='Approved' and User_id=".$user_id." order by id DESC";
 $res = mysqli_query($con,$sql);
 
 if(isset($_GET['del_id']))
@@ -47,7 +48,7 @@ if(isset($_GET['del_id']))
 
     <!-- header start -->
     <?php
-  include('header.php');
+  // include('header.php');
   ?>
     <!-- header start -->
 

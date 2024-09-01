@@ -1959,3 +1959,9 @@ body .is-layout-grid>* {
         color: #fff !important;
     }
 }
+
+.disabled-link {
+    pointer-events: none; /* Disables the link click */
+    color: gray; /* Changes the color to indicate it is disabled */
+    cursor: not-allowed; /* Changes the cursor to indicate it is disabled */
+}

@@ -2,8 +2,9 @@
 
 $con = mysqli_connect("localhost", "root", "", "real_estate");
 
+// Header start
+include('header.php');
 // Page session
-session_start();
 if(!isset($_SESSION['user_id']))
 {
   header("location:index.php");
@@ -16,7 +17,12 @@ if(isset($_GET['view_id']))
   $res = mysqli_query($con, $sql);
   $row = mysqli_fetch_assoc($res);
   
+
+  $sql_dec = "SELECT * FROM `deline_notice` WHERE Property_id=".$view_id;
+  $res_dec = mysqli_query($con, $sql_dec);
+  $row_dec = mysqli_fetch_assoc($res_dec);
 }
+
 
 
 ?>
@@ -35,11 +41,6 @@ if(isset($_GET['view_id']))
 </head>
 <body>
 
-    <!-- header start -->
-    <?php
-    include('header.php');
-    ?>
-    <!-- header start -->
 
     <div class="container-fluid">
       <div class="row">
@@ -182,8 +183,22 @@ if(isset($_GET['view_id']))
               <td colspan="3"><?php echo $row['Approval_status']; ?></td>
             </tr>
 
+            <tr>
+              <th>Property Register Date</th>
+              <td colspan="3"><?php echo $row['Pro_date']; ?></td>
+            </tr>
+            <tr>
+             
+              <th>Deline Notice Title</th> 
+              <td colspan="3"><?php if($row_dec){echo $row_dec['Pro_title'];}else{ echo ""; }   ?></td>
 
+            </tr>
+            <tr>
+              <th>Decline Description:</th>
+              <td colspan="3"><?php if($row_dec){echo $row_dec['Pro_dec'];}else{ echo ""; }   ?></td>
+            </tr>
             
+
 
            </table>
           <!-- table start -->

@@ -11,7 +11,7 @@ if(!isset($_SESSION['admin_id']))
 }
 
 // $status = "Pending";
-$sql = "select * from property_register where Approval_status='Decline'";
+$sql = "select * from property_register where Approval_status='Decline' order by id DESC";
 $res = mysqli_query($con,$sql);
 
 // if(isset($_GET['Decline_id']))
@@ -111,7 +111,7 @@ if(isset($_GET['del_id']))
                              <td><?php echo $row['id']; ?></td>
                               <td>
                                   <div class="img-data" style="width:130px; height: 130px;">
-                                      <img src="../User/upload/<?php echo $row['Image6']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                                      <img src="../User/upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
                                   </div>
                               </td>
                               <td><?php echo $row['Property_title'];  ?></td>

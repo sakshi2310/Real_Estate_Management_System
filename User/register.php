@@ -7,8 +7,9 @@ if(isset($_POST['Register']))
 	$Email = $_POST['Email'];
     $Password = $_POST['Password'];
     $user_type = $_POST['User_type'];
+    $mb_number = $_POST['M_b_no'];
 
-    $sql = "insert into users (User_name,Email,Password,User_type) values ('$User_name','$Email','$Password','$user_type');";
+    $sql = "insert into users (User_name,Email,Password,User_type,Mb_num) values ('$User_name','$Email','$Password','$user_type','$mb_number');";
     mysqli_query($con,$sql);
     header("location:index.php");
 }
@@ -51,6 +52,10 @@ if(isset($_POST['Register']))
                 </select>
                 <span>User Type</span>
             </div> 
+            <div class="inputs_group">
+                <input type="text" placeholder="Enter Your Mobile Number" name="M_b_no">
+                <span>Enter Mobile Number</span>
+            </div>
             <div class="forget_link">
                 <a href="#">Forget Your Password ?</a>
             </div>

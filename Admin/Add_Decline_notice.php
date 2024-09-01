@@ -13,6 +13,9 @@ if(!isset($_SESSION['admin_id']))
 if(isset($_GET['Decline_id']))
 {
   $decline_id = $_GET['Decline_id'];
+  $approval_status = "Decline";
+  $sql_update = "update property_register set Approval_status='$approval_status' where id =".$decline_id;
+  mysqli_query($con,$sql_update);
 }
 else{
   $decline_id = '';
@@ -25,6 +28,7 @@ if(isset($_POST['save']))
 
   $sql = "insert into deline_notice (Property_id,Pro_title,Pro_dec) value ('$decline_id','$title','$dec')";
   mysqli_query($con,$sql);
+  header('location:View_Decline_property.php');
 }
 
 

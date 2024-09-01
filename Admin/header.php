@@ -392,7 +392,7 @@ if(isset($_SESSION['admin_id']))
                   >
                     <div class="avatar-sm">
                       <img
-                        src="assets/img/profile.jpg"
+                        src="upload/<?php echo $row['Image'] ?>"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
@@ -414,10 +414,10 @@ if(isset($_SESSION['admin_id']))
                             />
                           </div>
                           <div class="u-text">
-                            <h4>Hizrian</h4>
-                            <p class="text-muted">hello@example.com</p>
+                            <h4><?php echo $row['User_name'];?></h4>
+                            <p class="text-muted"><?php echo $row['Email'];?></p>
                             <a
-                              href="profile.html"
+                              href="View_profile.php"
                               class="btn btn-xs btn-secondary btn-sm"
                               >View Profile</a
                             >
@@ -426,11 +426,10 @@ if(isset($_SESSION['admin_id']))
                       </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">My Profile</a>
-                        <a class="dropdown-item" href="#">My Balance</a>
-                        <a class="dropdown-item" href="#">Inbox</a>
+                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="View_profile.php">My Profile</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Account Setting</a>
+                        <a class="dropdown-item" href="#">Passwrod Setting</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
                       </li>

@@ -4,8 +4,9 @@
 # Select the Area from admin
 $con = mysqli_connect("localhost", "root", "", "real_estate");
 
+// Header start
+include('header.php');
 // Page session
-session_start();
 if(!isset($_SESSION['user_id']))
 {
   header("location:index.php");
@@ -72,6 +73,7 @@ if (isset($_POST['submit'])) {
   $property_age = $_POST['Property_age'];
   $Approval_status = "Pending";
 
+  $user_id = $_SESSION['user_id'];
   
 
   if(isset($_GET['edit_id']))
@@ -119,7 +121,7 @@ if (isset($_POST['submit'])) {
     }
     $sql_update = "update property_register set Property_title='$property_title',Description='$des',Type='$type',Status='$status',Price='$price',Sec_price='$sec_price',Land_price='$land_price',Land_postfix='$land_postfix',Image1='$image1',Image2='$image2',Image3='$image3',Image4='$image4',Image5='$image5',Image6='$image6',Feature='$featurs_str',Address='$address',Area_name='$area_name',Area_type='$area_type',City='$city',Badrooms='$badrooms',Bathroom='$bathrooms',Balcony='$balcony',BHK_plot='$BHK_plot',Total_floors='$total_floors',Your_floors='$your_floors',Property_age='$property_age',Approval_status='$Approval_status'  where id =".$edit_id;
     mysqli_query($con, $sql_update);
-    // header("location:View_property.php");
+    header("location:View_approved_property.php");
 
   }else{
 
@@ -165,9 +167,9 @@ if (isset($_POST['submit'])) {
       echo "Failed to upload Image6.";
     }
 
-      $sql = "insert into property_register(Property_title,Description,Type,Status,Price,Sec_price,Land_price,Land_postfix,Image1,Image2,Image3,Image4,Image5,Image6,Feature,Address,Area_name,Area_type,City,Badrooms,Bathroom,Balcony,BHK_plot,Total_floors,Your_floors,Property_age,Approval_status) values ('$property_title','$des','$type','$status','$price','$sec_price','$land_price','$land_postfix','$image1','$image2','$image3','$image4','$image5','$image6','$featurs_str','$address','$area_name','$area_type','$city','$badrooms','$bathrooms','$balcony','$BHK_plot','$total_floors','$your_floors','$property_age','$Approval_status');";
+      $sql = "insert into property_register(Property_title,Description,Type,Status,Price,Sec_price,Land_price,Land_postfix,Image1,Image2,Image3,Image4,Image5,Image6,Feature,Address,Area_name,Area_type,City,Badrooms,Bathroom,Balcony,BHK_plot,Total_floors,Your_floors,Property_age,Approval_status,User_id) values ('$property_title','$des','$type','$status','$price','$sec_price','$land_price','$land_postfix','$image1','$image2','$image3','$image4','$image5','$image6','$featurs_str','$address','$area_name','$area_type','$city','$badrooms','$bathrooms','$balcony','$BHK_plot','$total_floors','$your_floors','$property_age','$Approval_status','$user_id');";
       mysqli_query($con, $sql);
-      header("location:View_property.php");
+      header("location:View_pending_property.php");
 
   }
 
@@ -191,12 +193,6 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-
-  <!-- header start -->
-  <?php
-  include('header.php');
-  ?>
-  <!-- header end -->
 
   <div class="container-fluid">
     <div class="row">

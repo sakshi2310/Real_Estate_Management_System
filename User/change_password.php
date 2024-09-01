@@ -1,8 +1,9 @@
 <?php 
 
 $con = mysqli_connect('localhost','root','','real_estate');
+// Header start
+include('header.php');
 // Page session
-session_start();
 if(!isset($_SESSION['user_id']))
 {
   header("location:index.php");
@@ -11,7 +12,7 @@ if(!isset($_SESSION['user_id']))
 
 if(isset($_POST['submit']))
 {
-  echo "hy";
+  
   $old_password = $_POST['Old_Passsword'];
   $new_password = $_POST['New_Passsword'];
   $con_passwod = $_POST['Con_Passsword'];
@@ -38,6 +39,7 @@ if(isset($_POST['submit']))
     echo "Reenter con pass";
   }
 
+  header("location:View_profile.php");
 
 
 }
@@ -57,10 +59,7 @@ if(isset($_POST['submit']))
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-   
-    <?php
-  include('header.php');
-  ?>
+
    
     <div class="container-fluid">
       <div class="row">
