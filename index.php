@@ -2,9 +2,12 @@
 
 $con = mysqli_connect("localhost", "root", "", "real_estate");
 
-$sql = "SELECT * FROM `property_register` where ";
+$sql = "SELECT * FROM `property_register` WHERE Approval_status='Approved'";
 $res = mysqli_query($con,$sql);
-
+$row = mysqli_fetch_assoc($res);
+$sql_user = "select * from users where id=".$row['User_id']; 
+$res_user = mysqli_query($con,$sql); 
+$row_user = mysqli_fetch_assoc($res_user);
 
 ?>
 
@@ -76,7 +79,7 @@ $res = mysqli_query($con,$sql);
                                     <div class="elementor-widget-container">
                                         <form class="houzez-search-form-js houzez-search-builder-form-js"
                                             id="houzez-search-3a474c0" method="get"
-                                            action="https://demo01.houzez.co/search-results/">
+                                            action="#">
                                             <ul id="houzez-search-tabs-wrap" class="houzez-status-tabs nav nav-pills"
                                                 role="tablist" data-toggle="buttons">
                                                 <li class="nav-item">
@@ -313,7 +316,7 @@ $res = mysqli_query($con,$sql);
                                                                     <?php  while($row=mysqli_fetch_assoc($res)) { ?>
                                                                     <div class="item-listing-wrap hz-item-gallery-js card"
                                                                         data-hz-id="hz-115"
-                                                                        data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                        >
                                                                         <div
                                                                             class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
                                                                             <div
@@ -364,7 +367,7 @@ $res = mysqli_query($con,$sql);
                                                                                                 data-placement="top"
                                                                                                 title="Add to Compare"
                                                                                                 data-listing_id="115"
-                                                                                                data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg">
+                                                                                                data-listing_image="#">
                                                                                                 <i class="las la-plus-circle"></i>
                                                                                             </span>
                                                                                         </li>
@@ -372,18 +375,17 @@ $res = mysqli_query($con,$sql);
                                                                                     <div class="listing-image-wrap">
                                                                                         <div class="listing-thumb">
                                                                                             <a target="_self"
-                                                                                                href="https://demo01.houzez.co/property/modern-apartment-on-the-bay/"
+                                                                                                href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
                                                                                                 <img fetchpriority="high"
                                                                                                     decoding="async"
                                                                                                     width="592"
                                                                                                     height="444"
-                                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg"
+                                                                                                    src="User/upload/<?php echo $row['Image1']; ?>"
+                                                                                                    data-src=""
                                                                                                     class="houzez-lazyload img-fluid wp-post-image"
                                                                                                     alt srcset
-                                                                                                    data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/038.jpg 1170w"
-                                                                                                    sizes="(max-width: 592px) 100vw, 592px" />
+                                                                                                    data-srcset="" />
                                                                                             </a>
                                                                                         </div>
                                                                                     </div>
@@ -399,44 +401,41 @@ $res = mysqli_query($con,$sql);
                                                                                     </div>
                                                                                     <h2 class="item-title">
                                                                                         <a target="_self"
-                                                                                            href="https://demo01.houzez.co/property/modern-apartment-on-the-bay/">Light
-                                                                                            and modern apartment</a>
+                                                                                            href="single_property.php?pro_id=<?php echo $row['id'];?>"><?php echo $row['Property_title']; ?></a>
                                                                                     </h2>
                                                                                     <ul
                                                                                         class="item-price-wrap hide-on-list">
                                                                                         <li class="item-price">$4,500/mo
                                                                                         </li>
                                                                                     </ul>
-                                                                                    <address class="item-address">2436
-                                                                                        SW 8th St, Miami, FL 33135, USA
+                                                                                    <address class="item-address"><?php echo $row['Description'];?>
                                                                                     </address>
                                                                                     <ul
                                                                                         class="item-amenities item-amenities-with-icons">
                                                                                         <li class="h-beds"><i class="las la-bed"></i><span
                                                                                                 class="item-amenities-text">Beds:</span>
                                                                                             <span
-                                                                                                class="hz-figure">4</span>
+                                                                                                class="hz-figure"><?php echo $row['Badrooms']; ?></span>
                                                                                         </li>
                                                                                         <li class="h-baths"><i class="las la-bath"></i><span
                                                                                                 class="item-amenities-text">Baths:</span>
                                                                                             <span
-                                                                                                class="hz-figure">2</span>
+                                                                                                class="hz-figure"><?php echo $row['Bathroom']; ?></span>
                                                                                         </li>
                                                                                         <li class="h-cars"><i
                                                                                                 class="las la-car mr-1"></i><span
                                                                                                 class="item-amenities-text">Garage:</span>
                                                                                             <span
-                                                                                                class="hz-figure">1</span>
+                                                                                                class="hz-figure"><?php echo $row['Balcony']; ?></span>
                                                                                         </li>
                                                                                         <li class="h-area"><i
                                                                                                 class="las la-ruler-combined mr-1"></i><span
-                                                                                                class="hz-figure">1200</span>
+                                                                                                class="hz-figure"><?php echo $row['Land_price']; ?></span>
                                                                                             <span
-                                                                                                class="hz-figure area_postfix">Sq
-                                                                                                Ft</span>
+                                                                                                class="hz-figure area_postfix"><?php echo $row['Land_postfix']; ?></span>
                                                                                         </li>
                                                                                         <li class="h-type">
-                                                                                            <span>Apartment</span>
+                                                                                            <span><?php echo $row['Type']; ?></span>
                                                                                         </li>
                                                                                     </ul> <a
                                                                                         class="btn btn-primary btn-item "
@@ -446,9 +445,12 @@ $res = mysqli_query($con,$sql);
                                                                                     <div class="item-author">
                                                                                         <i
                                                                                             class="las la-user mr-1"></i>
+                                                                                            <?php 
+                                                                                           
+                                                                                            
+                                                                                            ?>
                                                                                         <a
-                                                                                            href="#">Samuel
-                                                                                            Palmer</a>
+                                                                                            href="#">#</a>
                                                                                     </div>
                                                                                     <div class="item-date">
                                                                                         <i
@@ -461,13 +463,13 @@ $res = mysqli_query($con,$sql);
                                                                                         <i
                                                                                             class="las la-user mr-1"></i>
                                                                                         <a
-                                                                                            href="#">Samuel
-                                                                                            Palmer</a>
+                                                                                            href="#"><?php   
+                                                                                             echo $row['User_id'];  ?></a>
                                                                                     </div>
                                                                                     <div class="item-date">
                                                                                         <i
                                                                                             class="las la-paperclip mr-1"></i>
-                                                                                        4 years ago
+                                                                                        <?php echo $row['Pro_date'];?>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
@@ -652,9 +654,9 @@ $res = mysqli_query($con,$sql);
                                                     <p><img loading="lazy" decoding="async"
                                                             class="houzez-lazyload alignnone wp-image-376 size-full"
                                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20883%20576%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                            data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/plan-1.jpg"
+                                                            data-src=""
                                                             alt="" width="883" height="576" srcset=""
-                                                            data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/plan-1.jpg 883w, https://demo08.houzez.co/wp-content/uploads/2020/03/plan-1-300x196.jpg 300w, https://demo08.houzez.co/wp-content/uploads/2020/03/plan-1-768x501.jpg 768w, https://demo08.houzez.co/wp-content/uploads/2020/03/plan-1-496x324.jpg 496w"
+                                                            data-srcset=""
                                                             sizes="(max-width: 883px) 100vw, 883px" /></p>
                                                 </div>
                                                 <div class="elementor-tab-title elementor-tab-mobile-title"
@@ -670,7 +672,7 @@ $res = mysqli_query($con,$sql);
                                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20883%20576%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
                                                             data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/plan-2.jpg"
                                                             alt="" width="883" height="576" srcset=""
-                                                            data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/plan-2.jpg 883w, https://demo08.houzez.co/wp-content/uploads/2020/03/plan-2-300x196.jpg 300w, https://demo08.houzez.co/wp-content/uploads/2020/03/plan-2-768x501.jpg 768w, https://demo08.houzez.co/wp-content/uploads/2020/03/plan-2-496x324.jpg 496w"
+                                                            data-srcset=""
                                                             sizes="(max-width: 883px) 100vw, 883px" /></p>
                                                 </div>
                                             </div>
@@ -738,7 +740,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2020/03/205-1024x683.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/property-type/apartment/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">23 Properties</div>
                                                                     <div class="grid-item-title">Apartment</div>
@@ -765,7 +767,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/023-1024x768.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/property-type/studio/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">7 Properties</div>
                                                                     <div class="grid-item-title">Studio</div>
@@ -792,7 +794,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/026-1024x768.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/property-type/single-family-home/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">12 Properties</div>
                                                                     <div class="grid-item-title">Single Family Home
@@ -815,7 +817,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/020-1024x768.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/property-type/villa/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">10 Properties</div>
                                                                     <div class="grid-item-title">Villa</div>
@@ -876,7 +878,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/206-1024x683.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/property-type/office/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">3 Properties</div>
                                                                     <div class="grid-item-title">Office</div>
@@ -903,7 +905,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/203-1024x683.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/property-type/shop/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">3 Properties</div>
                                                                     <div class="grid-item-title">Shop</div>
@@ -1112,12 +1114,12 @@ $res = mysqli_query($con,$sql);
                                                         </script>
                                                         <form class="elementor-form" id="houzez-form-25a24dc"
                                                             method="post" name="New Form"
-                                                            action="https://demo01.houzez.co/wp-admin/admin-ajax.php">
+                                                            action="">
                                                             <input type="hidden" name="form_id" value="25a24dc" />
                                                             <input type="hidden" name="action"
                                                                 value="houzez_ele_inquiry_form" />
                                                             <input type="hidden" name="source_link"
-                                                                value="https://demo01.houzez.co/" />
+                                                                value="" />
                                                             <input type="hidden" name="lead_page_id" value="10" />
                                                             <input type="hidden" name="is_estimation" value="yes" />
                                                             <input type="hidden" name="email_to"
@@ -1400,29 +1402,33 @@ $res = mysqli_query($con,$sql);
                                                                 class="listing-view grid-view card-deck grid-view-3-cols">
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-115"
-                                                                    data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                    data-images="">
                                                                     <div
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
                                                                                 <a target="_self"
-                                                                                    href="https://demo01.houzez.co/property/modern-apartment-on-the-bay/"
+                                                                                    href="#"
                                                                                     class="listing-featured-thumb hover-effect">
-                                                                                    <img fetchpriority="high"
-                                                                                        decoding="async" width="592"
-                                                                                        height="444"
-                                                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg"
-                                                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                                                        alt srcset
-                                                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/038.jpg 1170w"
-                                                                                        sizes="(max-width: 592px) 100vw, 592px" />
+                                                                                    <a target="_self"
+                                                                                                href="#"
+                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                <img fetchpriority="high"
+                                                                                                    decoding="async"
+                                                                                                    width="592"
+                                                                                                    height="444"
+                                                                                                    src="assets/about-slider.jpg"
+                                                                                                    data-src="#"
+                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
+                                                                                                    alt srcset
+                                                                                                    data-srcset="" />
+                                                                                            </a>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="https://demo01.houzez.co/property/modern-apartment-on-the-bay/">Light
+                                                                                href="#">Light
                                                                                 and modern apartment</a>
                                                                         </h2>
                                                                         <ul
@@ -1445,7 +1451,7 @@ $res = mysqli_query($con,$sql);
                                                                             <li class="item-price">$4,500/mo</li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
-                                                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                                                            <a href="#"
                                                                                 class="label-status label status-color-34">
                                                                                 For Rent
                                                                             </a>
@@ -1479,7 +1485,7 @@ $res = mysqli_query($con,$sql);
                                                                                     data-placement="top"
                                                                                     title="Add to Compare"
                                                                                     data-listing_id="115"
-                                                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg">
+                                                                                    data-listing_image="#">
                                                                                     <i class="las la-plus-circle"></i>
                                                                                 </span>
                                                                             </li>
@@ -1489,28 +1495,29 @@ $res = mysqli_query($con,$sql);
                                                                 </div>
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-344"
-                                                                    data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/018-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/018-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                    data-images="#">
                                                                     <div
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
-                                                                                <a target="_self"
-                                                                                    href="https://demo01.houzez.co/property/luxury-apartment-ocean-view/"
-                                                                                    class="listing-featured-thumb hover-effect">
-                                                                                    <img loading="lazy" decoding="async"
-                                                                                        width="592" height="444"
-                                                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg"
-                                                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                                                        alt srcset
-                                                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/03/018.jpg 1170w"
-                                                                                        sizes="(max-width: 592px) 100vw, 592px" />
-                                                                                </a>
+                                                                            <a target="_self"
+                                                                                                href="#"
+                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                <img fetchpriority="high"
+                                                                                                    decoding="async"
+                                                                                                    width="592"
+                                                                                                    height="444"
+                                                                                                    src="assets/about-slider.jpg"
+                                                                                                    data-src="#"
+                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
+                                                                                                    alt srcset
+                                                                                                    data-srcset="" />
+                                                                                            </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="https://demo01.houzez.co/property/luxury-apartment-ocean-view/">New
+                                                                                href="#">New
                                                                                 apartment nice view</a>
                                                                         </h2>
                                                                         <ul
@@ -1533,7 +1540,7 @@ $res = mysqli_query($con,$sql);
                                                                             <li class="item-price">$11,000/mo</li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
-                                                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                                                            <a href="#"
                                                                                 class="label-status label status-color-34">
                                                                                 For Rent
                                                                             </a>
@@ -1567,7 +1574,7 @@ $res = mysqli_query($con,$sql);
                                                                                     data-placement="top"
                                                                                     title="Add to Compare"
                                                                                     data-listing_id="344"
-                                                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg">
+                                                                                    data-listing_image="#">
                                                                                     <i class="las la-plus-circle"></i>
                                                                                 </span>
                                                                             </li>
@@ -1577,28 +1584,29 @@ $res = mysqli_query($con,$sql);
                                                                 </div>
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-112"
-                                                                    data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/039-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/039-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/039-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                    data-images="#">
                                                                     <div
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
-                                                                                <a target="_self"
-                                                                                    href="https://demo01.houzez.co/property/complex-building-ocean-front/"
-                                                                                    class="listing-featured-thumb hover-effect">
-                                                                                    <img loading="lazy" decoding="async"
-                                                                                        width="592" height="444"
-                                                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/039-592x444.jpg"
-                                                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                                                        alt srcset
-                                                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/039-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/039-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/039.jpg 1170w"
-                                                                                        sizes="(max-width: 592px) 100vw, 592px" />
-                                                                                </a>
+                                                                            <a target="_self"
+                                                                                                href="#"
+                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                <img fetchpriority="high"
+                                                                                                    decoding="async"
+                                                                                                    width="592"
+                                                                                                    height="444"
+                                                                                                    src="assets/about-slider.jpg"
+                                                                                                    data-src="#"
+                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
+                                                                                                    alt srcset
+                                                                                                    data-srcset="" />
+                                                                                            </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="https://demo01.houzez.co/property/complex-building-ocean-front/">Complex</a>
+                                                                                href="#">Complex</a>
                                                                         </h2>
                                                                         <ul
                                                                             class="item-amenities item-amenities-with-icons">
@@ -1620,7 +1628,7 @@ $res = mysqli_query($con,$sql);
                                                                             <li class="item-price">$5,600/mo</li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
-                                                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                                                            <a href="#"
                                                                                 class="label-status label status-color-34">
                                                                                 For Rent
                                                                             </a>
@@ -1652,7 +1660,7 @@ $res = mysqli_query($con,$sql);
                                                                                     data-placement="top"
                                                                                     title="Add to Compare"
                                                                                     data-listing_id="112"
-                                                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/039-592x444.jpg">
+                                                                                    data-listing_image="#">
                                                                                     <i class="las la-plus-circle"></i>
                                                                                 </span>
                                                                             </li>
@@ -1662,28 +1670,29 @@ $res = mysqli_query($con,$sql);
                                                                 </div>
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-123"
-                                                                    data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/037-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/037-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/037-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                    data-images="">
                                                                     <div
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
-                                                                                <a target="_self"
-                                                                                    href="https://demo01.houzez.co/property/apartment-for-rent-in-downtown/"
-                                                                                    class="listing-featured-thumb hover-effect">
-                                                                                    <img loading="lazy" decoding="async"
-                                                                                        width="592" height="444"
-                                                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/037-592x444.jpg"
-                                                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                                                        alt srcset
-                                                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/037-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/037-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/037.jpg 1170w"
-                                                                                        sizes="(max-width: 592px) 100vw, 592px" />
-                                                                                </a>
+                                                                            <a target="_self"
+                                                                                                href="#"
+                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                <img fetchpriority="high"
+                                                                                                    decoding="async"
+                                                                                                    width="592"
+                                                                                                    height="444"
+                                                                                                    src="assets/about-slider.jpg"
+                                                                                                    data-src="#"
+                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
+                                                                                                    alt srcset
+                                                                                                    data-srcset="" />
+                                                                                            </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="https://demo01.houzez.co/property/apartment-for-rent-in-downtown/">Green
+                                                                                href="#">Green
                                                                                 view design</a>
                                                                         </h2>
                                                                         <ul
@@ -1706,7 +1715,7 @@ $res = mysqli_query($con,$sql);
                                                                             <li class="item-price">$3,500/mo</li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
-                                                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                                                            <a href="#"
                                                                                 class="label-status label status-color-34">
                                                                                 For Rent
                                                                             </a>
@@ -1738,7 +1747,7 @@ $res = mysqli_query($con,$sql);
                                                                                     data-placement="top"
                                                                                     title="Add to Compare"
                                                                                     data-listing_id="123"
-                                                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/037-592x444.jpg">
+                                                                                    data-listing_image="">
                                                                                     <i class="las la-plus-circle"></i>
                                                                                 </span>
                                                                             </li>
@@ -1748,28 +1757,29 @@ $res = mysqli_query($con,$sql);
                                                                 </div>
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-125"
-                                                                    data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/034-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/034-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                    data-images="">
                                                                     <div
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
-                                                                                <a target="_self"
-                                                                                    href="https://demo01.houzez.co/property/modern-day-apartment/"
-                                                                                    class="listing-featured-thumb hover-effect">
-                                                                                    <img loading="lazy" decoding="async"
-                                                                                        width="592" height="444"
-                                                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/034-592x444.jpg"
-                                                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                                                        alt srcset
-                                                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/034-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/034-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/034.jpg 1170w"
-                                                                                        sizes="(max-width: 592px) 100vw, 592px" />
-                                                                                </a>
+                                                                            <a target="_self"
+                                                                                                href="#"
+                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                <img fetchpriority="high"
+                                                                                                    decoding="async"
+                                                                                                    width="592"
+                                                                                                    height="444"
+                                                                                                    src="assets/about-slider.jpg"
+                                                                                                    data-src="#"
+                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
+                                                                                                    alt srcset
+                                                                                                    data-srcset="" />
+                                                                                            </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="https://demo01.houzez.co/property/modern-day-apartment/">Modern
+                                                                                href="#">Modern
                                                                                 loft apartment</a>
                                                                         </h2>
                                                                         <ul
@@ -1792,7 +1802,7 @@ $res = mysqli_query($con,$sql);
                                                                             <li class="item-price">$3,750/mo</li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
-                                                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                                                            <a href="#"
                                                                                 class="label-status label status-color-34">
                                                                                 For Rent
                                                                             </a>
@@ -1824,7 +1834,7 @@ $res = mysqli_query($con,$sql);
                                                                                     data-placement="top"
                                                                                     title="Add to Compare"
                                                                                     data-listing_id="125"
-                                                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/034-592x444.jpg">
+                                                                                    data-listing_image="">
                                                                                     <i class="las la-plus-circle"></i>
                                                                                 </span>
                                                                             </li>
@@ -1834,28 +1844,29 @@ $res = mysqli_query($con,$sql);
                                                                 </div>
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-127"
-                                                                    data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/033-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/033-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/033-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                                                                    data-images="">
                                                                     <div
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
-                                                                                <a target="_self"
-                                                                                    href="https://demo01.houzez.co/property/amazing-oceanfront-apartment/"
-                                                                                    class="listing-featured-thumb hover-effect">
-                                                                                    <img loading="lazy" decoding="async"
-                                                                                        width="592" height="444"
-                                                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/033-592x444.jpg"
-                                                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                                                        alt srcset
-                                                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/033-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/033-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/033.jpg 1170w"
-                                                                                        sizes="(max-width: 592px) 100vw, 592px" />
-                                                                                </a>
+                                                                            <a target="_self"
+                                                                                                href="#"
+                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                <img fetchpriority="high"
+                                                                                                    decoding="async"
+                                                                                                    width="592"
+                                                                                                    height="444"
+                                                                                                    src="assets/about-slider.jpg"
+                                                                                                    data-src="#"
+                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
+                                                                                                    alt srcset
+                                                                                                    data-srcset="" />
+                                                                                            </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="https://demo01.houzez.co/property/amazing-oceanfront-apartment/">Renovated
+                                                                                href="#">Renovated
                                                                                 kitchen apartment</a>
                                                                         </h2>
                                                                         <ul
@@ -1878,7 +1889,7 @@ $res = mysqli_query($con,$sql);
                                                                             <li class="item-price">$1,890/mo</li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
-                                                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                                                            <a href="#"
                                                                                 class="label-status label status-color-34">
                                                                                 For Rent
                                                                             </a>
@@ -1910,7 +1921,7 @@ $res = mysqli_query($con,$sql);
                                                                                     data-placement="top"
                                                                                     title="Add to Compare"
                                                                                     data-listing_id="127"
-                                                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/033-592x444.jpg">
+                                                                                    data-listing_image="">
                                                                                     <i class="las la-plus-circle"></i>
                                                                                 </span>
                                                                             </li>
@@ -2012,7 +2023,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/chicago.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/city/chicago/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">13 Properties</div>
                                                                     <div class="grid-item-title">Chicago</div>
@@ -2039,7 +2050,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/miami-beach.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/city/miami/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">21 Properties</div>
                                                                     <div class="grid-item-title">Miami</div>
@@ -2066,7 +2077,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/new-york.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/city/new-york/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">10 Properties</div>
                                                                     <div class="grid-item-title">New York</div>
@@ -2093,7 +2104,7 @@ $res = mysqli_query($con,$sql);
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
                                                             style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/los-angeles.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
-                                                                href="https://demo01.houzez.co/city/los-angeles/">
+                                                                href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">14 Properties</div>
                                                                     <div class="grid-item-title">Los Angeles</div>
@@ -2151,7 +2162,7 @@ $res = mysqli_query($con,$sql);
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-efce673 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
                                                     data-id="efce673" data-element_type="widget"
-                                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
+                                                    data-settings=""
                                                     data-widget_type="houzez_elementor_section_title.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
@@ -2169,21 +2180,21 @@ $res = mysqli_query($con,$sql);
                                                             <div class="agent-item">
                                                                 <div class="agent-thumb">
                                                                     <a
-                                                                        href="https://demo01.houzez.co/agent/vincent-fuller/">
+                                                                        href="#">
                                                                         <img loading="lazy" decoding="async" width="150"
                                                                             height="150"
                                                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                            data-src="https://demo01.houzez.co/wp-content/uploads/2020/04/agent-4-150x150.jpg"
+                                                                            data-src="#"
                                                                             class="houzez-lazyload img-fluid rounded-circle wp-post-image"
                                                                             alt srcset
-                                                                            data-srcset="https://demo01.houzez.co/wp-content/uploads/2020/04/agent-4-150x150.jpg 150w, https://demo01.houzez.co/wp-content/uploads/2020/04/agent-4-300x300.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2020/04/agent-4-496x496.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2020/04/agent-4.jpg 500w"
+                                                                            data-srcset=""
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
                                                                 </div>
                                                                 <div class="agent-info">
                                                                     <div class="agent-name">
                                                                         <a
-                                                                            href="https://demo01.houzez.co/agent/vincent-fuller/"><strong>Vincent
+                                                                            href="#"><strong>Vincent
                                                                                 Fuller</strong></a>
                                                                     </div>
                                                                     <div class="agent-company">
@@ -2196,28 +2207,27 @@ $res = mysqli_query($con,$sql);
                                                                     consectetur,... </div>
                                                                 <div class="agent-link">
                                                                     <a
-                                                                        href="https://demo01.houzez.co/agent/vincent-fuller/">View
+                                                                        href="#">View
                                                                         Profile</a>
                                                                 </div>
                                                             </div>
                                                             <div class="agent-item">
                                                                 <div class="agent-thumb">
                                                                     <a
-                                                                        href="https://demo01.houzez.co/agent/brittany-watkins/">
+                                                                        href="#">
                                                                         <img loading="lazy" decoding="async" width="150"
                                                                             height="150"
                                                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/Artboard-2team-150x150.jpg"
+                                                                            data-src=""
                                                                             class="houzez-lazyload img-fluid rounded-circle wp-post-image"
                                                                             alt srcset
-                                                                            data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/Artboard-2team-150x150.jpg 150w, https://demo01.houzez.co/wp-content/uploads/2016/02/Artboard-2team-300x300.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/Artboard-2team.jpg 350w"
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
                                                                 </div>
                                                                 <div class="agent-info">
                                                                     <div class="agent-name">
                                                                         <a
-                                                                            href="https://demo01.houzez.co/agent/brittany-watkins/"><strong>Brittany
+                                                                            href="#"><strong>Brittany
                                                                                 Watkins</strong></a>
                                                                     </div>
                                                                     <div class="agent-company">
@@ -2230,28 +2240,28 @@ $res = mysqli_query($con,$sql);
                                                                     consectetur,... </div>
                                                                 <div class="agent-link">
                                                                     <a
-                                                                        href="https://demo01.houzez.co/agent/brittany-watkins/">View
+                                                                        href="#">View
                                                                         Profile</a>
                                                                 </div>
                                                             </div>
                                                             <div class="agent-item">
                                                                 <div class="agent-thumb">
                                                                     <a
-                                                                        href="https://demo01.houzez.co/agent/michelle-ramirez/">
+                                                                        href="#">
                                                                         <img loading="lazy" decoding="async" width="150"
                                                                             height="150"
                                                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1-150x150.jpg"
+                                                                            data-src=""
                                                                             class="houzez-lazyload img-fluid rounded-circle wp-post-image"
                                                                             alt srcset
-                                                                            data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1-150x150.jpg 150w, https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1-300x300.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1-768x768.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1-600x600.jpg 600w, https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1-496x496.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/agent-1.jpg 800w"
+                                                                            data-srcset=""
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
                                                                 </div>
                                                                 <div class="agent-info">
                                                                     <div class="agent-name">
                                                                         <a
-                                                                            href="https://demo01.houzez.co/agent/michelle-ramirez/"><strong>Michelle
+                                                                            href="#"><strong>Michelle
                                                                                 Ramirez</strong></a>
                                                                     </div>
                                                                     <div class="agent-company">
@@ -2264,7 +2274,7 @@ $res = mysqli_query($con,$sql);
                                                                     consectetur,... </div>
                                                                 <div class="agent-link">
                                                                     <a
-                                                                        href="https://demo01.houzez.co/agent/michelle-ramirez/">View
+                                                                        href="#">View
                                                                         Profile</a>
                                                                 </div>
                                                             </div>
@@ -2347,7 +2357,7 @@ $res = mysqli_query($con,$sql);
                                                                                 <img loading="lazy" decoding="async"
                                                                                     width="70" height="70"
                                                                                     src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2020/02/64.jpg"
+                                                                                    data-src="#"
                                                                                     class="houzez-lazyload img-fluid rounded-circle"
                                                                                     alt srcset data-srcset />
                                                                             </div>
@@ -2374,7 +2384,7 @@ $res = mysqli_query($con,$sql);
                                                                                 <img loading="lazy" decoding="async"
                                                                                     width="70" height="70"
                                                                                     src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2020/02/48.jpg"
+                                                                                    data-src=""
                                                                                     class="houzez-lazyload img-fluid rounded-circle"
                                                                                     alt srcset data-srcset />
                                                                             </div>
@@ -2401,7 +2411,7 @@ $res = mysqli_query($con,$sql);
                                                                                 <img loading="lazy" decoding="async"
                                                                                     width="70" height="70"
                                                                                     src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2020/02/44.jpg"
+                                                                                    data-src=""
                                                                                     class="houzez-lazyload img-fluid rounded-circle"
                                                                                     alt srcset data-srcset />
                                                                             </div>
@@ -2449,7 +2459,7 @@ $res = mysqli_query($con,$sql);
                                     <div class="elementor-widget-container">
                                         <img loading="lazy" decoding="async" width="150" height="60"
                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/partner-01-e1582734705113.jpg"
+                                            data-src=""
                                             class="houzez-lazyload attachment-large size-large wp-image-1118" alt srcset
                                             data-srcset />
                                     </div>
@@ -2464,7 +2474,7 @@ $res = mysqli_query($con,$sql);
                                     <div class="elementor-widget-container">
                                         <img loading="lazy" decoding="async" width="150" height="60"
                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/partner-02-e1582734691936.jpg"
+                                            data-src=""
                                             class="houzez-lazyload attachment-large size-large wp-image-1119" alt srcset
                                             data-srcset />
                                     </div>
@@ -2479,7 +2489,7 @@ $res = mysqli_query($con,$sql);
                                     <div class="elementor-widget-container">
                                         <img loading="lazy" decoding="async" width="150" height="60"
                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/partner-04-e1582734649458.jpg"
+                                            data-src=""
                                             class="houzez-lazyload attachment-large size-large wp-image-1121" alt srcset
                                             data-srcset />
                                     </div>
@@ -2494,7 +2504,7 @@ $res = mysqli_query($con,$sql);
                                     <div class="elementor-widget-container">
                                         <img loading="lazy" decoding="async" width="150" height="60"
                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/partner-03-e1582734671602.jpg"
+                                            data-src=""
                                             class="houzez-lazyload attachment-large size-large wp-image-1120" alt srcset
                                             data-srcset />
                                     </div>
@@ -2509,7 +2519,7 @@ $res = mysqli_query($con,$sql);
                                     <div class="elementor-widget-container">
                                         <img loading="lazy" decoding="async" width="150" height="60"
                                             src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/partner-05-e1582734603812.jpg"
+                                            data-src=""
                                             class="houzez-lazyload attachment-large size-large wp-image-1122" alt srcset
                                             data-srcset />
                                     </div>
@@ -2594,7 +2604,7 @@ $res = mysqli_query($con,$sql);
                                     value="c20799c110" /><input type="hidden" name="_wp_http_referer"
                                     value="/?_gl=1%2Aipnx0u%2A_gcl_au%2AODUxNDU0MjQ0LjE3MjEzMzg4MDk.%2A_ga%2AMTUzMDQyOTc1NS4xNzIxMzM4ODEw%2A_ga_RVPKT97G4N%2AMTcyMTc3ODAwNy4xMy4xLjE3MjE3NzkwOTUuMC4wLjA." />
                                 <input type="hidden" name="action" id="login_action" value="houzez_login">
-                                <input type="hidden" name="redirect_to" value="https://demo01.houzez.co/my-profile/">
+                                <input type="hidden" name="redirect_to" value="">
                                 <button id="houzez-login-btn" type="submit" class="btn btn-primary btn-full-width">
                                     <span class="btn-loader houzez-loader-js"></span> Login
                                 </button>

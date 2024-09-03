@@ -1965,3 +1965,14 @@ body .is-layout-grid>* {
     color: gray; /* Changes the color to indicate it is disabled */
     cursor: not-allowed; /* Changes the cursor to indicate it is disabled */
 }
+
+.listing-featured-thumb{
+    height: 280px;
+    width: 381px;
+    overflow: hidden;
+}
+.listing-featured-thumb img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}

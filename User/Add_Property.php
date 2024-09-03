@@ -30,8 +30,7 @@ if (isset($_GET['edit_id'])) {
   $sql_property = "select * from property_register where id=" . $edit_id;
   $sql_res = mysqli_query($con, $sql_property);
   $proprty_row = mysqli_fetch_assoc($sql_res);
-  $feature_update = explode(",",$proprty_row['Feature']);
-}
+  $feature_update = explode(",",$proprty_row['Feature']); 
 
 
 if (isset($_POST['submit'])) {
@@ -44,7 +43,7 @@ if (isset($_POST['submit'])) {
   $land_price = $_POST['Land_price'];
   $land_postfix = $_POST['Land_postfix'];
 
-  $image1 = $_FILES['Image1']['name'];
+
   $image2 = $_FILES['Image2']['name'];
   $image3 = $_FILES['Image3']['name'];
   $image4 = $_FILES['Image4']['name'];
@@ -71,13 +70,13 @@ if (isset($_POST['submit'])) {
   $total_floors = $_POST['Total_floors'];
   $your_floors = $_POST['Your_floor'];
   $property_age = $_POST['Property_age'];
-  $Approval_status = "Pending";
-
   $user_id = $_SESSION['user_id'];
-  
+
 
   if(isset($_GET['edit_id']))
   { 
+    $Approval_status = $proprty_row['Approval_status'];
+   
     if (!empty($image1)) {
       unlink('upload/' . $proprty_row['Image1']);
       move_uploaded_file($_FILES['Image1']['tmp_name'], 'upload/' . $image1);
@@ -91,6 +90,7 @@ if (isset($_POST['submit'])) {
     } else {
       $image2 = $proprty_row['Image2'];
     }
+    }  
 
     if (!empty($image3)) {
       unlink('upload/' . $proprty_row['Image3']);
@@ -129,16 +129,16 @@ if (isset($_POST['submit'])) {
       move_uploaded_file($_FILES['Image1']['tmp_name'], "upload/" . $image1);
     } else {
       $image1 = null;
-      echo "Failed to upload Image1.";
-    }
-  
-    if ($image2 && $_FILES['Image2']['error'] == UPLOAD_ERR_OK) {
+      echo "Failed to upload Image3.";
+    } 
+    
+    if ($image2 && $_FILES['Image3']['error'] == UPLOAD_ERR_OK) {
       move_uploaded_file($_FILES['Image2']['tmp_name'], "upload/" . $image2);
     } else {
       $image2 = null;
-      echo "Failed to upload Image2.";
+      echo "Failed to upload Image3.";
     }
-  
+
     if ($image3 && $_FILES['Image3']['error'] == UPLOAD_ERR_OK) {
       move_uploaded_file($_FILES['Image3']['tmp_name'], "upload/" . $image3);
     } else {
@@ -166,7 +166,7 @@ if (isset($_POST['submit'])) {
       $image6 = null;
       echo "Failed to upload Image6.";
     }
-
+      $Approval_status = "Pending";
       $sql = "insert into property_register(Property_title,Description,Type,Status,Price,Sec_price,Land_price,Land_postfix,Image1,Image2,Image3,Image4,Image5,Image6,Feature,Address,Area_name,Area_type,City,Badrooms,Bathroom,Balcony,BHK_plot,Total_floors,Your_floors,Property_age,Approval_status,User_id) values ('$property_title','$des','$type','$status','$price','$sec_price','$land_price','$land_postfix','$image1','$image2','$image3','$image4','$image5','$image6','$featurs_str','$address','$area_name','$area_type','$city','$badrooms','$bathrooms','$balcony','$BHK_plot','$total_floors','$your_floors','$property_age','$Approval_status','$user_id');";
       mysqli_query($con, $sql);
       header("location:View_pending_property.php");
