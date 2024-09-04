@@ -129,7 +129,7 @@
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/023.jpg)">
+                                                            style="background-image: url(assets/residancy1.jpg)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -151,7 +151,7 @@
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/205.jpg)">
+                                                            style="background-image: url(assets/residancy2.jpg)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -178,7 +178,7 @@
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/206.jpg)">
+                                                            style="background-image: url(assets/residancy3.jpg)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -200,7 +200,7 @@
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/007.jpg)">
+                                                            style="background-image: url(assets/residancy4.jpg)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -227,7 +227,7 @@
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/006.jpg)">
+                                                            style="background-image: url(assets/residancy5.jpg)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -254,7 +254,7 @@
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/204.jpg)">
+                                                            style="background-image: url(assets/residancy6.jpg)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -354,14 +354,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="09"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzQ3LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzA5LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/09.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/09-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/09-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/09-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/09-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/09-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary1.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -370,14 +366,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="16"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzU0LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzE2LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/16.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/16-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/16-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/16-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/16-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/16-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary2.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -386,14 +378,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="12"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzUwLCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzEyLmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/12.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/12-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/12-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/12-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/12-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/12-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary3.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -402,14 +390,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="15"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzUzLCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzE1LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/15.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/15-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/15-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/15-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/15-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/15-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary4.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -419,13 +403,10 @@
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="11"
                                                             data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzQ5LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzExLmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/11.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/11-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/11-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/11-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/11-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/11-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary5.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -434,14 +415,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="14"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzUyLCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzE0LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/14.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/14-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/14-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/14-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/14-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/14-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary6.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -450,14 +427,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="10"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzQ4LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzEwLmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/10.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/10-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/10-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/10-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/10-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/10-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary7.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -466,14 +439,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="07"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzQ1LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzA3LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/07.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/07-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/07-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/07-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/07-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/07-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary8.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -482,14 +451,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="13"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzUxLCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzEzLmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/13.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/13-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/13-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/13-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/13-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/13-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary9.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -498,14 +463,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="08"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzQ2LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzA4LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/08.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/08-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/08-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/08-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/08-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/08-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary10.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -514,14 +475,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="17"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzU1LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzE3LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/17.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/17-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/17-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/17-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/17-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/17-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary11.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -530,14 +487,10 @@
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="05"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzU4LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzA1LmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='https://demo08.houzez.co/wp-content/uploads/2020/03/05.jpg'><img
-                                                                loading="lazy" decoding="async" width="584" height="438"
-                                                                src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20584%20438%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/05-584x438.jpg"
-                                                                class="houzez-lazyload attachment-houzez-item-image-6 size-houzez-item-image-6"
-                                                                alt="" srcset=""
-                                                                data-srcset="https://demo08.houzez.co/wp-content/uploads/2020/03/05-584x438.jpg 584w, https://demo08.houzez.co/wp-content/uploads/2020/03/05-1170x877.jpg 1170w, https://demo08.houzez.co/wp-content/uploads/2020/03/05-592x444.jpg 592w, https://demo08.houzez.co/wp-content/uploads/2020/03/05-120x90.jpg 120w"
+                                                            href='#'><img
+                                                                loading="lazy"  width="584" height="438"
+                                                                src="assets/gallary12.jpg"
+                                                                alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
@@ -596,7 +549,7 @@
                                                     <div class="elementor-widget-container">
                                                         <div class="testimonials-module testimonials-module-v2">
                                                             <div class="row">
-                                                                <div class="col-md-4 col-sm-12">
+                                                            <div class="col-md-4 col-sm-12">
                                                                     <div class="testimonial-item testimonial-item-v2">
                                                                         <div class="testimonial-icon">
                                                                             <i class="las la-quote-left"></i>
@@ -608,12 +561,10 @@
                                                                         </div>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="testimonial-thumb">
-                                                                                <img loading="lazy" decoding="async"
+                                                                                <img 
                                                                                     width="70" height="70"
-                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2020/02/64.jpg"
-                                                                                    class="houzez-lazyload img-fluid rounded-circle"
-                                                                                    alt srcset data-srcset />
+                                                                                    src="assets/client1.jpg"
+                                                                                    class="img-fluid rounded-circle" />
                                                                             </div>
                                                                             <div class="testimonial-info">
                                                                                 by <strong>Roy Bennett</strong><br>
@@ -635,12 +586,10 @@
                                                                         </div>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="testimonial-thumb">
-                                                                                <img loading="lazy" decoding="async"
+                                                                            <img 
                                                                                     width="70" height="70"
-                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2020/02/48.jpg"
-                                                                                    class="houzez-lazyload img-fluid rounded-circle"
-                                                                                    alt srcset data-srcset />
+                                                                                    src="assets/client2.jpg"
+                                                                                    class="img-fluid rounded-circle" />
                                                                             </div>
                                                                             <div class="testimonial-info">
                                                                                 by <strong>Kenya Soval</strong><br>
@@ -662,12 +611,10 @@
                                                                         </div>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="testimonial-thumb">
-                                                                                <img loading="lazy" decoding="async"
+                                                                            <img 
                                                                                     width="70" height="70"
-                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2020/02/44.jpg"
-                                                                                    class="houzez-lazyload img-fluid rounded-circle"
-                                                                                    alt srcset data-srcset />
+                                                                                    src="assets/client3.jpg"
+                                                                                    class="img-fluid rounded-circle" />
                                                                             </div>
                                                                             <div class="testimonial-info">
                                                                                 by <strong>Kathleen
@@ -771,7 +718,7 @@
                                 <input type="hidden" id="houzez_login_security" name="houzez_login_security"
                                     value="7128d926d1" /><input type="hidden" name="_wp_http_referer" value="/about/" />
                                 <input type="hidden" name="action" id="login_action" value="houzez_login">
-                                <input type="hidden" name="redirect_to" value="https://demo01.houzez.co/my-profile/">
+                                <input type="hidden" name="redirect_to" >
                                 <button id="houzez-login-btn" type="submit" class="btn btn-primary btn-full-width">
                                     <span class="btn-loader houzez-loader-js"></span> Login
                                 </button>
