@@ -1,3 +1,48 @@
+<?php 
+$con=mysqli_connect("localhost","root","","real_estate");
+
+// page session
+session_start();
+if(!isset($_SESSION['admin_id']))
+{
+  header("location:index.php");
+}
+if(isset($_POST['submit']))
+{
+  
+  $old_password = $_POST['Old_Passsword'];
+  $new_password = $_POST['New_Passsword'];
+  $con_passwod = $_POST['Con_Passsword'];
+  $admin_id = $_SESSION['admin_id'];
+
+  $admin_id = $_SESSION['admin_id'];
+  $sql = "select * from admin where id = ".$admin_id;
+  $res = mysqli_query($con, $sql);
+  $row = mysqli_fetch_assoc($res);
+
+
+  // echo $row[ 'Password'];
+  if($new_password == $con_passwod)
+  {
+    if($old_password == $row['Password'])
+    {
+      $sql_update = "update admin set Password='$new_password' where id =".$admin_id;
+      mysqli_query($con,$sql_update);
+    }else
+    {
+      echo "not match";
+    }
+  }else{
+    echo "Reenter con pass";
+  }
+
+  header("location:View_profile.php");
+
+
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -99,7 +144,7 @@
                     </div>
                    
                   </div>
-                  <form>
+                  <form method="post">
                     <div class="card-body">
                     <div class="row gy-4">
                         <div class="col-lg-4 col-md-6 col-12">
@@ -117,7 +162,7 @@
                     </div>
                     
                     <div class="card-action mt-4">
-                        <button class="btn btn-submit" name="save" type="submit">Submit</button>
+                        <button class="btn btn-submit" name="submit"  value="submit" type="submit">Submit</button>
                         <button class="btn btn-cancel" name="Disdard">Cancel</button>
                     </div>
                     </form>
