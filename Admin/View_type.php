@@ -21,7 +21,16 @@ if(isset($_GET['del_id']))
   mysqli_query($con,$sql_del);
   header('location:View_type.php');
 }
+ 
 
+# Search Type
+// Search data
+$sql = "SELECT * FROM property_type";
+if (isset($_POST['search'])) {
+    $search = mysqli_real_escape_string($con, $_POST['search']);
+    $sql = "SELECT * FROM property_type WHERE property_type LIKE '%$search%'";
+}
+$res = mysqli_query($con, $sql);
 
 
  ?>
@@ -59,7 +68,7 @@ if(isset($_GET['del_id']))
                 $.ajax({
                     type: "POST",
                     data: { search: search },
-                    url: "View_feature.php", 
+                    url: "View_type.php", 
                     success: function(response) {
                         $('#data-table').html($(response).find('#data-table').html());
                     },
@@ -123,6 +132,15 @@ if(isset($_GET['del_id']))
                     <div class="card-title">Property Type</div>
                     
                     
+                    <div class="input-group Serach-input">
+                            <i class="fa fa-search search-icon"></i>
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                class="form-control"
+                                id="Search"
+                            />
+                    </div>
                     <div class="input-group position-relative search-dropdown">
                   <div class="input-group-prepend">
                     <button type="submit" class="btn btn-search pe-1">
@@ -156,7 +174,7 @@ if(isset($_GET['del_id']))
                           <th scope="col">Action</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="data-table">
                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                         <tr>
                           <td><?php echo $row['id']; ?></td>

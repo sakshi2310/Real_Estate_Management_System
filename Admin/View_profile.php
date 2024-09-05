@@ -135,7 +135,7 @@ $row = mysqli_fetch_assoc($res);
                             <span>Username</span>
                             <p><?php echo $row['User_name'];?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="Edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>
@@ -151,7 +151,7 @@ $row = mysqli_fetch_assoc($res);
                             <span>Email</span>
                             <p><?php echo $row['Email'];?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="Edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>
@@ -167,7 +167,7 @@ $row = mysqli_fetch_assoc($res);
                             <span>Mobile Number</span>
                             <p>+91 <?php echo $row['Contact'];?></p>
                         </div>
-                        <a href="#" class="edit-icn ms-auto">
+                        <a href="Edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
                             <i class="bi bi-pencil cursor"></i>
                         </a>
                     </div>

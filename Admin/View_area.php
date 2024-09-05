@@ -21,6 +21,15 @@ if(isset($_GET['del_id']))
   header('location:View_area.php');
 }
 
+//  search area
+// Search data
+$sql = "SELECT * FROM property_area";
+if (isset($_POST['search'])) {
+    $search = mysqli_real_escape_string($con, $_POST['search']);
+    $sql = "SELECT * FROM property_area WHERE Property_area LIKE '%$search%'";
+}
+$res = mysqli_query($con, $sql);
+
  ?><!DOCTYPE html>
  <html lang="en">
  <head>
@@ -55,7 +64,7 @@ if(isset($_GET['del_id']))
                  $.ajax({
                      type: "POST",
                      data: { search: search },
-                     url: "View_feature.php", 
+                     url: "View_area.php", 
                      success: function(response) {
                          $('#data-table').html($(response).find('#data-table').html());
                      },
@@ -118,6 +127,15 @@ if(isset($_GET['del_id']))
                   <div class="card-header  d-flex justify-content-between align-items-center">
                     <div class="card-title">View Area</div>
                     
+                    <div class="input-group Serach-input">
+                            <i class="fa fa-search search-icon"></i>
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                class="form-control"
+                                id="Search"
+                            />
+                    </div>
                     <div class="input-group position-relative search-dropdown">
                   <div class="input-group-prepend">
                     <button type="submit" class="btn btn-search pe-1">
@@ -151,7 +169,7 @@ if(isset($_GET['del_id']))
                           <th scope="col">Action</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="data-table">
                         <?php while($row = mysqli_fetch_assoc($res)){ ?>
                         <tr>
                           <td><?php echo $row['id']; ?></td>

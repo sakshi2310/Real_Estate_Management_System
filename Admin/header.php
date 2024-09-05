@@ -396,7 +396,7 @@ if(isset($_SESSION['admin_id']))
                         <a class="dropdown-item" href="#">Home</a>
                         <a class="dropdown-item" href="View_profile.php">My Profile</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Passwrod Setting</a>
+                        <a class="dropdown-item" href="Change_password.php">Passwrod Setting</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="logout.php">Logout</a>
                       </li>
