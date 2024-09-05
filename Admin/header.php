@@ -52,7 +52,7 @@ if(isset($_SESSION['admin_id']))
               <nav
                 class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
               >
-                <div class="input-group">
+                <div class="input-group position-relative serachbar">
                   <div class="input-group-prepend">
                     <button type="submit" class="btn btn-search pe-1">
                       <i class="fa fa-search search-icon"></i>
@@ -61,8 +61,18 @@ if(isset($_SESSION['admin_id']))
                   <input
                     type="text"
                     placeholder="Search ..."
-                    class="form-control"
+                    class="form-control" 
                   />
+                <div class="dropdown position-absolute top-0 start-0">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Option
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item active" href="#">Name</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                  <li><a class="dropdown-item" href="#">Status</a></li>
+                </ul>
+              </div>
                 </div>
               </nav>
 

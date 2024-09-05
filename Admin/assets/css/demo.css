@@ -636,7 +636,7 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 
 /* serachbar */
 
-.Serach-input{
+/* .Serach-input{
   position: relative;
   width: 350px !important;
 }
@@ -648,7 +648,8 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   -moz-border-radius: 3px !important;
   -ms-border-radius: 3px !important;
   -o-border-radius: 3px !important;
-  padding-left: 40px;
+  padding-left: 200px !important;
+  width: 400px !important;
 }
 
 .Serach-input i{
@@ -662,4 +663,35 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   left: 15px;
   position: relative;
   z-index: 999;
+  position: relative;
+  left: 140px !important;
+} */
+.serachbar{
+  width: 400px;
+  height: 42px !important;
+}
+.serachbar input{
+  width: 400px !important;
+  padding-left: 180px !important;
+  position: relative;
+  left: 0px;
+  top: -27px;
+}
+.serachbar i{
+  position: relative;
+  left: 140px !important;
+  top: 6px !important;
+  font-size: 14px !important;
+  z-index: 999;
+}
+
+.search-dropdown{
+  width: 400px !important;
+}
+.search-dropdown input{
+  padding-left: 150px !important;
+}
+.search-dropdown i{
+  left: 140px !important;
+  position: relative;
 }
