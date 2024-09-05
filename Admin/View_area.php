@@ -118,14 +118,28 @@ if(isset($_GET['del_id']))
                   <div class="card-header  d-flex justify-content-between align-items-center">
                     <div class="card-title">View Area</div>
                     
-                    <div class="input-group Serach-input">
-                            <i class="fa fa-search search-icon"></i>
-                            <input
-                                type="text"
-                                placeholder="Search ..."
-                                class="form-control"
-                            />
-                    </div>
+                    <div class="input-group position-relative search-dropdown">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="fa fa-search search-icon"></i>
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search ..."
+                    class="form-control" 
+                  />
+                <div class="dropdown position-absolute top-0 start-0">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select Option
+                </button>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item active" href="#">Name</a></li>
+                  <li><a class="dropdown-item" href="#">Contact</a></li>
+                  <li><a class="dropdown-item" href="#">Status</a></li>
+                </ul>
+              </div>
+      </div>
                   </div>
                   <div class="card-body">
                     <table class="table mt-4">
