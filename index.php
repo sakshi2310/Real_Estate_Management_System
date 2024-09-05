@@ -377,15 +377,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                                             <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="User/upload/11.jpeg"
-                                                                                                    data-src=""
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img
+                                                                                                    src="assets/banner.jpg"
+                                                                                                    alt=""
+                                                                                                />
                                                                                             </a>
                                                                                         </div>
                                                                                     </div>
@@ -651,12 +646,8 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     class="elementor-tab-content elementor-clearfix" data-tab="1"
                                                     role="tabpanel" aria-labelledby="elementor-tab-title-1311"
                                                     tabindex="0" hidden="false">
-                                                    <p><img loading="lazy" decoding="async"
-                                                            class="houzez-lazyload alignnone wp-image-376 size-full"
-                                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20883%20576%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                            data-src=""
-                                                            alt="" width="883" height="576" srcset=""
-                                                            data-srcset=""
+                                                    <p><img 
+                                                            src="assets/floor1.jpg"
                                                             sizes="(max-width: 883px) 100vw, 883px" /></p>
                                                 </div>
                                                 <div class="elementor-tab-title elementor-tab-mobile-title"
@@ -667,12 +658,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     class="elementor-tab-content elementor-clearfix" data-tab="2"
                                                     role="tabpanel" aria-labelledby="elementor-tab-title-1312"
                                                     tabindex="0" hidden="hidden">
-                                                    <p><img loading="lazy" decoding="async"
-                                                            class="houzez-lazyload alignnone wp-image-378 size-full"
-                                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20883%20576%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                            data-src="https://demo08.houzez.co/wp-content/uploads/2020/03/plan-2.jpg"
-                                                            alt="" width="883" height="576" srcset=""
-                                                            data-srcset=""
+                                                    <p><img src="assets/floor2.jpg"
                                                             sizes="(max-width: 883px) 100vw, 883px" /></p>
                                                 </div>
                                             </div>
@@ -738,7 +724,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2020/03/205-1024x683.jpg)">
+                                                            style="background-image: url(assets/residancy6.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -765,7 +751,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/023-1024x768.jpg)">
+                                                            style="background-image: url(assets/residancy4.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -792,7 +778,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/026-1024x768.jpg)">
+                                                            style="background-image: url(assets/residancy5.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -815,7 +801,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/020-1024x768.jpg)">
+                                                            style="background-image: url(assets/residancy3.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -876,7 +862,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/206-1024x683.jpg)">
+                                                            style="background-image: url(assets/residancy2.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -903,7 +889,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/203-1024x683.jpg)">
+                                                            style="background-image: url(assets/residancy1.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -996,6 +982,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
                                                     data-widget_type="houzez_elementor_section_title.default">
                                                     <div class="elementor-widget-container">
+                                                    
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Suitable For Agents And
                                                                 Agencies</h2>
@@ -1413,15 +1400,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                                     <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="assets/about-slider.jpg"
-                                                                                                    data-src="#"
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img src="assets/banner-slider.jpg">
                                                                                             </a>
                                                                                 </a>
                                                                             </div>
@@ -1503,15 +1482,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                             <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="assets/about-slider.jpg"
-                                                                                                    data-src="#"
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img src="assets/banner-slider.jpg">
                                                                                             </a>
                                                                             </div>
                                                                         </div>
@@ -1592,15 +1563,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                             <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="assets/about-slider.jpg"
-                                                                                                    data-src="#"
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img src="assets/banner-slider.jpg">
                                                                                             </a>
                                                                             </div>
                                                                         </div>
@@ -1678,15 +1641,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                             <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="assets/about-slider.jpg"
-                                                                                                    data-src="#"
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img src="assets/banner-slider.jpg">
                                                                                             </a>
                                                                             </div>
                                                                         </div>
@@ -1765,15 +1720,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                             <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="assets/about-slider.jpg"
-                                                                                                    data-src="#"
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img src="assets/banner-slider.jpg">
                                                                                             </a>
                                                                             </div>
                                                                         </div>
@@ -1852,15 +1799,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                             <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img fetchpriority="high"
-                                                                                                    decoding="async"
-                                                                                                    width="592"
-                                                                                                    height="444"
-                                                                                                    src="assets/about-slider.jpg"
-                                                                                                    data-src="#"
-                                                                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                                                                    alt srcset
-                                                                                                    data-srcset="" />
+                                                                                                <img src="assets/banner-slider.jpg">
                                                                                             </a>
                                                                             </div>
                                                                         </div>
@@ -2021,7 +1960,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/chicago.jpg)">
+                                                            style="background-image: url(assets/city1.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -2048,7 +1987,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/miami-beach.jpg)">
+                                                            style="background-image: url(assets/city2.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -2075,7 +2014,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/new-york.jpg)">
+                                                            style="background-image: url(assets/city3.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -2102,7 +2041,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(https://demo01.houzez.co/wp-content/uploads/2016/03/los-angeles.jpg)">
+                                                            style="background-image: url(assets/city4.jpg)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
@@ -2162,7 +2101,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                             <div class="elementor-widget-wrap elementor-element-populated">
                                                 <div class="elementor-element elementor-element-efce673 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
                                                     data-id="efce673" data-element_type="widget"
-                                                    data-settings=""
+                                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
                                                     data-widget_type="houzez_elementor_section_title.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
@@ -2181,13 +2120,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                 <div class="agent-thumb">
                                                                     <a
                                                                         href="#">
-                                                                        <img loading="lazy" decoding="async" width="150"
+                                                                        <img width="150"
                                                                             height="150"
-                                                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                            data-src="#"
-                                                                            class="houzez-lazyload img-fluid rounded-circle wp-post-image"
-                                                                            alt srcset
-                                                                            data-srcset=""
+                                                                            src="assets/agent1.jpg"
+                                                                            class="img-fluid rounded-circle"
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
                                                                 </div>
@@ -2215,12 +2151,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                 <div class="agent-thumb">
                                                                     <a
                                                                         href="#">
-                                                                        <img loading="lazy" decoding="async" width="150"
+                                                                        <img width="150"
                                                                             height="150"
-                                                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                            data-src=""
-                                                                            class="houzez-lazyload img-fluid rounded-circle wp-post-image"
-                                                                            alt srcset
+                                                                            src="assets/agent2.jpg"
+                                                                            class="img-fluid rounded-circle"
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
                                                                 </div>
@@ -2248,13 +2182,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                 <div class="agent-thumb">
                                                                     <a
                                                                         href="#">
-                                                                        <img loading="lazy" decoding="async" width="150"
+                                                                        <img width="150"
                                                                             height="150"
-                                                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%20150%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                            data-src=""
-                                                                            class="houzez-lazyload img-fluid rounded-circle wp-post-image"
-                                                                            alt srcset
-                                                                            data-srcset=""
+                                                                            src="assets/agent3.jpg"
+                                                                            class="img-fluid rounded-circle"
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
                                                                 </div>
@@ -2354,12 +2285,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                         </div>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="testimonial-thumb">
-                                                                                <img loading="lazy" decoding="async"
+                                                                                <img 
                                                                                     width="70" height="70"
-                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src="#"
-                                                                                    class="houzez-lazyload img-fluid rounded-circle"
-                                                                                    alt srcset data-srcset />
+                                                                                    src="assets/client1.jpg"
+                                                                                    class="img-fluid rounded-circle" />
                                                                             </div>
                                                                             <div class="testimonial-info">
                                                                                 by <strong>Roy Bennett</strong><br>
@@ -2381,12 +2310,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                         </div>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="testimonial-thumb">
-                                                                                <img loading="lazy" decoding="async"
+                                                                            <img 
                                                                                     width="70" height="70"
-                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src=""
-                                                                                    class="houzez-lazyload img-fluid rounded-circle"
-                                                                                    alt srcset data-srcset />
+                                                                                    src="assets/client2.jpg"
+                                                                                    class="img-fluid rounded-circle" />
                                                                             </div>
                                                                             <div class="testimonial-info">
                                                                                 by <strong>Kenya Soval</strong><br>
@@ -2408,12 +2335,10 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                         </div>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="testimonial-thumb">
-                                                                                <img loading="lazy" decoding="async"
+                                                                            <img 
                                                                                     width="70" height="70"
-                                                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2070%2070%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                                                    data-src=""
-                                                                                    class="houzez-lazyload img-fluid rounded-circle"
-                                                                                    alt srcset data-srcset />
+                                                                                    src="assets/client3.jpg"
+                                                                                    class="img-fluid rounded-circle" />
                                                                             </div>
                                                                             <div class="testimonial-info">
                                                                                 by <strong>Kathleen
@@ -2457,11 +2382,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                 <div class="elementor-element elementor-element-2323b52 elementor-widget elementor-widget-image"
                                     data-id="2323b52" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
-                                        <img loading="lazy" decoding="async" width="150" height="60"
-                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src=""
-                                            class="houzez-lazyload attachment-large size-large wp-image-1118" alt srcset
-                                            data-srcset />
+                                    <img src="assets/company1.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -2472,11 +2393,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                 <div class="elementor-element elementor-element-014fe12 elementor-widget elementor-widget-image"
                                     data-id="014fe12" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
-                                        <img loading="lazy" decoding="async" width="150" height="60"
-                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src=""
-                                            class="houzez-lazyload attachment-large size-large wp-image-1119" alt srcset
-                                            data-srcset />
+                                        <img src="assets/company2.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -2487,11 +2404,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                 <div class="elementor-element elementor-element-6fe48f6 elementor-widget elementor-widget-image"
                                     data-id="6fe48f6" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
-                                        <img loading="lazy" decoding="async" width="150" height="60"
-                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src=""
-                                            class="houzez-lazyload attachment-large size-large wp-image-1121" alt srcset
-                                            data-srcset />
+                                        <img src="assets/company3.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -2502,11 +2415,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                 <div class="elementor-element elementor-element-c347fb3 elementor-widget elementor-widget-image"
                                     data-id="c347fb3" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
-                                        <img loading="lazy" decoding="async" width="150" height="60"
-                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src=""
-                                            class="houzez-lazyload attachment-large size-large wp-image-1120" alt srcset
-                                            data-srcset />
+                                    <img src="assets/company4.jpg" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -2517,11 +2426,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                 <div class="elementor-element elementor-element-f937195 elementor-widget elementor-widget-image"
                                     data-id="f937195" data-element_type="widget" data-widget_type="image.default">
                                     <div class="elementor-widget-container">
-                                        <img loading="lazy" decoding="async" width="150" height="60"
-                                            src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20150%2060%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                            data-src=""
-                                            class="houzez-lazyload attachment-large size-large wp-image-1122" alt srcset
-                                            data-srcset />
+                                        <img src="assets/company5.jpg" alt="">
                                     </div>
                                 </div>
                             </div>

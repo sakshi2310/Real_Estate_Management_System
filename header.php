@@ -155,10 +155,6 @@
 	<link rel="stylesheet" id="swiper-css"
 		href="https://demo01.houzez.co/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css"
 		type="text/css" media="all" />
-	<link rel="stylesheet" id="elementor-post-17100-css"
-		href="https://demo01.houzez.co/wp-content/uploads/elementor/css/post-17100.css" type="text/css" media="all" />
-	<link rel="stylesheet" id="elementor-post-16941-css"
-		href="https://demo01.houzez.co/wp-content/uploads/elementor/css/post-16941.css" type="text/css" media="all" />
 	<link rel="stylesheet" id="houzez-studio-css"
 		href="https://demo01.houzez.co/wp-content/plugins/houzez-studio/public/css/houzez-studio-public.css"
 		type="text/css" media="all" />
@@ -350,7 +346,6 @@
     <script type="text/javascript"
         src="https://demo01.houzez.co/wp-content/plugins/houzez-studio/public/js/houzez-studio-public.js"
         id="houzez-studio-js"></script>
-    <link rel="https://api.w.org/" href="https://demo01.houzez.co/wp-json/" />
     <link rel="alternate" type="application/json" href="https://demo01.houzez.co/wp-json/wp/v2/pages/28" />
     <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://demo01.houzez.co/xmlrpc.php?rsd" />
     <meta name="generator" content="WordPress 6.5.5" />

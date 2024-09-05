@@ -7,7 +7,7 @@
             data-sticky="1">
             <div class="container">
                 <form class="houzez-search-form-js " method="get" autocomplete="off"
-                    action="https://demo01.houzez.co/search-results/">
+                    >
                     <div class="advanced-search-v1 ">
                         <div class="d-flex">
                             <div class="flex-search flex-grow-1">
@@ -219,7 +219,7 @@
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item breadcrumb-item-home"><i
-                                        class="las la-home mr-2"></i><a href="https://demo01.houzez.co/">Home</a>
+                                        class="las la-home mr-2"></i><a href="#">Home</a>
                                 </li>
                                 <li class="breadcrumb-item active"><i class="las la-angle-right mr-2"></i> Property</li>
                             </ol>
@@ -316,8 +316,7 @@
                         </div>
                         <div class="listing-view grid-view card-deck">
                             <div class="item-listing-wrap hz-item-gallery-js card"
-                            data-hz-id="hz-115"
-                            data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                            data-hz-id="hz-115">
                             <div
                                 class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
                                 <div
@@ -327,7 +326,7 @@
                                             class="label-featured label">Featured</span>
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                            <a href="#"
                                                 class="label-status label status-color-34">
                                                 For Rent
                                             </a>
@@ -367,8 +366,7 @@
                                                     data-toggle="tooltip"
                                                     data-placement="top"
                                                     title="Add to Compare"
-                                                    data-listing_id="115"
-                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg">
+                                                    data-listing_id="115">
                                                     <i class="las la-plus-circle"></i>
                                                 </span>
                                             </li>
@@ -378,16 +376,13 @@
                                                 <a target="_self"
                                                     href="single_property.php"
                                                     class="listing-featured-thumb hover-effect">
-                                                    <img fetchpriority="high"
-                                                        decoding="async"
-                                                        width="592"
-                                                        height="444"
-                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg"
-                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                        alt srcset
-                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/038.jpg 1170w"
-                                                        sizes="(max-width: 592px) 100vw, 592px" />
+                                                    <img loading="lazy"
+                                                    decoding="async"
+                                                    width="592"
+                                                    height="444"
+                                                    src="assets/residancy2.jpg"
+                                                    alt srcset
+                                                    sizes="(max-width: 592px) 100vw, 592px" />
                                                 </a>
                                             </div>
                                         </div>
@@ -396,7 +391,7 @@
                                     <div class="item-body flex-grow-1">
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                            <a href="#"
                                                 class="label-status label status-color-34">
                                                 For Rent
                                             </a>
@@ -451,7 +446,7 @@
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
+                                                href="#">Samuel
                                                 Palmer</a>
                                         </div>
                                         <div class="item-date">
@@ -465,7 +460,7 @@
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
+                                                href="#">Samuel
                                                 Palmer</a>
                                         </div>
                                         <div class="item-date">
@@ -478,8 +473,7 @@
                             </div>
                         </div>
                         <div class="item-listing-wrap hz-item-gallery-js card"
-                            data-hz-id="hz-294"
-                            data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/205-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/026-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                            data-hz-id="hz-294">
                             <div
                                 class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
                                 <div
@@ -489,7 +483,7 @@
                                             class="label-featured label">Featured</span>
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-sale/"
+                                            <a href="#"
                                                 class="label-status label status-color-18">
                                                 For Sale
                                             </a>
@@ -531,8 +525,7 @@
                                                     data-toggle="tooltip"
                                                     data-placement="top"
                                                     title="Add to Compare"
-                                                    data-listing_id="294"
-                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/205-592x444.jpg">
+                                                    data-listing_id="294">
                                                     <i class="las la-plus-circle"></i>
                                                 </span>
                                             </li>
@@ -540,18 +533,15 @@
                                         <div class="listing-image-wrap">
                                             <div class="listing-thumb">
                                                 <a target="_self"
-                                                    href="https://demo01.houzez.co/property/penthouse-apartment/"
+                                                    href="#"
                                                     class="listing-featured-thumb hover-effect">
                                                     <img loading="lazy"
-                                                        decoding="async"
-                                                        width="592"
-                                                        height="444"
-                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/205-592x444.jpg"
-                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                        alt srcset
-                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/205-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/205-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/205-120x90.jpg 120w"
-                                                        sizes="(max-width: 592px) 100vw, 592px" />
+                                                    decoding="async"
+                                                    width="592"
+                                                    height="444"
+                                                    src="assets/residancy3.jpg"
+                                                    alt srcset
+                                                    sizes="(max-width: 592px) 100vw, 592px" />
                                                 </a>
                                             </div>
                                         </div>
@@ -560,14 +550,14 @@
                                     <div class="item-body flex-grow-1">
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-sale/"
+                                            <a href="#"
                                                 class="label-status label status-color-18">
                                                 For Sale
                                             </a>
                                         </div>
                                         <h2 class="item-title">
                                             <a target="_self"
-                                                href="https://demo01.houzez.co/property/penthouse-apartment/">Design
+                                                href="#">Design
                                                 apartment</a>
                                         </h2>
                                         <ul
@@ -610,13 +600,13 @@
                                         </ul> <a
                                             class="btn btn-primary btn-item "
                                             target="_self"
-                                            href="https://demo01.houzez.co/property/penthouse-apartment/">
+                                            href="#">
                                             Details</a>
                                         <div class="item-author">
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/mike-moore/">Mike
+                                                href="#">Mike
                                                 Moore</a>
                                         </div>
                                         <div class="item-date">
@@ -630,7 +620,7 @@
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/mike-moore/">Mike
+                                                href="#">Mike
                                                 Moore</a>
                                         </div>
                                         <div class="item-date">
@@ -643,8 +633,7 @@
                             </div>
                         </div>
                         <div class="item-listing-wrap hz-item-gallery-js card"
-                            data-hz-id="hz-344"
-                            data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/018-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/018-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                            data-hz-id="hz-344">
                             <div
                                 class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
                                 <div
@@ -654,7 +643,7 @@
                                             class="label-featured label">Featured</span>
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                            <a href="#"
                                                 class="label-status label status-color-34">
                                                 For Rent
                                             </a>
@@ -694,9 +683,7 @@
                                                     data-toggle="tooltip"
                                                     data-placement="top"
                                                     title="Add to Compare"
-                                                    data-listing_id="344"
-                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg">
-                                                    <i class="las la-plus-circle"></i>
+                                                    data-listing_id="344"></i>
                                                 </span>
                                             </li>
                                         </ul>
@@ -706,15 +693,12 @@
                                                     href="single_property.php"
                                                     class="listing-featured-thumb hover-effect">
                                                     <img loading="lazy"
-                                                        decoding="async"
-                                                        width="592"
-                                                        height="444"
-                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg"
-                                                        class="houzez-lazyload img-fluid wp-post-image"
-                                                        alt srcset
-                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/03/018.jpg 1170w"
-                                                        sizes="(max-width: 592px) 100vw, 592px" />
+                                                    decoding="async"
+                                                    width="592"
+                                                    height="444"
+                                                    src="assets/residancy5.jpg"
+                                                    alt srcset
+                                                    sizes="(max-width: 592px) 100vw, 592px" />
                                                 </a>
                                             </div>
                                         </div>
@@ -723,7 +707,7 @@
                                     <div class="item-body flex-grow-1">
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-rent/"
+                                            <a href="#"
                                                 class="label-status label status-color-34">
                                                 For Rent
                                             </a>
@@ -779,7 +763,7 @@
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
+                                                href="#">Samuel
                                                 Palmer</a>
                                         </div>
                                         <div class="item-date">
@@ -793,7 +777,7 @@
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
+                                                href="#">Samuel
                                                 Palmer</a>
                                         </div>
                                         <div class="item-date">
@@ -806,8 +790,7 @@
                             </div>
                         </div>
                         <div class="item-listing-wrap hz-item-gallery-js card"
-                            data-hz-id="hz-282"
-                            data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/043-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/043-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
+                            data-hz-id="hz-344">
                             <div
                                 class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
                                 <div
@@ -817,7 +800,642 @@
                                             class="label-featured label">Featured</span>
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-sale/"
+                                            <a href="#"
+                                                class="label-status label status-color-34">
+                                                For Rent
+                                            </a>
+                                        </div>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price">
+                                                $11,000/mo</li>
+                                        </ul>
+                                        <ul class="item-tools">
+                                            <li
+                                                class="item-tool item-preview">
+                                                <span
+                                                    class="hz-show-lightbox-js"
+                                                    data-listid="344"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Preview">
+                                                    <i class="las la-compress-arrows-alt"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-favorite">
+                                                <span
+                                                    class="add-favorite-js item-tool-favorite"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Favourite"
+                                                    data-listid="344">
+                                                    <i class="las la-heart"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-compare">
+                                                <span
+                                                    class="houzez_compare compare-344 item-tool-compare show-compare-panel"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Add to Compare"
+                                                    data-listing_id="344"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <div class="listing-image-wrap">
+                                            <div class="listing-thumb">
+                                                <a target="_self"
+                                                    href="single_property.php"
+                                                    class="listing-featured-thumb hover-effect">
+                                                    <img loading="lazy"
+                                                    decoding="async"
+                                                    width="592"
+                                                    height="444"
+                                                    src="assets/residancy5.jpg"
+                                                    alt srcset
+                                                    sizes="(max-width: 592px) 100vw, 592px" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="preview_loader"></div>
+                                    </div>
+                                    <div class="item-body flex-grow-1">
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-34">
+                                                For Rent
+                                            </a>
+                                        </div>
+                                        <h2 class="item-title">
+                                            <a target="_self"
+                                                href="single_property.php">New
+                                                apartment nice view</a>
+                                        </h2>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price">
+                                                $11,000/mo</li>
+                                        </ul>
+                                        <address class="item-address">8100 S
+                                            Ashland Ave, Chicago, IL 60620,
+                                            USA</address>
+                                        <ul
+                                            class="item-amenities item-amenities-with-icons">
+                                            <li class="h-beds">
+                                                <i class="las la-bed"></i><span
+                                                    class="item-amenities-text">Beds:</span>
+                                                <span
+                                                    class="hz-figure">3</span>
+                                            </li>
+                                            <li class="h-baths"><i class="las la-bath"></i><span
+                                                    class="item-amenities-text">Bath:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-cars"><i
+                                                    class="las la-car mr-1"></i><span
+                                                    class="item-amenities-text">Garage:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-area"><i
+                                                    class="las la-ruler-combined mr-1"></i><span
+                                                    class="hz-figure">1789</span>
+                                                <span
+                                                    class="hz-figure area_postfix">Sq
+                                                    Ft</span>
+                                            </li>
+                                            <li class="h-type">
+                                                <span>Apartment</span>
+                                            </li>
+                                        </ul> <a
+                                            class="btn btn-primary btn-item "
+                                            target="_self"
+                                            href="single_property.php">
+                                            Details</a>
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Samuel
+                                                Palmer</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                    <div class="item-footer clearfix">
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Samuel
+                                                Palmer</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       
+                        <div class="item-listing-wrap hz-item-gallery-js card"
+                            data-hz-id="hz-344">
+                            <div
+                                class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
+                                <div
+                                    class="d-flex align-items-center h-100">
+                                    <div class="item-header">
+                                        <span
+                                            class="label-featured label">Featured</span>
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-34">
+                                                For Rent
+                                            </a>
+                                        </div>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price">
+                                                $11,000/mo</li>
+                                        </ul>
+                                        <ul class="item-tools">
+                                            <li
+                                                class="item-tool item-preview">
+                                                <span
+                                                    class="hz-show-lightbox-js"
+                                                    data-listid="344"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Preview">
+                                                    <i class="las la-compress-arrows-alt"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-favorite">
+                                                <span
+                                                    class="add-favorite-js item-tool-favorite"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Favourite"
+                                                    data-listid="344">
+                                                    <i class="las la-heart"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-compare">
+                                                <span
+                                                    class="houzez_compare compare-344 item-tool-compare show-compare-panel"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Add to Compare"
+                                                    data-listing_id="344"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <div class="listing-image-wrap">
+                                            <div class="listing-thumb">
+                                                <a target="_self"
+                                                    href="single_property.php"
+                                                    class="listing-featured-thumb hover-effect">
+                                                    <img loading="lazy"
+                                                    decoding="async"
+                                                    width="592"
+                                                    height="444"
+                                                    src="assets/residancy5.jpg"
+                                                    alt srcset
+                                                    sizes="(max-width: 592px) 100vw, 592px" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="preview_loader"></div>
+                                    </div>
+                                    <div class="item-body flex-grow-1">
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-34">
+                                                For Rent
+                                            </a>
+                                        </div>
+                                        <h2 class="item-title">
+                                            <a target="_self"
+                                                href="single_property.php">New
+                                                apartment nice view</a>
+                                        </h2>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price">
+                                                $11,000/mo</li>
+                                        </ul>
+                                        <address class="item-address">8100 S
+                                            Ashland Ave, Chicago, IL 60620,
+                                            USA</address>
+                                        <ul
+                                            class="item-amenities item-amenities-with-icons">
+                                            <li class="h-beds">
+                                                <i class="las la-bed"></i><span
+                                                    class="item-amenities-text">Beds:</span>
+                                                <span
+                                                    class="hz-figure">3</span>
+                                            </li>
+                                            <li class="h-baths"><i class="las la-bath"></i><span
+                                                    class="item-amenities-text">Bath:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-cars"><i
+                                                    class="las la-car mr-1"></i><span
+                                                    class="item-amenities-text">Garage:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-area"><i
+                                                    class="las la-ruler-combined mr-1"></i><span
+                                                    class="hz-figure">1789</span>
+                                                <span
+                                                    class="hz-figure area_postfix">Sq
+                                                    Ft</span>
+                                            </li>
+                                            <li class="h-type">
+                                                <span>Apartment</span>
+                                            </li>
+                                        </ul> <a
+                                            class="btn btn-primary btn-item "
+                                            target="_self"
+                                            href="single_property.php">
+                                            Details</a>
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Samuel
+                                                Palmer</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                    <div class="item-footer clearfix">
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Samuel
+                                                Palmer</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-listing-wrap hz-item-gallery-js card"
+                            data-hz-id="hz-294"
+                        >
+                            <div
+                                class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
+                                <div
+                                    class="d-flex align-items-center h-100">
+                                    <div class="item-header">
+                                        <span
+                                            class="label-featured label">Featured</span>
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-18">
+                                                For Sale
+                                            </a>
+                                        </div>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price"> $876,000
+                                            </li>
+                                            <li class="item-sub-price">
+                                                $7,600/sq ft</li>
+                                        </ul>
+                                        <ul class="item-tools">
+                                            <li
+                                                class="item-tool item-preview">
+                                                <span
+                                                    class="hz-show-lightbox-js"
+                                                    data-listid="294"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Preview">
+                                                    <i class="las la-compress-arrows-alt"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-favorite">
+                                                <span
+                                                    class="add-favorite-js item-tool-favorite"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Favourite"
+                                                    data-listid="294">
+                                                    <i class="las la-heart"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-compare">
+                                                <span
+                                                    class="houzez_compare compare-294 item-tool-compare show-compare-panel"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Add to Compare"
+                                                    data-listing_id="294">
+                                                    <i class="las la-plus-circle"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <div class="listing-image-wrap">
+                                            <div class="listing-thumb">
+                                                <a target="_self"
+                                                    href="#"
+                                                    class="listing-featured-thumb hover-effect">
+                                                    <img loading="lazy"
+                                                        decoding="async"
+                                                        width="592"
+                                                        height="444"
+                                                        src="assets/residancy7.jpg"
+                                                        alt srcset
+                                                        sizes="(max-width: 592px) 100vw, 592px" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="preview_loader"></div>
+                                    </div>
+                                    <div class="item-body flex-grow-1">
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-18">
+                                                For Sale
+                                            </a>
+                                        </div>
+                                        <h2 class="item-title">
+                                            <a target="_self"
+                                                href="#">Design
+                                                apartment</a>
+                                        </h2>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price"> $876,000
+                                            </li>
+                                            <li class="item-sub-price">
+                                                $7,600/sq ft</li>
+                                        </ul>
+                                        <address class="item-address">Quincy
+                                            St, Brooklyn, NY, USA</address>
+                                        <ul
+                                            class="item-amenities item-amenities-with-icons">
+                                            <li class="h-beds"><i class="las la-bed"></i><span
+                                                    class="item-amenities-text">Beds:</span>
+                                                <span
+                                                    class="hz-figure">3</span>
+                                            </li>
+                                            <li class="h-baths"><i class="las la-bath"></i><span
+                                                    class="item-amenities-text">Baths:</span>
+                                                <span
+                                                    class="hz-figure">2</span>
+                                            </li>
+                                            <li class="h-cars"><i
+                                                    class="las la-car mr-1"></i><span
+                                                    class="item-amenities-text">Garage:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-area"><i
+                                                    class="las la-ruler-combined mr-1"></i><span
+                                                    class="hz-figure">2560</span>
+                                                <span
+                                                    class="hz-figure area_postfix">Sq
+                                                    Ft</span>
+                                            </li>
+                                            <li class="h-type">
+                                                <span>Apartment</span>
+                                            </li>
+                                        </ul> <a
+                                            class="btn btn-primary btn-item "
+                                            target="_self"
+                                            href="#">
+                                            Details</a>
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Mike
+                                                Moore</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                    <div class="item-footer clearfix">
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Mike
+                                                Moore</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-listing-wrap hz-item-gallery-js card"
+                            data-hz-id="hz-344"
+                            >
+                            <div
+                                class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
+                                <div
+                                    class="d-flex align-items-center h-100">
+                                    <div class="item-header">
+                                        <span
+                                            class="label-featured label">Featured</span>
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-34">
+                                                For Rent
+                                            </a>
+                                        </div>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price">
+                                                $11,000/mo</li>
+                                        </ul>
+                                        <ul class="item-tools">
+                                            <li
+                                                class="item-tool item-preview">
+                                                <span
+                                                    class="hz-show-lightbox-js"
+                                                    data-listid="344"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Preview">
+                                                    <i class="las la-compress-arrows-alt"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-favorite">
+                                                <span
+                                                    class="add-favorite-js item-tool-favorite"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Favourite"
+                                                    data-listid="344">
+                                                    <i class="las la-heart"></i>
+                                                </span>
+                                            </li>
+                                            <li
+                                                class="item-tool item-compare">
+                                                <span
+                                                    class="houzez_compare compare-344 item-tool-compare show-compare-panel"
+                                                    data-toggle="tooltip"
+                                                    data-placement="top"
+                                                    title="Add to Compare"
+                                                    data-listing_id="344">
+                                                    <i class="las la-plus-circle"></i>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                        <div class="listing-image-wrap">
+                                            <div class="listing-thumb">
+                                                <a target="_self"
+                                                    href="single_property.php"
+                                                    class="listing-featured-thumb hover-effect">
+                                                    <img loading="lazy"
+                                                        decoding="async"
+                                                        width="592"
+                                                        height="444"
+                                                        src="assets/residancy6.jpg"
+                                                        alt srcset
+                                                        sizes="(max-width: 592px) 100vw, 592px" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="preview_loader"></div>
+                                    </div>
+                                    <div class="item-body flex-grow-1">
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
+                                                class="label-status label status-color-34">
+                                                For Rent
+                                            </a>
+                                        </div>
+                                        <h2 class="item-title">
+                                            <a target="_self"
+                                                href="single_property.php">New
+                                                apartment nice view</a>
+                                        </h2>
+                                        <ul
+                                            class="item-price-wrap hide-on-list">
+                                            <li class="item-price">
+                                                $11,000/mo</li>
+                                        </ul>
+                                        <address class="item-address">8100 S
+                                            Ashland Ave, Chicago, IL 60620,
+                                            USA</address>
+                                        <ul
+                                            class="item-amenities item-amenities-with-icons">
+                                            <li class="h-beds">
+                                                <i class="las la-bed"></i><span
+                                                    class="item-amenities-text">Beds:</span>
+                                                <span
+                                                    class="hz-figure">3</span>
+                                            </li>
+                                            <li class="h-baths"><i class="las la-bath"></i><span
+                                                    class="item-amenities-text">Bath:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-cars"><i
+                                                    class="las la-car mr-1"></i><span
+                                                    class="item-amenities-text">Garage:</span>
+                                                <span
+                                                    class="hz-figure">1</span>
+                                            </li>
+                                            <li class="h-area"><i
+                                                    class="las la-ruler-combined mr-1"></i><span
+                                                    class="hz-figure">1789</span>
+                                                <span
+                                                    class="hz-figure area_postfix">Sq
+                                                    Ft</span>
+                                            </li>
+                                            <li class="h-type">
+                                                <span>Apartment</span>
+                                            </li>
+                                        </ul> <a
+                                            class="btn btn-primary btn-item "
+                                            target="_self"
+                                            href="single_property.php">
+                                            Details</a>
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Samuel
+                                                Palmer</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                    <div class="item-footer clearfix">
+                                        <div class="item-author">
+                                            <i
+                                                class="las la-user mr-1"></i>
+                                            <a
+                                                href="#">Samuel
+                                                Palmer</a>
+                                        </div>
+                                        <div class="item-date">
+                                            <i
+                                                class="las la-paperclip mr-1"></i>
+                                            4 years ago
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item-listing-wrap hz-item-gallery-js card"
+                            data-hz-id="hz-282">
+                            <div
+                                class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
+                                <div
+                                    class="d-flex align-items-center h-100">
+                                    <div class="item-header">
+                                        <span
+                                            class="label-featured label">Featured</span>
+                                        <div
+                                            class="labels-wrap labels-right">
+                                            <a href="#"
                                                 class="label-status label status-color-18">
                                                 For Sale
                                             </a>
@@ -860,7 +1478,7 @@
                                                     data-placement="top"
                                                     title="Add to Compare"
                                                     data-listing_id="282"
-                                                    data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/043-592x444.jpg">
+                                                    data-listing_image="#">
                                                     <i class="las la-plus-circle"></i>
                                                 </span>
                                             </li>
@@ -868,17 +1486,14 @@
                                         <div class="listing-image-wrap">
                                             <div class="listing-thumb">
                                                 <a target="_self"
-                                                    href="https://demo01.houzez.co/property/renovated-studio/"
+                                                    href="#"
                                                     class="listing-featured-thumb hover-effect">
                                                     <img loading="lazy"
                                                         decoding="async"
                                                         width="592"
                                                         height="444"
-                                                        src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                        data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/043-592x444.jpg"
-                                                        class="houzez-lazyload img-fluid wp-post-image"
+                                                        src="assets/residancy1.jpg"
                                                         alt srcset
-                                                        data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/043-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/03/043.jpg 1170w"
                                                         sizes="(max-width: 592px) 100vw, 592px" />
                                                 </a>
                                             </div>
@@ -888,14 +1503,14 @@
                                     <div class="item-body flex-grow-1">
                                         <div
                                             class="labels-wrap labels-right">
-                                            <a href="https://demo01.houzez.co/status/for-sale/"
+                                            <a href="#"
                                                 class="label-status label status-color-18">
                                                 For Sale
                                             </a>
                                         </div>
                                         <h2 class="item-title">
                                             <a target="_self"
-                                                href="https://demo01.houzez.co/property/renovated-studio/">Renovated
+                                                href="#">Renovated
                                                 studio</a>
                                         </h2>
                                         <ul
@@ -939,13 +1554,13 @@
                                         </ul> <a
                                             class="btn btn-primary btn-item "
                                             target="_self"
-                                            href="https://demo01.houzez.co/property/renovated-studio/">
+                                            href="#">
                                             Details</a>
                                         <div class="item-author">
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/michelle-ramirez/">Michelle
+                                                href="#">Michelle
                                                 Ramirez</a>
                                         </div>
                                         <div class="item-date">
@@ -959,7 +1574,7 @@
                                             <i
                                                 class="las la-user mr-1"></i>
                                             <a
-                                                href="https://demo01.houzez.co/agent/michelle-ramirez/">Michelle
+                                                href="#">Michelle
                                                 Ramirez</a>
                                         </div>
                                         <div class="item-date">
@@ -971,680 +1586,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="item-listing-wrap hz-item-gallery-js card"
-                        data-hz-id="hz-115"
-                        data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/02\/038-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
-                        <div
-                            class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                            <div
-                                class="d-flex align-items-center h-100">
-                                <div class="item-header">
-                                    <span
-                                        class="label-featured label">Featured</span>
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-rent/"
-                                            class="label-status label status-color-34">
-                                            For Rent
-                                        </a>
-                                    </div>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price">$4,500/mo
-                                        </li>
-                                    </ul>
-                                    <ul class="item-tools">
-                                        <li
-                                            class="item-tool item-preview">
-                                            <span
-                                                class="hz-show-lightbox-js"
-                                                data-listid="115"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Preview">
-                                                <i class="las la-compress-arrows-alt"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-favorite">
-                                            <span
-                                                class="add-favorite-js item-tool-favorite"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Favourite"
-                                                data-listid="115">
-                                                <i class="las la-heart"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-compare">
-                                            <span
-                                                class="houzez_compare compare-115 item-tool-compare show-compare-panel"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Add to Compare"
-                                                data-listing_id="115"
-                                                data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg">
-                                                <i class="las la-plus-circle"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <div class="listing-image-wrap">
-                                        <div class="listing-thumb">
-                                            <a target="_self"
-                                                href="single_property.php"
-                                                class="listing-featured-thumb hover-effect">
-                                                <img fetchpriority="high"
-                                                    decoding="async"
-                                                    width="592"
-                                                    height="444"
-                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg"
-                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                    alt srcset
-                                                    data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/02/038-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/02/038-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/02/038.jpg 1170w"
-                                                    sizes="(max-width: 592px) 100vw, 592px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="preview_loader"></div>
-                                </div>
-                                <div class="item-body flex-grow-1">
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-rent/"
-                                            class="label-status label status-color-34">
-                                            For Rent
-                                        </a>
-                                    </div>
-                                    <h2 class="item-title">
-                                        <a target="_self"
-                                            href="single_property.php">Light
-                                            and modern apartment</a>
-                                    </h2>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price">$4,500/mo
-                                        </li>
-                                    </ul>
-                                    <address class="item-address">2436
-                                        SW 8th St, Miami, FL 33135, USA
-                                    </address>
-                                    <ul
-                                        class="item-amenities item-amenities-with-icons">
-                                        <li class="h-beds"><i class="las la-bed"></i><span
-                                                class="item-amenities-text">Beds:</span>
-                                            <span
-                                                class="hz-figure">4</span>
-                                        </li>
-                                        <li class="h-baths"><i class="las la-bath"></i><span
-                                                class="item-amenities-text">Baths:</span>
-                                            <span
-                                                class="hz-figure">2</span>
-                                        </li>
-                                        <li class="h-cars"><i
-                                                class="las la-car mr-1"></i><span
-                                                class="item-amenities-text">Garage:</span>
-                                            <span
-                                                class="hz-figure">1</span>
-                                        </li>
-                                        <li class="h-area"><i
-                                                class="las la-ruler-combined mr-1"></i><span
-                                                class="hz-figure">1200</span>
-                                            <span
-                                                class="hz-figure area_postfix">Sq
-                                                Ft</span>
-                                        </li>
-                                        <li class="h-type">
-                                            <span>Apartment</span>
-                                        </li>
-                                    </ul> <a
-                                        class="btn btn-primary btn-item "
-                                        target="_self"
-                                        href="single_property.php">
-                                        Details</a>
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
-                                            Palmer</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                                <div class="item-footer clearfix">
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
-                                            Palmer</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-listing-wrap hz-item-gallery-js card"
-                        data-hz-id="hz-294"
-                        data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/205-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/026-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
-                        <div
-                            class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                            <div
-                                class="d-flex align-items-center h-100">
-                                <div class="item-header">
-                                    <span
-                                        class="label-featured label">Featured</span>
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-sale/"
-                                            class="label-status label status-color-18">
-                                            For Sale
-                                        </a>
-                                    </div>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price"> $876,000
-                                        </li>
-                                        <li class="item-sub-price">
-                                            $7,600/sq ft</li>
-                                    </ul>
-                                    <ul class="item-tools">
-                                        <li
-                                            class="item-tool item-preview">
-                                            <span
-                                                class="hz-show-lightbox-js"
-                                                data-listid="294"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Preview">
-                                                <i class="las la-compress-arrows-alt"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-favorite">
-                                            <span
-                                                class="add-favorite-js item-tool-favorite"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Favourite"
-                                                data-listid="294">
-                                                <i class="las la-heart"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-compare">
-                                            <span
-                                                class="houzez_compare compare-294 item-tool-compare show-compare-panel"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Add to Compare"
-                                                data-listing_id="294"
-                                                data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/205-592x444.jpg">
-                                                <i class="las la-plus-circle"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <div class="listing-image-wrap">
-                                        <div class="listing-thumb">
-                                            <a target="_self"
-                                                href="https://demo01.houzez.co/property/penthouse-apartment/"
-                                                class="listing-featured-thumb hover-effect">
-                                                <img loading="lazy"
-                                                    decoding="async"
-                                                    width="592"
-                                                    height="444"
-                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/205-592x444.jpg"
-                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                    alt srcset
-                                                    data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/205-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/205-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/205-120x90.jpg 120w"
-                                                    sizes="(max-width: 592px) 100vw, 592px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="preview_loader"></div>
-                                </div>
-                                <div class="item-body flex-grow-1">
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-sale/"
-                                            class="label-status label status-color-18">
-                                            For Sale
-                                        </a>
-                                    </div>
-                                    <h2 class="item-title">
-                                        <a target="_self"
-                                            href="https://demo01.houzez.co/property/penthouse-apartment/">Design
-                                            apartment</a>
-                                    </h2>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price"> $876,000
-                                        </li>
-                                        <li class="item-sub-price">
-                                            $7,600/sq ft</li>
-                                    </ul>
-                                    <address class="item-address">Quincy
-                                        St, Brooklyn, NY, USA</address>
-                                    <ul
-                                        class="item-amenities item-amenities-with-icons">
-                                        <li class="h-beds"><i class="las la-bed"></i><span
-                                                class="item-amenities-text">Beds:</span>
-                                            <span
-                                                class="hz-figure">3</span>
-                                        </li>
-                                        <li class="h-baths"><i class="las la-bath"></i><span
-                                                class="item-amenities-text">Baths:</span>
-                                            <span
-                                                class="hz-figure">2</span>
-                                        </li>
-                                        <li class="h-cars"><i
-                                                class="las la-car mr-1"></i><span
-                                                class="item-amenities-text">Garage:</span>
-                                            <span
-                                                class="hz-figure">1</span>
-                                        </li>
-                                        <li class="h-area"><i
-                                                class="las la-ruler-combined mr-1"></i><span
-                                                class="hz-figure">2560</span>
-                                            <span
-                                                class="hz-figure area_postfix">Sq
-                                                Ft</span>
-                                        </li>
-                                        <li class="h-type">
-                                            <span>Apartment</span>
-                                        </li>
-                                    </ul> <a
-                                        class="btn btn-primary btn-item "
-                                        target="_self"
-                                        href="https://demo01.houzez.co/property/penthouse-apartment/">
-                                        Details</a>
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/mike-moore/">Mike
-                                            Moore</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                                <div class="item-footer clearfix">
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/mike-moore/">Mike
-                                            Moore</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-listing-wrap hz-item-gallery-js card"
-                        data-hz-id="hz-344"
-                        data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/018-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/018-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
-                        <div
-                            class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                            <div
-                                class="d-flex align-items-center h-100">
-                                <div class="item-header">
-                                    <span
-                                        class="label-featured label">Featured</span>
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-rent/"
-                                            class="label-status label status-color-34">
-                                            For Rent
-                                        </a>
-                                    </div>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price">
-                                            $11,000/mo</li>
-                                    </ul>
-                                    <ul class="item-tools">
-                                        <li
-                                            class="item-tool item-preview">
-                                            <span
-                                                class="hz-show-lightbox-js"
-                                                data-listid="344"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Preview">
-                                                <i class="las la-compress-arrows-alt"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-favorite">
-                                            <span
-                                                class="add-favorite-js item-tool-favorite"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Favourite"
-                                                data-listid="344">
-                                                <i class="las la-heart"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-compare">
-                                            <span
-                                                class="houzez_compare compare-344 item-tool-compare show-compare-panel"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Add to Compare"
-                                                data-listing_id="344"
-                                                data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg">
-                                                <i class="las la-plus-circle"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <div class="listing-image-wrap">
-                                        <div class="listing-thumb">
-                                            <a target="_self"
-                                                href="single_property.php"
-                                                class="listing-featured-thumb hover-effect">
-                                                <img loading="lazy"
-                                                    decoding="async"
-                                                    width="592"
-                                                    height="444"
-                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg"
-                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                    alt srcset
-                                                    data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/018-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/03/018-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/03/018.jpg 1170w"
-                                                    sizes="(max-width: 592px) 100vw, 592px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="preview_loader"></div>
-                                </div>
-                                <div class="item-body flex-grow-1">
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-rent/"
-                                            class="label-status label status-color-34">
-                                            For Rent
-                                        </a>
-                                    </div>
-                                    <h2 class="item-title">
-                                        <a target="_self"
-                                            href="single_property.php">New
-                                            apartment nice view</a>
-                                    </h2>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price">
-                                            $11,000/mo</li>
-                                    </ul>
-                                    <address class="item-address">8100 S
-                                        Ashland Ave, Chicago, IL 60620,
-                                        USA</address>
-                                    <ul
-                                        class="item-amenities item-amenities-with-icons">
-                                        <li class="h-beds">
-                                            <i class="las la-bed"></i><span
-                                                class="item-amenities-text">Beds:</span>
-                                            <span
-                                                class="hz-figure">3</span>
-                                        </li>
-                                        <li class="h-baths"><i class="las la-bath"></i><span
-                                                class="item-amenities-text">Bath:</span>
-                                            <span
-                                                class="hz-figure">1</span>
-                                        </li>
-                                        <li class="h-cars"><i
-                                                class="las la-car mr-1"></i><span
-                                                class="item-amenities-text">Garage:</span>
-                                            <span
-                                                class="hz-figure">1</span>
-                                        </li>
-                                        <li class="h-area"><i
-                                                class="las la-ruler-combined mr-1"></i><span
-                                                class="hz-figure">1789</span>
-                                            <span
-                                                class="hz-figure area_postfix">Sq
-                                                Ft</span>
-                                        </li>
-                                        <li class="h-type">
-                                            <span>Apartment</span>
-                                        </li>
-                                    </ul> <a
-                                        class="btn btn-primary btn-item "
-                                        target="_self"
-                                        href="single_property.php">
-                                        Details</a>
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
-                                            Palmer</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                                <div class="item-footer clearfix">
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/samuel-palmer/">Samuel
-                                            Palmer</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item-listing-wrap hz-item-gallery-js card"
-                        data-hz-id="hz-282"
-                        data-images="[{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/043-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/036-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/040-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/035-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/030-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/012-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/047-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/008-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/045-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444},{&quot;image&quot;:&quot;https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/043-592x444.jpg&quot;,&quot;alt&quot;:&quot;&quot;,&quot;width&quot;:592,&quot;height&quot;:444}]">
-                        <div
-                            class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                            <div
-                                class="d-flex align-items-center h-100">
-                                <div class="item-header">
-                                    <span
-                                        class="label-featured label">Featured</span>
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-sale/"
-                                            class="label-status label status-color-18">
-                                            For Sale
-                                        </a>
-                                    </div>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price"> $540,000
-                                        </li>
-                                        <li class="item-sub-price">
-                                            $3,700/sq ft</li>
-                                    </ul>
-                                    <ul class="item-tools">
-                                        <li
-                                            class="item-tool item-preview">
-                                            <span
-                                                class="hz-show-lightbox-js"
-                                                data-listid="282"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Preview">
-                                                <i class="las la-compress-arrows-alt"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-favorite">
-                                            <span
-                                                class="add-favorite-js item-tool-favorite"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Favourite"
-                                                data-listid="282">
-                                                <i class="las la-heart"></i>
-                                            </span>
-                                        </li>
-                                        <li
-                                            class="item-tool item-compare">
-                                            <span
-                                                class="houzez_compare compare-282 item-tool-compare show-compare-panel"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Add to Compare"
-                                                data-listing_id="282"
-                                                data-listing_image="https://demo01.houzez.co/wp-content/uploads/2016/03/043-592x444.jpg">
-                                                <i class="las la-plus-circle"></i>
-                                            </span>
-                                        </li>
-                                    </ul>
-                                    <div class="listing-image-wrap">
-                                        <div class="listing-thumb">
-                                            <a target="_self"
-                                                href="https://demo01.houzez.co/property/renovated-studio/"
-                                                class="listing-featured-thumb hover-effect">
-                                                <img loading="lazy"
-                                                    decoding="async"
-                                                    width="592"
-                                                    height="444"
-                                                    src="data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%20592%20444%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3C%2Fsvg%3E"
-                                                    data-src="https://demo01.houzez.co/wp-content/uploads/2016/03/043-592x444.jpg"
-                                                    class="houzez-lazyload img-fluid wp-post-image"
-                                                    alt srcset
-                                                    data-srcset="https://demo01.houzez.co/wp-content/uploads/2016/03/043-592x444.jpg 592w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-300x225.jpg 300w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-1024x768.jpg 1024w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-768x576.jpg 768w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-584x438.jpg 584w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-800x600.jpg 800w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-120x90.jpg 120w, https://demo01.houzez.co/wp-content/uploads/2016/03/043-496x372.jpg 496w, https://demo01.houzez.co/wp-content/uploads/2016/03/043.jpg 1170w"
-                                                    sizes="(max-width: 592px) 100vw, 592px" />
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="preview_loader"></div>
-                                </div>
-                                <div class="item-body flex-grow-1">
-                                    <div
-                                        class="labels-wrap labels-right">
-                                        <a href="https://demo01.houzez.co/status/for-sale/"
-                                            class="label-status label status-color-18">
-                                            For Sale
-                                        </a>
-                                    </div>
-                                    <h2 class="item-title">
-                                        <a target="_self"
-                                            href="https://demo01.houzez.co/property/renovated-studio/">Renovated
-                                            studio</a>
-                                    </h2>
-                                    <ul
-                                        class="item-price-wrap hide-on-list">
-                                        <li class="item-price"> $540,000
-                                        </li>
-                                        <li class="item-sub-price">
-                                            $3,700/sq ft</li>
-                                    </ul>
-                                    <address class="item-address">194
-                                        Mercer Street, 627 Broadway, New
-                                        York, NY 10012, USA</address>
-                                    <ul
-                                        class="item-amenities item-amenities-with-icons">
-                                        <li class="h-beds"><i class="las la-bed"></i><span
-                                                class="item-amenities-text">Beds:</span>
-                                            <span
-                                                class="hz-figure">4</span>
-                                        </li>
-                                        <li class="h-baths"><i class="las la-bath"></i><span
-                                                class="item-amenities-text">Baths:</span>
-                                            <span
-                                                class="hz-figure">2</span>
-                                        </li>
-                                        <li class="h-cars"><i
-                                                class="las la-car mr-1"></i><span
-                                                class="item-amenities-text">Garage:</span>
-                                            <span
-                                                class="hz-figure">1</span>
-                                        </li>
-                                        <li class="h-area"><i
-                                                class="las la-ruler-combined mr-1"></i><span
-                                                class="hz-figure">1200</span>
-                                            <span
-                                                class="hz-figure area_postfix">Sq
-                                                Ft</span>
-                                        </li>
-                                        <li class="h-type">
-                                            <span>Studio</span>
-                                        </li>
-                                    </ul> <a
-                                        class="btn btn-primary btn-item "
-                                        target="_self"
-                                        href="https://demo01.houzez.co/property/renovated-studio/">
-                                        Details</a>
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/michelle-ramirez/">Michelle
-                                            Ramirez</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                                <div class="item-footer clearfix">
-                                    <div class="item-author">
-                                        <i
-                                            class="las la-user mr-1"></i>
-                                        <a
-                                            href="https://demo01.houzez.co/agent/michelle-ramirez/">Michelle
-                                            Ramirez</a>
-                                    </div>
-                                    <div class="item-date">
-                                        <i
-                                            class="las la-paperclip mr-1"></i>
-                                        4 years ago
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                        </div>
-                        <div class="pagination-wrap">
-                            <nav>
-                                <ul class="pagination justify-content-center">
-                                    <li class="page-item disabled"><a class="page-link" aria-label="Previous"><i class="las la-angle-left"></i></a></li>
-                                    <li class="page-item active"><a class="page-link"
-                                            href="https://demo01.houzez.co/grid-default/">1 <span
-                                                class="sr-only"></span></a></li>
-                                    <li class="page-item"><a class="page-link"
-                                            href="https://demo01.houzez.co/grid-default/page/2/">2</a></li>
-                                    <li class="page-item"><a class="page-link"
-                                            href="https://demo01.houzez.co/grid-default/page/3/">3</a></li>
-                                    <li class="page-item"><a class="page-link"
-                                            href="https://demo01.houzez.co/grid-default/page/2/" aria-label="Next"><i class="las la-angle-right"></i></a></li>
-                                    <li class="page-item"><a class="page-link"
-                                            href="https://demo01.houzez.co/grid-default/page/6/" aria-label="Next"><i class="las la-angle-double-right"></i></a></li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                 </div>
@@ -1680,7 +1621,7 @@
                     <div class="header-inner-wrap">
                         <div class="navbar d-flex align-items-center">
                             <div class="logo logo-splash">
-                                <a href="https://demo01.houzez.co/" class="logo-img">
+                                <a href="#" class="logo-img">
                                     <img src="assets/dreamwell-light.png" alt="">
                                 </a>
                             </div>
@@ -1752,7 +1693,7 @@
                                     value="72b9d8b37a" /><input type="hidden" name="_wp_http_referer"
                                     value="/grid-default/" /> <input type="hidden" name="action" id="login_action"
                                     value="houzez_login">
-                                <input type="hidden" name="redirect_to" value="https://demo01.houzez.co/my-profile/">
+                                <input type="hidden" name="redirect_to" >
                                 <button id="houzez-login-btn" type="submit" class="btn btn-primary btn-full-width">
                                     <span class="btn-loader houzez-loader-js"></span> Login
                                 </button>
