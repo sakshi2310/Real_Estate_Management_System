@@ -381,7 +381,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                                                     decoding="async"
                                                                                                     width="592"
                                                                                                     height="444"
-                                                                                                    src="User/upload/<?php echo $row['Image1']; ?>"
+                                                                                                    src="User/upload/11.jpeg"
                                                                                                     data-src=""
                                                                                                     class="houzez-lazyload img-fluid wp-post-image"
                                                                                                     alt srcset
