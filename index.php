@@ -378,7 +378,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
                                                                                                 <img
-                                                                                                    src="assets/banner.jpg"
+                                                                                                    src="User/upload/<?php echo $row['Image1']; ?>"
                                                                                                     alt=""
                                                                                                 />
                                                                                             </a>

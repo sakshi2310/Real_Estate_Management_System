@@ -32,7 +32,30 @@ if(isset($_GET['del_id']))
   header('location:View_property.php');
 }
 
+// search
 
+$sql = "select * from property_register where Approval_status='Decline' order by id DESC";
+if (isset($_POST['search']) && isset($_POST['search_by'])) {
+  $search = mysqli_real_escape_string($con, $_POST['search']);
+  $search_by = mysqli_real_escape_string($con, $_POST['search_by']);
+  
+  // Build SQL query based on the selected search criterion
+  if ($search_by == 'Title') {
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Property_title LIKE '%$search%' ORDER BY id DESC";
+  } elseif ($search_by == 'Type') {
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Type LIKE '%$search%' ORDER BY id DESC";
+  } elseif ($search_by == 'Status') {
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Status LIKE '%$search%' ORDER BY id DESC";
+  } elseif ($search_by == 'Area') {
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Area_name LIKE '%$search%' ORDER BY id DESC";
+  } elseif ($search_by == 'BHK') {
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND BHK_plot LIKE '%$search%' ORDER BY id DESC";
+  } elseif ($search_by == 'Date') {
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Pro_date LIKE '%$search%' ORDER BY id DESC";
+  }
+}
+
+$res = mysqli_query($con,$sql);
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +67,29 @@ if(isset($_GET['del_id']))
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css file -->
     <link rel="stylesheet" href="css/style.css">
-    
+    <script src="../Admin/assets/js/jquery.min.js"></script>
+    <script>
+      
+      $(document).ready(function() {
+            $('#Search').keyup(function() {
+                var search = $(this).val();
+                var search_by = $('#Search_by').val()
+                console.log(search);
+                console.log(search_by);
+                $.ajax({
+                    type: "POST",
+                    data: { search_by:search_by,search: search },
+                    url: "View_Approved_property.php", 
+                    success: function(response) {
+                        $('#data-table').html($(response).find('#data-table').html());
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error: " + error); // Log errors if any
+                }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 
@@ -98,7 +143,7 @@ if(isset($_GET['del_id']))
                             </tr>
                         </thead>
             <tr>
-                   <tbody>
+                   <tbody id="data-table">
                           <?php while($row = mysqli_fetch_assoc($res)) { ?>
                           <tr>  
                              <td><?php echo $row['id']; ?></td>
