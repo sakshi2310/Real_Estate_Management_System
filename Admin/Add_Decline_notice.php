@@ -12,28 +12,67 @@ if(!isset($_SESSION['admin_id']))
 
 if(isset($_GET['Decline_id']))
 {
-  $decline_id = $_GET['Decline_id'];
-  $approval_status = "Decline";
-  $sql_update = "update property_register set Approval_status='$approval_status' where id =".$decline_id;
-  mysqli_query($con,$sql_update);
-}
+  if(isset($_POST['save']))
+  {
+    $title = $_POST['title'];
+    $dec = $_POST['dec'];
+    $decline_id = $_GET['Decline_id'];
+    $sql = "insert into deline_notice (Property_id,Pro_title,Pro_dec,Deline_date) value ('$decline_id','$title','$dec', CURDATE())";
+    mysqli_query($con,$sql);
+
+    $decline_id = $_GET['Decline_id'];
+    $approval_status = "Decline";
+    $sql_update = "update property_register set Approval_status='$approval_status' where id =".$decline_id;
+    mysqli_query($con,$sql_update);
+    header('location:View_Decline_property.php');
+
+  }
+ }
 else{
   $decline_id = '';
 }
 
-if(isset($_POST['save']))
-{
-  $title = $_POST['title'];
-  $dec = $_POST['dec'];
 
-  $sql = "insert into deline_notice (Property_id,Pro_title,Pro_dec) value ('$decline_id','$title','$dec')";
-  mysqli_query($con,$sql);
-  header('location:View_Decline_property.php');
-}
 
 
  ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Kaiadmin - Bootstrap 5 Admin Dashboard</title>
+    <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
+    <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
 
+      
+    </script>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+</head>
+<body>
 <?php 
     include('sidebar.php');
 ?>
