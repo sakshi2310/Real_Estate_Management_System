@@ -3,9 +3,6 @@
 // Connention
 $con=mysqli_connect("localhost","root","","real_estate");
 
-// For fetch all admins
-$sql = "select * from admin";
-$res = mysqli_query($con,$sql);
 
 // page session
 session_start();
@@ -39,7 +36,30 @@ if(isset($_GET['del_admin']))
   mysqli_query($con,$sql_del);
   header('location:View_admin.php');
 }
+//Serach By
+// For fetch all admins
+$sql = "select * from admin";
 
+if(isset($_POST['search']) && isset($_POST['search_by']))
+{
+  $search = mysqli_real_escape_string($con,$_POST['search']);
+  $search_by = mysqli_real_escape_string($con,$_POST['search_by']);
+
+  if($search_by == 'Name')
+  {
+    $sql = "select * from admin where User_name LIKE '%$search%'";
+  }elseif($search_by == 'Contact')
+  {
+    $sql = "select * from admin where Contact LIKE '%$search%'";
+  }elseif($search_by == 'Status')
+  {
+    $sql = "select * from admin where Status LIKE '%$search%'";
+  }
+
+}
+
+
+$res = mysqli_query($con,$sql);
 
 
 
@@ -71,23 +91,25 @@ if(isset($_GET['del_admin']))
             },
         });
 
-        // $(document).ready(function() {
-        //     $('#Search').keyup(function() {
-        //         var search = $(this).val();
-        //         console.log(search);
-        //         $.ajax({
-        //             type: "POST",
-        //             data: { search: search },
-        //             url: "View_feature.php", 
-        //             success: function(response) {
-        //                 $('#data-table').html($(response).find('#data-table').html());
-        //             },
-        //             error: function(xhr, status, error) {
-        //                 console.log("Error: " + error); // Log errors if any
-        //         }
-        //         });
-        //     });
-        // });
+        $(document).ready(function() {
+            $('#Search').keyup(function() {
+                var search = $(this).val();
+                var search_by = $('#Search_by').val()
+                console.log(search);
+                console.log(search_by);
+                $.ajax({
+                    type: "POST",
+                    data: { search_by:search_by,search: search },
+                    url: "View_admin.php", 
+                    success: function(response) {
+                        $('#data-table').html($(response).find('#data-table').html());
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error: " + error); // Log errors if any
+                }
+                });
+            });
+        });
     </script>
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -149,14 +171,15 @@ if(isset($_GET['del_admin']))
                   <input
                     type="text"
                     placeholder="Search ..."
-                    class="form-control" 
+                    class="form-control"
+                    id="Search" 
                   />
                   <div class="dropdown position-absolute top-0 start-0">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Select</option>
-                  <option value="1">Name</option>
-                  <option value="2">Contact</option>
-                  <option value="3">Status</option>
+                <select class="form-select" aria-label="Default select example" name="Search_by" id="Search_by">
+                  <option >Select</option>
+                  <option value="Name" selected>Name</option>
+                  <option value="Contact">Contact</option>
+                  <option value="Status">Status</option>
                 </select>
               </div>
       </div>
@@ -175,7 +198,7 @@ if(isset($_GET['del_admin']))
                           <th scope="col">Edit</th>
                         </tr>
                       </thead>
-                      <tbody>
+                      <tbody id="data-table">
                         <?php while($row = mysqli_fetch_assoc($res)) { ?>
                         <tr>
                           <td><?php echo $row['id']; ?></td>
