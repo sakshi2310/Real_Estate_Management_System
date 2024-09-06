@@ -132,6 +132,7 @@ $res = mysqli_query($con,$sql);
                 </select>
               </div>
             </div>
+      </div>
              <!-- table start -->
            <table class="table bg-transparent">
             <thead>
