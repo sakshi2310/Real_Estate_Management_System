@@ -151,15 +151,13 @@ if(isset($_GET['del_admin']))
                     placeholder="Search ..."
                     class="form-control" 
                   />
-                <div class="dropdown position-absolute top-0 start-0">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Select Option
-                </button>
-                <ul class="dropdown-menu dropdown-menu-dark">
-                  <li><a class="dropdown-item active" href="#">Name</a></li>
-                  <li><a class="dropdown-item" href="#">Contact</a></li>
-                  <li><a class="dropdown-item" href="#">Status</a></li>
-                </ul>
+                  <div class="dropdown position-absolute top-0 start-0">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select</option>
+                  <option value="1">Name</option>
+                  <option value="2">Contact</option>
+                  <option value="3">Status</option>
+                </select>
               </div>
       </div>
       </div>

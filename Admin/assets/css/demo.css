@@ -695,3 +695,12 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   left: 140px !important;
   position: relative;
 }
+.serachbar .dropdown select,
+.search-dropdown .dropdown select{
+  padding: 9px 20px !important;
+  width: 141px !important;
+  background-color: #F5F7FD !important;
+  &:focus{
+    box-shadow: none !important;
+  }
+}
