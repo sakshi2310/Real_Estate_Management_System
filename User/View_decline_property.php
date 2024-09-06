@@ -56,7 +56,32 @@ if(isset($_GET['del_id']))
       ?>
         <div class="col-10 p-4 ms-auto">
           <div class="main-Borad p-5 bg-white">
-            <h5 class="page-title">View Data</h5>
+          <div class="table-header d-flex justify-content-between py-3">
+              <h5 class="page-title mb-0">View Data</h5>
+              <div class="input-group position-relative search-dropdown w-auto">
+                  <div class="input-group-prepend">
+                    <button type="submit" class="btn btn-search pe-1">
+                      <i class="bi bi-search search-icn"></i>
+                    </button>
+                  </div>
+                  <input
+                    type="text"
+                    placeholder="Search ..."
+                    class="form-control" 
+                    id="Search"
+                  />
+                  <div class="dropdown position-absolute top-0 start-0">
+                  <select class="form-select" aria-label="Default select example" id="Search_by">
+                  <option >Select</option>
+                  <option value="Title" selected>Title</option>
+                  <option value="Type">Properyt Type</option>
+                  <option value="Status">Status</option>
+                  <option value="Area">Area</option>
+                  <option value="BHK">BHK</option>
+                  <option value="Date">Date</option>
+                </select>
+              </div>
+            </div>
              <!-- table start -->
            <table class="table bg-transparent">
             <thead>

@@ -690,16 +690,26 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 }
 .search-dropdown input{
   padding-left: 150px !important;
+  &:focus{
+    border: 1px solid #ddd !important;
+    background-color: transparent !important;
+  }
 }
 .search-dropdown i{
   left: 140px !important;
   position: relative;
+}
+.serachbar ,
+.search-dropdown{
+  z-index: 999 !important;
 }
 .serachbar .dropdown select,
 .search-dropdown .dropdown select{
   padding: 9px 20px !important;
   width: 141px !important;
   background-color: #F5F7FD !important;
+  position: relative;
+  z-index: 99 !important;
   &:focus{
     box-shadow: none !important;
   }
