@@ -9,6 +9,11 @@ $sql_user = "select * from users where id=".$row['User_id'];
 $res_user = mysqli_query($con,$sql); 
 $row_user = mysqli_fetch_assoc($res_user);
 
+
+$sql_explore = "SELECT * FROM `property_register` WHERE Approval_status='Approved' ORDER BY id DESC LIMIT 6";
+$res_explore = mysqli_query($con, $sql_explore);
+
+
 ?>
 
         <!-- header start -->
@@ -375,7 +380,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                                     <div class="listing-image-wrap">
                                                                                         <div class="listing-thumb">
                                                                                             <a target="_self"
-                                                                                                href="#"
+                                                                                                href="single_property.php?pro_id<?php echo $row_explore['id']; ?>"
                                                                                                 class="listing-featured-thumb hover-effect">
                                                                                                 <img
                                                                                                     src="User/upload/<?php echo $row['Image1']; ?>"
@@ -1387,6 +1392,7 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                             class="property-cards-module property-cards-module-v1 property-cards-module-3-cols">
                                                             <div id="module_properties"
                                                                 class="listing-view grid-view card-deck grid-view-3-cols">
+                                                                <?php while($row_explore=mysqli_fetch_assoc($res_explore)){ ?>
                                                                 <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
                                                                     data-hz-id="hz-115"
                                                                     data-images="">
@@ -1400,39 +1406,38 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                                     <a target="_self"
                                                                                                 href="#"
                                                                                                 class="listing-featured-thumb hover-effect">
-                                                                                                <img src="assets/banner-slider.jpg">
+                                                                                                <img src="User/upload/<?php echo $row_explore['Image1']; ?>">
                                                                                             </a>
                                                                                 </a>
                                                                             </div>
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="#">Light
-                                                                                and modern apartment</a>
+                                                                                href="#"><?php echo $row_explore['Property_title'];?></a>
                                                                         </h2>
                                                                         <ul
                                                                             class="item-amenities item-amenities-with-icons">
                                                                             <li class="h-beds"><i class="las la-bed"></i><span
                                                                                     class="item-amenities-text">Beds:</span>
-                                                                                <span class="hz-figure">4</span>
+                                                                                <span class="hz-figure"><?php echo $row_explore['Badrooms']; ?></span>
                                                                             </li>
                                                                             <li class="h-baths"><i class="las la-bath"></i></i><span
                                                                                     class="item-amenities-text">Baths:</span>
-                                                                                <span class="hz-figure">2</span>
+                                                                                <span class="hz-figure"><?php echo $row_explore['Bathroom']; ?></span>
                                                                             </li>
                                                                             <li class="h-cars"><i
                                                                                     class="las la-car mr-1"></i><span
-                                                                                    class="item-amenities-text">Garage:</span>
-                                                                                <span class="hz-figure">1</span>
+                                                                                    class="item-amenities-text">Balcony:</span>
+                                                                                <span class="hz-figure"><?php echo $row_explore['Balcony']; ?></span>
                                                                             </li>
                                                                         </ul>
                                                                         <ul class="item-price-wrap hide-on-list">
-                                                                            <li class="item-price">$4,500/mo</li>
+                                                                            <li class="item-price"><?php echo $row_explore['Area_name']; ?></li>
                                                                         </ul>
                                                                         <div class="labels-wrap labels-right">
                                                                             <a href="#"
                                                                                 class="label-status label status-color-34">
-                                                                                For Rent
+                                                                                For <?php echo $row_explore['Status']; ?>
                                                                             </a>
                                                                         </div>
                                                                         <span
@@ -1472,416 +1477,9 @@ $row_user = mysqli_fetch_assoc($res_user);
                                                                         <div class="preview_loader"></div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
-                                                                    data-hz-id="hz-344"
-                                                                    data-images="#">
-                                                                    <div
-                                                                        class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
-                                                                        <div class="listing-image-wrap">
-                                                                            <div class="listing-thumb">
-                                                                            <a target="_self"
-                                                                                                href="#"
-                                                                                                class="listing-featured-thumb hover-effect">
-                                                                                                <img src="assets/banner-slider.jpg">
-                                                                                            </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <h2 class="item-title">
-                                                                            <a target="_self"
-                                                                                href="#">New
-                                                                                apartment nice view</a>
-                                                                        </h2>
-                                                                        <ul
-                                                                            class="item-amenities item-amenities-with-icons">
-                                                                            <li class="h-beds"><i class="las la-bed"></i><span
-                                                                                    class="item-amenities-text">Beds:</span>
-                                                                                <span class="hz-figure">3</span>
-                                                                            </li>
-                                                                            <li class="h-baths"><i class="las la-bath"></i><span
-                                                                                    class="item-amenities-text">Bath:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                            <li class="h-cars"><i
-                                                                                    class="las la-car mr-1"></i><span
-                                                                                    class="item-amenities-text">Garage:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul class="item-price-wrap hide-on-list">
-                                                                            <li class="item-price">$11,000/mo</li>
-                                                                        </ul>
-                                                                        <div class="labels-wrap labels-right">
-                                                                            <a href="#"
-                                                                                class="label-status label status-color-34">
-                                                                                For Rent
-                                                                            </a>
-                                                                        </div>
-                                                                        <span
-                                                                            class="label-featured label">Featured</span>
-                                                                        <ul class="item-tools">
-                                                                            <li class="item-tool item-preview">
-                                                                                <span class="hz-show-lightbox-js"
-                                                                                    data-listid="344"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Preview">
-                                                                                    <i
-                                                                                        class="houzez-icon icon-expand-3"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-favorite">
-                                                                                <span
-                                                                                    class="add-favorite-js item-tool-favorite"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Favourite" data-listid="344">
-                                                                                    <i class="las la-heart"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-compare">
-                                                                                <span
-                                                                                    class="houzez_compare compare-344 item-tool-compare show-compare-panel"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Add to Compare"
-                                                                                    data-listing_id="344"
-                                                                                    data-listing_image="#">
-                                                                                    <i class="las la-plus-circle"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="preview_loader"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
-                                                                    data-hz-id="hz-112"
-                                                                    data-images="#">
-                                                                    <div
-                                                                        class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
-                                                                        <div class="listing-image-wrap">
-                                                                            <div class="listing-thumb">
-                                                                            <a target="_self"
-                                                                                                href="#"
-                                                                                                class="listing-featured-thumb hover-effect">
-                                                                                                <img src="assets/banner-slider.jpg">
-                                                                                            </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <h2 class="item-title">
-                                                                            <a target="_self"
-                                                                                href="#">Complex</a>
-                                                                        </h2>
-                                                                        <ul
-                                                                            class="item-amenities item-amenities-with-icons">
-                                                                            <li class="h-beds"><i class="las la-bed"></i><span
-                                                                                    class="item-amenities-text">Beds:</span>
-                                                                                <span class="hz-figure">5</span>
-                                                                            </li>
-                                                                            <li class="h-baths"><i class="las la-bath"></i><span
-                                                                                    class="item-amenities-text">Baths:</span>
-                                                                                <span class="hz-figure">3</span>
-                                                                            </li>
-                                                                            <li class="h-cars"><i
-                                                                                    class="las la-car mr-1"></i><span
-                                                                                    class="item-amenities-text">Garage:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul class="item-price-wrap hide-on-list">
-                                                                            <li class="item-price">$5,600/mo</li>
-                                                                        </ul>
-                                                                        <div class="labels-wrap labels-right">
-                                                                            <a href="#"
-                                                                                class="label-status label status-color-34">
-                                                                                For Rent
-                                                                            </a>
-                                                                        </div>
-                                                                        <ul class="item-tools">
-                                                                            <li class="item-tool item-preview">
-                                                                                <span class="hz-show-lightbox-js"
-                                                                                    data-listid="112"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Preview">
-                                                                                    <i
-                                                                                        class="houzez-icon icon-expand-3"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-favorite">
-                                                                                <span
-                                                                                    class="add-favorite-js item-tool-favorite"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Favourite" data-listid="112">
-                                                                                    <i class="las la-heart"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-compare">
-                                                                                <span
-                                                                                    class="houzez_compare compare-112 item-tool-compare show-compare-panel"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Add to Compare"
-                                                                                    data-listing_id="112"
-                                                                                    data-listing_image="#">
-                                                                                    <i class="las la-plus-circle"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="preview_loader"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
-                                                                    data-hz-id="hz-123"
-                                                                    data-images="">
-                                                                    <div
-                                                                        class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
-                                                                        <div class="listing-image-wrap">
-                                                                            <div class="listing-thumb">
-                                                                            <a target="_self"
-                                                                                                href="#"
-                                                                                                class="listing-featured-thumb hover-effect">
-                                                                                                <img src="assets/banner-slider.jpg">
-                                                                                            </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <h2 class="item-title">
-                                                                            <a target="_self"
-                                                                                href="#">Green
-                                                                                view design</a>
-                                                                        </h2>
-                                                                        <ul
-                                                                            class="item-amenities item-amenities-with-icons">
-                                                                            <li class="h-beds"><i class="las la-bed"></i><span
-                                                                                    class="item-amenities-text">Bed:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                            <li class="h-baths"><i class="las la-bath"></i><span
-                                                                                    class="item-amenities-text">Bath:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                            <li class="h-cars"><i
-                                                                                    class="las la-car mr-1"></i><span
-                                                                                    class="item-amenities-text">Garage:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul class="item-price-wrap hide-on-list">
-                                                                            <li class="item-price">$3,500/mo</li>
-                                                                        </ul>
-                                                                        <div class="labels-wrap labels-right">
-                                                                            <a href="#"
-                                                                                class="label-status label status-color-34">
-                                                                                For Rent
-                                                                            </a>
-                                                                        </div>
-                                                                        <ul class="item-tools">
-                                                                            <li class="item-tool item-preview">
-                                                                                <span class="hz-show-lightbox-js"
-                                                                                    data-listid="123"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Preview">
-                                                                                    <i
-                                                                                        class="houzez-icon icon-expand-3"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-favorite">
-                                                                                <span
-                                                                                    class="add-favorite-js item-tool-favorite"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Favourite" data-listid="123">
-                                                                                    <i class="las la-heart"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-compare">
-                                                                                <span
-                                                                                    class="houzez_compare compare-123 item-tool-compare show-compare-panel"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Add to Compare"
-                                                                                    data-listing_id="123"
-                                                                                    data-listing_image="">
-                                                                                    <i class="las la-plus-circle"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="preview_loader"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
-                                                                    data-hz-id="hz-125"
-                                                                    data-images="">
-                                                                    <div
-                                                                        class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
-                                                                        <div class="listing-image-wrap">
-                                                                            <div class="listing-thumb">
-                                                                            <a target="_self"
-                                                                                                href="#"
-                                                                                                class="listing-featured-thumb hover-effect">
-                                                                                                <img src="assets/banner-slider.jpg">
-                                                                                            </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <h2 class="item-title">
-                                                                            <a target="_self"
-                                                                                href="#">Modern
-                                                                                loft apartment</a>
-                                                                        </h2>
-                                                                        <ul
-                                                                            class="item-amenities item-amenities-with-icons">
-                                                                            <li class="h-beds"><i class="las la-bed"></i><span
-                                                                                    class="item-amenities-text">Bed:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                            <li class="h-baths"><i class="las la-bath"></i><span
-                                                                                    class="item-amenities-text">Bath:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                            <li class="h-cars"><i
-                                                                                    class="las la-car mr-1"></i><span
-                                                                                    class="item-amenities-text">Garage:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul class="item-price-wrap hide-on-list">
-                                                                            <li class="item-price">$3,750/mo</li>
-                                                                        </ul>
-                                                                        <div class="labels-wrap labels-right">
-                                                                            <a href="#"
-                                                                                class="label-status label status-color-34">
-                                                                                For Rent
-                                                                            </a>
-                                                                        </div>
-                                                                        <ul class="item-tools">
-                                                                            <li class="item-tool item-preview">
-                                                                                <span class="hz-show-lightbox-js"
-                                                                                    data-listid="125"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Preview">
-                                                                                    <i
-                                                                                        class="houzez-icon icon-expand-3"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-favorite">
-                                                                                <span
-                                                                                    class="add-favorite-js item-tool-favorite"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Favourite" data-listid="125">
-                                                                                    <i class="las la-heart"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-compare">
-                                                                                <span
-                                                                                    class="houzez_compare compare-125 item-tool-compare show-compare-panel"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Add to Compare"
-                                                                                    data-listing_id="125"
-                                                                                    data-listing_image="">
-                                                                                    <i class="las la-plus-circle"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="preview_loader"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="item-listing-wrap hz-item-gallery-js item-listing-wrap-v3 card"
-                                                                    data-hz-id="hz-127"
-                                                                    data-images="">
-                                                                    <div
-                                                                        class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
-                                                                        <div class="listing-image-wrap">
-                                                                            <div class="listing-thumb">
-                                                                            <a target="_self"
-                                                                                                href="#"
-                                                                                                class="listing-featured-thumb hover-effect">
-                                                                                                <img src="assets/banner-slider.jpg">
-                                                                                            </a>
-                                                                            </div>
-                                                                        </div>
-                                                                        <h2 class="item-title">
-                                                                            <a target="_self"
-                                                                                href="#">Renovated
-                                                                                kitchen apartment</a>
-                                                                        </h2>
-                                                                        <ul
-                                                                            class="item-amenities item-amenities-with-icons">
-                                                                            <li class="h-beds"><i class="las la-bed"></i><span
-                                                                                    class="item-amenities-text">Beds:</span>
-                                                                                <span class="hz-figure">2</span>
-                                                                            </li>
-                                                                            <li class="h-baths"><i class="las la-bath"></i><span
-                                                                                    class="item-amenities-text">Baths:</span>
-                                                                                <span class="hz-figure">2</span>
-                                                                            </li>
-                                                                            <li class="h-cars"><i
-                                                                                    class="las la-car mr-1"></i><span
-                                                                                    class="item-amenities-text">Garage:</span>
-                                                                                <span class="hz-figure">1</span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <ul class="item-price-wrap hide-on-list">
-                                                                            <li class="item-price">$1,890/mo</li>
-                                                                        </ul>
-                                                                        <div class="labels-wrap labels-right">
-                                                                            <a href="#"
-                                                                                class="label-status label status-color-34">
-                                                                                For Rent
-                                                                            </a>
-                                                                        </div>
-                                                                        <ul class="item-tools">
-                                                                            <li class="item-tool item-preview">
-                                                                                <span class="hz-show-lightbox-js"
-                                                                                    data-listid="127"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Preview">
-                                                                                    <i
-                                                                                        class="houzez-icon icon-expand-3"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-favorite">
-                                                                                <span
-                                                                                    class="add-favorite-js item-tool-favorite"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Favourite" data-listid="127">
-                                                                                    <i class="las la-heart"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                            <li class="item-tool item-compare">
-                                                                                <span
-                                                                                    class="houzez_compare compare-127 item-tool-compare show-compare-panel"
-                                                                                    data-toggle="tooltip"
-                                                                                    data-placement="top"
-                                                                                    title="Add to Compare"
-                                                                                    data-listing_id="127"
-                                                                                    data-listing_image="">
-                                                                                    <i class="las la-plus-circle"></i>
-                                                                                </span>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <div class="preview_loader"></div>
-                                                                    </div>
-                                                                </div>
+                                                               <?php } ?>
                                                             </div>
-                                                            <div id="fave-pagination-loadmore"
-                                                                class="load-more-wrap fave-load-more">
-                                                                <a class="btn btn-primary-outlined btn-load-more"
-                                                                    data-paged="2" data-prop-limit="6"
-                                                                    data-card="item-v3" data-type="apartment"
-                                                                    data-status="for-rent" data-state data-city
-                                                                    data-country data-area data-label data-user-role
-                                                                    data-featured-prop data-offset
-                                                                    data-sortby="featured_top" href="#">
-                                                                    <span class="btn-loader houzez-loader-js"></span>
-                                                                    Load More
-                                                                </a>
-                                                            </div>
+                                                            
                                                         </div>
                                                     </div>
                                                 </div>
