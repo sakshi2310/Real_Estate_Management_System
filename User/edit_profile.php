@@ -74,15 +74,6 @@ if(isset($_POST['edit']))
                 <div class="col-12  d-flex justify-content-between align-items-center">
                     <h5 class="page-title">Edit Profile Info</h5>
                     
-                    <div class="input-group Serach-input">
-                            <i class="bi bi-search"></i>
-                            <input
-                                type="text"
-                                placeholder="Search ..."
-                                class="form-control"
-                            />
-                    </div>
-                </div>
             </div>
             <form action="" method="post"  enctype="multipart/form-data">
             <div class="row">

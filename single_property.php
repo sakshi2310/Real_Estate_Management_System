@@ -104,12 +104,12 @@ $res_select = mysqli_query($con,$sql_select);
                         </div>
                         <ul class="item-tools">
                             <li class="item-tool houzez-favorite">
-                                <span class="add-favorite-js item-tool-favorite" data-listid="17405">
+                                <span class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center" data-listid="17405">
                                     <i class="las la-heart"></i>
                                 </span>
                             </li>
                             <li class="item-tool houzez-share">
-                                <span class="item-tool-share dropdown-toggle" data-toggle="dropdown">
+                                <span class="item-tool-share d-flex justify-content-center align-items-center dropdown-toggle" data-toggle="dropdown">
                                     <i class="las la-share-alt"></i>
                                 </span>
                                 <div class="dropdown-menu dropdown-menu-right item-tool-dropdown-menu">
@@ -139,7 +139,7 @@ $res_select = mysqli_query($con,$sql_select);
                                 </div>
                             </li>
                             <li class="item-tool houzez-print " data-propid="17405">
-                                <span class="item-tool-compare">
+                                <span class="item-tool-compare d-flex justify-content-center align-items-center">
                                     <i class="las la-print"></i>
                                 </span>
                             </li>
@@ -165,26 +165,26 @@ $res_select = mysqli_query($con,$sql_select);
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-8 col-md-12 bt-content-wrap">
+                    <div class="col-12">
                         <div class="property-top-wrap">
                             <div class="property-banner">
                                 <div class="container hidden-on-mobile">
                                     <ul class="nav nav-pills houzez-media-tabs-5" id="pills-tab" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="pills-gallery-tab" data-toggle="pill"
+                                            <a class="nav-link d-flex justify-content-center align-items-center active" id="pills-gallery-tab" data-toggle="pill"
                                                 href="#pills-gallery" role="tab" aria-controls="pills-gallery"
                                                 aria-selected="true">
                                                 <i class="las la-image"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " id="pills-map-tab" data-toggle="pill" href="#pills-map"
+                                            <a class="nav-link d-flex justify-content-center align-items-centerd-flex justify-content-center align-items-center" id="pills-map-tab" data-toggle="pill" href="#pills-map"
                                                 role="tab" aria-controls="pills-map" aria-selected="true">
                                                 <i class="las la-map"></i>
                                             </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link " id="pills-street-view-tab" data-toggle="pill"
+                                            <a class="nav-link d-flex justify-content-center align-items-centerd-flex justify-content-center align-items-center" id="pills-street-view-tab" data-toggle="pill"
                                                 href="#pills-street-view" role="tab" aria-controls="pills-street-view"
                                                 aria-selected="false">
                                                 <i class="las la-street-view"></i>
@@ -195,7 +195,7 @@ $res_select = mysqli_query($con,$sql_select);
                                 <div class="tab-content" id="pills-tabContent">
                                     <div class="tab-pane show active" id="pills-gallery" role="tabpanel"
                                         aria-labelledby="pills-gallery-tab">
-                                        <div class="top-gallery-section">
+                                        <div class="top-gallery-section h-auto">
                                             <div id="property-gallery-js"
                                                 class="houzez-photoswipe listing-slider cS-hidden">
                                                 <div
@@ -291,21 +291,21 @@ $res_select = mysqli_query($con,$sql_select);
                                     <div class="mobile-property-tools clearfix">
                                         <ul class="nav nav-pills houzez-media-tabs-5" id="pills-tab" role="tablist">
                                             <li class="nav-item">
-                                                <a class="nav-link active" id="pills-gallery-tab" data-toggle="pill"
+                                                <a class="nav-link d-flex justify-content-center align-items-center" id="pills-gallery-tab" data-toggle="pill"
                                                     href="#pills-gallery" role="tab" aria-controls="pills-gallery"
                                                     aria-selected="true">
                                                     <i class="las la-image"></i>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link " id="pills-map-tab" data-toggle="pill"
+                                                <a class="nav-link d-flex justify-content-center align-items-centerd-flex justify-content-center align-items-center" id="pills-map-tab" data-toggle="pill"
                                                     href="#pills-map" role="tab" aria-controls="pills-map"
                                                     aria-selected="true">
                                                     <i class="las la-map"></i>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
-                                                <a class="nav-link " id="pills-street-view-tab" data-toggle="pill"
+                                                <a class="nav-link d-flex justify-content-center align-items-center" id="pills-street-view-tab" data-toggle="pill"
                                                     href="#pills-street-view" role="tab"
                                                     aria-controls="pills-street-view" aria-selected="false">
                                                     <i class="las la-street-view"></i>
@@ -314,12 +314,12 @@ $res_select = mysqli_query($con,$sql_select);
                                         </ul>
                                         <ul class="item-tools">
                                             <li class="item-tool houzez-favorite">
-                                                <span class="add-favorite-js item-tool-favorite" data-listid="17405">
+                                                <span class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center d-flex justify-content-center align-items-center" data-listid="17405">
                                                     <i class="las la-heart"></i>
                                                 </span>
                                             </li>
                                             <li class="item-tool houzez-share">
-                                                <span class="item-tool-share dropdown-toggle" data-toggle="dropdown">
+                                                <span class="item-tool-share d-flex justify-content-center align-items-center dropdown-toggle" data-toggle="dropdown">
                                                     <i class="las la-share-alt"></i>
                                                 </span>
                                                 <div class="dropdown-menu dropdown-menu-right item-tool-dropdown-menu">
@@ -354,7 +354,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                 </div>
                                             </li>
                                             <li class="item-tool houzez-print " data-propid="17405">
-                                                <span class="item-tool-compare">
+                                                <span class="item-tool-compare d-flex justify-content-center align-items-center">
                                                     <i class="las la-print"></i>
                                                 </span>
                                             </li>
@@ -1624,7 +1624,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-favorite">
                                                         <span
-                                                            class="add-favorite-js item-tool-favorite"
+                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center d-flex justify-content-center align-items-center"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Favourite"
@@ -1635,7 +1635,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-compare">
                                                         <span
-                                                            class="houzez_compare compare-282 item-tool-compare show-compare-panel"
+                                                            class="houzez_compare compare-282 item-tool-compare d-flex justify-content-center align-items-center show-compare-panel"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Add to Compare"
@@ -1785,7 +1785,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-favorite">
                                                         <span
-                                                            class="add-favorite-js item-tool-favorite"
+                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center d-flex justify-content-center align-items-center"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Favourite"
@@ -1796,7 +1796,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-compare">
                                                         <span
-                                                            class="houzez_compare compare-282 item-tool-compare show-compare-panel"
+                                                            class="houzez_compare compare-282 item-tool-compare d-flex justify-content-center align-items-center show-compare-panel"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Add to Compare"
@@ -1944,7 +1944,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-favorite">
                                                         <span
-                                                            class="add-favorite-js item-tool-favorite"
+                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center d-flex justify-content-center align-items-center"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Favourite"
@@ -1955,7 +1955,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-compare">
                                                         <span
-                                                            class="houzez_compare compare-344 item-tool-compare show-compare-panel"
+                                                            class="houzez_compare compare-344 item-tool-compare d-flex justify-content-center align-items-center show-compare-panel"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Add to Compare"
@@ -2104,7 +2104,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <li
                                                         class="item-tool item-favorite">
                                                         <span
-                                                            class="add-favorite-js item-tool-favorite"
+                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center"
                                                             data-toggle="tooltip"
                                                             data-placement="top"
                                                             title="Favourite"
@@ -2231,416 +2231,6 @@ $res_select = mysqli_query($con,$sql_select);
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 bt-sidebar-wrap houzez_sticky">
-                        <aside id="sidebar" class="sidebar-wrap">
-                            <div class="property-form-tabs-wrap">
-                                <div class="property-form-tabs">
-                                    <ul class="nav nav-tabs">
-                                        <li class="nav-item">
-                                            <a class="nav-link active" data-toggle="tab" href="#tab_tour"
-                                                role="tab"><span class="tab-title">Schedule a tour</span></a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" data-toggle="tab" href="#tab_agent_form"
-                                                role="tab"><span class="tab-title">Request Info</span></a>
-                                        </li>
-                                    </ul>
-                                    <div class="tab-content">
-                                        <div class="property-form-tabs-tab-pane tab-pane fade show active" id="tab_tour"
-                                            role="tabpanel">
-                                            <form method="post" action="#">
-                                                <input type="hidden" name="schedule_contact_form_ajax"
-                                                    value="b2300d9565" />
-                                                <input type="hidden" name="property_permalink" />
-                                                <input type="hidden" name="property_title" value="New Apartment" />
-                                                <input type="hidden" name="action" value="houzez_schedule_send_message">
-                                                <input type="hidden" name="listing_id" value="17405">
-                                                <input type="hidden" name="is_listing_form" value="yes">
-                                                <input type="hidden" name="is_schedule_form" value="yes">
-                                                <input type="hidden" name="agent_id" value="17365">
-                                                <input type="hidden" name="agent_type" value="agent_info">
-                                                <input type="hidden" name="target_email"
-                                                    value="mike.m&#111;&#111;re&#64;ho&#117;z&#101;z.&#99;&#111;">
-                                                <div class="property-schedule-tour-form-wrap">
-                                                    <div class="property-schedule-tour-day-form">
-                                                        <div class="tour-day-form-slide-arrow next sche-tabs-next-js">
-                                                            <i class="las la-angle-right"></i>
-                                                        </div>
-                                                        <div class="tour-day-form-slide-arrow prev sche-tabs-prev-js">
-                                                            <i class="las la-angle-left"></i>
-                                                        </div>
-                                                        <div class="property-schedule-tour-day-form-slide-wrap">
-                                                            <div class="property-schedule-tour-day-form-slide-v2">
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Sun 04 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Sun<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">04</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Mon 05 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Mon<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">05</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Tue 06 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Tue<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">06</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Wed 07 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Wed<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">07</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Thu 08 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Thu<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">08</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Fri 09 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Fri<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">09</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Sat 10 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Sat<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">10</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Sun 11 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Sun<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">11</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Mon 12 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Mon<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">12</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Tue 13 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Tue<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">13</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Wed 14 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Wed<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">14</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Thu 15 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Thu<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">15</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Fri 16 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Fri<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">16</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Sat 17 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Sat<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">17</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="hz-date-item">
-                                                                    <div class="form-group">
-                                                                        <label class="control control--radio">
-                                                                            <input name="schedule_date" type="radio"
-                                                                                value="Sun 18 Aug">
-                                                                            <span class="control__indicator">
-                                                                                Sun<br>
-                                                                                <span
-                                                                                    class="control__indicator_day">18</span><br>
-                                                                                Aug </span>
-                                                                        </label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="property-schedule-tour-form-title">Tour Type</div>
-                                                    <div
-                                                        class="property-schedule-tour-type-form d-flex justify-content-between">
-                                                        <div class="form-group">
-                                                            <label class="control control--radio">
-                                                                <input name="schedule_tour_type" type="radio" checked
-                                                                    value="In Person">
-                                                                <span class="control__indicator">In Person</span>
-                                                            </label>
-                                                        </div>
-
-                                                        <div class="form-group">
-                                                            <label class="control control--radio">
-                                                                <input name="schedule_tour_type" type="radio"
-                                                                    value="Video Chat">
-                                                                <span class="control__indicator">Video Chat</span>
-                                                            </label>
-                                                        </div>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <select name="schedule_time"
-                                                            class="selectpicker form-control bs-select-hidden"
-                                                            title="Time" data-live-search="false">
-                                                            <option value="10:00 am">10:00 am</option>
-                                                            <option value="10:15 pm"> 10:15 pm</option>
-                                                            <option value="10:30 pm"> 10:30 pm</option>
-                                                            <option value="12:00 pm"> 12:00 pm</option>
-                                                            <option value="12:15 pm"> 12:15 pm</option>
-                                                            <option value="12:30 pm"> 12:30 pm</option>
-                                                            <option value="12:45 pm"> 12:45 pm</option>
-                                                            <option value="01:00 pm"> 01:00 pm</option>
-                                                            <option value="01:15 pm"> 01:15 pm</option>
-                                                            <option value="01:30 pm"> 01:30 pm</option>
-                                                            <option value="01:45 pm"> 01:45 pm</option>
-                                                            <option value="02:00 pm"> 02:00 pm</option>
-                                                            <option value="05:00 pm"> 05:00 pm</option>
-                                                        </select>
-
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input class="form-control" name="name" placeholder="Name"
-                                                            type="text">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input class="form-control" name="phone" placeholder="Phone"
-                                                            type="text">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input class="form-control" name="email" placeholder="Email"
-                                                            type="email">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <textarea class="form-control" name="message" rows="3"
-                                                            placeholder="Enter your Message"></textarea>
-                                                    </div>
-                                                    <div class="form-group form-group-terms">
-                                                        <label class="control control--checkbox hz-no-gdpr-checkbox">
-                                                            <div class="gdpr-text-wrap">
-                                                                By submitting this form I agree to <a target="_blank"
-                                                                    href="#">Terms
-                                                                    of Use</a>
-                                                            </div>
-                                                        </label>
-                                                    </div>
-                                                    <div class="form_messages"></div>
-                                                    <button
-                                                        class="schedule_contact_form btn btn-secondary btn-full-width">
-                                                        <span class="btn-loader houzez-loader-js"></span> Submit a Tour
-                                                        Request
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="property-tabs-module-tab-pane tab-pane fade" id="tab_agent_form"
-                                            role="tabpanel">
-                                            <div class="property-form-wrap">
-                                                <div class="property-form clearfix">
-                                                    <form method="post" action="#">
-                                                        <div class="agent-details">
-                                                            <div class="d-flex align-items-center">
-                                                                <div class="agent-image"><img class="rounded"
-                                                                        src="assets/profile.webp"
-                                                                        alt="Mike Moore" width="70" height="70"></div>
-                                                                <ul class="agent-information list-unstyled">
-                                                                    <li class="agent-name"><i
-                                                                            class="las la-user mr-1"></i>
-                                                                        Mike Moore</li>
-                                                                    <li class="agent-link"><a
-                                                                            href="#">View
-                                                                            Listings</a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" name="name" value type="text"
-                                                                placeholder="Name">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" name="mobile" value type="text"
-                                                                placeholder="Phone">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <input class="form-control" name="email" value type="email"
-                                                                placeholder="Email">
-                                                        </div>
-                                                        <div class="form-group form-group-textarea">
-                                                            <textarea class="form-control hz-form-message"
-                                                                name="message" rows="4"
-                                                                placeholder="Message">Hello, I am interested in [New Apartment]</textarea>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <select name="user_type"
-                                                                class="selectpicker form-control bs-select-hidden"
-                                                                title="Select">
-                                                                <option value="buyer">I'm a buyer</option>
-                                                                <option value="tennant">I'm a tennant</option>
-                                                                <option value="agent">I'm an agent</option>
-                                                                <option value="other">Other</option>
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label
-                                                                class="control control--checkbox m-0 hz-terms-of-use hz-no-gdpr-checkbox">
-                                                                <div class="gdpr-text-wrap">
-                                                                    By submitting this form I agree to <a
-                                                                        target="_blank"
-                                                                        href="#">Terms
-                                                                        of Use</a>
-                                                                </div>
-                                                            </label>
-                                                        </div>
-                                                        <input type="hidden" name="target_email"
-                                                            value="m&#105;&#107;&#101;.m&#111;&#111;&#114;&#101;&#64;&#104;ou&#122;&#101;&#122;.c&#111;">
-                                                        <input type="hidden" name="property_agent_contact_security"
-                                                            value="bb9a5e698d" />
-                                                        <input type="hidden" name="property_permalink" />
-                                                        <input type="hidden" name="property_title"
-                                                            value="New Apartment" />
-                                                        <input type="hidden" name="property_id" value="Hz-11" />
-                                                        <input type="hidden" name="action"
-                                                            value="houzez_property_agent_contact">
-                                                        <input type="hidden" name="listing_id" value="17405">
-                                                        <input type="hidden" name="is_listing_form" value="yes">
-                                                        <input type="hidden" name="agent_id" value="17365">
-                                                        <input type="hidden" name="agent_type" value="agent_info">
-                                                        <div class="form_messages"></div>
-                                                        <button type="button"
-                                                            class="houzez_agent_property_form btn btn-secondary btn-half-width">
-                                                            <span class="btn-loader houzez-loader-js"></span> Send
-                                                            Message
-                                                        </button>
-                                                        <a href="tel:8976541258"
-                                                            class="btn btn-secondary-outlined btn-half-width">
-
-                                                            <span class="hide-on-click">Call</span>
-                                                            <span class="show-on-click">897 654 1258</span>
-
-                                                        </a>
-                                                        <a target="_blank"
-                                                            href="#"
-                                                            class="btn btn-secondary-outlined btn-full-width mt-10"><i
-                                                                class="lab la-whatsapp mr-1"></i>
-                                                            WhatsApp</a>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </aside>
                     </div>
                 </div>
             </div>
@@ -3067,7 +2657,6 @@ $res_select = mysqli_query($con,$sql_select);
                                 </div>
                             </div>
                         </div>
-                    </div>
                     <div class="modal-footer">
                     </div>
                 </div>

@@ -4379,7 +4379,7 @@ h1.entry-title {
     overflow: hidden;
 }
 .listing-featured-thumb img{
-    height: 100%;
+    height: 280px;
     width: 100%;
     object-fit: cover;
 }

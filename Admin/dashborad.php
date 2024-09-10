@@ -1,55 +1,10 @@
-<?php 
-$con=mysqli_connect("localhost","root","","real_estate");
-
-// page session
-session_start();
-if(!isset($_SESSION['admin_id']))
-{
-  header("location:index.php");
-}
-
-
-$admin_id = $_SESSION['admin_id'];
-
-$sql = "select * from admin where id=".$admin_id;
-$res = mysqli_query($con,$sql);
-$row = mysqli_fetch_assoc($res);
-
-
-
-
-if(isset($_POST['edit']))
-{
-  $name = $_POST['Name'];
-  $email = $_POST['Email'];
-  $password = $_POST['Password'];
-  $Mb_num = $_POST['MoblieNo'];
-  // $image = $_FILES['Image']['name'];
-
-  if (isset($_FILES['Image']) && $_FILES['Image']['error'] === UPLOAD_ERR_OK)
-  {
-    $image = $_FILES['Image']['name'];
-    
-    if (!empty($proprty_row['Image'])) {
-      unlink('upload/' . $proprty_row['Image']); // Delete the existing image
-    }
-    move_uploaded_file($_FILES['Image']['tmp_name'], 'upload/' . $image);
-  }else{
-    $image = $row['Image']; 
-  }
-
-
-    $sql_update = "update admin set User_name='$name',Email='$email',Password='$password',Contact='$Mb_num',Image='$image' where id =".$admin_id;
-    mysqli_query($con,$sql_update);
-    header('location:View_profile.php');
-}
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashborad</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Admin - Edit Profile</title>
     <meta content="width=device-width, initial-scale=1.0, shrink-to-fit=no" name="viewport" />
     <link rel="icon" href="assets/img/kaiadmin/favicon.ico" type="image/x-icon" />
     <!-- Fonts and icons -->
@@ -80,6 +35,7 @@ if(isset($_POST['edit']))
     <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link rel="stylesheet" href="assets/css/demo.css" />
+    
 </head>
 <body>
 
@@ -97,7 +53,7 @@ if(isset($_POST['edit']))
           include('header.php');
         ?>
 
-<div class="container">
+      <div class="container">
           <div class="page-inner">
             <div class="page-header">
               <h3 class="fw-bold mb-3">Dashborad </h3>
@@ -127,30 +83,14 @@ if(isset($_POST['edit']))
                   <div class="card-header">
                   <div class="col-12 d-flex w-100 justify-content-between">
                     <h5 class="page-title mb-0">Edit Profile Info</h5>
-                    <div class="input-group position-relative search-dropdown">
-                  <div class="input-group-prepend">
-                    <button type="submit" class="btn btn-search pe-1">
-                      <i class="fa fa-search search-icon"></i>
-                    </button>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Search ..."
-                    class="form-control" 
-                    id="Search"
-                  />
-                  <div class="dropdown position-absolute top-0 start-0">
-                  <select class="form-select" aria-label="Default select example" id="Search_by">
-                  <option >Select</option>
-                  <option value="Title" selected>Title</option>
-                  <option value="Type">Properyt Type</option>
-                  <option value="Status">Status</option>
-                  <option value="Area">Area</option>
-                  <option value="BHK">BHK</option>
-                  <option value="Date">Date</option>
-                </select>
-              </div>
-      </div>
+                    <div class="input-group Serach-input">
+                            <i class="fa fa-search search-icon"></i>
+                            <input
+                                type="text"
+                                placeholder="Search ..."
+                                class="form-control"
+                            />
+                    </div>
                     </div>
                   </div>
                   <form method="post" enctype="multipart/form-data"> 
@@ -193,7 +133,6 @@ if(isset($_POST['edit']))
               </div>
           </div>
         </div>
-
 
 
        <?php 

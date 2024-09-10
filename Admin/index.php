@@ -71,8 +71,6 @@ if(isset($_POST['Login_admin']))
             </div>
         </form>
     </div>
-        
 </div>
-    
 </body>
 </html>
