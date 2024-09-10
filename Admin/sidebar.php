@@ -28,7 +28,7 @@
           <div class="sidebar-content">
             <ul class="nav nav-secondary">
                <li class="nav-item active">
-                <a href="add_features.php">
+                <a href="dashborad.php">
                  <i class="fas fa-tachometer-alt"></i>
                   <p>Dashboard</p>
                 </a>
@@ -169,7 +169,7 @@
               </li>
                  
               <li class="nav-item">
-                <a href="add_features.php">
+                <a href="view_reviews.php">
                   <i class="fas fa-star-half-alt"></i>
                   <p>Reviews</p>
                 </a>

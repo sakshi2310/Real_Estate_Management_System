@@ -381,10 +381,10 @@ $res_explore = mysqli_query($con, $sql_explore);
                                                                                         <div class="listing-thumb">
                                                                                             <a target="_self"
                                                                                                 href="single_property.php?pro_id<?php echo $row_explore['id']; ?>"
-                                                                                                class="listing-featured-thumb hover-effect">
+                                                                                                class="listing-featured-thumb hover-effect overflow-hidden">
                                                                                                 <img
-                                                                                                    src="User/upload/<?php echo $row['Image1']; ?>"
-                                                                                                    alt=""
+                                                                                                    src="User/upload/<?php echo $row['Image1']; ?> "
+                                                                                                    alt="" 
                                                                                                 />
                                                                                             </a>
                                                                                         </div>
