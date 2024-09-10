@@ -1,4 +1,28 @@
-      <!-- header start -->
+<?php 
+
+$con=mysqli_connect("localhost","root","","real_estate");
+
+if(isset($_POST['save']))
+{
+    
+    
+    $email = $_POST['Email'];
+    $title = $_POST['Title'];
+    $rating = $_POST['Rating'];
+    $review = $_POST['Review'];
+    $property_id = $_GET['pro_id'];
+    // $property_id = 1;
+    $sql = "insert into property_review (Email,Title,Rating,Review,Property_id,Date) values ('$email','$title','$rating','$review','$property_id',CURDATE())";
+    mysqli_query($con,$sql);
+}
+$property_id = $_GET['pro_id'];
+$sql_select ="select * from property_review where Property_id=".$property_id;
+$res_select = mysqli_query($con,$sql_select);
+
+?> 
+ 
+ 
+ <!-- header start -->
       <?php
             include('header-light.php');
          ?>
@@ -1452,7 +1476,9 @@
                                 </div>
                                 <input type="hidden" name="review_paged" id="review_paged" value="1">
                                 <input type="hidden" name="total_pages" id="total_pages" value="1">
+
                                 <ul id="houzez_reviews_container" class="review-list-wrap list-unstyled">
+                                    <?php while($row = mysqli_fetch_assoc($res_select)) { ?>
                                     <li id="review-17881" class="property-review">
                                         <div class="d-flex">
                                             <div class="review-image flex-grow-1">
@@ -1462,7 +1488,7 @@
                                             </div>
                                             <div class="review-message">
                                                 <div class="d-flex align-items-center">
-                                                    <h4 class="review-title">eger</h4>
+                                                    <h4 class="review-title"><?php echo $row['Title'];?></h4>
                                                     <div class="rating-score-wrap flex-grow-1">
                                                         <span class="star"><i class="icon-rating full-star"></i></span>
                                                         <span class="star"><i class="icon-rating empty-star"></i></span>
@@ -1472,9 +1498,8 @@
                                                     </div>
                                                 </div>
                                                 <time class="review-date"><i
-                                                        class="las la-paperclip mr-1"></i> 3 months
-                                                    ago</time>
-                                                <p>fzfz</p>
+                                                        class="las la-paperclip mr-1"></i><?php echo $row['Date'];?> </time>
+                                                <p><?php echo $row['Review'];?></p>
                                                 <div class="review-like mt-2">
                                                     <ul class="likes-container-js list-inline">
                                                         <li class="list-inline-item"><span class="vote-msg"></span></li>
@@ -1498,94 +1523,7 @@
                                             </div>
                                         </div>
                                     </li>
-                                    <li id="review-17689" class="property-review">
-                                        <div class="d-flex">
-                                            <div class="review-image flex-grow-1">
-                                                <img class="rounded-circle"
-                                                    src="assets/profile.webp"
-                                                    width="64" height="64" alt="thumb">
-                                            </div>
-                                            <div class="review-message">
-                                                <div class="d-flex align-items-center">
-                                                    <h4 class="review-title">hola</h4>
-                                                    <div class="rating-score-wrap flex-grow-1">
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating empty-star"></i></span>
-                                                        <span class="star"><i class="icon-rating empty-star"></i></span>
-                                                    </div>
-                                                </div>
-                                                <time class="review-date"><i
-                                                        class="las la-paperclip mr-1"></i> 2 years ago</time>
-                                                <p>saludos esto es una prueba</p>
-                                                <div class="review-like mt-2">
-                                                    <ul class="likes-container-js list-inline">
-                                                        <li class="list-inline-item"><span class="vote-msg"></span></li>
-                                                        <span class="btn-loader houzez-loader-js"></span>
-                                                        <li class="list-inline-item review-like-button">
-                                                            <a class="hz-like-dislike-js" data-id="17689"
-                                                                data-type="likes" data-msg="You have already voted">
-                                                                <i class="las la-thumbs-up mr-1"></i>
-                                                            </a>
-                                                            <span class="likes-count">1</span>
-                                                        </li>
-                                                        <li class="list-inline-item review-dislike-button">
-                                                            <a class="hz-like-dislike-js" data-id="17689"
-                                                                data-type="dislikes" data-msg="You have already voted">
-                                                                <i class="las la-thumbs-down mr-1"></i>
-                                                            </a>
-                                                            <span class="dislikes-count">1</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li id="review-17686" class="property-review">
-                                        <div class="d-flex">
-                                            <div class="review-image flex-grow-1">
-                                                <img class="rounded-circle"
-                                                    src="assets/profile.webp"
-                                                    width="64" height="64" alt="thumb">
-                                            </div>
-                                            <div class="review-message">
-                                                <div class="d-flex align-items-center">
-                                                    <h4 class="review-title">jlnlkn</h4>
-                                                    <div class="rating-score-wrap flex-grow-1">
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                                    </div>
-                                                </div>
-                                                <time class="review-date"><i
-                                                        class="las la-paperclip mr-1"></i> 2 years ago</time>
-                                                <p>asdasd</p>
-                                                <div class="review-like mt-2">
-                                                    <ul class="likes-container-js list-inline">
-                                                        <li class="list-inline-item"><span class="vote-msg"></span></li>
-                                                        <span class="btn-loader houzez-loader-js"></span>
-                                                        <li class="list-inline-item review-like-button">
-                                                            <a class="hz-like-dislike-js" data-id="17686"
-                                                                data-type="likes" data-msg="You have already voted">
-                                                                <i class="las la-thumbs-up mr-1"></i>
-                                                            </a>
-                                                            <span class="likes-count">1</span>
-                                                        </li>
-                                                        <li class="list-inline-item review-dislike-button">
-                                                            <a class="hz-like-dislike-js" data-id="17686"
-                                                                data-type="dislikes" data-msg="You have already voted">
-                                                                <i class="las la-thumbs-down mr-1"></i>
-                                                            </a>
-                                                            <span class="dislikes-count">0</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    <?php } ?>
                                 </ul>
                                 <div class="block-wrap" id="property-review-form">
                                     <div class="block-title-wrap">
@@ -1593,34 +1531,26 @@
                                     </div>
                                     <div class="block-content-wrap">
                                         <form method="post">
-                                            <input type="hidden" name="review-security" value="91ced8c7e3" />
-                                            <input type="hidden" name="listing_id" value="17405" />
-                                            <input type="hidden" name="review_id" value="0" />
-                                            <input type="hidden" name="listing_title" value="New Apartment" />
-                                            <input type="hidden" name="permalink"/>
-                                            <input type="hidden" name="review_post_type" value="property">
-                                            <input type="hidden" name="action" value="houzez_submit_review">
-                                            <input type="hidden" name="is_update" value>
                                             <div class="form_messages"></div>
                                             <div class="row">
                                                 <div class="col-md-12 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Email</label>
-                                                        <input class="form-control" name="review_email"
+                                                        <input class="form-control" name="Email"
                                                             placeholder="you@example.com" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Title</label>
-                                                        <input class="form-control" name="review_title" value
+                                                        <input class="form-control" name="Title" value
                                                             placeholder="Enter a title" type="text">
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="form-group">
                                                         <label>Rating</label>
-                                                        <select name="review_stars"
+                                                        <select name="Rating"
                                                             class="selectpicker form-control bs-select-hidden"
                                                             title="Select" data-live-search="false">
                                                             <option value>Select</option>
@@ -1635,15 +1565,16 @@
                                                 <div class="col-sm-12 col-xs-12">
                                                     <div class="form-group form-group-textarea">
                                                         <label>Review</label>
-                                                        <textarea class="form-control" name="review" rows="5"
+                                                        <textarea class="form-control" name="Review" rows="5"
                                                             placeholder="Write a review"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 col-xs-12">
-                                                    <button id="submit-review"
+                                                    <input type="submit" value="Submit Review" name="save" class="btn btn-secondary btn-sm-full-width">
+                                                    <!-- <button id="submit-review" type="submit" name="save" value="save"
                                                         class="btn btn-secondary btn-sm-full-width">
-                                                        <span class="btn-loader houzez-loader-js"></span> Submit Review
-                                                    </button>
+                                                        <span class="houzez-loader-js"></span> Submit Review
+                                                    </button> -->
                                                 </div>
                                             </div>
                                         </form>
