@@ -416,7 +416,16 @@
                 console.log("Failure at Presize of Slider:" + e)
             }
             //});
-        };</script>
+        };
+        
+         // pre-loader
+            $(document).ready(function(){
+            setTimeout(function(){
+                $('.pre-loader').fadeOut();
+            },3000);
+            });
+        
+        </script>
 
 
     <!-- favicon icon -->
@@ -427,11 +436,26 @@
 
 	<!-- custom css file -->
     <link rel="stylesheet" href="css/style.css">
+
+     <!-- jqueary file -->
+    <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
+    <script src="assets/js/jqueary-1.11.0.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
     
 </head>
 
 <body
     class="home page-template page-template-template page-template-template-homepage page-template-templatetemplate-homepage-php page page-id-10 houzez-theme houzez-footer-position transparent-yes houzez-header-elementor elementor-default elementor-kit-17100 elementor-page elementor-page-10">
+    
+    <!-- preloader start -->
+    <!-- <div class="pre-loader">
+        <div class="loader">
+            <img src="assets/loader.gif" alt="">
+        </div>
+    </div> -->
+    <!-- preloader end -->
+    
     <div class="nav-mobile nav-mobile-js">
         <div class="main-nav navbar slideout-menu slideout-menu-left" id="nav-mobile">
             <ul id="mobile-main-nav" class="navbar-nav mobile-navbar-nav">
@@ -535,3 +559,7 @@
                 </div>
             </div>
         </header>
+
+
+
+
