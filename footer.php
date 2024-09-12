@@ -135,3 +135,18 @@
             </div>
         </div>
     </footer>
+
+
+         <!-- jqueary file -->
+    <!-- <script src="assets/js/jquery-3.7.1.min.js"></script> -->
+    <script src="assets/js/jqueary-1.11.0.min.js"></script>
+    <script src="assets/js/script.js"></script>
+
+    <script>
+    // Pre-loader functionality
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('.pre-loader').fadeOut('slow'); // Added 'slow' to smooth the fade out transition
+        }, 3000); // 3-second delay before hiding the preloader
+    });
+</script>

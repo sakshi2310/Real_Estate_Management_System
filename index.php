@@ -1403,11 +1403,7 @@ $res_explore = mysqli_query($con, $sql_explore);
                                                                                 <a target="_self"
                                                                                     href="#"
                                                                                     class="listing-featured-thumb hover-effect">
-                                                                                    <a target="_self"
-                                                                                                href="#"
-                                                                                                class="listing-featured-thumb hover-effect">
                                                                                                 <img src="User/upload/<?php echo $row_explore['Image1']; ?>">
-                                                                                            </a>
                                                                                 </a>
                                                                             </div>
                                                                         </div>

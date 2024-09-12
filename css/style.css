@@ -4400,7 +4400,7 @@ h1.entry-title {
 
 
 /* pre-loafder */
-.pre-loader {
+/* .pre-loader {
     width: 100%;
     height: 100vh;
     background-color: #fff;
@@ -4408,11 +4408,29 @@ h1.entry-title {
     top: 0;
     left: 0;
     z-index: 10000;
-  }
+  } */
 /* HTML: <div class="loader"></div> */
-.loader {
+/* .loader {
     position: fixed;
     top: 45%;
     left: 45%;
     width: 150px;
-  }
+  } */
+
+  .pre-loader {
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    position: fixed; /* Changed from absolute to fixed for better responsiveness */
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    display: flex; /* Center loader using flexbox */
+    align-items: center;
+    justify-content: center;
+}
+
+/* Loader */
+.loader {
+    width: 150px;
+}

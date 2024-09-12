@@ -1586,7 +1586,7 @@ $res_select = mysqli_query($con,$sql_select);
                                     <h2>Similar Listings</h2>
                                 </div>
                                 <div class="listing-view grid-view card-deck">
-                                <div class="item-listing-wrap hz-item-gallery-js card"
+                                <div class="item-listing-wrap hz-item-gallery-js card col-md-4 col-12"
                                     data-hz-id="hz-282">
                                     <div
                                         class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
@@ -1747,7 +1747,7 @@ $res_select = mysqli_query($con,$sql_select);
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item-listing-wrap hz-item-gallery-js card"
+                                <div class="item-listing-wrap hz-item-gallery-js card col-md-4 col-12"
                                     data-hz-id="hz-282">
                                     <div
                                         class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
@@ -1908,7 +1908,7 @@ $res_select = mysqli_query($con,$sql_select);
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item-listing-wrap hz-item-gallery-js card"
+                                <div class="item-listing-wrap hz-item-gallery-js card col-md-4 col-12"
                                     data-hz-id="hz-344">
                                     <div
                                         class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
@@ -2056,167 +2056,6 @@ $res_select = mysqli_query($con,$sql_select);
                                                     <a
                                                         href="#">Samuel
                                                         Palmer</a>
-                                                </div>
-                                                <div class="item-date">
-                                                    <i
-                                                        class="las la-paperclip mr-1"></i>
-                                                    4 years ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-listing-wrap hz-item-gallery-js card"
-                                    data-hz-id="hz-282">
-                                    <div
-                                        class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                                        <div
-                                            class="d-flex align-items-center h-100">
-                                            <div class="item-header">
-                                                <span
-                                                    class="label-featured label">Featured</span>
-                                                <div
-                                                    class="labels-wrap labels-right">
-                                                    <a href="#"
-                                                        class="label-status label status-color-18">
-                                                        For Sale
-                                                    </a>
-                                                </div>
-                                                <ul
-                                                    class="item-price-wrap hide-on-list">
-                                                    <li class="item-price"> $540,000
-                                                    </li>
-                                                    <li class="item-sub-price">
-                                                        $3,700/sq ft</li>
-                                                </ul>
-                                                <ul class="item-tools">
-                                                    <li
-                                                        class="item-tool item-preview">
-                                                        <span
-                                                            class="hz-show-lightbox-js"
-                                                            data-listid="282"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Preview">
-                                                            <i class="las la-compress-arrows-alt"></i>
-                                                        </span>
-                                                    </li>
-                                                    <li
-                                                        class="item-tool item-favorite">
-                                                        <span
-                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Favourite"
-                                                            data-listid="282">
-                                                            <i class="las la-heart"></i>
-                                                        </span>
-                                                    </li>
-                                                    <li
-                                                        class="item-tool item-compare">
-                                                        <span
-                                                            class="houzez_compare compare-282 item-tool-compare show-compare-panel"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Add to Compare"
-                                                            data-listing_id="282">
-                                                            <i class="las la-plus-circle"></i>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                                <div class="listing-image-wrap">
-                                                    <div class="listing-thumb">
-                                                        <a target="_self"
-                                                            href="single_property.php"
-                                                            class="listing-featured-thumb hover-effect">
-                                                            <img loading="lazy"
-                                                                decoding="async"
-                                                                width="592"
-                                                                height="444"
-                                                                src="assets/gallary5.jpg"
-                                                                alt srcset
-                                                                sizes="(max-width: 592px) 100vw, 592px" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="preview_loader"></div>
-                                            </div>
-                                            <div class="item-body flex-grow-1">
-                                                <div
-                                                    class="labels-wrap labels-right">
-                                                    <a href="#"
-                                                        class="label-status label status-color-18">
-                                                        For Sale
-                                                    </a>
-                                                </div>
-                                                <h2 class="item-title">
-                                                    <a target="_self"
-                                                        href="#">Renovated
-                                                        studio</a>
-                                                </h2>
-                                                <ul
-                                                    class="item-price-wrap hide-on-list">
-                                                    <li class="item-price"> $540,000
-                                                    </li>
-                                                    <li class="item-sub-price">
-                                                        $3,700/sq ft</li>
-                                                </ul>
-                                                <address class="item-address">194
-                                                    Mercer Street, 627 Broadway, New
-                                                    York, NY 10012, USA</address>
-                                                <ul
-                                                    class="item-amenities item-amenities-with-icons">
-                                                    <li class="h-beds"><i class="las la-bed"></i><span
-                                                            class="item-amenities-text">Beds:</span>
-                                                        <span
-                                                            class="hz-figure">4</span>
-                                                    </li>
-                                                    <li class="h-baths"><i class="las la-bath"></i><span
-                                                            class="item-amenities-text">Baths:</span>
-                                                        <span
-                                                            class="hz-figure">2</span>
-                                                    </li>
-                                                    <li class="h-cars"><i
-                                                            class="las la-car mr-1"></i><span
-                                                            class="item-amenities-text">Garage:</span>
-                                                        <span
-                                                            class="hz-figure">1</span>
-                                                    </li>
-                                                    <li class="h-area"><i
-                                                            class="las la-ruler-combined mr-1"></i><span
-                                                            class="hz-figure">1200</span>
-                                                        <span
-                                                            class="hz-figure area_postfix">Sq
-                                                            Ft</span>
-                                                    </li>
-                                                    <li class="h-type">
-                                                        <span>Studio</span>
-                                                    </li>
-                                                </ul> <a
-                                                    class="btn btn-primary btn-item "
-                                                    target="_self"
-                                                    href="#">
-                                                    Details</a>
-                                                <div class="item-author">
-                                                    <i
-                                                        class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Michelle
-                                                        Ramirez</a>
-                                                </div>
-                                                <div class="item-date">
-                                                    <i
-                                                        class="las la-paperclip mr-1"></i>
-                                                    4 years ago
-                                                </div>
-                                            </div>
-                                            <div class="item-footer clearfix">
-                                                <div class="item-author">
-                                                    <i
-                                                        class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Michelle
-                                                        Ramirez</a>
                                                 </div>
                                                 <div class="item-date">
                                                     <i
@@ -2450,214 +2289,10 @@ $res_select = mysqli_query($con,$sql_select);
                                 <div class="form_messages"></div>
                                 <button type="button"
                                     class="houzez_agent_property_form btn btn-secondary btn-half-width">
-                                    <span class="btn-loader houzez-loader-js"></span> Send Message
+                                    <span class="btn-loader houzez-loader-js"></span> Send Inquiry
                                 </button>
-                                <a href="tel:8976541258" class="btn btn-secondary-outlined btn-half-width">
-
-                                    <span class="hide-on-click">Call</span>
-                                    <span class="show-on-click">897 654 1258</span>
-
-                                </a>
-                                <a target="_blank"
-                                    href="#"
-                                    class="btn btn-secondary-outlined btn-full-width mt-10"><i
-                                        class="lab la-whatsapp mr-1"></i> WhatsApp</a>
                             </form>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="property-lightbox">
-        <div class="modal fade" id="property-lightbox" tabindex="-1" role="dialog">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <div class="d-flex align-items-center">
-                            <div class="lightbox-logo">
-                                <img class="img-fluid"
-                                    src="assets/dreamwell-light.jpg"
-                                    alt="New Apartment">
-                            </div>
-                            <div class="lightbox-title flex-grow-1">
-                            </div>
-                            <div class="lightbox-tools">
-                                <ul class="list-inline">
-                                    <li class="list-inline-item btn-favorite">
-                                        <a class="add-favorite-js" data-listid="17405" href="#"><i
-                                                class="las la-heartmr-2 "></i> <span
-                                                class="display-none">Favorite</span></a>
-                                    </li>
-                                    <li class="list-inline-item btn-share">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
-                                                class="las la-share-alt mr-2"></i> <span>Share</span></a>
-                                        <div class="dropdown-menu dropdown-menu-right item-tool-dropdown-menu">
-                                            <a class="dropdown-item" target="_blank"
-                                                href="#">
-                                                <i class="lab la-whatsapp mr-1"></i> WhatsApp</a>
-                                            <a class="dropdown-item"
-                                                href="#">
-                                                <i class="lab la-facebook mr-1"></i> Facebook
-                                            </a>
-                                            <a class="dropdown-item"
-                                                href="#">
-                                                <i class="houzez-icon icon-x-logo-twitter-logo-2 mr-1"></i> Twitter
-                                            </a>
-                                            <a class="dropdown-item"
-                                                href="#">
-                                                <i class="houzez-icon icon-social-pinterest mr-1"></i> Pinterest
-                                            </a>
-                                            <a class="dropdown-item"
-                                                href="#">
-                                                <i class="houzez-icon icon-professional-network-linkedin mr-1"></i>
-                                                Linkedin
-                                            </a>
-                                            <a class="dropdown-item"
-                                                href="#">
-                                                <i class="houzez-icon icon-envelope mr-1"></i>Email
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="list-inline-item btn-email">
-                                        <a href="#"><i class="houzez-icon icon-envelope"></i></a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body clearfix">
-                        <div class="lightbox-gallery-wrap ">
-                            <a class="btn-expand">
-                                <i class="houzez-icon icon-expand-3"></i>
-                            </a>
-                            <div class="lightbox-gallery">
-                                <div id="lightbox-slider-js" class="lightbox-slider">
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary1.jpg" alt
-                                            title="205"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary2.jpg" alt
-                                            title="030"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary3.jpg" alt
-                                            title="006"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary4.jpg" alt
-                                            title="007"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary5.jpg" alt
-                                            title="008"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary6.jpg" alt
-                                            title="035"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary7.jpg" alt
-                                            title="036"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary8.jpg" alt
-                                            title="045"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary9.jpg" alt
-                                            title="040"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary10.jpg" alt
-                                            title="012"></div>
-                                    <div><img class="img-fluid"
-                                            src="assets/gallary11.jpg" alt
-                                            title="047"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="lightbox-form-wrap">
-                            <div class="property-form-wrap">
-                                <div class="property-form clearfix">
-                                    <form method="post" action="#">
-                                        <div class="agent-details">
-                                            <div class="d-flex align-items-center">
-                                                <div class="agent-image"><img class="rounded"
-                                                        src="assets/client1.jpg"
-                                                        alt="Mike Moore" width="70" height="70"></div>
-                                                <ul class="agent-information list-unstyled">
-                                                    <li class="agent-name"><i
-                                                            class="las la-user mr-1"></i> Mike Moore
-                                                    </li>
-                                                    <li class="agent-link"><a
-                                                            href="#">View
-                                                            Listings</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="name" value type="text"
-                                                placeholder="Name">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="mobile" value type="text"
-                                                placeholder="Phone">
-                                        </div>
-                                        <div class="form-group">
-                                            <input class="form-control" name="email" value type="email"
-                                                placeholder="Email">
-                                        </div>
-                                        <div class="form-group form-group-textarea">
-                                            <textarea class="form-control hz-form-message" name="message" rows="4"
-                                                placeholder="Message">Hello, I am interested in [New Apartment]</textarea>
-                                        </div>
-                                        <div class="form-group">
-                                            <select name="user_type" class="selectpicker form-control bs-select-hidden"
-                                                title="Select">
-                                                <option value="buyer">I'm a buyer</option>
-                                                <option value="tennant">I'm a tennant</option>
-                                                <option value="agent">I'm an agent</option>
-                                                <option value="other">Other</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label
-                                                class="control control--checkbox m-0 hz-terms-of-use hz-no-gdpr-checkbox">
-                                                <div class="gdpr-text-wrap">
-                                                    By submitting this form I agree to <a target="_blank"
-                                                        href="#">Terms of
-                                                        Use</a>
-                                                </div>
-                                            </label>
-                                        </div>
-                                        <input type="hidden" name="target_email"
-                                            value="m&#105;k&#101;.mo&#111;r&#101;&#64;&#104;&#111;&#117;zez.&#99;&#111;">
-                                        <input type="hidden" name="property_agent_contact_security"
-                                            value="bb9a5e698d" />
-                                        <input type="hidden" name="property_permalink" />
-                                        <input type="hidden" name="property_title" value="New Apartment" />
-                                        <input type="hidden" name="property_id" value="Hz-11" />
-                                        <input type="hidden" name="action" value="houzez_property_agent_contact">
-                                        <input type="hidden" name="listing_id" value="17405">
-                                        <input type="hidden" name="is_listing_form" value="yes">
-                                        <input type="hidden" name="agent_id" value="17365">
-                                        <input type="hidden" name="agent_type" value="agent_info">
-                                        <div class="form_messages"></div>
-                                        <button type="button"
-                                            class="houzez_agent_property_form btn btn-secondary btn-half-width">
-                                            <span class="btn-loader houzez-loader-js"></span> Send Message
-                                        </button>
-                                        <a href="tel:8976541258" class="btn btn-secondary-outlined btn-half-width">
-
-                                            <span class="hide-on-click">Call</span>
-                                            <span class="show-on-click">897 654 1258</span>
-
-                                        </a>
-                                        <a target="_blank"
-                                            href="#"
-                                            class="btn btn-secondary-outlined btn-full-width mt-10"><i
-                                                class="lab la-whatsapp mr-1"></i> WhatsApp</a>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="modal-footer">
                     </div>
                 </div>
             </div>
