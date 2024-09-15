@@ -15,9 +15,80 @@ if(isset($_POST['save']))
     $sql = "insert into property_review (Email,Title,Rating,Review,Property_id,Date) values ('$email','$title','$rating','$review','$property_id',CURDATE())";
     mysqli_query($con,$sql);
 }
+//  for the fetch review 
 $property_id = $_GET['pro_id'];
 $sql_select ="select * from property_review where Property_id=".$property_id;
 $res_select = mysqli_query($con,$sql_select);
+
+//  for the fetch Property record
+$Property_sql = "select * from property_register where id=".$property_id;
+$property_res = mysqli_query($con,$Property_sql);
+$row = mysqli_fetch_assoc($property_res);
+
+// want to fetch year for the property
+// This will output the year from the pro_date column
+$Property_year_sql = "SELECT YEAR(pro_date) AS year_only FROM property_register WHERE id = " . $property_id;
+$property_year_res = mysqli_query($con, $Property_year_sql);
+$row_year = mysqli_fetch_assoc($property_year_res);
+
+// Make the Features in Differnt Columns
+$features = explode(',', $row['Feature']);
+
+
+// Mortgage Calculator
+if(isset($_POST['Calculate']))
+{
+
+    function calculateMortgage($principal, $annualInterestRate, $years) {
+        // Convert annual interest rate to a monthly interest rate
+        $monthlyInterestRate = $annualInterestRate / 100 / 12;
+        // Convert years to months
+        $months = $years * 12;
+        
+        // Calculate the monthly payment using the formula
+        if ($monthlyInterestRate == 0) {  // If the interest rate is 0
+            $monthlyPayment = $principal / $months;
+        } else {
+            $monthlyPayment = $principal * ($monthlyInterestRate * pow(1 + $monthlyInterestRate, $months)) / (pow(1 + $monthlyInterestRate, $months) - 1);
+        }
+        
+        return $monthlyPayment;
+    }
+    
+
+    $total_amount = $_POST['Total_amount'];
+    $down_payment_percent = $_POST['Down_payment'];
+    $annual_interest_rate = $_POST['Interest_rate'];
+    $year = $_POST['Year'];
+    $property_tax_percent = $_POST['Property_tax'];
+    $home_insurance_annual = $_POST['Home_insurance']; 
+    $monthly_fees = $_POST['Monthly_fees'];
+    $PMI_per = $_POST['PMI'];
+
+    // Calculations
+    $down_payement = $total_amount * ($down_payment_percent / 100);
+    $loan_amount = $total_amount - $down_payement;
+    $monthly_mortgage_payment = calculateMortgage($loan_amount, $annual_interest_rate, $year);
+
+    //  Property Tax Calculation
+    $annual_property_tax = $total_amount * ($property_tax_percent / 100);
+    $monthly_property_tax = $annual_property_tax / 12;
+
+    // Home insurance
+    $monthly_home_insurance = $home_insurance_annual /12;
+
+    // PMI cal
+    $annual_pmi = $loan_amount * ($PMI_per / 100);
+    $monthly_pmi = $annual_pmi /12;
+
+    // total Monthely cost
+    $total_monthly_cost = $monthly_mortgage_payment + $monthly_property_tax + $monthly_home_insurance + $monthly_pmi + $monthly_fees;
+
+
+
+
+}
+
 
 ?> 
  
@@ -147,20 +218,19 @@ $res_select = mysqli_query($con,$sql_select);
                     </div>
                     <div class="d-flex align-items-center property-title-price-wrap">
                         <div class="page-title">
-                            <h1>New Apartment</h1>
+                            <h1><?php echo $row['Property_title'];?></h1>
                         </div>
                         <ul class="item-price-wrap hide-on-list">
-                            <li class="item-price">$125,000</li>
-                            <li class="item-sub-price">$900/Sq Ft</li>
+                            <li class="item-price"><?php echo $row['Price'];?></li>
+                            <li class="item-sub-price"><?php echo $row['Land_price'];?>/<?php echo $row['Land_postfix'];?></li>
                         </ul>
                     </div>
                     <div class="property-labels-wrap">
                         <a href="#" class="label-status label status-color-18">
-                            For Sale
+                            For <?php echo $row['Status'];?>
                         </a>
                     </div>
-                    <address class="item-address"><i class="las la-map-marker mr-1"></i>6701 South Dixie Highway,
-                        Miami, FL, USA</address>
+                    <address class="item-address"><i class="las la-map-marker mr-1"></i><?php echo $row['Address'];?></address>
                 </div>
             </div>
             <div class="container">
@@ -204,7 +274,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                         class="houzez-trigger-popup-slider-js swipebox sub-imgs"
                                                         data-toggle="modal" data-target="#property-lightbox">
                                                         <img class="img-fluid"
-                                                            src="assets/residancy3.jpg"
+                                                            src="User/upload/<?php echo $row['Image1'];?>"
                                                             alt title="205">
                                                     </a></div>
                                                 <div
@@ -213,7 +283,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                         class="houzez-trigger-popup-slider-js swipebox sub-imgs"
                                                         data-toggle="modal" data-target="#property-lightbox">
                                                         <img class="img-fluid"
-                                                            src="assets/residancy1.jpg"
+                                                            src="User/upload/<?php echo $row['Image2'];?>"
                                                             alt title="030">
                                                     </a></div>
                                                 <div
@@ -222,7 +292,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                         class="houzez-trigger-popup-slider-js swipebox sub-imgs"
                                                         data-toggle="modal" data-target="#property-lightbox">
                                                         <img class="img-fluid"
-                                                            src="assets/residancy2.jpg"
+                                                            src="User/upload/<?php echo $row['Image3'];?>"
                                                             alt title="006">
                                                     </a></div>
                                                 <div
@@ -383,39 +453,39 @@ $res_select = mysqli_query($con,$sql_select);
                                 <div class="block-wrap">
                                     <div class="block-title-wrap d-flex justify-content-between align-items-center">
                                         <h2>Overview</h2>
-                                        <div><strong>Property ID:</strong> Hz-11</div>
+                                        <div><strong>Property ID:</strong>RE-<?php echo $row['id'];?></div>
                                     </div>
                                     <div class="d-flex property-overview-data">
                                         <ul class="list-unstyled flex-fill">
-                                            <li class="property-overview-item"><strong>Apartment</strong></li>
+                                            <li class="property-overview-item"><strong><?php echo $row['Type'];?></strong></li>
                                             <li class="hz-meta-label property-overview-type">Property Type</li>
                                         </ul>
                                         <ul class="list-unstyled flex-fill">
                                             <li class="property-overview-item"><i
                                                     class="las la-bed mr-1"></i>
-                                                <strong>2</strong> </li>
+                                                <strong><?php echo $row['Badrooms'];?></strong> </li>
                                             <li class="hz-meta-label h-beds">Bedrooms</li>
                                         </ul>
                                         <ul class="list-unstyled flex-fill">
                                             <li class="property-overview-item"><i
                                                     class="las la-bath mr-1"></i>
-                                                <strong>2</strong></li>
+                                                <strong><?php echo $row['Bathroom'];?></strong></li>
                                             <li class="hz-meta-label h-baths">Bathrooms</li>
                                         </ul>
                                         <ul class="list-unstyled flex-fill">
                                             <li class="property-overview-item"><i
-                                                    class="las la-car mr-1"></i> <strong>1</strong></li>
-                                            <li class="hz-meta-label h-garage">Garage</li>
+                                                    class="las la-car mr-1"></i> <strong><?php echo $row['Balcony'];?></strong></li>
+                                            <li class="hz-meta-label h-garage">Balcony</li>
                                         </ul>
                                         <ul class="list-unstyled flex-fill">
                                             <li class="property-overview-item"><i
                                                     class="las la-rular-combined mr-1"></i>
-                                                <strong>1987</strong></li>
-                                            <li class="hz-meta-label h-area">sqft</li>
+                                                <strong><?php echo $row['Land_price'];?></strong></li>
+                                            <li class="hz-meta-label h-area"><?php echo $row['Land_postfix'];?></li>
                                         </ul>
                                         <ul class="list-unstyled flex-fill">
                                             <li class="property-overview-item"><i
-                                                    class="las la-calendar mr-1"></i> <strong>2020</strong>
+                                                    class="las la-calendar mr-1"></i> <strong><?php echo $row_year['year_only'];?></strong>
                                             </li>
                                             <li class="hz-meta-label h-year-built">Year Built</li>
                                         </ul>
@@ -428,28 +498,7 @@ $res_select = mysqli_query($con,$sql_select);
                                         <h2>Description</h2>
                                     </div>
                                     <div class="block-content-wrap">
-                                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy
-                                            nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                                            wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
-                                            lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                                            dolor in hendrerit in vulputate velit esse molestie consequat, vel illum
-                                            dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio
-                                            dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te
-                                            feugait nulla facilisi.</p>
-                                        <div class="block-title-wrap block-title-property-doc">
-                                            <h3>Property Documents</h3>
-                                        </div>
-                                        <div class="property-documents">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="property-document-title">
-                                                    <i class="las la-file mr-1"></i> Brochure
-                                                </div>
-                                                <div class="property-document-link login-link">
-                                                    <a href="#" data-toggle="modal"
-                                                        data-target="#login-register-form">Download</a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <p><?php echo $row['Description'];?></p>
                                     </div>
                                 </div>
                             </div>
@@ -463,13 +512,12 @@ $res_select = mysqli_query($con,$sql_select);
                                             Maps</a>
                                     </div>
                                     <div class="block-content-wrap">
-                                        <ul class="list-2-cols list-unstyled">
-                                            <li class="detail-address"><strong>Address</strong> <span>6701 South Dixie
-                                                    Highway, Miami, FL, USA</span></li>
-                                            <li class="detail-city"><strong>City</strong> <span>Miami</span></li>
-                                            <li class="detail-state"><strong>State/county</strong> <span>Florida</span>
+                                        <ul class="list-1-cols list-unstyled">
+                                            <li class="detail-address"><strong>Address</strong> <span><?php echo $row['Address'];?></span></li>
+                                            <li class="detail-city"><strong>City</strong> <span><?php echo $row['City'];?></span></li>
+                                            <li class="detail-state"><strong>State/county</strong> <span>Gujarat / India</span>
                                             </li>
-                                            <li class="detail-zip"><strong>Zip/Postal Code</strong> <span>33143</span>
+                                           
                                             </li>
                                         </ul>
                                     </div>
@@ -480,135 +528,80 @@ $res_select = mysqli_query($con,$sql_select);
                                     <div class="block-title-wrap d-flex justify-content-between align-items-center">
                                         <h2>Details</h2>
                                         <span class="small-text grey"><i class="las la-calendar mr-1"></i>
-                                            Updated on January 27, 2023 at 7:47 pm</span>
+                                            Updated on <?php echo $row['Pro_date'];?></span>
                                     </div>
                                     <div class="block-content-wrap">
                                         <div class="detail-wrap">
                                             <ul class="list-2-cols list-unstyled">
                                                 <li>
                                                     <strong>Property ID:</strong>
-                                                    <span>Hz-11</span>
+                                                    <span>RE-<?php echo $row['id'];?></span>
                                                 </li>
                                                 <li>
                                                     <strong>Price:</strong>
-                                                    <span> $125,000</span>
+                                                    <span> $ <?php echo $row['Price'];?></span>
                                                 </li>
                                                 <li>
                                                     <strong>Property Size:</strong>
-                                                    <span>1987 sqft</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Land Area:</strong>
-                                                    <span>987 sqft</span>
+                                                    <span><?php echo $row['Land_price'];?> <?php echo $row['Land_postfix'];?></span>
                                                 </li>
                                                 <li>
                                                     <strong>Bedrooms:</strong>
-                                                    <span>2</span>
+                                                    <span><?php echo $row['Badrooms'];?></span>
                                                 </li>
                                                 <li>
                                                     <strong>Bathrooms:</strong>
-                                                    <span>2</span>
+                                                    <span><?php echo $row['Bathroom'];?></span>
                                                 </li>
                                                 <li>
-                                                    <strong>Garage:</strong>
-                                                    <span>1</span>
-                                                </li>
-                                                <li>
-                                                    <strong>Garage Size:</strong>
-                                                    <span>350 Sq Ft</span>
+                                                    <strong>Balcony:</strong>
+                                                    <span><?php echo $row['Balcony'];?></span>
                                                 </li>
                                                 <li>
                                                     <strong>Year Built:</strong>
-                                                    <span>2020</span>
+                                                    <span><?php echo $row_year['year_only'];?></span>
                                                 </li>
                                                 <li class="prop_type">
                                                     <strong>Property Type:</strong>
-                                                    <span>Apartment</span>
+                                                    <span><?php echo $row['Type'];?></span>
                                                 </li>
                                                 <li class="prop_status">
                                                     <strong>Property Status:</strong>
-                                                    <span>For Sale</span>
+                                                    <span>For <?php echo $row['Status'];?></span>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div class="block-title-wrap">
                                             <h3>Additional details</h3>
                                         </div>
-                                        <ul class="list-2-cols list-unstyled">
-                                            <li><strong>Swimming Pool:</strong> <span>Swimming Pool</span></li>
-                                            <li><strong>Pool Size:</strong> <span>Pool Size</span></li>
-                                        </ul>
                                     </div>
                                 </div>
                             </div>
                             <div class="property-gallery-grid property-section-wrap" id="property-gallery-grid">
                                 <div class="d-flex flex-wrap">
-                                    <a href="#" data-toggle="modal" data-slider-no="1" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary1.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="2" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary2.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="3" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary3.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="4" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary4.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="5" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary5.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="6" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary6.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="7" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary7.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="8" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item ">
-                                        <img class="img-fluid"
-                                            src="assets/gallary8.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="9" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item more-images">
-                                        <span>2+</span> <img class="img-fluid"
-                                            src="assets/gallary9.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="10" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item gallery-hidden">
-                                        <img class="img-fluid"
-                                            src="assets/gallary10.jpg"
-                                            alt>
-                                    </a>
-                                    <a href="#" data-toggle="modal" data-slider-no="11" data-target="#property-lightbox"
-                                        class="houzez-trigger-popup-slider-js gallery-grid-item gallery-hidden">
-                                        <img class="img-fluid"
-                                            src="assets/gallary11.jpg"
-                                            alt>
-                                    </a>
+                                    <?php 
+                                    $Property_sql = "SELECT * FROM property_register WHERE id=" . $property_id;
+                                    $property_res = mysqli_query($con, $Property_sql);
+                                    $row = mysqli_fetch_assoc($property_res);
+                                    
+                                    if ($row) {
+                                        // Loop through the image columns Image1 to Image6
+                                        for ($i = 1; $i <= 6; $i++) {
+                                            $image_column = 'Image' . $i; // Dynamically construct column name
+                                    
+                                            if (!empty($row[$image_column])) { // Check if the image column is not empty
+                                                // Dynamically generate the HTML for each image
+                                                echo '<a href="#" data-toggle="modal" data-slider-no="' . $i . '" data-target="#property-lightbox"
+                                                        class="houzez-trigger-popup-slider-js gallery-grid-item">
+                                                        <img class="img-fluid"
+                                                            src="User/upload/' . $row[$image_column] . '"
+                                                            alt="Property Image ' . $i . '">
+                                                      </a>';
+                                            }
+                                        }
+                                    }
+                                    ?>
+    
                                 </div>
                             </div>
                             <style>
@@ -618,73 +611,6 @@ $res_select = mysqli_query($con,$sql_select);
                                     margin-bottom: 1px;
                                 }
                             </style>
-                            <div class="property-energy-class-wrap property-section-wrap"
-                                id="property-energy-class-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap">
-                                        <h2>Energy Class</h2>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <ul class="class-energy-list list-unstyled">
-                                            <li>
-                                                <strong>Energetic class:</strong>
-                                                <span>A+</span>
-                                            </li>
-                                            <li>
-                                                <strong>Global Energy Performance Index:</strong>
-                                                <span>92.42 kWh / m²a</span>
-                                            </li>
-                                            <li>
-                                                <strong>Renewable energy performance index:</strong>
-                                                <span>0.00 kWh / m²a</span>
-                                            </li>
-                                            <li>
-                                                <strong>Energy performance of the building:</strong>
-                                                <span>XYZ</span>
-                                            </li>
-                                            <li>
-                                                <strong>EPC Current Rating:</strong>
-                                                <span>80</span>
-                                            </li>
-                                            <li>
-                                                <strong>EPC Potential Rating:</strong>
-                                                <span>60</span>
-                                            </li>
-                                        </ul>
-                                        <ul class="class-energy energy-class-9">
-                                            <li class="class-energy-indicator">
-                                                <div class="indicator-energy" data-energyclass="A+">92.42 kWh / m²a |
-                                                    Energy class A+</div>
-                                                <span class="energy-A+">A+</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-A">A</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-B">B</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-C">C</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-D">D</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-E">E</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-F">F</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-G">G</span>
-                                            </li>
-                                            <li class="class-energy-indicator">
-                                                <span class="energy-H">H</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="property-features-wrap property-section-wrap" id="property-features-wrap">
                                 <div class="block-wrap">
                                     <div class="block-title-wrap d-flex justify-content-between align-items-center">
@@ -692,26 +618,10 @@ $res_select = mysqli_query($con,$sql_select);
                                     </div>
                                     <div class="block-content-wrap">
                                         <ul class="list-3-cols list-unstyled">
+                                            <?php foreach($features as $feature) {?>
                                             <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Air
-                                                    Conditioning</a></li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Barbeque</a></li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Gym</a></li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Laundry</a></li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Outdoor
-                                                    Shower</a></li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Refrigerator</a>
-                                            </li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Sauna</a></li>
-                                            <li><i class="las la-check-circle mr-2"></i><a
-                                                    href="#">Swimming
-                                                    Pool</a></li>
+                                                    href="#"><?php echo $feature; ?></a></li>
+                                            <?php } ?>
                                         </ul>
                                     </div>
                                 </div>
@@ -783,7 +693,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                                 <div class="input-group-text">$</div>
                                                             </div>
                                                             <input id="homePrice" type="text" class="form-control"
-                                                                placeholder="Total Amount" value="125000">
+                                                                placeholder="Total Amount" value="" name="Total_amount">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -796,7 +706,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                             </div>
                                                             <input id="downPaymentPercentage" type="text"
                                                                 class="form-control" placeholder="Down Payment"
-                                                                value="15">
+                                                                value="" name="Down_payment">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -809,7 +719,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                             </div>
                                                             <input id="annualInterestRate" type="text"
                                                                 class="form-control" placeholder="Interest Rate"
-                                                                value="3.5">
+                                                                value="" name="Interest_rate">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -823,7 +733,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                                 </div>
                                                             </div>
                                                             <input id="loanTermInYears" type="text" class="form-control"
-                                                                placeholder="Loan Terms (Years)" value="20">
+                                                                placeholder="Loan Terms (Years)" value="" name="Year">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -836,7 +746,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                             </div>
                                                             <input id="annualPropertyTaxRate" type="text"
                                                                 class="form-control" placeholder="Property Tax"
-                                                                value="1.2">
+                                                                value="" name="Property_tax">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -849,7 +759,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                             </div>
                                                             <input id="annualHomeInsurance" type="text"
                                                                 class="form-control" placeholder="Home Insurance"
-                                                                value="2000">
+                                                                value="" name="Home_insurance">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -861,7 +771,7 @@ $res_select = mysqli_query($con,$sql_select);
                                                                 <div class="input-group-text">$</div>
                                                             </div>
                                                             <input id="monthlyHOAFees" type="text" class="form-control"
-                                                                placeholder="Monthly HOA Fees" value="250">
+                                                                placeholder="Monthly HOA Fees" value="" name="Monthly_fees">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -873,11 +783,13 @@ $res_select = mysqli_query($con,$sql_select);
                                                                 <div class="input-group-text">%</div>
                                                             </div>
                                                             <input id="pmi" type="text" class="form-control"
-                                                                placeholder="PMI" value>
+                                                                placeholder="PMI" value name="PMI">
                                                         </div>
                                                     </div>
                                                 </div>
+                                               
                                             </div>
+                                            <input type="submit" value="Calculate" name="Calculate">
                                         </form>
                                     </div>
                                 </div>
@@ -1176,25 +1088,8 @@ $res_select = mysqli_query($con,$sql_select);
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="property-schedule-tour-form-title">Tour Type</div>
-                                                        <div
-                                                            class="property-schedule-tour-type-form d-flex justify-content-between">
-                                                            <div class="form-group">
-                                                                <label class="control control--radio">
-                                                                    <input name="schedule_tour_type" type="radio"
-                                                                        checked value="In Person">
-                                                                    <span class="control__indicator">In Person</span>
-                                                                </label>
-                                                            </div>
-
-                                                            <div class="form-group">
-                                                                <label class="control control--radio">
-                                                                    <input name="schedule_tour_type" type="radio"
-                                                                        value="Video Chat">
-                                                                    <span class="control__indicator">Video Chat</span>
-                                                                </label>
-                                                            </div>
-
+                                                        
+                                                       
                                                         </div>
                                                         <div class="form-group">
                                                             <select name="schedule_time"
