@@ -2,7 +2,7 @@
         <div class="sidebar-logo">
           <!-- Logo Header -->
           <div class="logo-header" data-background-color="dark">
-          <a href="index.html" class="logo">
+          <a href="Dashborad.php" class="logo">
               <img
                 src="assets/img/logo-dash.png"
                 alt="navbar brand"
@@ -169,7 +169,7 @@
               </li>
                  
               <li class="nav-item">
-                <a href="view_reviews.php">
+                <a href="View_reviews.php">
                   <i class="fas fa-star-half-alt"></i>
                   <p>Reviews</p>
                 </a>
@@ -193,7 +193,7 @@
                       </a>
                     </li>
                     <li>
-                      <a href="View_area.php">
+                      <a href="View_contact_us.php">
                         <span class="sub-item">Contact Us</span>
                       </a>
                     </li>
@@ -201,6 +201,57 @@
                   </ul>
                  </div>
               </li>
+              <li class="nav-item">
+                <a
+                  data-bs-toggle="collapse"
+                  href="#Image_Gallery"
+                  class="collapsed"
+                  aria-expanded="false">
+                  <i class="fas fa-file-alt"></i>
+                  <p>Image Gallery</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="Image_Gallery">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="Add_Images.php">
+                        <span class="sub-item">Add Images</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="View_image_gallery.php">
+                        <span class="sub-item">View / Select Images</span>
+                      </a>
+                    </li>
+                   
+                  </ul>
+                 </div>
+              </li>
+              <li class="nav-item">
+                <a
+                  data-bs-toggle="collapse"
+                  href="#Service"
+                  class="collapsed"
+                  aria-expanded="false">
+                  <i class="fas fa-file-alt"></i>
+                  <p>website Services</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="Service">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="Add_webstie_services.php">
+                        <span class="sub-item">Add Services</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="View_website_services.php">
+                        <span class="sub-item">View Services</span>
+                      </a>
+                    </li>
+                   
+                  </ul>
+                 </div>
                  
                <li class="nav-item">
                 <a href="View_profile.php">

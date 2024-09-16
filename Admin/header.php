@@ -23,7 +23,7 @@ if(isset($_SESSION['admin_id']))
           <div class="main-header-logo">
             <!-- Logo Header -->
             <div class="logo-header" data-background-color="dark">
-              <a href="index.html" class="logo">
+              <a href="dashborad.php" class="logo">
                 <img
                   src="assets/img/kaiadmin/logo_light.svg"
                   alt="navbar brand"
@@ -100,43 +100,7 @@ if(isset($_SESSION['admin_id']))
                     </form>
                   </ul>
                 </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="messageDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-envelope"></i>
-                  </a>
-                </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="notifDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    <i class="fa fa-bell"></i>
-                    <span class="notification">4</span>
-                  </a>
-                </li>
-                <li class="nav-item topbar-icon dropdown hidden-caret">
-                  <a
-                    class="nav-link"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    aria-expanded="false"
-                  >
-                    <i class="fas fa-layer-group"></i>
-                  </a>
-                </li>
+           
 
                 <li class="nav-item topbar-user dropdown hidden-caret">
                   <a
@@ -181,7 +145,7 @@ if(isset($_SESSION['admin_id']))
                       </li>
                       <li>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Home</a>
+                        <a class="dropdown-item" href="Dashborad.php">Home</a>
                         <a class="dropdown-item" href="View_profile.php">My Profile</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="Change_password.php">Passwrod Setting</a>

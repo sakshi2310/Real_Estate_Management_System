@@ -11,30 +11,31 @@ if(!isset($_SESSION['admin_id']))
 }
 
 // Fetch the review
-$sql_review = "select * from property_review";
+$sql_contactUs = "select * from website_contact_us";
 
 
 if(isset($_POST['search']) && isset($_POST['search_by']))
 {
+     // echo "Hello";
   $search = mysqli_real_escape_string($con,$_POST['search']);
   $search_by = mysqli_real_escape_string($con,$_POST['search_by']);
 
-  if($search_by == 'Rating')
+  if($search_by == 'First_name')
   {
-    $sql_review = "select * from property_review where Rating LIKE '%$search%'";
+    $sql_contactUs = "select * from website_contact_us where First_name LIKE '%$search%'";
    
-  }elseif($search_by == 'Property_id')
+  }elseif($search_by == 'Email')
   {
-    $sql_review = "select * from property_review where Property_id LIKE '%$search%'";
+    $sql_contactUs = "select * from website_contact_us where Email LIKE '%$search%'";
   }elseif($search_by == 'Date')
   {
-    $sql_review = "select * from property_review where Date LIKE '%$search%'";
+    $sql_contactUs = "select * from property_review where Date LIKE '%$search%'";
   }
 
 }
 
 
-$res_review = mysqli_query($con,$sql_review);
+$res_review = mysqli_query($con,$sql_contactUs);
 
 
 
@@ -76,7 +77,7 @@ $res_review = mysqli_query($con,$sql_review);
                 $.ajax({
                     type: "POST",
                     data: { search_by:search_by,search: search },
-                    url: "View_reviews.php", 
+                    url: "View_contact_us.php", 
                     success: function(response) {
                         $('#data-table').html($(response).find('#data-table').html());
                     },
@@ -154,10 +155,9 @@ $res_review = mysqli_query($con,$sql_review);
                   <div class="dropdown position-absolute top-0 start-0">
                 <select class="form-select" aria-label="Default select example" id="Search_by">
                   <option >Select</option>
-                  <option value="Rating" selected>Rating</option>
-                  <option value="Property_id" >Property id</option>
+                  <option value="First_name" selected>First Name</option>
+                  <option value="Email" >Email</option>
                   <option value="Date">Date</option>
-                  <option value="Title">Title</option>
                 </select>
               </div>
       </div>
@@ -171,39 +171,28 @@ $res_review = mysqli_query($con,$sql_review);
                         <thead>
                             <tr>
                                 <th class="id-column" style="width: 10px;">ID</th>
+                                <th>First Name</th>
+                                <th>Last Name</th>
                                 <th>Email</th>
-                                <th>Title</th>
-                                <th>Rating</th>
-                                <th>Review</th>
-                                <th>Property_id</th> 
-                                <th>Date</th> 
+                                <th>Message</th>
+                              
                                
                             </tr>
                         </thead>
-                        <?php while($row = mysqli_fetch_assoc($res_review)){
-                          
-                          $property_id = $row['Property_id'];
-                          $sql_property = "select * from property_register where id=".$property_id;
-                          $res_property = mysqli_query($con,$sql_property);
-                          $row_property = mysqli_fetch_assoc($res_property);
-                          
-                          
-                          
-                          ?>
+                       
                         <tbody id="data-table">
+                        <?php while($row = mysqli_fetch_assoc($res_review)){?>
                           <tr>  
                                 <td><?php echo $row['Id'] ?></td>
+                                <td><?php echo $row['First_name'] ?></td>
+                                <td><?php echo $row['Last_name'] ?></td>
                                 <td><?php echo $row['Email'] ?></td>
-                                <td><?php echo $row['Title'] ?></td>
-                                <td><?php echo $row['Rating'] ?></td>
-                                <td><?php echo $row['Review'] ?></td>
-                                <td><?php echo $row['Property_id'] ?></td>
-                                <td><?php echo $row_property['Property_title'] ?></td>
+                                <td><?php echo $row['Message'] ?></td>
                                 <td><?php echo $row['Date'] ?></td>
                           </tr>
-                          
+                          <?php } ?>
                         </tbody>
-                        <?php } ?>
+                        
                       </table>
                     </div>
                   </div>

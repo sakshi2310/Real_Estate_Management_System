@@ -1,4 +1,12 @@
+<?php 
 
+$con=mysqli_connect("localhost","root","","real_estate");
+
+$sql = 'select * from website_aboutus_photo_gallery';
+$res  = mysqli_query($con,$sql);
+
+
+?>
        
                 <!-- header start -->
                 <?php
@@ -349,6 +357,7 @@
                                         <div class="elementor-image-gallery">
                                             <div id='gallery-1'
                                                 class='gallery galleryid-8 gallery-columns-4 gallery-size-houzez-item-image-6'>
+                                                <?php while($row = mysqli_fetch_assoc($res)) {  ?>
                                                 <figure class='gallery-item'>
                                                     <div class='gallery-icon landscape'>
                                                         <a data-elementor-open-lightbox="yes"
@@ -356,144 +365,13 @@
                                                             data-elementor-lightbox-title="09"
                                                             href='#'><img
                                                                 loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary1.jpg"
+                                                                src="Admin/upload/<?php echo $row['Image']; ?>"
                                                                 alt="" 
                                                                 sizes="(max-width: 584px) 100vw, 584px" /></a>
                                                     </div>
                                                 </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="16"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary2.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="12"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary3.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="15"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary4.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="11"
-                                                            data-e-action-hash="#elementor-action%3Aaction%3Dlightbox%26settings%3DeyJpZCI6MzQ5LCJ1cmwiOiJodHRwczpcL1wvZGVtbzA4LmhvdXplei5jb1wvd3AtY29udGVudFwvdXBsb2Fkc1wvMjAyMFwvMDNcLzExLmpwZyIsInNsaWRlc2hvdyI6IjkwY2ViYTkifQ%3D%3D"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary5.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon portrait'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="14"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary6.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="10"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary7.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="07"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary8.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon portrait'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="13"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary9.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="08"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary10.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="17"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary11.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
-                                                <figure class='gallery-item'>
-                                                    <div class='gallery-icon landscape'>
-                                                        <a data-elementor-open-lightbox="yes"
-                                                            data-elementor-lightbox-slideshow="90ceba9"
-                                                            data-elementor-lightbox-title="05"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
-                                                                src="assets/gallary12.jpg"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
-                                                    </div>
-                                                </figure>
+                                                <?php  } ?>
+                                          
                                             </div>
                                         </div>
                                     </div>

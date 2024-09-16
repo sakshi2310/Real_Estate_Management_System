@@ -1,3 +1,17 @@
+<?php 
+
+$con = mysqli_connect("localhost", "root", "", "real_estate");
+
+
+// haader start
+// include('header.php');
+// // Page session
+// if (!isset($_SESSION['user_id'])) {
+//   header("location:login-error.php");
+// }
+
+
+?>
 <!doctype html>
 <html lang="en-US">
 
@@ -417,7 +431,7 @@
             </ul>
         </div>
         <nav class="navi-login-register slideout-menu slideout-menu-right" id="navi-user">
-            <a class="btn btn-create-listing" href="#">Create a Listing</a>
+            <a class="btn btn-create-listing" href="User/View_approved_property.php">Create a Listing</a>
             <ul class="logged-in-nav">
                 <li class="login-link">
                     <a href="#" data-toggle="modal" data-target="#login-register-form"><i
@@ -465,8 +479,10 @@
                             <div class="login-register on-hover-menu">
                                 <ul class="login-register-nav dropdown d-flex align-items-center">
                                     <li>
-                                        <a href="#"
+                                        
+                                        <a href="User/View_approved_property.php"
                                             class="btn btn-create-listing hidden-xs hidden-sm">Create a Listing</a>
+                                     
                                     </li>
                                 </ul>
                             </div>

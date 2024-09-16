@@ -1,3 +1,13 @@
+<?php
+
+$con = mysqli_connect("localhost", "root", "", "real_estate");
+
+// Page session
+// if (!isset($_SESSION['user_id'])) {
+//   header("location:login-error.php");
+// }
+
+?>
 <!doctype html>
 <html lang="en-US">
 
@@ -16,9 +26,106 @@
         href="https://demo01.houzez.co/comments/feed/" />
     <script type="text/javascript">
         /* <![CDATA[ */
-        window._wpemojiSettings = { "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/", "ext": ".png", "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/", "svgExt": ".svg", "source": { "concatemoji": "https:\/\/demo01.houzez.co\/wp-includes\/js\/wp-emoji-release.min.js" } };
+        window._wpemojiSettings = {
+            "baseUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/",
+            "ext": ".png",
+            "svgUrl": "https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/",
+            "svgExt": ".svg",
+            "source": {
+                "concatemoji": "https:\/\/demo01.houzez.co\/wp-includes\/js\/wp-emoji-release.min.js"
+            }
+        };
         /*! This file is auto-generated */
-        !function (i, n) { var o, s, e; function c(e) { try { var t = { supportTests: e, timestamp: (new Date).valueOf() }; sessionStorage.setItem(o, JSON.stringify(t)) } catch (e) { } } function p(e, t, n) { e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0); var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data), r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data)); return t.every(function (e, t) { return e === r[t] }) } function u(e, t, n) { switch (t) { case "flag": return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f"); case "emoji": return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b") }return !1 } function f(e, t, n) { var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"), a = r.getContext("2d", { willReadFrequently: !0 }), o = (a.textBaseline = "top", a.font = "600 32px Arial", {}); return e.forEach(function (e) { o[e] = t(a, e, n) }), o } function t(e) { var t = i.createElement("script"); t.src = e, t.defer = !0, i.head.appendChild(t) } "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = { everything: !0, everythingExceptFlag: !0 }, e = new Promise(function (e) { i.addEventListener("DOMContentLoaded", e, { once: !0 }) }), new Promise(function (t) { var n = function () { try { var e = JSON.parse(sessionStorage.getItem(o)); if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests } catch (e) { } return null }(); if (!n) { if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try { var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));", r = new Blob([e], { type: "text/javascript" }), a = new Worker(URL.createObjectURL(r), { name: "wpTestEmojiSupports" }); return void (a.onmessage = function (e) { c(n = e.data), a.terminate(), t(n) }) } catch (e) { } c(n = f(s, u, p)) } t(n) }).then(function (e) { for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]); n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function () { n.DOMReady = !0 } }).then(function () { return e }).then(function () { var e; n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji))) })) }((window, document), window._wpemojiSettings);
+        ! function(i, n) {
+            var o, s, e;
+
+            function c(e) {
+                try {
+                    var t = {
+                        supportTests: e,
+                        timestamp: (new Date).valueOf()
+                    };
+                    sessionStorage.setItem(o, JSON.stringify(t))
+                } catch (e) {}
+            }
+
+            function p(e, t, n) {
+                e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(t, 0, 0);
+                var t = new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data),
+                    r = (e.clearRect(0, 0, e.canvas.width, e.canvas.height), e.fillText(n, 0, 0), new Uint32Array(e.getImageData(0, 0, e.canvas.width, e.canvas.height).data));
+                return t.every(function(e, t) {
+                    return e === r[t]
+                })
+            }
+
+            function u(e, t, n) {
+                switch (t) {
+                    case "flag":
+                        return n(e, "\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f", "\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f") ? !1 : !n(e, "\ud83c\uddfa\ud83c\uddf3", "\ud83c\uddfa\u200b\ud83c\uddf3") && !n(e, "\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f", "\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");
+                    case "emoji":
+                        return !n(e, "\ud83d\udc26\u200d\u2b1b", "\ud83d\udc26\u200b\u2b1b")
+                }
+                return !1
+            }
+
+            function f(e, t, n) {
+                var r = "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? new OffscreenCanvas(300, 150) : i.createElement("canvas"),
+                    a = r.getContext("2d", {
+                        willReadFrequently: !0
+                    }),
+                    o = (a.textBaseline = "top", a.font = "600 32px Arial", {});
+                return e.forEach(function(e) {
+                    o[e] = t(a, e, n)
+                }), o
+            }
+
+            function t(e) {
+                var t = i.createElement("script");
+                t.src = e, t.defer = !0, i.head.appendChild(t)
+            }
+            "undefined" != typeof Promise && (o = "wpEmojiSettingsSupports", s = ["flag", "emoji"], n.supports = {
+                everything: !0,
+                everythingExceptFlag: !0
+            }, e = new Promise(function(e) {
+                i.addEventListener("DOMContentLoaded", e, {
+                    once: !0
+                })
+            }), new Promise(function(t) {
+                var n = function() {
+                    try {
+                        var e = JSON.parse(sessionStorage.getItem(o));
+                        if ("object" == typeof e && "number" == typeof e.timestamp && (new Date).valueOf() < e.timestamp + 604800 && "object" == typeof e.supportTests) return e.supportTests
+                    } catch (e) {}
+                    return null
+                }();
+                if (!n) {
+                    if ("undefined" != typeof Worker && "undefined" != typeof OffscreenCanvas && "undefined" != typeof URL && URL.createObjectURL && "undefined" != typeof Blob) try {
+                        var e = "postMessage(" + f.toString() + "(" + [JSON.stringify(s), u.toString(), p.toString()].join(",") + "));",
+                            r = new Blob([e], {
+                                type: "text/javascript"
+                            }),
+                            a = new Worker(URL.createObjectURL(r), {
+                                name: "wpTestEmojiSupports"
+                            });
+                        return void(a.onmessage = function(e) {
+                            c(n = e.data), a.terminate(), t(n)
+                        })
+                    } catch (e) {}
+                    c(n = f(s, u, p))
+                }
+                t(n)
+            }).then(function(e) {
+                for (var t in e) n.supports[t] = e[t], n.supports.everything = n.supports.everything && n.supports[t], "flag" !== t && (n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && n.supports[t]);
+                n.supports.everythingExceptFlag = n.supports.everythingExceptFlag && !n.supports.flag, n.DOMReady = !1, n.readyCallback = function() {
+                    n.DOMReady = !0
+                }
+            }).then(function() {
+                return e
+            }).then(function() {
+                var e;
+                n.supports.everything || (n.readyCallback(), (e = n.source || {}).concatemoji ? t(e.concatemoji) : e.wpemoji && e.twemoji && (t(e.twemoji), t(e.wpemoji)))
+            }))
+        }((window, document), window._wpemojiSettings);
         /* ]]> */
     </script>
     <link rel="stylesheet" id="wp-block-library-css"
@@ -427,7 +534,8 @@
 
     <meta name="generator"
         content="Powered by Slider Revolution 6.7.15 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-    <script>function setREVStartSize(e) {
+    <script>
+        function setREVStartSize(e) {
             //window.requestAnimationFrame(function() {
             window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
             window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
@@ -446,10 +554,12 @@
                     newh = Math.max(e.mh, window.RSIH);
                 else {
                     e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-                    for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+                    for (var i in e.rl)
+                        if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
                     e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
                     e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-                    for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+                    for (var i in e.rl)
+                        if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
 
                     var nl = new Array(e.rl.length),
                         ix = 0,
@@ -460,7 +570,11 @@
                     e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
                     for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
                     sl = nl[0];
-                    for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
+                    for (var i in nl)
+                        if (sl > nl[i] && nl[i] > 0) {
+                            sl = nl[i];
+                            ix = i;
+                        }
                     var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
                     newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
                 }
@@ -475,12 +589,37 @@
                 console.log("Failure at Presize of Slider:" + e)
             }
             //});
-        };</script>
+        };
+    </script>
 
-    
-<link rel="stylesheet" id="wp-block-library-css"
+    <script>
+        function calculateMortgage() {
+            // Gather form data
+            const formData = new FormData(document.getElementById('mortgageForm'));
+
+            // Send form data to PHP script for calculation
+            fetch('single_property.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Update HTML with calculated values
+                    document.getElementById('downPaymentResult').textContent = `${data.downPayment}`;
+                    document.getElementById('loadAmountResult').textContent = `${data.loanAmount}`;
+                    document.getElementById('monthlyMortgagePaymentResult').textContent = `${data.monthlyMortgagePayment}`;
+                    document.getElementById('monthlyPropertyTaxResult').textContent = `${data.monthlyPropertyTax}`;
+                    document.getElementById('monthlyHomeInsuranceResult').textContent = `${data.monthlyHomeInsurance}`;
+                    document.getElementById('monthlyPMIResult').textContent = `${data.monthlyPMI}`;
+                    document.getElementById('monthlyHOAResult').textContent = `${data.monthlyHOA}`;
+                })
+        }
+    </script>
+
+
+    <link rel="stylesheet" id="wp-block-library-css"
         href="https://demo01.houzez.co/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all" />
- 
+
     <link rel="stylesheet" id="elementor-icons-css"
         href="https://demo01.houzez.co/wp-content/plugins/elementor/assets/lib/eicons/css/elementor-icons.min.css"
         type="text/css" media="all" />
@@ -502,7 +641,7 @@
         media="all" />
     <link rel="stylesheet" id="houzez-style-css" href="https://demo01.houzez.co/wp-content/themes/houzez/style.css"
         type="text/css" media="all" />
- 
+
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900,100italic,300italic,400italic,500italic,700italic,900italic&#038;display=swap" />
     <link rel="stylesheet"
@@ -545,10 +684,11 @@
         href="https://demo01.houzez.co/wp-content/uploads/2022/10/favicon-72x72-1.png">
     <meta name="generator"
         content="Elementor 3.23.2; features: additional_custom_breakpoints, e_lazyload; settings: css_print_method-external, google_font-enabled, font_display-auto">
- 
+
     <meta name="generator"
         content="Powered by Slider Revolution 6.7.15 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-    <script>function setREVStartSize(e) {
+    <script>
+        function setREVStartSize(e) {
             //window.requestAnimationFrame(function() {
             window.RSIW = window.RSIW === undefined ? window.innerWidth : window.RSIW;
             window.RSIH = window.RSIH === undefined ? window.innerHeight : window.RSIH;
@@ -567,10 +707,12 @@
                     newh = Math.max(e.mh, window.RSIH);
                 else {
                     e.gw = Array.isArray(e.gw) ? e.gw : [e.gw];
-                    for (var i in e.rl) if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
+                    for (var i in e.rl)
+                        if (e.gw[i] === undefined || e.gw[i] === 0) e.gw[i] = e.gw[i - 1];
                     e.gh = e.el === undefined || e.el === "" || (Array.isArray(e.el) && e.el.length == 0) ? e.gh : e.el;
                     e.gh = Array.isArray(e.gh) ? e.gh : [e.gh];
-                    for (var i in e.rl) if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
+                    for (var i in e.rl)
+                        if (e.gh[i] === undefined || e.gh[i] === 0) e.gh[i] = e.gh[i - 1];
 
                     var nl = new Array(e.rl.length),
                         ix = 0,
@@ -581,7 +723,11 @@
                     e.thumbh = e.thumbhide >= pw ? 0 : e.thumbh;
                     for (var i in e.rl) nl[i] = e.rl[i] < window.RSIW ? 0 : e.rl[i];
                     sl = nl[0];
-                    for (var i in nl) if (sl > nl[i] && nl[i] > 0) { sl = nl[i]; ix = i; }
+                    for (var i in nl)
+                        if (sl > nl[i] && nl[i] > 0) {
+                            sl = nl[i];
+                            ix = i;
+                        }
                     var m = pw > (e.gw[ix] + e.tabw + e.thumbw) ? 1 : (pw - (e.tabw + e.thumbw)) / (e.gw[ix]);
                     newh = (e.gh[ix] * m) + (e.tabh + e.thumbh);
                 }
@@ -596,10 +742,11 @@
                 console.log("Failure at Presize of Slider:" + e)
             }
             //});
-        };</script>
+        };
+    </script>
 
     <!-- font icon -->
-     <link rel="stylesheet" href="css/line-awesome.min.css">
+    <link rel="stylesheet" href="css/line-awesome.min.css">
 
     <!-- custom css file -->
     <link rel="stylesheet" href="css/style.css">
@@ -608,13 +755,13 @@
 
 <body
     class="page-template page-template-template page-template-template-listing-grid-v1 page-template-templatetemplate-listing-grid-v1-php page page-id-28 houzez-theme houzez-footer-position transparent-no houzez-header-none elementor-default elementor-kit-17100">
-   
+
     <div class="nav-mobile nav-mobile-js">
         <div class="main-nav navbar slideout-menu slideout-menu-left" id="nav-mobile">
             <ul id="mobile-main-nav" class="navbar-nav mobile-navbar-nav">
-            <li
+                <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children dropdown">
-                    <a class="nav-link " href="index.php">Home</a> 
+                    <a class="nav-link " href="index.php">Home</a>
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
@@ -626,12 +773,12 @@
                 </li>
                 <li
                     class="nav-item menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown">
-                    <a class="nav-link " href="peoperty.php">Properties</a> 
+                    <a class="nav-link " href="peoperty.php">Properties</a>
                 </li>
             </ul>
         </div>
         <nav class="navi-login-register slideout-menu slideout-menu-right" id="navi-user">
-            <a class="btn btn-create-listing" href="https://demo01.houzez.co/create-listing/">Create a Listing</a>
+            <a class="btn btn-create-listing" href="">Create a Listing</a>
             <ul class="logged-in-nav">
                 <li class="login-link">
                     <a href="#" data-toggle="modal" data-target="#login-register-form"><i
@@ -646,7 +793,7 @@
     </div>
     <main id="main-wrap" class="main-wrap main-wrap-js">
 
-<header class="header-main-wrap header-transparent-wrap text-bg-white position-static light-header">
+        <header class="header-main-wrap header-transparent-wrap text-bg-white position-static light-header">
             <div id="header-section" class="header-desktop header-v4" data-sticky="0">
                 <div class="container">
                     <div class="header-inner-wrap">
@@ -660,7 +807,7 @@
                                 <ul id="main-nav" class="navbar-nav justify-content-end">
                                     <li id="menu-item-60"
                                         class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children nav-item menu-item-60 menu-item-design-default dropdown">
-                                        <a class="nav-link"  href="index.php">Home</a>
+                                        <a class="nav-link" href="index.php">Home</a>
                                     </li>
                                     <li id="menu-item-71"
                                         class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children nav-item menu-item-71 menu-item-design-default dropdown">
@@ -679,8 +826,11 @@
                             <div class="login-register on-hover-menu">
                                 <ul class="login-register-nav dropdown d-flex align-items-center">
                                     <li>
-                                        <a href="#"
-                                            class="btn btn-create-listing hidden-xs hidden-sm">Create a Listing</a>
+                                      
+                                            <a href="User/View_approved_property.php"
+                                                class="btn btn-create-listing hidden-xs hidden-sm">Create a Listing</a>
+                                    
+
                                     </li>
                                 </ul>
                             </div>

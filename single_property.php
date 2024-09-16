@@ -2,6 +2,11 @@
 
 $con=mysqli_connect("localhost","root","","real_estate");
 
+if(!isset($_GET['pro_id']))
+{
+    header('location:index.php');
+}
+
 if(isset($_POST['save']))
 {
     
@@ -83,21 +88,31 @@ if(isset($_POST['Calculate']))
 
     // total Monthely cost
     $total_monthly_cost = $monthly_mortgage_payment + $monthly_property_tax + $monthly_home_insurance + $monthly_pmi + $monthly_fees;
-
-
+    
+    echo json_encode([
+        'downPayment' => number_format($down_payment, 2),
+        'loanAmount' => number_format($loan_amount, 2),
+        'monthlyMortgagePayment' => number_format($monthly_mortgage_payment, 2),
+        'monthlyPropertyTax' => number_format($monthly_property_tax, 2),
+        'monthlyHomeInsurance' => number_format($monthly_home_insurance, 2),
+        'monthlyPMI' => number_format($monthly_pmi, 2),
+        'monthlyHOA' => number_format($monthly_fees, 2),
+        'totalMonthlyCost' => number_format($total_monthly_cost, 2),
+    ]);
+    exit;
 
 
 }
 
 
 ?> 
+
  
  
- <!-- header start -->
-      <?php
+      <?php 
             include('header-light.php');
          ?>
-    <!-- header end -->
+
     <main id="main-wrap" class="main-wrap main-wrap-js">
               
         <section class="content-wrap property-wrap property-detail-v3 ">
@@ -683,7 +698,7 @@ if(isset($_POST['Calculate']))
                                                 </ul>
                                             </div>
                                         </div>
-                                        <form id="houzez-calculator-form" method="post">
+                                        <form id="mortgageForm" method="post"  onsubmit="event.preventDefault(); calculateMortgage();">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
@@ -1340,18 +1355,9 @@ if(isset($_POST['Calculate']))
                             </div>
                             <div class="property-review-wrap property-section-wrap" id="property-review-wrap">
                                 <div class="block-title-wrap review-title-wrap d-flex align-items-center">
-                                    <h2>3 Reviews</h2>
+                                    <h2>Reviews</h2>
                                     <div class="rating-score-wrap flex-grow-1">
-                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                        <span class="star"><i class="icon-rating full-star"></i></span>
-                                        <span class="star"><i class="icon-rating empty-star"></i></span>
-                                        <span class="star"><i class="icon-rating empty-star"></i></span>
-                                        <span class="star-text star-text-right">
-                                            (<span itemprop="ratingValue">3</span> out of <span
-                                                itemprop="bestRating">5</span>)
-                                        </span>
-                                    </div>
+                                    </div>b
                                     <div class="sort-by">
                                         <div class="d-flex align-items-center">
                                             <div class="sort-by-title">

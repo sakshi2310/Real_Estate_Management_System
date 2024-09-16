@@ -111,14 +111,9 @@ $res = mysqli_query($con, $sql);
                     type="text"
                     placeholder="Search ..."
                     class="form-control" 
+                    id="Search"
                   />
                   <div class="dropdown position-absolute top-0 start-0">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Select</option>
-                  <option value="1">Name</option>
-                  <option value="2">Contact</option>
-                  <option value="3">Status</option>
-                </select>
               </div>
       </div>
                                 </div>

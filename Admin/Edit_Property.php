@@ -253,7 +253,8 @@ if (isset($_POST['submit'])) {
             <div class="row">
               <div class="col-md-12">
                 <div class="card">
-                 <form method="post">
+                 <form method="post" enctype="multipart/form-data"
+                 >
                     <div class="card-body">
                     <div class="row"> 
                       <div class="col-12">
