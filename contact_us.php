@@ -179,50 +179,6 @@ if(isset($_POST['Contact']))
 											Biscayne Boulevard<br />Miami FL, 33176</p>
 									</div>
 								</div>
-								<div class="elementor-element elementor-element-0b2a1b4 e-grid-align-left elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons"
-									data-id="0b2a1b4" data-element_type="widget"
-									data-widget_type="social-icons.default">
-									<div class="elementor-widget-container">
-										<div class="elementor-social-icons-wrapper elementor-grid">
-											<span class="elementor-grid-item">
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-facebook elementor-animation-shrink elementor-repeater-item-4d4e750"
-													href="#" target="_blank">
-													<span class="elementor-screen-only">Facebook</span>
-													<i class="fab fa-facebook"></i> </a>
-											</span>
-											<span class="elementor-grid-item">
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-twitter elementor-animation-shrink elementor-repeater-item-a2d8d9c"
-													href="#" target="_blank">
-													<span class="elementor-screen-only">Twitter</span>
-													<i class="fab fa-twitter"></i> </a>
-											</span>
-											<span class="elementor-grid-item">
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-youtube elementor-animation-shrink elementor-repeater-item-4483b35"
-													href="#" target="_blank">
-													<span class="elementor-screen-only">Youtube</span>
-													<i class="fab fa-youtube"></i> </a>
-											</span>
-											<span class="elementor-grid-item">
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-linkedin elementor-animation-shrink elementor-repeater-item-4cd5d30"
-													href="#" target="_blank">
-													<span class="elementor-screen-only">Linkedin</span>
-													<i class="fab fa-linkedin"></i> </a>
-											</span>
-											<span class="elementor-grid-item">
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-instagram elementor-animation-shrink elementor-repeater-item-9e48d2c"
-													href="#" target="_blank">
-													<span class="elementor-screen-only">Instagram</span>
-													<i class="fab fa-instagram"></i> </a>
-											</span>
-											<span class="elementor-grid-item">
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-skype elementor-animation-shrink elementor-repeater-item-a996753"
-													href="#" target="_blank">
-													<span class="elementor-screen-only">Skype</span>
-													<i class="fab fa-skype"></i> </a>
-											</span>
-										</div>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>

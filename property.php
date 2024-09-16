@@ -159,68 +159,6 @@ $res = mysqli_query($con,$sql);
                                   </div>
                               </div>
                           </div>
-                          <div class="d-flex">
-                              <div class="flex-search-half ">
-                                  <div class="range-text">
-                                      <input type="hidden" name="min-price" class="min-price-range-hidden range-input"
-                                          value>
-                                      <input type="hidden" name="max-price" class="max-price-range-hidden range-input"
-                                          value>
-                                      <span class="range-title">Price Range</span> From <span
-                                          class="min-price-range"></span> To <span class="max-price-range"></span>
-                                  </div>
-                                  <div class="price-range-wrap">
-                                      <div class="price-range"></div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="features-list-wrap">
-                          <a class="btn-features-list" data-toggle="collapse" href="#features-list">
-                              <i class="houzez-icon icon-add-square"></i> Other Features </a>
-                          <div id="features-list" class="collapse">
-                              <div class="features-list">
-                                  <label class="control control--checkbox"><input class name="feature[]"
-                                          type="checkbox" value="air-conditioning">Air Conditioning<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="barbeque">Barbeque<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="dryer">Dryer<span class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="gym">Gym<span class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="laundry">Laundry<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="lawn">Lawn<span class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="microwave">Microwave<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="outdoor-shower">Outdoor Shower<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="refrigerator">Refrigerator<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="sauna">Sauna<span class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="swimming-pool">Swimming Pool<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="tv-cable">TV Cable<span
-                                          class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="washer">Washer<span class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="wifi">WiFi<span class="control__indicator"></span></label><label
-                                      class="control control--checkbox"><input class name="feature[]" type="checkbox"
-                                          value="window-coverings">Window Coverings<span
-                                          class="control__indicator"></span></label>
-                              </div>
-                          </div>
                       </div>
                   </div>
               </form>
@@ -799,11 +737,10 @@ $res = mysqli_query($con,$sql);
           };
           /* ]]> */
       </script>
-      <script type="text/javascript" src="https://demo01.houzez.co/wp-content/themes/houzez/js/custom.min.js"
-          id="houzez-custom-js"></script>
-      <script type="text/javascript" defer
-          src="https://demo01.houzez.co/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js"
-          id="mc4wp-forms-api-js"></script>
+
+    
+
+
       </body>
 
       </html>
