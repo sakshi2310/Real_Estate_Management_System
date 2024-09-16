@@ -129,28 +129,13 @@ if(isset($_POST['edit']))
                     <h5 class="page-title mb-0">Edit Profile Info</h5>
                     <div class="input-group position-relative search-dropdown">
                   <div class="input-group-prepend">
-                    <button type="submit" class="btn btn-search pe-1">
-                      <i class="fa fa-search search-icon"></i>
-                    </button>
+                 
                   </div>
-                  <input
-                    type="text"
-                    placeholder="Search ..."
-                    class="form-control" 
-                    id="Search"
-                  />
+               
                   <div class="dropdown position-absolute top-0 start-0">
-                  <select class="form-select" aria-label="Default select example" id="Search_by">
-                  <option >Select</option>
-                  <option value="Title" selected>Title</option>
-                  <option value="Type">Properyt Type</option>
-                  <option value="Status">Status</option>
-                  <option value="Area">Area</option>
-                  <option value="BHK">BHK</option>
-                  <option value="Date">Date</option>
-                </select>
+              
               </div>
-      </div>
+              </div>
                     </div>
                   </div>
                   <form method="post" enctype="multipart/form-data"> 

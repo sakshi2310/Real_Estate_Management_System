@@ -11,30 +11,30 @@ if(!isset($_SESSION['admin_id']))
 }
 
 // Fetch the review
-$sql_review = "select * from property_review";
+$Sql_Service = "select * from website_services";
 
 
-if(isset($_POST['search']) && isset($_POST['search_by']))
-{
-  $search = mysqli_real_escape_string($con,$_POST['search']);
-  $search_by = mysqli_real_escape_string($con,$_POST['search_by']);
+// if(isset($_POST['search']) && isset($_POST['search_by']))
+// {
+//   $search = mysqli_real_escape_string($con,$_POST['search']);
+//   $search_by = mysqli_real_escape_string($con,$_POST['search_by']);
 
-  if($search_by == 'Rating')
-  {
-    $sql_review = "select * from property_review where Rating LIKE '%$search%'";
+//   if($search_by == 'Rating')
+//   {
+//     $sql_review = "select * from property_review where Rating LIKE '%$search%'";
    
-  }elseif($search_by == 'Property_id')
-  {
-    $sql_review = "select * from property_review where Property_id LIKE '%$search%'";
-  }elseif($search_by == 'Date')
-  {
-    $sql_review = "select * from property_review where Date LIKE '%$search%'";
-  }
+//   }elseif($search_by == 'Property_id')
+//   {
+//     $sql_review = "select * from property_review where Property_id LIKE '%$search%'";
+//   }elseif($search_by == 'Date')
+//   {
+//     $sql_review = "select * from property_review where Date LIKE '%$search%'";
+//   }
 
-}
+// }
 
 
-$res_review = mysqli_query($con,$sql_review);
+$res_service = mysqli_query($con,$Sql_Service);
 
 
 
@@ -171,35 +171,36 @@ $res_review = mysqli_query($con,$sql_review);
                         <thead>
                             <tr>
                                 <th class="id-column" style="width: 10px;">ID</th>
-                                <th>Email</th>
                                 <th>Title</th>
-                                <th>Rating</th>
-                                <th>Review</th>
-                                <th>Property_id</th> 
-                                <th>Date</th> 
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                               
                                
                             </tr>
                         </thead>
-                        <?php while($row = mysqli_fetch_assoc($res_review)){
-                          
-                          $property_id = $row['Property_id'];
-                          $sql_property = "select * from property_register where id=".$property_id;
-                          $res_property = mysqli_query($con,$sql_property);
-                          $row_property = mysqli_fetch_assoc($res_property);
-                          
-                          
-                          
+                        <?php while($row = mysqli_fetch_assoc($res_service)){
                           ?>
                         <tbody id="data-table">
                           <tr>  
                                 <td><?php echo $row['Id'] ?></td>
-                                <td><?php echo $row['Email'] ?></td>
                                 <td><?php echo $row['Title'] ?></td>
-                                <td><?php echo $row['Rating'] ?></td>
-                                <td><?php echo $row['Review'] ?></td>
-                                <td><?php echo $row['Property_id'] ?></td>
-                                <td><?php echo $row_property['Property_title'] ?></td>
-                                <td><?php echo $row['Date'] ?></td>
+                                <td><?php echo $row['Description'] ?></td>
+                                <td>
+                                  <div class="img-data" style="width:130px; height: 130px;">
+                                      <img src="upload/<?php echo $row['Image']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                                  </div>
+                              </td>
+                              <td><?php echo $row['Date'] ?></td>
+                                  <td>
+                                <div class="action-icn">
+                                  <div class="form-button-action d-flex gap-2">
+                                    <a href="Add_webstie_services.php?edit_id=<?php echo $row['Id']; ?>" class="edit-btn">  <i class="fa fa-edit"></i> </a>
+                                    <a href="Add_webstie_services.php?del_id=<?php echo $row['Id']?>" class="del-btn"> <i class="fa fa-times"></i></a>
+                                  </div>
+                                </div>
+                              </td>
                           </tr>
                           
                         </tbody>

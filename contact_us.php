@@ -1,3 +1,25 @@
+<?php 
+
+$con=mysqli_connect("localhost","root","","real_estate");
+
+if(isset($_POST['Contact']))
+{
+	$first_name = $_POST['first_name'];
+	$last_name = $_POST['last_name'];
+	$email = $_POST['email'];
+	$message = $_POST['message'];
+
+	$sql = "insert into website_contact_us (First_name,Last_name,Email,Message,Date) values ('$first_name','$last_name','$email','$message',CURDATE())";
+	$res = mysqli_query($con,$sql);
+	// show the alert
+}
+
+
+
+?>
+			
+			
+			
 			<!-- header start -->
 			<?php 
 				include('header.php');
@@ -68,23 +90,8 @@
 												houzezValidateElementor("#houzez-form-f4a5b85");
 											});
 										</script>
-										<form class="elementor-form" id="houzez-form-f4a5b85" method="post"
-											name="New Form" action="https://demo01.houzez.co/wp-admin/admin-ajax.php">
-											<input type="hidden" name="form_id" value="f4a5b85" />
-											<input type="hidden" name="houzez_contact_form" value="yes" />
-											<input type="hidden" name="action" value="houzez_ele_contact_form" />
-											<input type="hidden" name="source_link"
-												value="https://demo01.houzez.co/contact/" />
-											<input type="hidden" name="lead_page_id" value="16941" />
-											<input type="hidden" name="email_to" value="hello@favethemes.com" />
-											<input type="hidden" name="email_subject"
-												value="New message from &quot;Houzez 01&quot;" />
-											<input type="hidden" name="email_to_cc" value />
-											<input type="hidden" name="email_to_bcc" value />
-											<input type="hidden" name="webhook" value="false" />
-											<input type="hidden" name="webhook_url" value />
-											<input type="hidden" name="redirect_to" value />
-											<input type="hidden" name="google_recaptcha" value="yes" />
+										<form class="elementor-form" id="" method="post"
+											name="">
 											<div class="elementor-form-fields-wrapper elementor-labels-above">
 												<div
 													class="elementor-field-group elementor-column form-group elementor-field-group-name elementor-col-50 elementor-field-required elementor-mark-required">
@@ -121,25 +128,12 @@
 														placeholder="Message" required="required"
 														title="* Message"></textarea>
 												</div>
-												<div
-													class="houzez-gdpr-agreement elementor-field-group elementor-col-100">
-													<label for="gdpr_agreement" class="elementor-field-label">GDPR
-														Agreement</label>
-													<div class="gdpr-agreement-subgroup">
-														<span class="gdpr-field-option">
-															<label class="gdpr-text" for="gdpr_agreement">
-																<input required type="checkbox" name="gdpr_agreement"
-																	id="gdpr_agreement" title="* GDPR Agreement"> I
-																consent to having this website store my submitted
-																information </label>
-														</span>
-													</div>
-												</div>
+												
 												<div class>
 												</div>
 												<div
 													class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
-													<button type="submit"
+													<button type="submit" name="Contact"
 														class="houzez-submit-button houzez-contact-form-js elementor-button elementor-size-sm">
 														<i class="btn-loader houzez-loader-js"></i>
 														Submit </button>

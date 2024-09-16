@@ -1,3 +1,4 @@
+
 <?php 
 
 $con=mysqli_connect("localhost","root","","real_estate");
@@ -10,27 +11,29 @@ if(!isset($_SESSION['admin_id']))
 }
 
 
-$sql = "select * from property_type";
-$res = mysqli_query($con,$sql);
 
-// Del the row
 if(isset($_GET['del_id']))
 {
   $del_id = $_GET['del_id'];
-  $sql_del ="delete from property_type where id=".$del_id;
+  $sql_sel = "select * from website_aboutus_photo_gallery  where id =".$del_id;
+  $sql_res = mysqli_query($con,$sql_sel);
+  $row = mysqli_fetch_assoc($sql_res);
+  if(file_exists('upload/'.$row['Image']) & $row['Image']!=" ")
+  {
+    echo "image 1";
+    unlink('upload/'.$row['Image']);
+  }
+  $sql_del = "delete from website_aboutus_photo_gallery where id = ".$del_id;
   mysqli_query($con,$sql_del);
-  header('location:View_type.php');
+  header('location:View_image_gallery.php');
 }
- 
 
-# Search Type
-// Search data
-$sql = "SELECT * FROM property_type";
-if (isset($_POST['search'])) {
-    $search = mysqli_real_escape_string($con, $_POST['search']);
-    $sql = "SELECT * FROM property_type WHERE property_type LIKE '%$search%'";
-}
-$res = mysqli_query($con, $sql);
+// search
+
+$sql = "select * from website_aboutus_photo_gallery";
+
+
+$res = mysqli_query($con,$sql);
 
 
  ?>
@@ -61,23 +64,7 @@ $res = mysqli_query($con, $sql);
             },
         });
 
-        $(document).ready(function() {
-            $('#Search').keyup(function() {
-                var search = $(this).val();
-                console.log(search);
-                $.ajax({
-                    type: "POST",
-                    data: { search: search },
-                    url: "View_type.php", 
-                    success: function(response) {
-                        $('#data-table').html($(response).find('#data-table').html());
-                    },
-                    error: function(xhr, status, error) {
-                        console.log("Error: " + error); // Log errors if any
-                }
-                });
-            });
-        });
+    
     </script>
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -87,7 +74,7 @@ $res = mysqli_query($con, $sql);
     <link rel="stylesheet" href="assets/css/demo.css" />
 </head>
 <body>
-<div class="wrapper">
+ <div class="wrapper">
       <!-- Sidebar -->
       <?php 
         include('sidebar.php');
@@ -101,10 +88,10 @@ $res = mysqli_query($con, $sql);
           include('header.php');
         ?>
 
-<div class="container">
+      <div class="container">
           <div class="page-inner">
             <div class="page-header">
-              <h3 class="fw-bold mb-3">Forms</h3>
+              <h3 class="fw-bold mb-3">Admin Data </h3>
               <ul class="breadcrumbs mb-3">
                 <li class="nav-home">
                   <a href="#">
@@ -115,64 +102,70 @@ $res = mysqli_query($con, $sql);
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Property Type</a>
+                  <a href="#">View all property</a>
                 </li>
                 <li class="separator">
                   <i class="icon-arrow-right"></i>
                 </li>
                 <li class="nav-item">
-                  <a href="#">Add Property Type</a>
+                  <a href="#">Property Data</a>
                 </li>
               </ul>
             </div>
             <div class="row">
               <div class="col-md-12">
-              <div class="card">
+                <div class="card">
                   <div class="card-header  d-flex justify-content-between align-items-center">
-                    <div class="card-title">Property Type</div>
+                    <h4 class="card-title">Admin Data</h4>
+                    
                     <div class="input-group position-relative search-dropdown">
                   <div class="input-group-prepend">
-                    <button type="submit" class="btn btn-search pe-1">
-                      <i class="fa fa-search search-icon"></i>
-                    </button>
-                  </div>
-                  <input
-                    type="text"
-                    placeholder="Search ..."
-                    class="form-control" 
-                    id="Search"
-                  />
+                   </
                   <div class="dropdown position-absolute top-0 start-0">
-             
+                  
               </div>
       </div>
-      </div>
+                  </div>
                   <div class="card-body">
-                    <table class="table mt-4">
-                      <thead  style="background-color:#6861ce !important;">
-                        <tr>
-                          <th scope="col">Id</th>
-                          <th scope="col">Name</th>
-                          
-                          <th scope="col">Action</th>
-                        </tr>
-                      </thead>
-                      <tbody id="data-table">
-                        <?php while($row = mysqli_fetch_assoc($res)){ ?>
-                        <tr>
-                          <td><?php echo $row['id']; ?></td>
-                          <td><?php echo $row['Property_type']; ?></td>
-                          
-                          <td>  <a href="Add_type.php?edit_id=<?php echo $row['id']; ?>" class="text-theme"><i class="far fa-edit"></i> &nbsp;</a> | <a href="View_type.php?del_id=<?php echo $row['id']; ?>" class="text-theme"> &nbsp;<i class="fas fa-trash-alt"></i></a>
-</td>
-                        </tr>
-                      <?php } ?>
-                      </tbody>
-                    </table>
+                    <div class="table-responsive">
+                      <table
+                        id="basic-datatables"
+                        class="display table table-striped table-hover"
+                      >
+                        <thead>
+                            <tr>
+                                <th class="id-column" style="width: 10px;">ID</th>
+                                <th>Select</th>
+                                <th>Iamge</th>
+                                <th>Date</th>
+                                <th>Delete</th> 
+                            </tr>
+                        </thead>
+                        <tbody id="data-table">
+                          <?php while($row = mysqli_fetch_assoc($res)) { ?>
+                          <tr>  
+                             <td><?php echo $row['id']; ?></td>
+                             <td>
+                              <input type="checkbox">
+                             </td>
+                              <td>
+                                  <div class="img-data" style="width: 200px; height: 150px;">
+                                      <img src="upload/<?php echo $row['Image']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                                  </div>
+                              </td>
+                              <td><?php echo $row['Date'];  ?></td>
+                            
+                                <td>
+                                <a href="View_image_gallery.php?del_id=<?php echo $row['id']?>" class="del-btn"> <i class="fa fa-times"></i></a>
+                                </td>
+                          </tr>
+                        <?php } ?>
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
           </div>
         </div>
 
