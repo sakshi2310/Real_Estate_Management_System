@@ -112,7 +112,7 @@
                         </span>
                         <span>
                             <a class="btn-twitter" target="_blank" href="#">
-                                <i class="lab la-whatsapp"></i> </a>
+                                <i class="lab la-whatsapp mr-2"></i> </a>
                         </span>
                         <span>
                             <a class="btn-googleplus" target="_blank" href="#">
