@@ -3,19 +3,17 @@
 
 $con=mysqli_connect("localhost","root","","real_estate");
 
-
-
-// haader start
+// Header start
 include('header.php');
 // Page session
 if(!isset($_SESSION['user_id']))
 {
   header("location:index.php");
 }
-$user_id  = $_SESSION['user_id'];
-// $status = "Pending";
-$sql = "select * from property_register where Approval_status='Decline' and User_id=".$user_id." order by id DESC";
+$user_id = $_SESSION['user_id'];
+$sql = "select * from property_register where Approval_status='Approved' and User_id=".$user_id." order by id DESC";
 $res = mysqli_query($con,$sql);
+
 if(isset($_GET['del_id']))
 {
   $del_id = $_GET['del_id'];
@@ -32,30 +30,31 @@ if(isset($_GET['del_id']))
   header('location:View_property.php');
 }
 
-// search
-
-$sql = "select * from property_register where Approval_status='Decline' order by id DESC";
+$sql = "select * from property_register where Approval_status='Approved' order by id DESC";
 if (isset($_POST['search']) && isset($_POST['search_by'])) {
   $search = mysqli_real_escape_string($con, $_POST['search']);
   $search_by = mysqli_real_escape_string($con, $_POST['search_by']);
   
   // Build SQL query based on the selected search criterion
   if ($search_by == 'Title') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Property_title LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Property_title LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Type') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Type LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Type LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Status') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Status LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Status LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Area') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Area_name LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Area_name LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'BHK') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND BHK_plot LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND BHK_plot LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Date') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Pro_date LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Pro_date LIKE '%$search%' ORDER BY id DESC";
   }
 }
 
 $res = mysqli_query($con,$sql);
+
+
+
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,11 +65,10 @@ $res = mysqli_query($con,$sql);
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css file -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="../Admin/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../../Admin/assets/js/jquery.min.js"></script>
     <script>
-      
-      $(document).ready(function() {
+         $(document).ready(function() {
             $('#Search').keyup(function() {
                 var search = $(this).val();
                 var search_by = $('#Search_by').val()
@@ -93,6 +91,11 @@ $res = mysqli_query($con,$sql);
 </head>
 <body>
 
+    <!-- header start -->
+    <?php
+  // include('header.php');
+  ?>
+    <!-- header start -->
 
     <div class="container-fluid">
       <div class="row">
@@ -101,7 +104,7 @@ $res = mysqli_query($con,$sql);
       ?>
         <div class="col-10 p-4 ms-auto">
           <div class="main-Borad p-5 bg-white">
-          <div class="table-header d-flex justify-content-between py-3">
+            <div class="table-header d-flex justify-content-between py-3">
               <h5 class="page-title mb-0">View Data</h5>
               <div class="input-group position-relative search-dropdown w-auto">
                   <div class="input-group-prepend">
@@ -127,7 +130,7 @@ $res = mysqli_query($con,$sql);
                 </select>
               </div>
             </div>
-      </div>
+            </div>
              <!-- table start -->
            <table class="table bg-transparent">
             <thead>
@@ -150,7 +153,7 @@ $res = mysqli_query($con,$sql);
                              <td><?php echo $row['id']; ?></td>
                               <td>
                                   <div class="img-data" style="width:180px; height: 180px;">
-                                      <img src="upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                                      <img src="../upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
                                   </div>
                               </td>
                               <td><?php echo $row['Property_title'];  ?></td>

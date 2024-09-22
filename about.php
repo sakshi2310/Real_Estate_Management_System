@@ -5,6 +5,11 @@ $con=mysqli_connect("localhost","root","","real_estate");
 $sql = 'select * from website_aboutus_photo_gallery';
 $res  = mysqli_query($con,$sql);
 
+$sql_services = 'select * from website_services';
+$res_services = mysqli_query($con,$sql_services);
+$row_services = mysqli_fetch_assoc($res_services)
+
+
 
 ?>
        
@@ -102,6 +107,7 @@ $res  = mysqli_query($con,$sql);
                     data-id="fc78338" data-element_type="section"
                     data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
                     <div class="elementor-container elementor-column-gap-default">
+                       
                         <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-50dc01c"
                             data-id="50dc01c" data-element_type="column">
                             <div class="elementor-widget-wrap elementor-element-populated">
@@ -293,6 +299,7 @@ $res  = mysqli_query($con,$sql);
                                 </div>
                             </div>
                         </div>
+                  
                     </div>
                 </section>
 

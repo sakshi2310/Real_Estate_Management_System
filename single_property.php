@@ -105,6 +105,66 @@ if(isset($_POST['Calculate']))
 }
 
 
+// Property Inquirey
+
+$pro_id = $_GET['pro_id'];
+$sql_Pro_admin = "select * from property_register where id=".$pro_id;
+$res_pro_admin = mysqli_query($con,$sql_Pro_admin);
+$row_pro_admin = mysqli_fetch_assoc($res_pro_admin);
+
+$Pro_admin_id = $row_pro_admin['User_id'];
+$pro_admin_name = "select * from users where id=".$Pro_admin_id;
+$res_admin = mysqli_query($con,$pro_admin_name);
+$row_admin = mysqli_fetch_assoc($res_admin);
+
+
+if(isset($_POST['Inquiry']))
+{
+
+   
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $mb_num = $_POST['mobile'];
+    $user_type = $_POST['user_type'];
+    $message = $_POST['message'];
+    $property_id = $_GET['pro_id'];
+    $admin_id = $Pro_admin_id;
+
+
+    $sql_inquiry = "INSERT INTO property_inquiry (
+       Name,Email,User_type,MB_num,Message,Date,Pro_id,Pro_admin_id
+    ) VALUES (
+        '$name','$email','$user_type','$mb_num','$message',CURDATE(),'$property_id','$admin_id'
+    )";
+    mysqli_query($con,$sql_inquiry);
+
+}
+
+
+// Schedule  a Tour
+
+if(isset($_POST['Schedual_tour']))
+{
+   
+    $sechudal_date = $_POST['schedule_date'];
+    $time = $_POST['schedule_time'];
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+    $property_id = $_GET['pro_id'];
+    $admin_id = $Pro_admin_id;
+    
+    $sql_tour = "INSERT INTO schedual_tour (
+       Schedual_date,Time,Name,Phone,Email,Message,Date,Property_id,User_id
+     ) VALUES (
+         '$sechudal_date','$time','$name','$phone','$email','$message',CURDATE(),'$property_id','$admin_id'
+     )";
+     mysqli_query($con,$sql_tour);
+ 
+
+}
+
 ?> 
 
  
@@ -873,17 +933,7 @@ if(isset($_POST['Calculate']))
                                 <div class="block-wrap">
                                     <div class="block-content-wrap">
                                         <form method="post" action="#">
-                                            <input type="hidden" name="schedule_contact_form_ajax" value="b2300d9565" />
-                                            <input type="hidden" name="property_permalink"/>
-                                            <input type="hidden" name="property_title" value="New Apartment" />
-                                            <input type="hidden" name="action" value="houzez_schedule_send_message">
-                                            <input type="hidden" name="listing_id" value="17405">
-                                            <input type="hidden" name="property_id" value="Hz-11" />
-                                            <input type="hidden" name="is_listing_form" value="yes">
-                                            <input type="hidden" name="is_schedule_form" value="yes">
-                                            <input type="hidden" name="redirect_to" value>
-                                            <input type="hidden" name="agent_id" value="17365">
-                                            <input type="hidden" name="agent_type" value="agent_info">
+                                          
                                             <input type="hidden" name="target_email"
                                                 value="&#109;ike.m&#111;o&#114;e&#64;houze&#122;&#46;&#99;&#111;">
                                             <div class="row">
@@ -905,201 +955,36 @@ if(isset($_POST['Calculate']))
                                                             <div class="property-schedule-tour-day-form-slide-wrap">
                                                                 <div
                                                                     class="property-schedule-tour-day-form-slide-v2-bottom">
+                                                                    <?php 
+                                                                        $today =  new DateTime();
+                                                                        $enddate = clone $today;
+                                                                        $enddate->modify('+15 days');
+                                                                        
+                                                                        while($today <= $enddate){
+                                                                            $dayname = $today->format('D');
+                                                                            $dayNumber = $today->format('d'); 
+                                                                            $monthName = $today->format('M');
+                                                                            $fullDate = $today->format('Y-m-d'); 
+                                                                    ?>
                                                                     <div class="hz-date-item">
                                                                         <div class="form-group">
                                                                             <label class="control control--radio">
                                                                                 <input name="schedule_date" type="radio"
-                                                                                    value="Sun 04 Aug">
+                                                                                    value="<?php echo $fullDate; ?>">
                                                                                 <span class="control__indicator">
-                                                                                    Sun<br>
+                                                                                    <?php echo $dayname; ?><br>
                                                                                     <span
-                                                                                        class="control__indicator_day">04</span><br>
-                                                                                    Aug </span>
+                                                                                        class="control__indicator_day"><?php echo $dayNumber; ?></span><br>
+                                                                                    <?php echo $monthName; ?> </span>
                                                                             </label>
                                                                         </div>
                                                                     </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Mon 05 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Mon<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">05</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Tue 06 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Tue<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">06</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Wed 07 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Wed<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">07</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Thu 08 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Thu<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">08</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Fri 09 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Fri<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">09</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Sat 10 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Sat<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">10</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Sun 11 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Sun<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">11</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Mon 12 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Mon<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">12</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Tue 13 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Tue<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">13</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Wed 14 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Wed<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">14</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Thu 15 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Thu<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">15</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Fri 16 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Fri<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">16</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Sat 17 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Sat<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">17</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="hz-date-item">
-                                                                        <div class="form-group">
-                                                                            <label class="control control--radio">
-                                                                                <input name="schedule_date" type="radio"
-                                                                                    value="Sun 18 Aug">
-                                                                                <span class="control__indicator">
-                                                                                    Sun<br>
-                                                                                    <span
-                                                                                        class="control__indicator_day">18</span><br>
-                                                                                    Aug </span>
-                                                                            </label>
-                                                                        </div>
-                                                                    </div>
+                                                                   <?php 
+                                                                    $today->modify('+1 day');
+                                                                
+                                                                }
+
+                                                                   ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1122,6 +1007,8 @@ if(isset($_POST['Calculate']))
                                                                 <option value="01:30 pm"> 01:30 pm</option>
                                                                 <option value="01:45 pm"> 01:45 pm</option>
                                                                 <option value="02:00 pm"> 02:00 pm</option>
+                                                                <option value="03:00 pm"> 03:00 pm</option>
+                                                                <option value="04:00 pm"> 04:00 pm</option>
                                                                 <option value="05:00 pm"> 05:00 pm</option>
                                                             </select>
 
@@ -1153,11 +1040,12 @@ if(isset($_POST['Calculate']))
                                                                 </div>
                                                             </label>
                                                         </div>
-                                                        <button
+                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request">
+                                                        <!-- <button
                                                             class="schedule_contact_form btn btn-secondary btn-full-width">
                                                             <span class="btn-loader houzez-loader-js"></span> Submit a
                                                             Tour Request
-                                                        </button>
+                                                        </button> -->
                                                     </div>
 
                                                 </div>
@@ -1236,25 +1124,33 @@ if(isset($_POST['Calculate']))
                                             Listings</a>
                                     </div>
                                     <div class="block-content-wrap">
-                                        <form method="post" action="#">
+                                       
                                             <div class="agent-details">
                                                 <div class="d-flex align-items-center">
                                                     <div class="agent-image"><a
                                                             href="#"><img
                                                                 class="rounded"
-                                                                src="assets/client1.jpg"
+                                                                src="User/upload/<?php echo $row_admin['Image']; ?>"
                                                                 alt="Mike Moore" width="80" height="80"></a></div>
                                                     <ul class="agent-information list-unstyled">
                                                         <li class="agent-name"><i
-                                                                class="las la-user mr-1"></i> Mike
-                                                            Moore</li>
+                                                                class="las la-user mr-1"></i> <?php echo $row_admin['User_name']; ?></li>
                                                         <li class="agent-phone-wrap clearfix"><i
                                                                 class="las la-phone mr-1"></i><span
-                                                                class="agent-phone "><a href="tel:7894563210">789 456
-                                                                    3210</a></span><i
-                                                                class="las la-mobile mr-1"></i><span
-                                                                class="agent-phone "><a href="tel:8976541258">897 654
-                                                                    1258</a></span><i
+                                                                class="agent-phone "><a href="tel:7894563210"><?php 
+                                                                    $phone_number = $row_admin['Mb_num'];
+                                                                    if($phone_number)
+                                                                    {
+                                                                        $start = substr($phone_number,0,2);
+                                                                        $end = substr($phone_number,-2);
+                                                                        $format_number = $start.str_repeat("*",strlen($phone_number)-4).$end;
+                                                                    }else{
+                                                                        $format_number = $row_admin['Mb_num'];
+                                                                    }
+                                                                
+                                                                
+                                                                
+                                                                echo $format_number; ?></a></span><i
                                                                 class="lab la-whatsapp mr-1"></i><span><a
                                                                     target="_blank"
                                                                     href="#">WhatsApp</a></span>
@@ -1273,6 +1169,7 @@ if(isset($_POST['Calculate']))
                                                 <h3>Enquire About This Property</h3>
                                             </div>
                                             <div class="form_messages"></div>
+                                            <form method="post">
                                             <div class="row">
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="form-group">
@@ -1328,28 +1225,12 @@ if(isset($_POST['Calculate']))
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 col-xs-12">
-                                                    <input type="hidden" name="target_email"
-                                                        value="&#109;ike&#46;&#109;&#111;o&#114;&#101;&#64;&#104;&#111;&#117;&#122;ez&#46;&#99;o">
-                                                    <input type="hidden" name="property_agent_contact_security"
-                                                        value="bb9a5e698d" />
-                                                    <input type="hidden" name="property_permalink" />
-                                                    <input type="hidden" name="property_title" value="New Apartment" />
-                                                    <input type="hidden" name="property_id" value="Hz-11" />
-                                                    <input type="hidden" name="action"
-                                                        value="houzez_property_agent_contact">
-                                                    <input type="hidden" class="is_bottom" value="bottom">
-                                                    <input type="hidden" name="listing_id" value="17405">
-                                                    <input type="hidden" name="is_listing_form" value="yes">
-                                                    <input type="hidden" name="agent_id" value="17365">
-                                                    <input type="hidden" name="agent_type" value="agent_info">
-                                                    <button
-                                                        class="houzez_agent_property_form btn btn-secondary btn-sm-full-width">
-                                                        <span class="btn-loader houzez-loader-js"></span> Request
-                                                        Information
-                                                    </button>
+                                                    <input type="submit" name="Inquiry" id="" value="Request Information" class="houzez_agent_property_form btn btn-secondary btn-sm-full-width">
+                                                    <input type="submit" name="Inquiry" value="Request Information"> 
+                                                    <!-- Abouve button is work without css give it css if i give the css class then not work it -->
                                                 </div>
                                             </div>
-                                        </form>
+                                            </form>
                                     </div>
                                 </div>
                             </div>

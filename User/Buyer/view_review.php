@@ -3,17 +3,19 @@
 
 $con=mysqli_connect("localhost","root","","real_estate");
 
-// Header start
+
+
+// haader start
 include('header.php');
 // Page session
 if(!isset($_SESSION['user_id']))
 {
   header("location:index.php");
 }
-$user_id = $_SESSION['user_id'];
-$sql = "select * from property_register where Approval_status='Approved' and User_id=".$user_id." order by id DESC";
+$user_id  = $_SESSION['user_id'];
+// $status = "Pending";
+$sql = "select * from property_register where Approval_status='Decline' and User_id=".$user_id." order by id DESC";
 $res = mysqli_query($con,$sql);
-
 if(isset($_GET['del_id']))
 {
   $del_id = $_GET['del_id'];
@@ -30,31 +32,30 @@ if(isset($_GET['del_id']))
   header('location:View_property.php');
 }
 
-$sql = "select * from property_register where Approval_status='Approved' order by id DESC";
+// search
+
+$sql = "select * from property_register where Approval_status='Decline' order by id DESC";
 if (isset($_POST['search']) && isset($_POST['search_by'])) {
   $search = mysqli_real_escape_string($con, $_POST['search']);
   $search_by = mysqli_real_escape_string($con, $_POST['search_by']);
   
   // Build SQL query based on the selected search criterion
   if ($search_by == 'Title') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Property_title LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Property_title LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Type') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Type LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Type LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Status') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Status LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Status LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Area') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Area_name LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Area_name LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'BHK') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND BHK_plot LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND BHK_plot LIKE '%$search%' ORDER BY id DESC";
   } elseif ($search_by == 'Date') {
-      $sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND Pro_date LIKE '%$search%' ORDER BY id DESC";
+      $sql = "SELECT * FROM property_register WHERE Approval_status='Decline' AND Pro_date LIKE '%$search%' ORDER BY id DESC";
   }
 }
 
 $res = mysqli_query($con,$sql);
-
-
-
  ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -65,10 +66,11 @@ $res = mysqli_query($con,$sql);
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css file -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="../Admin/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../../Admin/assets/js/jquery.min.js"></script>
     <script>
-         $(document).ready(function() {
+      
+      $(document).ready(function() {
             $('#Search').keyup(function() {
                 var search = $(this).val();
                 var search_by = $('#Search_by').val()
@@ -91,11 +93,6 @@ $res = mysqli_query($con,$sql);
 </head>
 <body>
 
-    <!-- header start -->
-    <?php
-  // include('header.php');
-  ?>
-    <!-- header start -->
 
     <div class="container-fluid">
       <div class="row">
@@ -104,7 +101,7 @@ $res = mysqli_query($con,$sql);
       ?>
         <div class="col-10 p-4 ms-auto">
           <div class="main-Borad p-5 bg-white">
-            <div class="table-header d-flex justify-content-between py-3">
+          <div class="table-header d-flex justify-content-between py-3">
               <h5 class="page-title mb-0">View Data</h5>
               <div class="input-group position-relative search-dropdown w-auto">
                   <div class="input-group-prepend">
@@ -121,67 +118,64 @@ $res = mysqli_query($con,$sql);
                   <div class="dropdown position-absolute top-0 start-0">
                   <select class="form-select" aria-label="Default select example" id="Search_by">
                   <option >Select</option>
-                  <option value="Title" selected>Title</option>
-                  <option value="Type">Properyt Type</option>
-                  <option value="Status">Status</option>
-                  <option value="Area">Area</option>
-                  <option value="BHK">BHK</option>
-                  <option value="Date">Date</option>
+                  <option value="Title" selected>Date</option>
+                  <option value="Status">Rating</option>
+                  <option value="Area">Title</option>
+                  <option value="Id">Properyt Id</option>
                 </select>
               </div>
             </div>
-            </div>
+      </div>
              <!-- table start -->
            <table class="table bg-transparent">
             <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Iamge</th>
-                                <th>title</th>
-                                <th>Status</th>
-                                <th>Type</th>
-                                <th>City</th> 
-                                <th>Approval status</th>
-                                <th class="text-center">Action</th> 
-                                <th>Preview</th>
+                            <th class="id-column" style="width: 10px;">ID</th>
+                                <th>Email</th>
+                                <th>Title</th>
+                                <th>Rating</th>
+                                <th>Review</th>
+                                <th>Property_id</th> 
+                                <th>Date</th> 
+                                <th>Action</th>
                             </tr>
                         </thead>
             <tr>
                    <tbody id="data-table">
-                          <?php while($row = mysqli_fetch_assoc($res)) { ?>
-                          <tr>  
-                             <td><?php echo $row['id']; ?></td>
-                              <td>
-                                  <div class="img-data" style="width:180px; height: 180px;">
-                                      <img src="upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                   <tr>  
+                                <td>1</td>
+                                <td>sakshi@gmail.com</td>
+                                <td>DSDA</td>
+                                <td>1</td>
+                                <td>it's great</td>
+                                <td>4</td>
+                                <td>2024-08-04</td>
+                                <td>
+                                <div class="action-icn">
+                                  <div class="form-button-action d-flex gap-2">
+                                  <a href="Edit_Property.php" class="edit-btn">  <i class="bi bi-pencil"></i> </a>
+                                  <a href="View_property.php" class="del-btn"> <i class="bi bi-trash3"></i></a>
                                   </div>
-                              </td>
-                              <td><?php echo $row['Property_title'];  ?></td>
-                              <td>
-                                  <?php echo $row['Status']; ?>
-                              </td>
-                               <td>
-                                  <?php echo $row['Type']; ?>
-                              </td>
-                              <td>
-                                  <?php echo $row['City']; ?>
-                              </td>
-                              <td>
-                                  <?php echo $row['Approval_status']; ?>
-                              </td>
-                              <td>
-                <div class="action-icn d-flex gap-2">
-                <a href="Add_property.php?edit_id=<?php echo $row['id'];?>" class="edit-btn"><i class="bi bi-pencil"></i></a>
-                <a href="View_property.php?del_id=<?php echo $row['id'];?>" class="del-btn"><i class="bi bi-trash3"></i></a>
-                </div>
-              </td>
-              <td>
-                <div class="action-icn d-flex justify-content-center">
-                <a href="Single_property.php?view_id=<?php echo $row['id'];?>" class="prev-btn"><i class="bi bi-eye"></i></a>
-                </div>
-              </td>
+                                </div>
+                                </td>
                           </tr>
-                        <?php } ?>
+                          <tr>  
+                                <td>2</td>
+                                <td>vrushti@gmail.com</td>
+                                <td>DSDA</td>
+                                <td>2</td>
+                                <td>it's great</td>
+                                <td>5</td>
+                                <td>2024-09-04</td>
+                                <td>
+                                <div class="action-icn">
+                                  <div class="form-button-action d-flex gap-2">
+                                    <a href="Edit_Property.php" class="edit-btn">  <i class="bi bi-pencil"></i> </a>
+                                    <a href="View_property.php" class="del-btn"> <i class="bi bi-trash3"></i></a>
+                                  </div>
+                                </div>
+                                </td>
+                          </tr>
                         </tbody>
            </table>
           <!-- table start -->

@@ -68,8 +68,8 @@ $res = mysqli_query($con, $sql);
   <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- css file -->
-  <link rel="stylesheet" href="css/style.css">
-  <script src="../Admin/assets/js/jquery.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="../../Admin/assets/js/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
       $('#Search').keyup(function() {
@@ -154,7 +154,7 @@ $res = mysqli_query($con, $sql);
                     <td><?php echo $row['id']; ?></td>
                     <td>
                       <div class="img-data" style="width:180px; height: 180px;">
-                        <img src="upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
+                        <img src="../upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
                       </div>
                     </td>
                     <td><?php echo $row['Property_title'];  ?></td>
