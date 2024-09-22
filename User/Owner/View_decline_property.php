@@ -66,8 +66,8 @@ $res = mysqli_query($con,$sql);
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css file -->
-    <link rel="stylesheet" href="css/style.css">
-    <script src="../Admin/assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../../Admin/assets/js/jquery.min.js"></script>
     <script>
       
       $(document).ready(function() {
@@ -118,10 +118,12 @@ $res = mysqli_query($con,$sql);
                   <div class="dropdown position-absolute top-0 start-0">
                   <select class="form-select" aria-label="Default select example" id="Search_by">
                   <option >Select</option>
-                  <option value="Title" selected>Date</option>
-                  <option value="Status">Rating</option>
-                  <option value="Area">Title</option>
-                  <option value="Id">Properyt Id</option>
+                  <option value="Title" selected>Title</option>
+                  <option value="Type">Properyt Type</option>
+                  <option value="Status">Status</option>
+                  <option value="Area">Area</option>
+                  <option value="BHK">BHK</option>
+                  <option value="Date">Date</option>
                 </select>
               </div>
             </div>
@@ -130,52 +132,53 @@ $res = mysqli_query($con,$sql);
            <table class="table bg-transparent">
             <thead>
                             <tr>
-                            <th class="id-column" style="width: 10px;">ID</th>
-                                <th>Email</th>
-                                <th>Title</th>
-                                <th>Rating</th>
-                                <th>Review</th>
-                                <th>Property_id</th> 
-                                <th>Date</th> 
-                                <th>Action</th>
+                                <th>ID</th>
+                                <th>Iamge</th>
+                                <th>title</th>
+                                <th>Status</th>
+                                <th>Type</th>
+                                <th>City</th> 
+                                <th>Approval status</th>
+                                <th class="text-center">Action</th> 
+                                <th>Preview</th>
                             </tr>
                         </thead>
             <tr>
                    <tbody id="data-table">
-                   <tr>  
-                                <td>1</td>
-                                <td>sakshi@gmail.com</td>
-                                <td>DSDA</td>
-                                <td>1</td>
-                                <td>it's great</td>
-                                <td>4</td>
-                                <td>2024-08-04</td>
-                                <td>
-                                <div class="action-icn">
-                                  <div class="form-button-action d-flex gap-2">
-                                  <a href="Edit_Property.php" class="edit-btn">  <i class="bi bi-pencil"></i> </a>
-                                  <a href="View_property.php" class="del-btn"> <i class="bi bi-trash3"></i></a>
-                                  </div>
-                                </div>
-                                </td>
-                          </tr>
+                          <?php while($row = mysqli_fetch_assoc($res)) { ?>
                           <tr>  
-                                <td>2</td>
-                                <td>vrushti@gmail.com</td>
-                                <td>DSDA</td>
-                                <td>2</td>
-                                <td>it's great</td>
-                                <td>5</td>
-                                <td>2024-09-04</td>
-                                <td>
-                                <div class="action-icn">
-                                  <div class="form-button-action d-flex gap-2">
-                                    <a href="Edit_Property.php" class="edit-btn">  <i class="bi bi-pencil"></i> </a>
-                                    <a href="View_property.php" class="del-btn"> <i class="bi bi-trash3"></i></a>
+                             <td><?php echo $row['id']; ?></td>
+                              <td>
+                                  <div class="img-data" style="width:180px; height: 180px;">
+                                      <img src="../upload/<?php echo $row['Image1']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">
                                   </div>
-                                </div>
-                                </td>
+                              </td>
+                              <td><?php echo $row['Property_title'];  ?></td>
+                              <td>
+                                  <?php echo $row['Status']; ?>
+                              </td>
+                               <td>
+                                  <?php echo $row['Type']; ?>
+                              </td>
+                              <td>
+                                  <?php echo $row['City']; ?>
+                              </td>
+                              <td>
+                                  <?php echo $row['Approval_status']; ?>
+                              </td>
+                              <td>
+                <div class="action-icn d-flex gap-2">
+                <a href="Add_property.php?edit_id=<?php echo $row['id'];?>" class="edit-btn"><i class="bi bi-pencil"></i></a>
+                <a href="View_property.php?del_id=<?php echo $row['id'];?>" class="del-btn"><i class="bi bi-trash3"></i></a>
+                </div>
+              </td>
+              <td>
+                <div class="action-icn d-flex justify-content-center">
+                <a href="Single_property.php?view_id=<?php echo $row['id'];?>" class="prev-btn"><i class="bi bi-eye"></i></a>
+                </div>
+              </td>
                           </tr>
+                        <?php } ?>
                         </tbody>
            </table>
           <!-- table start -->

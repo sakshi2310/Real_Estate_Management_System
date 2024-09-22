@@ -1,10 +1,10 @@
 <?php 
 $con = mysqli_connect('localhost','root','','real_estate');
 session_start();
-if(isset($_SESSION['user_id']))
-{
-  header("location:View_approved_property.php");
-}
+// if(isset($_SESSION['user_id']))
+// {
+//   header("location:View_approved_property.php");
+// }
 if(isset($_POST['Login']))
 {
     $User_name = $_POST['User_name'];
@@ -12,7 +12,7 @@ if(isset($_POST['Login']))
 
     $sql = "select * from users where User_name ='$User_name' and Password='$Password'";
     $res=mysqli_query($con,$sql);
-
+    
     $cnt = mysqli_num_rows($res);
     if($cnt == 0)
     {
@@ -21,7 +21,16 @@ if(isset($_POST['Login']))
     {
         $row = mysqli_fetch_assoc($res);
         $_SESSION['user_id']=$row['id'];
-        header("location:View_approved_property.php");
+        $user_type = $row['User_type'];
+        if($user_type == 'Buyer')
+        {   
+            header("location:Buyer/View_profile.php");
+        }else
+        {   
+            header("location:Owner/View_approved_property.php");
+        }
+       
+      
         
     }
    

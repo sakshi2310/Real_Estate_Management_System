@@ -152,7 +152,7 @@ if (isset($_GET['edit_id'])) {
   <!-- bootstrap css -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <!-- css file -->
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
@@ -242,34 +242,34 @@ if (isset($_GET['edit_id'])) {
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Select Image" name="Image1">
-              <img src="upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail2" placeholder="Select Image" name="Image2">
-              <img src="upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail3" placeholder="Select Image" name="Image3">
-              <img src="upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 " id="page2">
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail4" placeholder="Select Image" name="Image4">
-              <img src="upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail5" placeholder="Select Image" name="Image5">
-              <img src="upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Imae</label>
               <input type="file" class="form-control" id="exampleInputEmail6" placeholder="Select Image" name="Image6">
-              <img src="upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 mt-4">

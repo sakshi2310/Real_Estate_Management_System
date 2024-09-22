@@ -27,7 +27,7 @@ $row = mysqli_fetch_assoc($res);
     <!-- bootstrap css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- css file -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     
@@ -51,7 +51,11 @@ $row = mysqli_fetch_assoc($res);
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-12 mx-auto justify-content-center d-flex">
                     <div class="profile-pic-view">
-                        <img src="upload/<?php echo $row['Image']; ?>" alt="">
+                        <?php if($row['Image']) { ?>
+                        <img src="../upload/<?php echo $row['Image']; ?>" alt="">
+                        <?php }else { ?>
+                            <img src="../img/Default_profile.png" alt="">
+                            <?php } ?>
                         <a href="#" class="edit-icn text-center mt-2">
                             Edit Image
                             <i class="bi bi-pencil cursor ms-2"></i>
