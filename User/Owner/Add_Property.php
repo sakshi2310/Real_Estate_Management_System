@@ -1,6 +1,5 @@
 
 <?php 
-echo "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
 $con = mysqli_connect("localhost",'root','','real_estate');
 // echo $con;
 if (!$con) {
@@ -37,7 +36,6 @@ if (isset($_GET['edit_id'])) {
 
 }
   if (isset($_POST['submit'])) {
-      // Database connection (make sure $con is initialized)
   
     
   
