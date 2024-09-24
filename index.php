@@ -380,7 +380,7 @@ $res_explore = mysqli_query($con, $sql_explore);
                                                                                     <div class="listing-image-wrap">
                                                                                         <div class="listing-thumb">
                                                                                             <a target="_self"
-                                                                                                href="single_property.php?pro_id<?php echo $row_explore['id']; ?>"
+                                                                                                href=""
                                                                                                 class="listing-featured-thumb hover-effect overflow-hidden">
                                                                                                 <img
                                                                                                     src="User/upload/<?php echo $row['Image1']; ?> "
