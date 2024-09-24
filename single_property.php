@@ -176,62 +176,7 @@ if(isset($_POST['Schedual_tour']))
     <main id="main-wrap" class="main-wrap main-wrap-js">
               
         <section class="content-wrap property-wrap property-detail-v3 ">
-            <div class="property-navigation-wrap">
-                <div class="container-fluid">
-                    <ul class="property-navigation list-unstyled d-flex justify-content-between">
-                        <li class="property-navigation-item">
-                            <a class="back-top" href="#main-wrap">
-                                <i class="houzez-icon icon-arrow-button-circle-up"></i>
-                            </a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-description-wrap">Description</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-address-wrap">Address</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-detail-wrap">Details</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-energy-class-wrap">Energy Class</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-features-wrap">Features</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-mortgage-calculator-wrap">Mortgage Calculator</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-floor-plans-wrap">Floor Plans</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-schedule-tour-wrap">Schedule a Tour</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-video-wrap">Video</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-virtual-tour-wrap">360° Virtual Tour</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-walkscore-wrap">Walk Score</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-nearby-wrap">What's Nearby?</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-contact-agent-wrap">Contact</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#property-review-wrap">Reviews</a>
-                        </li>
-                        <li class="property-navigation-item">
-                            <a class="target" href="#similar-listings-wrap">Similar Listings</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            
             <div class="page-title-wrap">
                 <div class="container">
                     <div class="d-flex align-items-center">
@@ -342,7 +287,7 @@ if(isset($_POST['Schedual_tour']))
                                         aria-labelledby="pills-gallery-tab">
                                         <div class="top-gallery-section h-auto">
                                             <div id="property-gallery-js"
-                                                class="houzez-photoswipe listing-slider cS-hidden">
+                                                class="houzez-photoswipe listing-slider cS-hidden" >
                                                 <div
                                                     data-thumb="assets/residancy3.jpg">
                                                     <a rel="gallery-1" data-slider-no="1" href="#"
@@ -864,7 +809,7 @@ if(isset($_POST['Schedual_tour']))
                                                 </div>
                                                
                                             </div>
-                                            <input type="submit" value="Calculate" name="Calculate">
+                                            <input type="submit" value="Calculate" name="Calculate"  class="houzez_agent_property_form btn btn-theme btn-sm-full-width">
                                         </form>
                                     </div>
                                 </div>
@@ -1040,7 +985,7 @@ if(isset($_POST['Schedual_tour']))
                                                                 </div>
                                                             </label>
                                                         </div>
-                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request">
+                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request"  class="houzez_agent_property_form btn btn-theme btn-sm-full-width">
                                                         <!-- <button
                                                             class="schedule_contact_form btn btn-secondary btn-full-width">
                                                             <span class="btn-loader houzez-loader-js"></span> Submit a
@@ -1225,8 +1170,8 @@ if(isset($_POST['Schedual_tour']))
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 col-xs-12">
-                                                    <input type="submit" name="Inquiry" id="" value="Request Information" class="houzez_agent_property_form btn btn-secondary btn-sm-full-width">
-                                                    <input type="submit" name="Inquiry" value="Request Information"> 
+                                                    <!-- <input type="submit" name="Inquiry" id="" value="Request Information" class="houzez_agent_property_form btn btn-secondary btn-sm-full-width"> -->
+                                                    <input type="submit" name="Inquiry" value="Request Information"  class="houzez_agent_property_form btn btn-theme btn-sm-full-width"> 
                                                     <!-- Abouve button is work without css give it css if i give the css class then not work it -->
                                                 </div>
                                             </div>
@@ -1352,7 +1297,7 @@ if(isset($_POST['Schedual_tour']))
                                                     </div>
                                                 </div>
                                                 <div class="col-sm-12 col-xs-12">
-                                                    <input type="submit" value="Submit Review" name="save" class="btn btn-secondary btn-sm-full-width">
+                                                    <input type="submit" value="Submit Review" name="save" class="btn btn-theme btn-sm-full-width">
                                                     <!-- <button id="submit-review" type="submit" name="save" value="save"
                                                         class="btn btn-secondary btn-sm-full-width">
                                                         <span class="houzez-loader-js"></span> Submit Review
