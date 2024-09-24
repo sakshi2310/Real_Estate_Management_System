@@ -1369,3 +1369,20 @@
 .loader {
     width: 150px;
 }
+
+
+.houzez-photoswipe div,.houzez-photoswipe a{
+  height: 476px !important;
+  width: 1145px !important;
+}
+
+.houzez-photoswipe img{
+  height: 100% !important;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.btn-theme{
+  background-color:#33BEFF ;
+  color: white;
+}
