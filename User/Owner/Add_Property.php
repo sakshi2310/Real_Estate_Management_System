@@ -1,15 +1,18 @@
-<?php
 
-
-# Select the Area from admin
-$con = mysqli_connect("localhost", "root", "", "real_estate");
-
+<?php 
+echo "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
+$con = mysqli_connect("localhost",'root','','real_estate');
+// echo $con;
+if (!$con) {
+  echo $con;
+  die("Connection failed: " . mysqli_connect_error());
+}
 // Header start
 include('header.php');
 // Page session
 if(!isset($_SESSION['user_id']))
 {
-  header("location:index.php");
+  header("location:../index.php");
 }
 
 $sql_area = "select * from property_area";
@@ -35,7 +38,7 @@ if (isset($_GET['edit_id'])) {
 }
   if (isset($_POST['submit'])) {
       // Database connection (make sure $con is initialized)
-      $con = mysqli_connect("localhost", "username", "password", "database");
+    
   
       // Gather form data
       $property_title = $_POST['Property_title'];
@@ -142,6 +145,8 @@ if (isset($_GET['edit_id'])) {
   ?>
   
 
+  
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -242,34 +247,34 @@ if (isset($_GET['edit_id'])) {
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Select Image" name="Image1">
-              <img src="../upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
+              <img src="upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail2" placeholder="Select Image" name="Image2">
-              <img src="../upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
+              <img src="upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail3" placeholder="Select Image" name="Image3">
-              <img src="../upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
+              <img src="upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 " id="page2">
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail4" placeholder="Select Image" name="Image4">
-              <img src="../upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
+              <img src="upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail5" placeholder="Select Image" name="Image5">
-              <img src="../upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
+              <img src="upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Imae</label>
               <input type="file" class="form-control" id="exampleInputEmail6" placeholder="Select Image" name="Image6">
-              <img src="../upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
+              <img src="upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 mt-4">
