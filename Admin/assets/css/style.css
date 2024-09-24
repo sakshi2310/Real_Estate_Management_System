@@ -3,9 +3,67 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 
+body{
+    font-family: Quicksand;
+}
+
 /* form bg */
 
 .main{
     background: rgb(104,97,206);
     background: linear-gradient(90deg, rgba(104,97,206,1) 35%, rgba(81,194,249,1) 100%);
+}
+
+
+
+/* otp page */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+.otp-code{
+    text-align: center;
+    margin-bottom: 28px;
+    gap: 10px;
+}
+
+.otp-code input{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border: none;
+    outline: none !important;
+    background-color:#e6ecf8;
+    border: 1px solid #5F86DF;
+    text-align: center;
+    font-size: 16px;
+    caret-color: var(--theme-color);
+    color: var(--theme-color);
+}
+
+.otp_handle{
+    color: var(--theme-color);
+    font-weight: 500;
+    text-align: end;
+    text-align: center;
+}
+
+.otp_code{
+    font-size: 18px;
+    font-weight: 500;
+    color: #222;
+    text-align: center;
+    margin-bottom: 28px;
 }
