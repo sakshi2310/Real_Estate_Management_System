@@ -64,13 +64,13 @@ if(isset($_POST['otp']))
             <input type="number" maxlength="1" class="otp-input" id="input4" oninput="moveNext(this, 'input5')" required>
             <input type="number" maxlength="1" class="otp-input" id="input5" oninput="moveNext(this, 'input6')" required>
             <input type="number" maxlength="1" class="otp-input" id="input6" oninput="moveNext(this, 'input1')" required>
+</div>
             <div class="otp_handle">
                 <span>Resend Code</span>
             </div>
            <div class="frm_btn">
            <input type="hidden" name="otp" id="otp-value">
            <input type="submit" value="Verify OTP" onclick="combineOtp()">
-            </div>
         </form> 
     </div>
         
