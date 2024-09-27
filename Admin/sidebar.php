@@ -174,33 +174,15 @@
                   <p>Reviews</p>
                 </a>
               </li>
-                 
+
               <li class="nav-item">
-                <a
-                  data-bs-toggle="collapse"
-                  href="#Page"
-                  class="collapsed"
-                  aria-expanded="false">
-                  <i class="fas fa-file-alt"></i>
-                  <p>Pages</p>
-                  <span class="caret"></span>
+                <a href="View_contact_us.php">
+                  <i class="fas fa-star-half-alt"></i>
+                  <p>Contact us</p>
                 </a>
-                <div class="collapse" id="Page">
-                  <ul class="nav nav-collapse">
-                    <li>
-                      <a href="View_property.php">
-                        <span class="sub-item">About Us</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="View_contact_us.php">
-                        <span class="sub-item">Contact Us</span>
-                      </a>
-                    </li>
-                   
-                  </ul>
-                 </div>
               </li>
+                 
+             
               <li class="nav-item">
                 <a
                   data-bs-toggle="collapse"
@@ -259,12 +241,7 @@
                   <p>Profile</p>
                 </a>
               </li>
-                <li class="nav-item">
-                <a href="logout.php">
-                  <i class="fas fa-sign-out-alt"></i>
-                  <p>Logout</p>
-                </a>
-              </li>
+                
             </ul>
           </div>
         </div>

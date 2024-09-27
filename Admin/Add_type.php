@@ -1,5 +1,6 @@
 <?php 
 
+// session_start();
 $con = mysqli_connect('localhost','root','','real_estate');
 
 // page session
@@ -8,7 +9,6 @@ if(!isset($_SESSION['admin_id']))
 {
   header("location:index.php");
 }
-
 // edit type
 
 if(isset($_GET['edit_id']))
@@ -45,7 +45,7 @@ if(isset($_POST['Disdard']))
 
 
  ?>
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -82,6 +82,8 @@ if(isset($_POST['Disdard']))
     <link rel="stylesheet" href="assets/css/demo.css" />
 </head>
 <body>
+
+
 
       <div class="wrapper">
         <!-- Sidebar -->
@@ -149,9 +151,10 @@ if(isset($_POST['Disdard']))
                 </div>
 
 
-             </div>
-        <?php 
+       <?php 
         include('footer.php');
        ?>
+      </div>
+     
       <!-- End Custom template -->
     </div>

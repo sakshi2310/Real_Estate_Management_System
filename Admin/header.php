@@ -3,7 +3,6 @@
 
 // Connention
 $con=mysqli_connect("localhost","root","","real_estate");
-// session_start();
 // fetch the current admin for the profile view
 if(isset($_SESSION['admin_id']))
 {
@@ -13,7 +12,7 @@ if(isset($_SESSION['admin_id']))
   $admin_id = $_SESSION['admin_id'];
   $sql_profile = "select * from admin where id =".$admin_id;
   $res_profile = mysqli_query($con,$sql_profile);
-  $row = mysqli_fetch_assoc($res_profile);
+  $row_profile = mysqli_fetch_assoc($res_profile);
 
 }
 
@@ -111,14 +110,14 @@ if(isset($_SESSION['admin_id']))
                   >
                     <div class="avatar-sm">
                       <img
-                        src="upload/<?php echo $row['Image'] ?>"
+                        src="upload/<?php echo $row_profile['Image'] ?>"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
                     </div>
                     <span class="profile-username">
                       <span class="op-7">Hi,</span>
-                      <span class="fw-bold"><?php echo $row['User_name'];?></span>
+                      <span class="fw-bold"><?php echo $row_profile['User_name'];?></span>
                     </span>
                   </a>
                   <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -127,14 +126,14 @@ if(isset($_SESSION['admin_id']))
                         <div class="user-box">
                           <div class="avatar-lg">
                             <img
-                              src="assets/img/profile.jpg"
+                              src="upload/<?php echo $row_profile['Image'] ?>"
                               alt="image profile"
                               class="avatar-img rounded"
                             />
                           </div>
                           <div class="u-text">
-                            <h4><?php echo $row['User_name'];?></h4>
-                            <p class="text-muted"><?php echo $row['Email'];?></p>
+                            <h4><?php echo $row_profile['User_name'];?></h4>
+                            <p class="text-muted"><?php echo $row_profile['Email'];?></p>
                             <a
                               href="View_profile.php"
                               class="btn btn-xs btn-secondary btn-sm"
