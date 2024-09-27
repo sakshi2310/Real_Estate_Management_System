@@ -15,7 +15,7 @@ if(isset($_GET['view_id']))
     $res = mysqli_query($con,$sql);
     $row_detail = mysqli_fetch_assoc($res);
 
-    $sql_dec = "SELECT * FROM `deline_notice` WHERE Property_id=".$view_id;
+    $sql_dec = "SELECT * FROM `deline_notice` WHERE Property_id = ".$view_id." ORDER BY id DESC LIMIT 1";
     $res_dec = mysqli_query($con, $sql_dec);
     $row_dec = mysqli_fetch_assoc($res_dec);
 }

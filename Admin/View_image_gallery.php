@@ -135,7 +135,6 @@ $res = mysqli_query($con,$sql);
                         <thead>
                             <tr>
                                 <th class="id-column" style="width: 10px;">ID</th>
-                                <th>Select</th>
                                 <th>Iamge</th>
                                 <th>Date</th>
                                 <th>Delete</th> 
@@ -145,9 +144,6 @@ $res = mysqli_query($con,$sql);
                           <?php while($row = mysqli_fetch_assoc($res)) { ?>
                           <tr>  
                              <td><?php echo $row['id']; ?></td>
-                             <td>
-                              <input type="checkbox">
-                             </td>
                               <td>
                                   <div class="img-data" style="width: 200px; height: 150px;">
                                       <img src="upload/<?php echo $row['Image']; ?>" alt="" class="img" style="height:100%; width:100%; object-fit:cover;">

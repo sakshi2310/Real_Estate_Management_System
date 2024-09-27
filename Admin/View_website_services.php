@@ -36,7 +36,21 @@ $Sql_Service = "select * from website_services";
 
 $res_service = mysqli_query($con,$Sql_Service);
 
-
+if(isset($_GET['del_id']))
+{
+  $del_id = $_GET['del_id'];
+  $sql_sel = "select * from website_services where id =".$del_id;
+  $sql_res = mysqli_query($con,$sql_sel);
+  $row = mysqli_fetch_assoc($sql_res);
+  if(file_exists('upload/'.$row['Image']) & $row['Image']!=" ")
+  {
+    echo "image 1";
+    unlink('upload/'.$row['Image']);
+  }
+  $sql_del = "delete from website_services where id = ".$del_id;
+  mysqli_query($con,$sql_del);
+  header('location:View_website_services.php');
+}
 
 
 ?>
@@ -197,7 +211,7 @@ $res_service = mysqli_query($con,$Sql_Service);
                                 <div class="action-icn">
                                   <div class="form-button-action d-flex gap-2">
                                     <a href="Add_webstie_services.php?edit_id=<?php echo $row['Id']; ?>" class="edit-btn">  <i class="fa fa-edit"></i> </a>
-                                    <a href="Add_webstie_services.php?del_id=<?php echo $row['Id']?>" class="del-btn"> <i class="fa fa-times"></i></a>
+                                    <a href="View_website_services.php?del_id=<?php echo $row['Id']?>" class="del-btn"> <i class="fa fa-times"></i></a>
                                   </div>
                                 </div>
                               </td>

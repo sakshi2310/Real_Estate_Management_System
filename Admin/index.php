@@ -67,7 +67,6 @@ if(isset($_POST['Login_admin']))
         }  
         
         header(("location:otp_page.php"));
-        // header("location:View_admin.php");
         
     }
    

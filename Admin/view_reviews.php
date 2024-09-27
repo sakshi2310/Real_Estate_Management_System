@@ -176,6 +176,7 @@ $res_review = mysqli_query($con,$sql_review);
                                 <th>Rating</th>
                                 <th>Review</th>
                                 <th>Property_id</th> 
+                                <th>Property title</th>
                                 <th>Date</th> 
                                
                             </tr>

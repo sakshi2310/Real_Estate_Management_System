@@ -70,23 +70,7 @@ if(isset($_POST['submit']))
             },
         });
 
-        $(document).ready(function() {
-            $('#Search').keyup(function() {
-                var search = $(this).val();
-                console.log(search);
-                $.ajax({
-                    type: "POST",
-                    data: { search: search },
-                    url: "View_feature.php", 
-                    success: function(response) {
-                        $('#data-table').html($(response).find('#data-table').html());
-                    },
-                    error: function(xhr, status, error) {
-                        console.log("Error: " + error); // Log errors if any
-                }
-                });
-            });
-        });
+        
     </script>
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
@@ -133,16 +117,7 @@ if(isset($_POST['submit']))
                 <div class="card">
                   <div class="card-header">
                   <div class="col-12 d-flex w-100 justify-content-between">
-                    <h5 class="page-title mb-0">Change Password</h5>
-                    <div class="input-group Serach-input">
-                            <i class="fa fa-search search-icon"></i>
-                            <input
-                                type="text"
-                                placeholder="Search ..."
-                                class="form-control"
-                            />
-                    </div>
-                   
+                    <h5 class="page-title mb-0">Change Password</h5>  
                   </div>
                   <form method="post">
                     <div class="card-body">

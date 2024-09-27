@@ -1,14 +1,14 @@
 <?php 
 
 $con = mysqli_connect('localhost','root','','real_estate');
-// page session
+
 session_start();
 if(!isset($_SESSION['admin_id']))
 {
   header("location:index.php");
 }
 // edit type
-
+$row = array('User_name' => '', 'Email' => '', 'Password' => '', 'Contact' => '');
 if(isset($_GET['edit_id']))
 {
   $edit_id = $_GET['edit_id'];
@@ -28,12 +28,16 @@ if(isset($_POST['Register_admin']))
   if(isset($_GET['edit_id']))
   {
     $sql = "update admin set User_name='$User_name',Email='$Email',Password='$Password',Contact='$Contact' where id=".$edit_id;
+    mysqli_query($con,$sql);
+    header("location:View_admin.php");
   }else
   {
      $sql = "insert into admin (User_name,Email,Password,Contact,Status) values ('$User_name','$Email','$Password','$Contact','$Status');";
+     mysqli_query($con,$sql);
+     header("location:View_admin.php");
   }
-    mysqli_query($con,$sql);
-    header("location:view_admin.php");
+   
+   
 }
 
 
@@ -127,7 +131,7 @@ if(isset($_POST['Register_admin']))
                       <div class="col-md-6 col-lg-4">
                         <div class="form-group px-0">
                           <label for="user" style="font-weight:600 !important;">Username</label>
-                          <input type="text" class="form-control" id="user" placeholder="Enter User"/ name="User_name" value="<?php echo @$row['User_name']; ?>">
+                          <input type="text" class="form-control" id="user" placeholder="Enter User"/ name="User_name"  value="<?php echo @$row['User_name']; ?>">
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4">

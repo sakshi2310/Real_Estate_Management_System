@@ -5,6 +5,16 @@ use PHPMailer\PHPMailer\Exception;
 
 $con = mysqli_connect('localhost','root','','real_estate');
 session_start();
+if(isset($_SESSION['user_id']))
+{
+  if($_SESSION['User_type'] == 'Sellar')
+  {
+        header("location:Owner/View_approved_property.php");
+  }else{
+    header("location:Buyer/View_profile.php");
+  }
+
+}
 
 
 //Load Composer's autoloader
