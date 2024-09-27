@@ -85,7 +85,8 @@ form{
     text-align: center;
     margin-top: 30px;
 }
-.frm_btn button{
+.frm_btn button,
+.frm_btn input{
     padding: 10px 26px;
     background-color: var(--theme-color);
     border-radius: 50px;

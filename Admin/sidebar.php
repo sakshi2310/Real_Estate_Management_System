@@ -177,7 +177,7 @@
 
               <li class="nav-item">
                 <a href="View_contact_us.php">
-                  <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-address-book"></i>
                   <p>Contact us</p>
                 </a>
               </li>
@@ -215,8 +215,8 @@
                   href="#Service"
                   class="collapsed"
                   aria-expanded="false">
-                  <i class="fas fa-file-alt"></i>
-                  <p>website Services</p>
+                  <i class="fas fa-wrench"></i>
+                  <p>Website Services</p>
                   <span class="caret"></span>
                 </a>
                 <div class="collapse" id="Service">
