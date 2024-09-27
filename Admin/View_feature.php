@@ -119,7 +119,7 @@ $res = mysqli_query($con, $sql);
                                 </div>
                                 <div class="card-body">
                                     <div>
-                                        <table class="table mt-4">
+                                        <table class="table">
                                             <thead style="background-color:#6861ce !important;">
                                                 <tr>
                                                     <th scope="col">Id</th>

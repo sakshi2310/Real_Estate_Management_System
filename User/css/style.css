@@ -67,6 +67,9 @@ header{
     z-index: 999;
 }
 
+.header .notification{
+    color: rgba(33, 37, 41, 0.75);
+}
 
 .logo >a img{
     width: 80px;
@@ -170,8 +173,13 @@ table tr >td{
 
 /* sidebar */
 
+.sidebar{
+    z-index: 9999 !important;
+    background-color: #202947 !important;
+}
+
 .sidebar-menus{
-    height: 605px !important;
+    height: 695px !important;
     max-height: 100% !important;
     overflow-y: auto !important;
     padding-bottom:20px !important ;
@@ -188,11 +196,13 @@ table tr >td{
     -o-border-radius: 6px !important;
 }
 .sidebar-menu >li> a{
-    
     font-size: 14px !important;
+    /* color: #fff; */
+    color: #e2e6f1;
 }
-.sidebar-menu >li >a >i{
-    font-size: 14px !important;
+.sidebar-menu >li >a >svg{
+    /* font-size: 14px !important; */
+    color: #e2e6f1;
 }
 .sub-menu >li{
     padding-left: 5px;
@@ -200,7 +210,7 @@ table tr >td{
 .sub-menu >li >a{
     font-size: 14px !important;
     text-decoration: none !important;
-    color: #666;
+    color: #fff;
     padding: 8px 0px ;
     padding-left: 16px;
     position: relative;
@@ -409,3 +419,11 @@ table{
   .card-body{
     border: none !important;
   }
+
+  .card.card-body{
+    background-color: transparent !important;
+  }
+
+.text-muted{
+    font-size: 14px;
+}
