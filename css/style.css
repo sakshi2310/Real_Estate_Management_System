@@ -1385,6 +1385,10 @@
 .btn-theme{
   background-color:#33BEFF ;
   color: white;
+  &:hover{
+    background-color: #33beff;
+    color: white;
+  }
 }
 
 .img-gallary{

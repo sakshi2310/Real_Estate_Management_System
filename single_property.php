@@ -776,7 +776,7 @@ if(isset($_POST['Schedual_tour']))
                                                                 </div>
                                                             </label>
                                                         </div>
-                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request">
+                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request" class="btn btn-theme">
                                                         <!-- <button
                                                             class="schedule_contact_form btn btn-secondary btn-full-width">
                                                             <span class="btn-loader houzez-loader-js"></span> Submit a
@@ -963,7 +963,7 @@ if(isset($_POST['Schedual_tour']))
                                                 </div>
                                                 <div class="col-sm-12 col-xs-12">
                                                     <!-- <input type="submit" name="Inquiry" id="" value="Request Information" class="houzez_agent_property_form btn btn-secondary btn-sm-full-width"> -->
-                                                    <input type="submit" name="Inquiry" value="Request Information"  > 
+                                                    <input type="submit" name="Inquiry" value="Request Information" class="btn btn-theme" > 
                                                     <!-- Abouve button is work without css give it css if i give the css class then not work it -->
                                                 </div>
                                             </div>
