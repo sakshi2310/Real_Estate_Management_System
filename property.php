@@ -18,7 +18,7 @@ $res = mysqli_query($con,$sql);
         include('header-light.php');
         ?>
       <!-- header end -->
-      <section id="desktop-header-search" class="advanced-search advanced-search-nav " data-hidden="0"
+      <!-- <section id="desktop-header-search" class="advanced-search advanced-search-nav " data-hidden="0"
           data-sticky="1">
           <div class="container">
               <form class="houzez-search-form-js " method="get" autocomplete="off">
@@ -163,7 +163,7 @@ $res = mysqli_query($con,$sql);
                   </div>
               </form>
           </div>
-      </section>
+      </section> -->
       <section class="listing-wrap listing-v1">
           <div class="container">
               <div class="page-title-wrap">

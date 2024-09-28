@@ -637,7 +637,7 @@ body[data-background-color="dark"] .demo-icon .icon-class {
 
 /* serachbar */
 
-/* .Serach-input{
+.Serach-input{
   position: relative;
   width: 350px !important;
 }
@@ -649,11 +649,11 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   -moz-border-radius: 3px !important;
   -ms-border-radius: 3px !important;
   -o-border-radius: 3px !important;
-  padding-left: 200px !important;
+  padding-left: 50px !important;
   width: 400px !important;
 }
 
-.Serach-input i{
+.Serach-input .input-group-prepend{
   position: absolute !important;
   top: 50%;
   transform: translateY(-50%);
@@ -661,12 +661,11 @@ body[data-background-color="dark"] .demo-icon .icon-class {
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
-  left: 15px;
+  left: 0px;
   position: relative;
   z-index: 999;
   position: relative;
-  left: 140px !important;
-} */
+}
 .serachbar{
   width: 400px;
   height: 42px !important;

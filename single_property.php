@@ -570,7 +570,7 @@ if(isset($_POST['Schedual_tour']))
                                             if (!empty($row[$image_column])) { // Check if the image column is not empty
                                                 // Dynamically generate the HTML for each image
                                                 echo '<a href="#" data-toggle="modal" data-slider-no="' . $i . '" data-target="#property-lightbox"
-                                                        class="houzez-trigger-popup-slider-js gallery-grid-item">
+                                                        class="houzez-trigger-popup-slider-js gallery-grid-item img-gallary object-fit-cover" style="width:300px; height="192px";">
                                                         <img class="img-fluid"
                                                             src="User/upload/' . $row[$image_column] . '"
                                                             alt="Property Image ' . $i . '">
@@ -1896,7 +1896,7 @@ if(isset($_POST['Schedual_tour']))
     <script type="text/javascript" id="houzez-custom-js-extra">
         /* <![CDATA[ */
         var houzez_vars = { "admin_url": "https:\/\/demo01.houzez.co\/wp-admin\/", "houzez_rtl": "no", "user_id": "0", "redirect_type": "diff_page", "login_redirect": "https:\/\/demo01.houzez.co\/my-profile\/", "property_gallery_popup_type": "houzez", "wp_is_mobile": "", "default_lat": "25.686540", "default_long": "-80.431345", "houzez_is_splash": "", "prop_detail_nav": "yes", "add_to_favorite_login_required": "0", "disable_property_gallery": "1", "grid_gallery_behaviour": "houzez-show-gallery", "is_singular_property": "1", "search_position": "under_nav", "login_loading": "Sending user info, please wait...", "not_found": "We didn't find any results", "houzez_map_system": "google", "for_rent": "for-rent", "for_rent_price_slider": "for-rent", "search_min_price_range": "200", "search_max_price_range": "2500000", "search_min_price_range_for_rent": "50", "search_max_price_range_for_rent": "25000", "get_min_price": "0", "get_max_price": "0", "currency_position": "before", "currency_symbol": "$", "decimals": "0", "decimal_point_separator": ".", "thousands_separator": ",", "is_halfmap": "", "houzez_date_language": "", "houzez_default_radius": "50", "houzez_reCaptcha": "", "geo_country_limit": "0", "geocomplete_country": "", "is_edit_property": "", "processing_text": "Processing, Please wait...", "halfmap_layout": "", "prev_text": "Prev", "next_text": "Next", "keyword_search_field": "prop_title", "keyword_autocomplete": "1", "autosearch_text": "Searching...", "paypal_connecting": "Connecting to paypal, Please wait... ", "transparent_logo": "", "is_transparent": "", "is_top_header": "0", "simple_logo": "https:\/\/demo01.houzez.co\/wp-content\/uploads\/2020\/02\/logo-houzez-color.png", "retina_logo": "https:\/\/demo01.houzez.co\/wp-content\/uploads\/2016\/03\/logo-houzez-color@2x.png", "mobile_logo": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/logo-houzez-white.png", "retina_logo_mobile": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/logo-houzez-white@2x.png", "retina_logo_mobile_splash": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/logo-houzez-white@2x.png", "custom_logo_splash": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/logo-houzez-white.png", "retina_logo_splash": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/logo-houzez-white@2x.png", "monthly_payment": "Monthly Payment", "weekly_payment": "Weekly Payment", "bi_weekly_payment": "Bi-Weekly Payment", "compare_url": "https:\/\/demo01.houzez.co\/compare-properties\/", "favorite_url": "https:\/\/demo01.houzez.co\/favorite-properties\/", "template_thankyou": "https:\/\/demo01.houzez.co\/thank-you\/", "compare_page_not_found": "Please create page using compare properties template", "compare_limit": "Maximum item compare are 4", "compare_add_icon": "", "compare_remove_icon": "", "add_compare_text": "Add to Compare", "remove_compare_text": "Remove from Compare", "is_mapbox": "google", "api_mapbox": "", "is_marker_cluster": "1", "g_recaptha_version": "v3", "s_country": "", "s_state": "", "s_city": "", "s_areas": "", "woo_checkout_url": "", "agent_redirection": "" };
-        /* ]]> */
+    
     </script>
     <script type="text/javascript" src="https://demo01.houzez.co/wp-content/themes/houzez/js/custom.min.js"
         id="houzez-custom-js"></script>
@@ -1904,7 +1904,7 @@ if(isset($_POST['Schedual_tour']))
         /* <![CDATA[ */
         var houzez_single_property_map = { "title": "New Apartment", "price": " $125,000", "property_id": "17405", "pricePin": "$125,000", "property_type": "Apartment", "address": "6701 South Dixie Highway, Miami, FL, USA", "lat": "25.6950387", "lng": "-80.3017672", "term_id": "7", "marker": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/map\/pin-single-family.png", "retinaMarker": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/map\/pin-single-family.png", "thumbnail": "https:\/\/demo01.houzez.co\/wp-content\/uploads\/2020\/04\/036-592x444.jpg" };
         var houzez_map_options = { "markerPricePins": "no", "single_map_zoom": "14", "map_type": "roadmap", "map_pin_type": "marker", "googlemap_stype": "[{\r\n\t\t\t\t\"elementType\": \"labels.text\",\r\n\t\t\t\t\"stylers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"weight\": 5\r\n\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"featureType\": \"landscape\",\r\n\t\t\t\t\"elementType\": \"geometry.fill\",\r\n\t\t\t\t\"stylers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"color\": \"#f5f7ff\"\r\n\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"featureType\": \"road\",\r\n\t\t\t\t\"stylers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"visibility\": \"off\"\r\n\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"featureType\": \"water\",\r\n\t\t\t\t\"elementType\": \"geometry.fill\",\r\n\t\t\t\t\"stylers\": [\r\n\t\t\t\t{\r\n\t\t\t\t\t\"color\": \"#84dcff\"\r\n\t\t\t\t}\r\n\t\t\t\t]\r\n\t\t\t}]", "closeIcon": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/map\/close.png", "show_map": "1", "infoWindowPlac": "https:\/\/demo01.houzez.co\/wp-content\/themes\/houzez\/img\/pixel.gif" };
-        /* ]]> */
+      
     </script>
     <script type="text/javascript"
         src="https://demo01.houzez.co/wp-content/themes/houzez/js/single-property-google-map.min.js"
@@ -1917,7 +1917,7 @@ if(isset($_POST['Schedual_tour']))
         var ws_width = '650';
         var ws_width = '100%';
         var ws_height = '400';
-        /* ]]> */
+      
     </script>
     <script type="text/javascript" src="https://www.walkscore.com/tile/show-walkscore-tile.php"
         id="houzez-walkscore-js"></script>
@@ -1925,5 +1925,4 @@ if(isset($_POST['Schedual_tour']))
         src="https://demo01.houzez.co/wp-content/plugins/mailchimp-for-wp/assets/js/forms.js"
         id="mc4wp-forms-api-js"></script>
 </body>
-
 </html>
