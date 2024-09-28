@@ -1171,7 +1171,7 @@ if(isset($_POST['Schedual_tour']))
                                                 </div>
                                                 <div class="col-sm-12 col-xs-12">
                                                     <!-- <input type="submit" name="Inquiry" id="" value="Request Information" class="houzez_agent_property_form btn btn-secondary btn-sm-full-width"> -->
-                                                    <input type="submit" name="Inquiry" value="Request Information"  class="houzez_agent_property_form btn btn-theme btn-sm-full-width"> 
+                                                    <input type="submit" name="Inquiry" value="Request Information"  > 
                                                     <!-- Abouve button is work without css give it css if i give the css class then not work it -->
                                                 </div>
                                             </div>

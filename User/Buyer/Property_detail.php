@@ -10,9 +10,9 @@ if(!isset($_SESSION['user_id']))
   header("location:index.php");
 }
 
-if(isset($_GET['view_id']))
+if(isset($_GET['Pro_id']))
 {
-  $view_id = $_GET['view_id'];
+  $view_id = $_GET['Pro_id'];
   $sql = "select * from property_register where id = ".$view_id;
   $res = mysqli_query($con, $sql);
   $row = mysqli_fetch_assoc($res);
@@ -180,16 +180,7 @@ if(isset($_GET['view_id']))
               <th>Property Register Date</th>
               <td colspan="3"><?php echo $row['Pro_date']; ?></td>
             </tr>
-            <tr>
-             
-              <th>Deline Notice Title</th> 
-              <td colspan="3"><?php if($row_dec){echo $row_dec['Pro_title'];}else{ echo ""; }   ?></td>
-
-            </tr>
-            <tr>
-              <th>Decline Description:</th>
-              <td colspan="3"><?php if($row_dec){echo $row_dec['Pro_dec'];}else{ echo ""; }   ?></td>
-            </tr>
+          
             
 
 

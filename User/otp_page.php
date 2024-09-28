@@ -30,6 +30,7 @@ if(isset($_POST['otp']))
             }
             unset($_SESSION['otp']);
         }else{
+            unset($_SESSION['user_id']);
             echo "<script>
             alert('Invalid OTP. A new OTP has been sent to your email. Login again.');
             window.location.href = 'index.php'; 

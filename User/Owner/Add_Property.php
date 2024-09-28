@@ -35,52 +35,84 @@ if (isset($_GET['edit_id'])) {
   $feature_update = explode(",",$proprty_row['Feature']); 
 
 }
-  if (isset($_POST['submit'])) {
-  
-    
-  
-      // Gather form data
-      $property_title = $_POST['Property_title'];
-      $des = $_POST['Description'];
-      $type = $_POST['Type'];
-      $status = $_POST['Status'];
-      $price = $_POST['Price'];
-      $sec_price = $_POST['Sec_price'];
-      $land_price = $_POST['Land_price'];
-      $land_postfix = $_POST['Land_postfix'];
-      $address = $_POST['Address'];
-      $area_name = $_POST['Area_name'];
-      $area_type = $_POST['Area_type'];
-      $city = $_POST['City'];
-      $badrooms = $_POST['Badrooms'];
-      $bathrooms = $_POST['Bathrooms'];
-      $balcony = $_POST['Balcony'];
-      $BHK_plot = $_POST['BHK_plot'];
-      $total_floors = $_POST['Total_floors'];
-      $your_floors = $_POST['Your_floor'];
-      $property_age = $_POST['Property_age'];
-      $user_id = $_SESSION['user_id'];
-      $featurs = $_POST['features'];
-      $featurs_str = implode(",", $featurs);
-  
-      // Create upload directory if not exists
-      if (!file_exists('upload')) {
-          mkdir('upload', 0777, true);
-      }
-  
-      // Function to handle file uploads
-      function handleFileUpload($fileInputName, $existingImage = null) {
-          if (isset($_FILES[$fileInputName]) && $_FILES[$fileInputName]['error'] == UPLOAD_ERR_OK) {
-              $fileName = basename($_FILES[$fileInputName]['name']);
-              if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], 'upload/' . $fileName)) {
-                  return $fileName;
-              } else {
-                  echo "Failed to upload $fileInputName.";
-              }
+if (isset($_POST['submit'])) {
+
+  // Gather form data
+  $property_title = $_POST['Property_title'];
+  $des = $_POST['Description'];
+  $type = $_POST['Type'];
+  $status = $_POST['Status'];
+  $price = $_POST['Price'];
+  $sec_price = $_POST['Sec_price'];
+  $land_price = $_POST['Land_price'];
+  $land_postfix = $_POST['Land_postfix'];
+  $address = $_POST['Address'];
+  $area_name = $_POST['Area_name'];
+  $area_type = $_POST['Area_type'];
+  $city = $_POST['City'];
+  $badrooms = $_POST['Badrooms'];
+  $bathrooms = $_POST['Bathrooms'];
+  $balcony = $_POST['Balcony'];
+  $BHK_plot = $_POST['BHK_plot'];
+  $total_floors = $_POST['Total_floors'];
+  $your_floors = $_POST['Your_floor'];
+  $property_age = $_POST['Property_age'];
+  $user_id = $_SESSION['user_id'];
+  $featurs = $_POST['features'];
+  $featurs_str = implode(",", $featurs);
+
+  // Create upload directory if not exists
+  if (!file_exists('../upload')) {
+      mkdir('../upload', 0777, true);
+  }
+
+  // Function to handle file uploads
+  function handleFileUpload($fileInputName, $existingImage = null) {
+      if (isset($_FILES[$fileInputName]) && $_FILES[$fileInputName]['error'] == UPLOAD_ERR_OK) {
+          $fileName = basename($_FILES[$fileInputName]['name']);
+          if (move_uploaded_file($_FILES[$fileInputName]['tmp_name'], '../upload/' . $fileName)) {
+              return $fileName;
+          } else {
+              echo "Failed to upload $fileInputName.";
           }
-          return $existingImage;
       }
-  
+      return $existingImage;
+  }
+
+  // SQL operations
+  if (isset($_GET['edit_id'])) {
+      $edit_id = intval($_GET['edit_id']);
+
+      // Fetch current images from the database
+      $sql_fetch = "SELECT * FROM property_register WHERE id=$edit_id";
+      $result = mysqli_query($con, $sql_fetch);
+      $proprty_row = mysqli_fetch_assoc($result);
+
+      // Handle image uploads, preserve existing images if new ones are not uploaded
+      $image1 = handleFileUpload('Image1', $proprty_row['Image1']);
+      $image2 = handleFileUpload('Image2', $proprty_row['Image2']);
+      $image3 = handleFileUpload('Image3', $proprty_row['Image3']);
+      $image4 = handleFileUpload('Image4', $proprty_row['Image4']);
+      $image5 = handleFileUpload('Image5', $proprty_row['Image5']);
+      $image6 = handleFileUpload('Image6', $proprty_row['Image6']);
+
+      // Prepare and execute update query
+      $sql_update = "UPDATE property_register SET 
+          Property_title='$property_title', Description='$des', Type='$type', Status='$status', Price='$price', 
+          Sec_price='$sec_price', Land_price='$land_price', Land_postfix='$land_postfix', 
+          Image1='$image1', Image2='$image2', Image3='$image3', Image4='$image4', Image5='$image5', 
+          Image6='$image6', Feature='$featurs_str', Address='$address', Area_name='$area_name', 
+          Area_type='$area_type', City='$city', Badrooms='$badrooms', Bathroom='$bathrooms', 
+          Balcony='$balcony', BHK_plot='$BHK_plot', Total_floors='$total_floors', Your_floors='$your_floors', 
+          Property_age='$property_age' WHERE id=$edit_id";
+
+      mysqli_query($con, $sql_update);
+      header("Location:View_approved_property.php");
+
+  } else {
+      // New property insert
+      $Approval_status = "Pending";
+
       // Handle image uploads
       $image1 = handleFileUpload('Image1');
       $image2 = handleFileUpload('Image2');
@@ -88,59 +120,27 @@ if (isset($_GET['edit_id'])) {
       $image4 = handleFileUpload('Image4');
       $image5 = handleFileUpload('Image5');
       $image6 = handleFileUpload('Image6');
-  
-      // SQL operations
-      if (isset($_GET['edit_id'])) {
-          $edit_id = intval($_GET['edit_id']);
-  
-          // Fetch existing property data
-          $result = mysqli_query($con, "SELECT * FROM property_register WHERE id = $edit_id");
-          $proprty_row = mysqli_fetch_assoc($result);
-          $Approval_status = $proprty_row['Approval_status'];
-  
-          // Delete old images
-          $images = ['Image1', 'Image2', 'Image3', 'Image4', 'Image5', 'Image6'];
-          foreach ($images as $img) {
-              if (!empty(${$img}) && !empty($proprty_row[$img])) {
-                  unlink('upload/' . $proprty_row[$img]);
-              }
-          }
-  
-          // Prepare and execute update query
-          $sql_update = "UPDATE property_register SET 
-              Property_title='$property_title', Description='$des', Type='$type', Status='$status', Price='$price', 
-              Sec_price='$sec_price', Land_price='$land_price', Land_postfix='$land_postfix', 
-              Image1='$image1', Image2='$image2', Image3='$image3', Image4='$image4', Image5='$image5', 
-              Image6='$image6', Feature='$featurs_str', Address='$address', Area_name='$area_name', 
-              Area_type='$area_type', City='$city', Badrooms='$badrooms', Bathroom='$bathrooms', 
-              Balcony='$balcony', BHK_plot='$BHK_plot', Total_floors='$total_floors', Your_floors='$your_floors', 
-              Property_age='$property_age', Approval_status='$Approval_status' WHERE id=$edit_id";
-          
-          mysqli_query($con, $sql_update);
-          header("Location: View_approved_property.php");
-      } else {
-          // New property insert
-          $Approval_status = "Pending";
-  
-          $sql = "INSERT INTO property_register (
-              Property_title, Description, Type, Status, Price, Sec_price, Land_price, Land_postfix, 
-              Image1, Image2, Image3, Image4, Image5, Image6, Feature, Address, Area_name, Area_type, 
-              City, Badrooms, Bathroom, Balcony, BHK_plot, Total_floors, Your_floors, Property_age, 
-              Approval_status, User_id, Pro_date
-          ) VALUES (
-              '$property_title', '$des', '$type', '$status', '$price', '$sec_price', '$land_price', '$land_postfix', 
-              '$image1', '$image2', '$image3', '$image4', '$image5', '$image6', '$featurs_str', '$address', 
-              '$area_name', '$area_type', '$city', '$badrooms', '$bathrooms', '$balcony', '$BHK_plot', '$total_floors', 
-              '$your_floors', '$property_age', '$Approval_status', '$user_id', CURDATE()
-          )";
-  
-          mysqli_query($con, $sql);
-          header("Location: View_pending_property.php");
-      }
-  
-      // Close the database connection
-      mysqli_close($con);
+
+      $sql = "INSERT INTO property_register (
+          Property_title, Description, Type, Status, Price, Sec_price, Land_price, Land_postfix, 
+          Image1, Image2, Image3, Image4, Image5, Image6, Feature, Address, Area_name, Area_type, 
+          City, Badrooms, Bathroom, Balcony, BHK_plot, Total_floors, Your_floors, Property_age, 
+          Approval_status, User_id, Pro_date
+      ) VALUES (
+          '$property_title', '$des', '$type', '$status', '$price', '$sec_price', '$land_price', '$land_postfix', 
+          '$image1', '$image2', '$image3', '$image4', '$image5', '$image6', '$featurs_str', '$address', 
+          '$area_name', '$area_type', '$city', '$badrooms', '$bathrooms', '$balcony', '$BHK_plot', '$total_floors', 
+          '$your_floors', '$property_age', '$Approval_status', '$user_id', CURDATE()
+      )";
+
+      mysqli_query($con, $sql);
+      header("Location:View_pending_property.php");
   }
+
+  // Close the database connection
+  mysqli_close($con);
+}
+
   ?>
   
 
@@ -246,34 +246,34 @@ if (isset($_GET['edit_id'])) {
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail1" placeholder="Select Image" name="Image1">
-              <img src="upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image1']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail2" placeholder="Select Image" name="Image2">
-              <img src="upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image2']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail3" placeholder="Select Image" name="Image3">
-              <img src="upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image3']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 " id="page2">
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail4" placeholder="Select Image" name="Image4">
-              <img src="upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image4']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Image</label>
               <input type="file" class="form-control" id="exampleInputEmail5" placeholder="Select Image" name="Image5">
-              <img src="upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image5']; ?>" width="50" >
             </div>
             <div class="col-lg-4 col-md-6 col-12">
               <label for="exampleInputEmail1" class="form-label">Select Imae</label>
               <input type="file" class="form-control" id="exampleInputEmail6" placeholder="Select Image" name="Image6">
-              <img src="upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
+              <img src="../upload/<?php echo @$proprty_row['Image6']; ?>" width="50" >
             </div>
           </div>
           <div class="row main-Borad bg-white p-4 mt-4">

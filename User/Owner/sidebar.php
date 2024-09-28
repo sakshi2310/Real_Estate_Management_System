@@ -58,13 +58,13 @@
                   </div>
                   </div>
                   <li>
-                    <a href="#" class="nav-link  py-2 ">
+                    <a href="View_recived_inquiry.php" class="nav-link  py-2 ">
                     <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="19px" height="19px" viewBox="0 0 24 24"><path fill="currentColor" d="M12 17.75a.75.75 0 0 0 .75-.75v-6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75M12 7a1 1 0 1 1 0 2a1 1 0 0 1 0-2"/><path fill="currentColor" fill-rule="evenodd" d="M1.25 12C1.25 6.063 6.063 1.25 12 1.25S22.75 6.063 22.75 12S17.937 22.75 12 22.75S1.25 17.937 1.25 12M12 2.75a9.25 9.25 0 1 0 0 18.5a9.25 9.25 0 0 0 0-18.5" clip-rule="evenodd"/></svg>
                       Recieved Inquirey 
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="nav-link  py-2">
+                    <a href="View_answer_query.php" class="nav-link  py-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="19px" height="19px" viewBox="0 0 28 28"><path fill="currentColor" d="M14 2c6.627 0 12 5.373 12 12s-5.373 12-12 12S2 20.627 2 14S7.373 2 14 2m0 1.5C8.201 3.5 3.5 8.201 3.5 14S8.201 24.5 14 24.5S24.5 19.799 24.5 14S19.799 3.5 14 3.5m0 15a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 0 1 0-2.5m0-11.75c1.963 0 3.75 1.725 3.75 3.75c0 1.431-.465 2.274-1.546 3.306l-.197.184l-.204.187c-.806.738-1.053 1.125-1.053 1.823a.75.75 0 0 1-1.5 0c0-1.149.398-1.842 1.343-2.745l.57-.528c.81-.772 1.087-1.285 1.087-2.227c0-1.184-1.104-2.25-2.25-2.25s-2.25 1.066-2.25 2.25a.75.75 0 0 1-1.5 0c0-2.025 1.787-3.75 3.75-3.75"/></svg>
                         Answerd Query
                     </a>
