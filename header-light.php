@@ -480,7 +480,7 @@ $con = mysqli_connect("localhost", "root", "", "real_estate");
             }
             //});
         };
-    </script>]
+    </script>
 
 </head>
 

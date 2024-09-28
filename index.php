@@ -87,7 +87,7 @@ $res_explore = mysqli_query($con, $sql_explore);
                                             action="#">
                                             <ul id="houzez-search-tabs-wrap" class="houzez-status-tabs nav nav-pills"
                                                 role="tablist" data-toggle="buttons">
-                                                <li class="nav-item">
+                                                <!-- <li class="nav-item">
                                                     <a class="nav-link active" data-val data-toggle="pill" href="#"
                                                         role="tab" aria-selected="true">
                                                         All Status </a>
@@ -103,10 +103,10 @@ $res_explore = mysqli_query($con, $sql_explore);
                                                         data-toggle="pill" href="#" role="tab" aria-selected="true">
                                                         For Sale
                                                     </a>
-                                                </li> <input type="hidden" name="status[]" id="search-tabs" value>
+                                                </li> <input type="hidden" name="status[]" id="search-tabs" value> -->
                                             </ul>
                                             <div
-                                                class="houzez-ele-search-form-wrapper elementor-form-fields-wrapper elementor-labels-above slider-box">
+                                                class="houzez-ele-search-form-wrapper elementor-form-fields-wrapper elementor-labels-above slider-box" style="margin-top:50px;">
                                                 <div
                                                     class="elementor-field-group elementor-column form-group elementor-field-group-field-types elementor-col-20 elementor-sm-100">
                                                     <label for="form-field-field-types"

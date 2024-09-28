@@ -1386,3 +1386,9 @@
   background-color:#33BEFF ;
   color: white;
 }
+
+.img-gallary{
+  width: 300px !important;
+  height: 168px !important;
+  object-fit: cover !important;
+}
