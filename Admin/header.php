@@ -109,11 +109,20 @@ if(isset($_SESSION['admin_id']))
                     aria-expanded="false"
                   >
                     <div class="avatar-sm">
+                    <?php if($row_profile['Image']) { ?>
                       <img
                         src="upload/<?php echo $row_profile['Image'] ?>"
                         alt="..."
                         class="avatar-img rounded-circle"
                       />
+                      <?php }else { ?>
+                        <img
+                        src="assets/img/Default_profile.png"
+                        alt="..."
+                        class="avatar-img rounded-circle"
+                      />
+                        <?php } ?>
+                     
                     </div>
                     <span class="profile-username">
                       <span class="op-7">Hi,</span>
@@ -125,11 +134,20 @@ if(isset($_SESSION['admin_id']))
                       <li>
                         <div class="user-box">
                           <div class="avatar-lg">
-                            <img
-                              src="upload/<?php echo $row_profile['Image'] ?>"
-                              alt="image profile"
-                              class="avatar-img rounded"
-                            />
+                          <?php if($row_profile['Image']) { ?>
+                      <img
+                        src="upload/<?php echo $row_profile['Image'] ?>"
+                        alt="..."
+                        class="avatar-img rounded-circle"
+                      />
+                      <?php }else { ?>
+                        <img
+                        src="assets/img/Default_profile.png"
+                        alt="..."
+                        class="avatar-img rounded-circle"
+                      />
+                        <?php } ?>
+                     
                           </div>
                           <div class="u-text">
                             <h4><?php echo $row_profile['User_name'];?></h4>
