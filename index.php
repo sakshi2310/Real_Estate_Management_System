@@ -300,8 +300,7 @@ $res_area = mysqli_query($con,$property_area);
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Discover Our Featured
                                                                 Listings </h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipisicing elit</p>
+                                                            <p class="houzez_section_subtitle">Explore Our Exclusive Featured Listing</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -539,9 +538,7 @@ $res_area = mysqli_query($con,$property_area);
                                                                     class="houzez_section_title_wrap section-title-module text-center">
                                                                     <h2 class="houzez_section_title text-dark">3d Tour
                                                                     </h2>
-                                                                    <p class="houzez_section_subtitle text-dark">Lorem
-                                                                        ipsum dolor sit
-                                                                        amet, conse tetur elit</p>
+                                                                    <p class="houzez_section_subtitle text-dark">Step Inside with Our 3D Virtual Tours</p>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -613,7 +610,7 @@ $res_area = mysqli_query($con,$property_area);
                                                 class="houzez_section_title_wrap section-title-module text-center">
                                                 <h2 class="houzez_section_title text-dark">Floor Plans
                                                 </h2>
-                                                <p class="houzez_section_subtitle text-dark">Lorem ipsum dolor sit amet, conse tetur elit</p>
+                                                <p class="houzez_section_subtitle text-dark">View Detailed Floor Plans for Every Space</p>
                                             </div>
                                         </div>
                                     </div>
@@ -710,9 +707,7 @@ $res_area = mysqli_query($con,$property_area);
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Residential </h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                                                incidi dunt </p>
+                                                            <p class="houzez_section_subtitle">Explore a wide range of residential properties designed to suit every lifestyle. From cozy apartments to spacious homes, find your perfect living space with ease. </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1381,8 +1376,7 @@ $res_area = mysqli_query($con,$property_area);
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Check Our Selection Of
                                                                 Finest Properties</h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipisicing elit</p>
+                                                            <p class="houzez_section_subtitle">Browse Our Curated Collection of Premium Properties, Handpicked for Quality and Elegance. Discover Your Next Dream Home Today!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1540,9 +1534,7 @@ $res_area = mysqli_query($con,$property_area);
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Explore Cities</h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                                                incididunt ut labore et dolore magna </p>
+                                                            <p class="houzez_section_subtitle">Discover Top Cities to Live In – Explore Diverse Neighborhoods and Find Your Ideal Urban Destination! </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1703,8 +1695,7 @@ $res_area = mysqli_query($con,$property_area);
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Meet Our Agents</h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipisicing elit</p>
+                                                            <p class="houzez_section_subtitle">Connect with Our Expert Agents – Dedicated Professionals Ready to Help You Find Your Perfect Property!</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1858,8 +1849,7 @@ $res_area = mysqli_query($con,$property_area);
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
                                                             <h2 class="houzez_section_title">Testimonials</h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipisicing elit</p>
+                                                            <p class="houzez_section_subtitle">Read What Our Clients Are Saying – Genuine Testimonials from Satisfied Homeowners and Investors!</p>
                                                         </div>
                                                     </div>
                                                 </div>
