@@ -46,42 +46,49 @@ if(isset($_POST['Login']))
         $_SESSION['Email'] = $row['Email'];
         $Mail = $row['Email'];
 
+        if($row['User_type'] == 'Buyer')
+        {
+            header("location:Buyer/View_profile.php");
+        }else
+        {
+            header("location:Owner/View_approved_property.php");
+        }
 
         $otp = rand(100000, 999999);
         $_SESSION['otp'] = $otp;
 
-        //Create an instance; passing `true` enables exceptions
-        $mail = new PHPMailer(true);
+        // //Create an instance; passing `true` enables exceptions
+        // $mail = new PHPMailer(true);
 
-        try {
+        // try {
 
-            //Server settings                     //Enable verbose debug output
-            $mail->isSMTP();                                            //Send using SMTP
-            $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
-            $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'dreamwell1623@gmail.com';                     //SMTP username
-            $mail->Password   = 'ihbe ytzf plqa vnva';                               //SMTP password
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
-            $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        //     //Server settings                     //Enable verbose debug output
+        //     $mail->isSMTP();                                            //Send using SMTP
+        //     $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        //     $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        //     $mail->Username   = 'dreamwell1623@gmail.com';                     //SMTP username
+        //     $mail->Password   = 'ihbe ytzf plqa vnva';                               //SMTP password
+        //     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        //     $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
-            //Recipients
-            $mail->setFrom('dreamwell1623@gmail.com', 'Dreamwell');
-            $mail->addAddress($Mail, $Mail);     //Add a recipient
+        //     //Recipients
+        //     $mail->setFrom('dreamwell1623@gmail.com', 'Dreamwell');
+        //     $mail->addAddress($Mail, $Mail);     //Add a recipient
             
 
-            //Content
-            $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Your OTP Code';
-            $mail->Body    = 'Sender Email : dreamwell1623@gmail.com <br> Your OTP for login is: '.$otp;
-            $mail->AltBody = 'Your OTP for login is: ' . $otp;
+        //     //Content
+        //     $mail->isHTML(true);                                  //Set email format to HTML
+        //     $mail->Subject = 'Your OTP Code';
+        //     $mail->Body    = 'Sender Email : dreamwell1623@gmail.com <br> Your OTP for login is: '.$otp;
+        //     $mail->AltBody = 'Your OTP for login is: ' . $otp;
 
-            $mail->send();
-            echo 'OTP has been sent to your email.';
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-        }  
+        //     $mail->send();
+        //     echo 'OTP has been sent to your email.';
+        // } catch (Exception $e) {
+        //     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        // }  
         
-        header(("location:otp_page.php"));
+        // header(("location:.php"));
 
 
         

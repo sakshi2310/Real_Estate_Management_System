@@ -12,7 +12,7 @@ if(!isset($_SESSION['user_id']))
 }
 
 $user_id = $_SESSION['user_id'];
-$sql = "SELECT * FROM property_inquiry WHERE Pro_admin_id = $user_id AND (Answer_inquery IS NULL OR Answer_inquery = '') ORDER BY id DESC";
+$sql = "SELECT * FROM property_inquiry WHERE user_id = $user_id AND (Answer_inquery IS NULL OR Answer_inquery = '') ORDER BY id DESC";
 
 // if (isset($_POST['search']) && isset($_POST['search_by'])) {
 //   $search = mysqli_real_escape_string($con, $_POST['search']);

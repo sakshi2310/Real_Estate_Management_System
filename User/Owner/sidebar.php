@@ -70,6 +70,12 @@
                     </a>
                   </li>
                   <li>
+                    <a href="View_schedual_tour.php" class="nav-link  py-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="19px" height="19px" viewBox="0 0 28 28"><path fill="currentColor" d="M14 2c6.627 0 12 5.373 12 12s-5.373 12-12 12S2 20.627 2 14S7.373 2 14 2m0 1.5C8.201 3.5 3.5 8.201 3.5 14S8.201 24.5 14 24.5S24.5 19.799 24.5 14S19.799 3.5 14 3.5m0 15a1.25 1.25 0 1 1 0 2.5a1.25 1.25 0 0 1 0-2.5m0-11.75c1.963 0 3.75 1.725 3.75 3.75c0 1.431-.465 2.274-1.546 3.306l-.197.184l-.204.187c-.806.738-1.053 1.125-1.053 1.823a.75.75 0 0 1-1.5 0c0-1.149.398-1.842 1.343-2.745l.57-.528c.81-.772 1.087-1.285 1.087-2.227c0-1.184-1.104-2.25-2.25-2.25s-2.25 1.066-2.25 2.25a.75.75 0 0 1-1.5 0c0-2.025 1.787-3.75 3.75-3.75"/></svg>
+                        Schudule Tour
+                    </a>
+                  </li>
+                  <li>
                     <a href="../logout.php" class="nav-link  py-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="me-2" width="18px" height="18px" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="m11 3l-.663.234c-2.578.91-3.868 1.365-4.602 2.403S5 8.043 5 10.777v2.445c0 2.735 0 4.102.735 5.14c.734 1.039 2.024 1.494 4.602 2.404L11 21m10-9H11m10 0c0-.7-1.994-2.008-2.5-2.5M21 12c0 .7-1.994 2.008-2.5 2.5" color="currentColor"/></svg>
                         Logout
