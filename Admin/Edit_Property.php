@@ -31,10 +31,8 @@ if (isset($_GET['edit_id'])) {
   $feature_update = explode(",",$proprty_row['Feature']);
 }
 
-if (isset($_POST['submit'])) {
-  
-    
-  
+if (isset($_POST['save'])) {
+
   // Gather form data
   $property_title = $_POST['Property_title'];
   $des = $_POST['Description'];
@@ -60,9 +58,9 @@ if (isset($_POST['submit'])) {
   $featurs_str = implode(",", $featurs);
 
   // Create upload directory if not exists
-  // if (!file_exists('upload')) {
-  //     mkdir('upload', 0777, true);
-  // }
+  if (!file_exists('../User/upload')) {
+      mkdir('../User/upload', 0777, true);
+  }
 
   // Function to handle file uploads
   function handleFileUpload($fileInputName, $existingImage = null) {
@@ -77,30 +75,22 @@ if (isset($_POST['submit'])) {
       return $existingImage;
   }
 
-  // Handle image uploads
-  $image1 = handleFileUpload('Image1');
-  $image2 = handleFileUpload('Image2');
-  $image3 = handleFileUpload('Image3');
-  $image4 = handleFileUpload('Image4');
-  $image5 = handleFileUpload('Image5');
-  $image6 = handleFileUpload('Image6');
-
   // SQL operations
   if (isset($_GET['edit_id'])) {
       $edit_id = intval($_GET['edit_id']);
 
-      // Fetch existing property data
-      $result = mysqli_query($con, "SELECT * FROM property_register WHERE id = $edit_id");
+      // Fetch current images from the database
+      $sql_fetch = "SELECT * FROM property_register WHERE id=$edit_id";
+      $result = mysqli_query($con, $sql_fetch);
       $proprty_row = mysqli_fetch_assoc($result);
-      $Approval_status = $proprty_row['Approval_status'];
 
-      // Delete old images
-      $images = ['Image1', 'Image2', 'Image3', 'Image4', 'Image5', 'Image6'];
-      foreach ($images as $img) {
-          if (!empty(${$img}) && !empty($proprty_row[$img])) {
-              unlink('../User/upload/' . $proprty_row[$img]);
-          }
-      }
+      // Handle image uploads, preserve existing images if new ones are not uploaded
+      $image1 = handleFileUpload('Image1', $proprty_row['Image1']);
+      $image2 = handleFileUpload('Image2', $proprty_row['Image2']);
+      $image3 = handleFileUpload('Image3', $proprty_row['Image3']);
+      $image4 = handleFileUpload('Image4', $proprty_row['Image4']);
+      $image5 = handleFileUpload('Image5', $proprty_row['Image5']);
+      $image6 = handleFileUpload('Image6', $proprty_row['Image6']);
 
       // Prepare and execute update query
       $sql_update = "UPDATE property_register SET 
@@ -110,13 +100,22 @@ if (isset($_POST['submit'])) {
           Image6='$image6', Feature='$featurs_str', Address='$address', Area_name='$area_name', 
           Area_type='$area_type', City='$city', Badrooms='$badrooms', Bathroom='$bathrooms', 
           Balcony='$balcony', BHK_plot='$BHK_plot', Total_floors='$total_floors', Your_floors='$your_floors', 
-          Property_age='$property_age', Approval_status='$Approval_status' WHERE id=$edit_id";
-      
+          Property_age='$property_age' WHERE id=$edit_id";
+
       mysqli_query($con, $sql_update);
       header("Location:View_approved_property.php");
+
   } else {
       // New property insert
       $Approval_status = "Pending";
+
+      // Handle image uploads
+      $image1 = handleFileUpload('Image1');
+      $image2 = handleFileUpload('Image2');
+      $image3 = handleFileUpload('Image3');
+      $image4 = handleFileUpload('Image4');
+      $image5 = handleFileUpload('Image5');
+      $image6 = handleFileUpload('Image6');
 
       $sql = "INSERT INTO property_register (
           Property_title, Description, Type, Status, Price, Sec_price, Land_price, Land_postfix, 
@@ -127,7 +126,7 @@ if (isset($_POST['submit'])) {
           '$property_title', '$des', '$type', '$status', '$price', '$sec_price', '$land_price', '$land_postfix', 
           '$image1', '$image2', '$image3', '$image4', '$image5', '$image6', '$featurs_str', '$address', 
           '$area_name', '$area_type', '$city', '$badrooms', '$bathrooms', '$balcony', '$BHK_plot', '$total_floors', 
-          '$your_floors', '$property_age', '$Approval_status', '$user_id', CURDATE()than
+          '$your_floors', '$property_age', '$Approval_status', '$user_id', CURDATE()
       )";
 
       mysqli_query($con, $sql);
@@ -137,6 +136,7 @@ if (isset($_POST['submit'])) {
   // Close the database connection
   mysqli_close($con);
 }
+
 
 ?>
 <!DOCTYPE html>
@@ -227,7 +227,7 @@ if (isset($_POST['submit'])) {
                       <div class="col-md-6 col-lg-4">
                           <div class="form-group px-0">
                             <label for="Property type" style="font-weight:600 !important;">Property title</label>
-                            <input type="text" class="form-control" id="contact" placeholder="Property type" name="Property_type" value="<?php echo @$proprty_row['Property_title'] ?>">
+                            <input type="text" class="form-control" id="contact" placeholder="Property type" name="Property_title" value="<?php echo @$proprty_row['Property_title'] ?>">
                           </div>
                       </div>
                       <div class="col-md-6 col-lg-4">
@@ -271,13 +271,13 @@ if (isset($_POST['submit'])) {
                       <div class="col-md-6 col-lg-4">
                           <div class="form-group px-0">
                             <label for="Property type" style="font-weight:600 !important;">Sale the Rent</label>
-                            <input type="text" class="form-control" id="contact" placeholder="Property type"/ name="Property_type" value="<?php echo @$proprty_row['Price']; ?>">
+                            <input type="text" class="form-control" id="contact" placeholder="Property type"/ name="Price" value="<?php echo @$proprty_row['Price']; ?>">
                           </div>
                       </div>
                       <div class="col-md-6 col-lg-4">
                           <div class="form-group px-0">
                             <label for="Description" style="font-weight:600 !important;">Secount Price</label>
-                            <input type="text" class="form-control" id="exampleInput" placeholder="Description" name="Description" value="<?php echo @$proprty_row['Sec_price']; ?>">
+                            <input type="text" class="form-control" id="exampleInput" placeholder="Description" name="Sec_price" value="<?php echo @$proprty_row['Sec_price']; ?>">
                           </div>
                       </div>
                       <div class="col-md-6 col-lg-4">

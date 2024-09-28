@@ -56,7 +56,7 @@ $row = mysqli_fetch_assoc($res);
                         <?php }else { ?>
                             <img src="../img/Default_profile.png" alt="">
                             <?php } ?>
-                        <a href="#" class="edit-icn text-center mt-2">
+                        <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn text-center mt-2">
                             Edit Image
                             <i class="bi bi-pencil cursor ms-2"></i>
                         </a>
