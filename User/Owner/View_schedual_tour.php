@@ -12,7 +12,7 @@ if(!isset($_SESSION['user_id']))
 }
 
 $user_id = $_SESSION['user_id'];
-$sql = "SELECT * FROM property_inquiry WHERE user_id = $user_id AND Answer_inquery IS NOT NULL AND Answer_inquery != '' ORDER BY id DESC";
+$sql = "SELECT * FROM schedual_tour WHERE Pro_admin_id = $user_id ORDER BY id DESC";
 
 // if (isset($_POST['search']) && isset($_POST['search_by'])) {
 //   $search = mysqli_real_escape_string($con, $_POST['search']);
@@ -119,11 +119,15 @@ $res = mysqli_query($con,$sql);
             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Meassage</th>
-                                <th>Date</th>
-                                <th>Answer Inquery</th>
-                                <th>Answer Date</th>
-                                <th>Property ID</th>
+                                <th>Schedual Date</th>
+                                <th>Time</th>
+                                <th>Name</th>
+                                <th>Phone</th>
+                                <th>Email</th> 
+                                <th>Message</th>
+                                <th>Status</th>
+                                <th>Answer Message</th>
+                                <th>Give Ans</th>
                                
                             </tr>
                         </thead>
@@ -133,22 +137,34 @@ $res = mysqli_query($con,$sql);
                           <tr>  
                              <td><?php echo $row['Id']; ?></td>
                               <td>
-                                   <?php echo $row['Message']; ?>
+                              <?php echo $row['Schedual_date'];  ?>
+                              </td>
+                              <td><?php echo $row['Time'];  ?></td>
+                              <td>
+                                  <?php echo $row['Name']; ?>
+                              </td>
+                               <td>
+                                  <?php echo $row['Phone']; ?>
                               </td>
                               <td>
-                                  <?php echo $row['Date']; ?>
+                                  <?php echo $row['Email']; ?>
                               </td>
                               <td>
-                                  <?php echo $row['Answer_inquery']; ?>
+                                  <?php echo $row['Message']; ?>
                               </td>
                               <td>
-                                  <?php echo $row['Ans_date']; ?>
+                                  <?php echo $row['Tour_status']; ?>
                               </td>
                               <td>
-                                  <?php echo $row['Pro_id']; ?>
+                                  <?php echo $row['Answer_message']; ?>
                               </td>
-          
                              
+                              <td>
+                                   <div class="action-icn d-flex justify-content-center">
+                                   <a href="Add_tour.php?tour_id=<?php echo $row['Id'];?>" class="prev-btn"><i class="bi bi-eye"></i></a>
+                                   </div>
+                              </td>
+                           
                           </tr>
                         <?php } ?>
                         </tbody>

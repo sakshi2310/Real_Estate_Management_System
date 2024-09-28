@@ -432,7 +432,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15
 <div class="dashboard-content-block-wrap">
 <div class="submit-login-required" style="padding-bottom: 9rem;">
 <strong>Login Required:</strong> Please login to submit property!
-<span class="login-link"><a href="#" data-toggle="modal" data-target="#login-register-form">Login</a></span>
+<span class="login-link"><a href="User/index.php" target="_blank">Login</a></span>
 </div>
 </div> </div>
 </div>

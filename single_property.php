@@ -1,7 +1,7 @@
 <?php 
 
 $con=mysqli_connect("localhost","root","","real_estate");
-
+session_start();
 if(!isset($_GET['pro_id']))
 {
     header('location:index.php');
@@ -117,28 +117,39 @@ $pro_admin_name = "select * from users where id=".$Pro_admin_id;
 $res_admin = mysqli_query($con,$pro_admin_name);
 $row_admin = mysqli_fetch_assoc($res_admin);
 
-
 if(isset($_POST['Inquiry']))
 {
 
-   
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $mb_num = $_POST['mobile'];
-    $user_type = $_POST['user_type'];
-    $message = $_POST['message'];
-    $property_id = $_GET['pro_id'];
-    $admin_id = $Pro_admin_id;
+        
+    $user_id = $_SESSION['user_id'];
+
+    if($user_id)
+    {
+    
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $mb_num = $_POST['mobile'];
+        $user_type = $_POST['user_type'];
+        $message = $_POST['message'];
+        $property_id = $_GET['pro_id'];
+        $admin_id = $Pro_admin_id;
+        $user_id = $_SESSION['user_id'];
 
 
-    $sql_inquiry = "INSERT INTO property_inquiry (
-       Name,Email,User_type,MB_num,Message,Date,Pro_id,Pro_admin_id
-    ) VALUES (
-        '$name','$email','$user_type','$mb_num','$message',CURDATE(),'$property_id','$admin_id'
-    )";
-    mysqli_query($con,$sql_inquiry);
+        $sql_inquiry = "INSERT INTO property_inquiry (
+        Name,Email,User_type,MB_num,Message,Date,Pro_id,Pro_admin_id,User_id
+        ) VALUES (
+            '$name','$email','$user_type','$mb_num','$message',CURDATE(),'$property_id','$admin_id','$user_id'
+        )";
+        mysqli_query($con,$sql_inquiry);
+
+    }else
+    {
+        header('location:login-error.php');
+    }
 
 }
+
 
 
 // Schedule  a Tour
@@ -153,12 +164,14 @@ if(isset($_POST['Schedual_tour']))
     $email = $_POST['email'];
     $message = $_POST['message'];
     $property_id = $_GET['pro_id'];
+    $user_id = $_SESSION['user_id'];
     $admin_id = $Pro_admin_id;
     
+
     $sql_tour = "INSERT INTO schedual_tour (
-       Schedual_date,Time,Name,Phone,Email,Message,Date,Property_id,User_id
+       Schedual_date,Time,Name,Phone,Email,Message,Date,Property_id,User_id,Pro_admin_id
      ) VALUES (
-         '$sechudal_date','$time','$name','$phone','$email','$message',CURDATE(),'$property_id','$admin_id'
+         '$sechudal_date','$time','$name','$phone','$email','$message',CURDATE(),'$property_id','$user_id','$admin_id'
      )";
      mysqli_query($con,$sql_tour);
  
@@ -288,8 +301,9 @@ if(isset($_POST['Schedual_tour']))
                                         <div class="top-gallery-section h-auto">
                                             <div id="property-gallery-js"
                                                 class="houzez-photoswipe listing-slider cS-hidden" >
+                                                <?php  ?>
                                                 <div
-                                                    data-thumb="assets/residancy3.jpg">
+                                                    data-thumb="User/upload/<?php echo $row['Image1'];?>">
                                                     <a rel="gallery-1" data-slider-no="1" href="#"
                                                         class="houzez-trigger-popup-slider-js swipebox sub-imgs"
                                                         data-toggle="modal" data-target="#property-lightbox">
@@ -297,69 +311,9 @@ if(isset($_POST['Schedual_tour']))
                                                             src="User/upload/<?php echo $row['Image1'];?>"
                                                             alt title="205">
                                                     </a></div>
-                                                <div
-                                                    data-thumb="assets/residancy1.jpg">
-                                                    <a rel="gallery-1" data-slider-no="2" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="User/upload/<?php echo $row['Image2'];?>"
-                                                            alt title="030">
-                                                    </a></div>
-                                                <div
-                                                    data-thumb="assets/residancy2.jpg">
-                                                    <a rel="gallery-1" data-slider-no="3" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="User/upload/<?php echo $row['Image3'];?>"
-                                                            alt title="006">
-                                                    </a></div>
-                                                <div
-                                                    data-thumb="assets/residancy4.jpg">
-                                                    <a rel="gallery-1" data-slider-no="4" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="assets/residancy4.jpg"
-                                                            alt title="007">
-                                                    </a></div>
-                                                <div
-                                                    data-thumb="assets/residancy5.jpg">
-                                                    <a rel="gallery-1" data-slider-no="5" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="assets/residancy5.jpg"
-                                                            alt title="008">
-                                                    </a></div>
-                                                <div
-                                                    data-thumb="assets/residancy6.jpg">
-                                                    <a rel="gallery-1" data-slider-no="6" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="assets/residancy6.jpg"
-                                                            alt title="035">
-                                                    </a></div>
-                                                <div
-                                                    data-thumb="assets/gallary4.jpg">
-                                                    <a rel="gallery-1" data-slider-no="7" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="assets/gallary4.jpg"
-                                                            alt title="036">
-                                                    </a></div>
-                                                <div
-                                                    data-thumb="assets/gallary8.jpg">
-                                                    <a rel="gallery-1" data-slider-no="8" href="#"
-                                                        class="houzez-trigger-popup-slider-js swipebox sub-imgs"
-                                                        data-toggle="modal" data-target="#property-lightbox">
-                                                        <img class="img-fluid"
-                                                            src="assets/gallary8.jpg"
-                                                            alt title="045">
-                                                    </a></div>
+                                               
+                                            
+                                           
                                             </div>
                                         </div>
                                     </div>
@@ -985,7 +939,7 @@ if(isset($_POST['Schedual_tour']))
                                                                 </div>
                                                             </label>
                                                         </div>
-                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request"  class="houzez_agent_property_form btn btn-theme btn-sm-full-width">
+                                                        <input type="submit" name="Schedual_tour" value="Submit a Tour Request">
                                                         <!-- <button
                                                             class="schedule_contact_form btn btn-secondary btn-full-width">
                                                             <span class="btn-loader houzez-loader-js"></span> Submit a
