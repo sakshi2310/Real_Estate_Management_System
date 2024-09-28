@@ -107,7 +107,7 @@ if (isset($_POST['submit'])) {
           Property_age='$property_age' WHERE id=$edit_id";
 
       mysqli_query($con, $sql_update);
-      header("Location:View_approved_property.php");
+      echo "<script>alert('Property Edited successfully!'); window.location.href = 'View_approved_property.php'; </script>";
 
   } else {
       // New property insert
@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
       )";
 
       mysqli_query($con, $sql);
-      header("Location:View_pending_property.php");
+      echo "<script>alert('Property successfully registered!'); window.location.href = 'View_Pending_property.php'; </script>";
   }
 
   // Close the database connection
