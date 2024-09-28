@@ -131,6 +131,9 @@ if(isset($_POST['Login']))
             <div class="frm_btn">
                 <button type="submit" name="Login">Login</button>
             </div>
+            <div class="register_link">
+                <a href="register.php">Register Now</a>
+            </div>
         </form>
     </div>
         
