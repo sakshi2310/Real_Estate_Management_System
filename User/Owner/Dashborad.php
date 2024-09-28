@@ -36,6 +36,11 @@ if(!isset($_SESSION['user_id']))
       include('sidebar.php');
       ?>
         <div class="col-10 p-4 ms-auto">
+        <div class="row">
+                <div class="col-12  d-flex justify-content-between align-items-center">
+                    <h5 class="page-title">Dashborad</h5>
+                    
+            </div>
         <div class="row gap-3">
               <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #48ABF7;">
                     <div class="card-body">
