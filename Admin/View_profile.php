@@ -117,7 +117,12 @@ $row = mysqli_fetch_assoc($res);
                   <div class="row">
                 <div class="col-lg-6 col-md-8 col-12 mx-auto justify-content-center d-flex">
                     <div class="profile-pic-view d-flex justify-content-center flex-wrap mb03">
+                    <?php if($row['Image']) { ?>
                         <img src="upload/<?php echo $row['Image']; ?>" alt="">
+                        <?php }else { ?>  
+                            <img src="assets/img/Default_profile.png" alt=""width="32" height="32" class="rounded-circle" >
+                            <?php } ?>
+                       
                         <a href="Edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn text-center mt-2">
                             Edit Image
                             <i class="bi bi-pencil cursor ms-2"></i>
