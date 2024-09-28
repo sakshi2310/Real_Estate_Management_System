@@ -34,7 +34,7 @@ if(isset($_GET['del_id']))
 
 // search
 
-$sql = "select * from property_register where Approval_status='Decline' order by id DESC";
+$sql = "select * from property_register where Approval_status='Decline' and User_id='$user_id' order by id DESC";
 if (isset($_POST['search']) && isset($_POST['search_by'])) {
   $search = mysqli_real_escape_string($con, $_POST['search']);
   $search_by = mysqli_real_escape_string($con, $_POST['search_by']);

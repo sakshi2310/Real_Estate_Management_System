@@ -30,7 +30,7 @@ if(isset($_GET['del_id']))
   header('location:View_property.php');
 }
 
-$sql = "select * from property_register where Approval_status='Approved' order by id DESC";
+$sql = "SELECT * FROM property_register WHERE Approval_status='Approved' AND User_id='$user_id' order by id DESC";
 if (isset($_POST['search']) && isset($_POST['search_by'])) {
   $search = mysqli_real_escape_string($con, $_POST['search']);
   $search_by = mysqli_real_escape_string($con, $_POST['search_by']);
