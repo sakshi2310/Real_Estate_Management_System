@@ -129,7 +129,7 @@ $res = mysqli_query($con, $sql);
               <div class="card">
                   <div class="card-header  d-flex justify-content-between align-items-center">
                     <div class="card-title">Property Type</div>
-                    <div class="input-group position-relative search-dropdown">
+                    <div class="input-group position-relative Serach-input">
                   <div class="input-group-prepend">
                     <button type="submit" class="btn btn-search pe-1">
                       <i class="fa fa-search search-icon"></i>

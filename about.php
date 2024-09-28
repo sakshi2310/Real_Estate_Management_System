@@ -370,11 +370,10 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                         <a data-elementor-open-lightbox="yes"
                                                             data-elementor-lightbox-slideshow="90ceba9"
                                                             data-elementor-lightbox-title="09"
-                                                            href='#'><img
-                                                                loading="lazy"  width="584" height="438"
+                                                            href='#' class="img-gallary"><img
+                                                                loading="lazy" style="width:100%; height:192px; object-fit:cover;"
                                                                 src="Admin/upload/<?php echo $row['Image']; ?>"
-                                                                alt="" 
-                                                                sizes="(max-width: 584px) 100vw, 584px" /></a>
+                                                                alt=""  /></a>
                                                     </div>
                                                 </figure>
                                                 <?php  } ?>
