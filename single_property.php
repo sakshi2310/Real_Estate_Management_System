@@ -301,18 +301,22 @@ if(isset($_POST['Schedual_tour']))
                                         <div class="top-gallery-section h-auto">
                                             <div id="property-gallery-js"
                                                 class="houzez-photoswipe listing-slider cS-hidden" >
-                                                <?php  ?>
+                                                
+                                                <?php for($i=1;$i<=6;$i++) {
+
+                                                        $image = 'Image'.$i;
+                                                    ?>
                                                 <div
-                                                    data-thumb="User/upload/<?php echo $row['Image1'];?>">
+                                                    data-thumb="User/upload/<?php echo $row[$image];?>">
                                                     <a rel="gallery-1" data-slider-no="1" href="#"
                                                         class="houzez-trigger-popup-slider-js swipebox sub-imgs"
                                                         data-toggle="modal" data-target="#property-lightbox">
                                                         <img class="img-fluid"
-                                                            src="User/upload/<?php echo $row['Image1'];?>"
+                                                            src="User/upload/<?php echo $row[$image];?>"
                                                             alt title="205">
                                                     </a></div>
                                                
-                                            
+                                                <?php } ?>
                                            
                                             </div>
                                         </div>
@@ -600,174 +604,7 @@ if(isset($_POST['Schedual_tour']))
                                     </div>
                                 </div>
                             </div>
-                            <div class="property-mortgage-calculator-wrap property-section-wrap"
-                                id="property-mortgage-calculator-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap">
-                                        <h2>Mortgage Calculator</h2>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <div class="d-flex align-items-center sm-column">
-                                            <div class="mortgage-calculator-chart flex-fill">
-                                                <div class="mortgage-calculator-monthly-payment-wrap">
-                                                    <div id="m_monthly_val" class="mortgage-calculator-monthly-payment">
-                                                    </div>
-                                                    <div class="mortgage-calculator-monthly-requency">Monthly</div>
-                                                </div>
-                                                <canvas id="mortgage-calculator-chart" width="300"
-                                                    height="300"></canvas>
-                                            </div>
-                                            <div class="mortgage-calculator-data flex-fill">
-                                                <ul class="list-unstyled">
-                                                    <li class="mortgage-calculator-data-1 stats-data-01">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>Down Payment</strong>
-                                                        <span id="downPaymentResult"></span>
-                                                    </li>
-                                                    <li class="mortgage-calculator-data-1 stats-data-01">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>Loan Amount</strong>
-                                                        <span id="loadAmountResult"></span>
-                                                    </li>
-                                                    <li class="mortgage-calculator-data-1 stats-data-1">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>Monthly Mortgage Payment</strong>
-                                                        <span id="monthlyMortgagePaymentResult"></span>
-                                                    </li>
-                                                    <li class="mortgage-calculator-data-2 stats-data-2">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>Property Tax</strong>
-                                                        <span id="monthlyPropertyTaxResult"></span>
-                                                    </li>
-                                                    <li class="mortgage-calculator-data-3 stats-data-3">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>Home Insurance</strong>
-                                                        <span id="monthlyHomeInsuranceResult"></span>
-                                                    </li>
-                                                    <li class="mortgage-calculator-data-4 rslt-pmi stats-data-4">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>PMI</strong>
-                                                        <span id="monthlyPMIResult"></span>
-                                                    </li>
-                                                    <li class="mortgage-calculator-data-4 stats-data-04">
-                                                        <i class="las la-circle mr-1"></i>
-                                                        <strong>Monthly HOA Fees</strong>
-                                                        <span id="monthlyHOAResult"></span>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <form id="mortgageForm" method="post"  onsubmit="event.preventDefault(); calculateMortgage();">
-                                            <div class="row">
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Total Amount</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">$</div>
-                                                            </div>
-                                                            <input id="homePrice" type="text" class="form-control"
-                                                                placeholder="Total Amount" value="" name="Total_amount">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Down Payment</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">%</div>
-                                                            </div>
-                                                            <input id="downPaymentPercentage" type="text"
-                                                                class="form-control" placeholder="Down Payment"
-                                                                value="" name="Down_payment">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Interest Rate</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">%</div>
-                                                            </div>
-                                                            <input id="annualInterestRate" type="text"
-                                                                class="form-control" placeholder="Interest Rate"
-                                                                value="" name="Interest_rate">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Loan Terms (Years)</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">
-                                                                    <i class="las la-calendar"></i>
-                                                                </div>
-                                                            </div>
-                                                            <input id="loanTermInYears" type="text" class="form-control"
-                                                                placeholder="Loan Terms (Years)" value="" name="Year">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Property Tax</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">%</div>
-                                                            </div>
-                                                            <input id="annualPropertyTaxRate" type="text"
-                                                                class="form-control" placeholder="Property Tax"
-                                                                value="" name="Property_tax">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Home Insurance</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">$</div>
-                                                            </div>
-                                                            <input id="annualHomeInsurance" type="text"
-                                                                class="form-control" placeholder="Home Insurance"
-                                                                value="" name="Home_insurance">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>Monthly HOA Fees</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">$</div>
-                                                            </div>
-                                                            <input id="monthlyHOAFees" type="text" class="form-control"
-                                                                placeholder="Monthly HOA Fees" value="" name="Monthly_fees">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-4">
-                                                    <div class="form-group">
-                                                        <label>PMI</label>
-                                                        <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                                <div class="input-group-text">%</div>
-                                                            </div>
-                                                            <input id="pmi" type="text" class="form-control"
-                                                                placeholder="PMI" value name="PMI">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                            <input type="submit" value="Calculate" name="Calculate"  class="houzez_agent_property_form btn btn-theme btn-sm-full-width">
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+                       
                             <div class="property-floor-plans-wrap property-section-wrap" id="property-floor-plans-wrap">
                                 <div class="block-wrap">
                                     <div class="block-title-wrap d-flex justify-content-between align-items-center">
@@ -1013,6 +850,7 @@ if(isset($_POST['Schedual_tour']))
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="property-contact-agent-wrap property-section-wrap"
                                 id="property-contact-agent-wrap">
                                 <div class="block-wrap">

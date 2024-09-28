@@ -14,13 +14,46 @@ $sql_explore = "SELECT * FROM `property_register` WHERE Approval_status='Approve
 $res_explore = mysqli_query($con, $sql_explore);
 
 
+$property_type = "select * from property_type";
+$res_type = mysqli_query($con,$property_type);
+
+
+$property_area = "select * from property_area";
+$res_area = mysqli_query($con,$property_area);
+
 ?>
 
         <!-- header start -->
          <?php
             include('header.php');
          ?>
-        <!-- header end -->
+          <script src="Admin/assets/js/jquery.min.js"></script>
+            <script>
+               
+            $(document).ready(function() {
+                    $('#Search_by').change(function() {
+                        var search_by = $(this).val();
+                        console.log(search_by);
+                        $.ajax({
+                            type: "POST",
+                            data: { search_by:search_by},
+                            url: "index.php", 
+                            success: function(response) {
+                                $('#data-table').html($(response).find('#data-table').html());
+                            },
+                            error: function(xhr, status, error) {
+                                console.log("Error: " + error); // Log errors if any
+                        }
+                        });
+                    });
+                });
+
+
+
+
+
+            </script>
+
 
         <section class="content-wrap">
             <div data-elementor-type="wp-page" data-elementor-id="10" class="elementor elementor-10">
@@ -112,31 +145,15 @@ $res_explore = mysqli_query($con, $sql_explore);
                                                     <label for="form-field-field-types"
                                                         class="elementor-field-label">Looking for</label>
                                                     <div class="elementor-field elementor-select-wrapper">
-                                                        <select multiple="multiple" title="Property Type"
-                                                            data-selected-text-format="count &gt; 1"
-                                                            data-select-all-text="Select All"
-                                                            data-deselect-all-text="Deselect All"
-                                                            data-actions-box="true"
-                                                            data-count-selected-text="{0} types selected" data-size="5"
-                                                            name="type[]" id="form-field-field-types"
-                                                            class="selectpicker bs-select-hidden houzez-field-textual form-control elementor-size-sm "
-                                                            data-none-results-text="No results matched {0}">
-                                                            <option data-ref="commercial" value="commercial">Commercial
+                                                        
+                                                        <select  title="Property Type"   class="selectpicker bs-select-hidden houzez-field-textual form-control elementor-size-sm houzezSelectFilter houzezCityFilter houzezThirdList houzez-city-js" id="Serch_by">
+                                                            <option value="">Property type</option>
+                                                        <?php while($row=mysqli_fetch_assoc($res_type)) {?>
+                                                            <option value="<?php echo $row['Property_type']; ?>">
+                                                            <?php echo $row['Property_type']; ?>
                                                             </option>
-                                                            <option data-ref="office" value="office"> - Office</option>
-                                                            <option data-ref="shop" value="shop"> - Shop</option>
-                                                            <option data-ref="residential" value="residential">
-                                                                Residential</option>
-                                                            <option data-ref="apartment" value="apartment"> - Apartment
-                                                            </option>
-                                                            <option data-ref="condo" value="condo"> - Condo</option>
-                                                            <option data-ref="multi-family-home"
-                                                                value="multi-family-home"> - Multi Family Home</option>
-                                                            <option data-ref="single-family-home"
-                                                                value="single-family-home"> - Single Family Home
-                                                            </option>
-                                                            <option data-ref="studio" value="studio"> - Studio</option>
-                                                            <option data-ref="villa" value="villa"> - Villa</option>
+                                                            <?php } ?>
+                                                          
                                                         </select>
                                                     </div>
                                                 </div>
@@ -145,27 +162,13 @@ $res_explore = mysqli_query($con, $sql_explore);
                                                     <label for="form-field-6b0017d"
                                                         class="elementor-field-label">Location</label>
                                                     <div class="elementor-field elementor-select-wrapper">
-                                                        <select data-size="5" name="location[]" id="form-field-6b0017d"
-                                                            class="selectpicker bs-select-hidden houzez-field-textual form-control elementor-size-sm houzezSelectFilter houzezCityFilter houzezThirdList houzez-city-js"
-                                                            data-none-results-text="No results matched {0}"
-                                                            data-target="houzezFourthList">
+                                                        <select data-size="5"
+                                                            class="selectpicker bs-select-hidden houzez-field-textual form-control elementor-size-sm houzezSelectFilter houzezCityFilter houzezThirdList houzez-city-js">
                                                             <option value>All Cities</option>
-                                                            <option data-ref="chicago" data-belong="illinois"
-                                                                data-subtext="Illinois" value="chicago">Chicago</option>
-                                                            <option data-ref="chivilcoy"
-                                                                data-belong="provincia-de-buenos-aires"
-                                                                data-subtext="Provincia de Buenos Aires"
-                                                                value="chivilcoy">Chivilcoy</option>
-                                                            <option data-ref="los-angeles" data-belong="california"
-                                                                data-subtext="California" value="los-angeles">Los
-                                                                Angeles</option>
-                                                            <option data-ref="miami" data-belong="florida"
-                                                                data-subtext="Florida" value="miami">Miami</option>
-                                                            <option data-ref="new-york" data-belong="new-york"
-                                                                data-subtext="New York" value="new-york">New York
-                                                            </option>
-                                                            <option data-ref="uyo" data-belong="akwa-ibom"
-                                                                data-subtext="AKWA IBOM" value="uyo">Uyo</option>
+                                                                     <?php while ($row = mysqli_fetch_assoc($res_area)) { ?>
+                                                                    <option value="<?php echo $row['Property_area'] ?>" <?php if(@$proprty_row['Area_name']==$row['Property_area']){ echo "selected" ; } ?>><?php echo $row['Property_area']; ?></option>
+                                                                    <?php } ?>
+                                                                                                            
                                                         </select>
                                                     </div>
                                                 </div>

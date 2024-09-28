@@ -192,7 +192,7 @@ $res = mysqli_query($con,$sql);
                               </div>
                               <div class="widget-body">
                                   <div class="btn-group d-flex flex-wrap gap-4 checkboxs mt-3 property-type" role="group" aria-label="Basic checkbox toggle button group ">
-                                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="Rent">
                                       <label class="btn btn-outline-primary" for="btncheck1">Rent</label>
                                       <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
                                       <label class="btn btn-outline-primary" for="btncheck2">Farm House</label>
@@ -269,7 +269,7 @@ $res = mysqli_query($con,$sql);
                       <div class="listing-view grid-view card-deck">
                         <?php while($row = mysqli_fetch_assoc($res) ) {  ?>
                           <div class="item-listing-wrap hz-item-gallery-js card"
-                              data-hz-id="hz-115">
+                              data-hz-id="hz-115" id="data-table">
                               <div
                                   class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
                                   <div
