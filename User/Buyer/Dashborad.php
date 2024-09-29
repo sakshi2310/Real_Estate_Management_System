@@ -42,6 +42,7 @@ if(!isset($_SESSION['user_id']))
                     <h5 class="page-title">Edit Profile Info</h5>
                     
             </div>
+</div>
         <div class="row gap-3">
               <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #48ABF7;">
                     <div class="card-body">
