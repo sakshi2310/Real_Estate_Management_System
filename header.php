@@ -514,7 +514,7 @@ $con = mysqli_connect("localhost", "root", "", "real_estate");
                                 <ul class="login-register-nav dropdown d-flex align-items-center">
                                     <li>
                                         
-                                        <a href="User/View_approved_property.php"
+                                        <a href="User/"
                                             class="btn btn-create-listing hidden-xs hidden-sm">Create a Listing</a>
                                      
                                     </li>
