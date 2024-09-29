@@ -72,12 +72,13 @@ $ans_inq_records = $row_ans_inq['total_records'];
                     <h5 class="page-title">Dashborad</h5>
                     
             </div>
+</div>
         <div class="row gap-3">
               <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #48ABF7;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>All Property</h6>
+                                <h6>All</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -92,7 +93,7 @@ $ans_inq_records = $row_ans_inq['total_records'];
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Approved Property</h6>
+                                <h6>Approved</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -107,7 +108,7 @@ $ans_inq_records = $row_ans_inq['total_records'];
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Pending Property</h6>
+                                <h6>Pending</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -118,11 +119,14 @@ $ans_inq_records = $row_ans_inq['total_records'];
                         </div>
                     </div>
               </div>
-              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #FF8E6F;">
+      </div>
+      <div class="row gap-3 mt-3">
+        
+      <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #FF8E6F;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Decline Property</h6>
+                                <h6>Decline</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -133,10 +137,6 @@ $ans_inq_records = $row_ans_inq['total_records'];
                         </div>
                     </div>
               </div>
-              
-      </div>
-
-      <div class="row gap-3">
               <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #48ABF7;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
@@ -167,10 +167,7 @@ $ans_inq_records = $row_ans_inq['total_records'];
                         </div>
                     </div>
               </div>
-             
       </div>
-
-
     </div>
 
     <!-- bootstrap js -->
