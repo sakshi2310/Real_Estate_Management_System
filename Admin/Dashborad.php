@@ -18,7 +18,25 @@ if(isset($_GET['edit_id']))
   $row = mysqli_fetch_assoc($res);
 }
 
+$sql_all = "SELECT COUNT(*) AS total_records FROM property_register";
+$res_all = mysqli_query($con,$sql_all);
+$row_all = mysqli_fetch_assoc($res_all);
+$total_records = $row_all['total_records'];
 
+$sql_approved = "SELECT COUNT(*) AS total_records FROM property_register where Approval_status='Approved'";
+$res_approved = mysqli_query($con,$sql_approved);
+$row_approved = mysqli_fetch_assoc($res_approved);
+$approved_records = $row_approved['total_records'];
+
+$sql_Pending = "SELECT COUNT(*) AS total_records FROM property_register where Approval_status='Pending'";
+$res_Pending = mysqli_query($con,$sql_Pending);
+$row_Pending = mysqli_fetch_assoc($res_Pending);
+$Pending_records = $row_Pending['total_records'];
+
+$sql_decline = "SELECT COUNT(*) AS total_records FROM property_register where  Approval_status='Decline'";
+$res_Decline = mysqli_query($con,$sql_decline);
+$row_Decline = mysqli_fetch_assoc($res_Decline);
+$Decline_records = $row_Decline['total_records']
 
 
 
@@ -101,7 +119,7 @@ if(isset($_GET['edit_id']))
                         <h6><b>All Property</b></h6>
                         <p class="text-muted mb-0">Property</p>
                       </div>
-                      <h4 class="text-info fw-bold">20</h4>
+                      <h4 class="text-info fw-bold">  <?php echo $total_records; ?></h4>
                     </div>
                   </div>
                 </div>
@@ -114,7 +132,7 @@ if(isset($_GET['edit_id']))
                         <h6><b>Approved Property</b></h6>
                         <p class="text-muted mb-0">Property</p>
                       </div>
-                      <h4 class="text-success fw-bold">10</h4>
+                      <h4 class="text-success fw-bold">  <?php echo $approved_records; ?></h4>
                     </div>
                   </div>
                 </div>
@@ -127,7 +145,7 @@ if(isset($_GET['edit_id']))
                         <h6><b>Pending Property</b></h6>
                         <p class="text-muted mb-0">Property</p>
                       </div>
-                      <h4 class="text-danger fw-bold">15</h4>
+                      <h4 class="text-danger fw-bold">  <?php echo $Pending_records; ?></h4>
                     </div>
                   </div>
                 </div>
@@ -140,7 +158,7 @@ if(isset($_GET['edit_id']))
                         <h6><b>Decline Property</b></h6>
                         <p class="text-muted mb-0">Property</p>
                       </div>
-                      <h4 class="text-secondary fw-bold">12</h4>
+                      <h4 class="text-secondary fw-bold">  <?php echo $Decline_records; ?></h4>
                     </div>
                   </div>
                 </div>

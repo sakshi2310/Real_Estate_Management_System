@@ -10,6 +10,15 @@ if(!isset($_SESSION['user_id']))
   header("location:index.php");
 }
 
+$sql_rec_inq =  "SELECT COUNT(*) AS total_records FROM property_inquiry where User_id ='$user_id'";
+$res_rec_inq = mysqli_query($con,$sql_rec_inq);
+$row_inq = mysqli_fetch_assoc($res_rec_inq);
+$rec_inq_records = $row_inq['total_records'];
+
+$sql_ans_inq =  "SELECT COUNT(*) AS total_records FROM schedual_tour where User_id ='$user_id'";
+$res_ans_inq = mysqli_query($con,$sql_ans_inq);
+$row_ans_inq = mysqli_fetch_assoc($res_ans_inq);
+$ans_inq_records = $row_ans_inq['total_records'];
 
 
 ?>
@@ -47,12 +56,12 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>All Property</h6>
-                                <p class="text-muted mb-0">Property</p>
+                                <h6>All Inquery</h6>
+                                <p class="text-muted mb-0">Inquery</p>
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class="text-info fw-bold">
-                                    24
+                                <?php echo $rec_inq_records; ?>
                                 </h4>
                             </div>
                         </div>
@@ -62,47 +71,18 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Approved Property</h6>
-                                <p class="text-muted mb-0">Property</p>
+                                <h6>Schedual Tour</h6>
+                                <p class="text-muted mb-0">Property Tour</p>
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class=" fw-bold" style="color:#E354D4;">
-                                    14
+                                <?php echo $ans_inq_records; ?>
                                 </h4>
                             </div>
                         </div>
                     </div>
               </div>
-              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #FF5D9F;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h6>Pending Property</h6>
-                                <p class="text-muted mb-0">Property</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <h4 class=" fw-bold" style="color:#FF5D9F;">
-                                    4
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #FF8E6F;">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between">
-                            <div>
-                                <h6>Decline Property</h6>
-                                <p class="text-muted mb-0">Property</p>
-                            </div>
-                            <div class="d-flex align-items-center">
-                                <h4 class=" fw-bold" style="color:#FF8E6F;">
-                                    10
-                                </h4>
-                            </div>
-                        </div>
-                    </div>
-              </div>
+           
       </div>
 
 
