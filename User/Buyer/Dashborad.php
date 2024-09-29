@@ -10,6 +10,15 @@ if(!isset($_SESSION['user_id']))
   header("location:index.php");
 }
 
+$sql_rec_inq =  "SELECT COUNT(*) AS total_records FROM property_inquiry where User_id ='$user_id'";
+$res_rec_inq = mysqli_query($con,$sql_rec_inq);
+$row_inq = mysqli_fetch_assoc($res_rec_inq);
+$rec_inq_records = $row_inq['total_records'];
+
+$sql_ans_inq =  "SELECT COUNT(*) AS total_records FROM schedual_tour where User_id ='$user_id'";
+$res_ans_inq = mysqli_query($con,$sql_ans_inq);
+$row_ans_inq = mysqli_fetch_assoc($res_ans_inq);
+$ans_inq_records = $row_ans_inq['total_records'];
 
 
 ?>
@@ -48,12 +57,17 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
+
+                                <h6>All Inquery</h6>
+                                <p class="text-muted mb-0">Inquery</p>
+
                                 <h6>All</h6>
                                 <p class="text-muted mb-0">Property</p>
+
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class="text-info fw-bold">
-                                    24
+                                <?php echo $rec_inq_records; ?>
                                 </h4>
                             </div>
                         </div>
@@ -63,6 +77,13 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
+                                <h6>Schedual Tour</h6>
+                                <p class="text-muted mb-0">Property Tour</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h4 class=" fw-bold" style="color:#E354D4;">
+                                <?php echo $ans_inq_records; ?>
+
                                 <h6>Approved</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
@@ -99,11 +120,13 @@ if(!isset($_SESSION['user_id']))
                             <div class="d-flex align-items-center">
                                 <h4 class=" fw-bold" style="color:#FF8E6F;">
                                     10
+
                                 </h4>
                             </div>
                         </div>
                     </div>
               </div>
+           
       </div>
 
 
