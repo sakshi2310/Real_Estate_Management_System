@@ -439,7 +439,7 @@ $con = mysqli_connect("localhost", "root", "", "real_estate");
                 e.thumbh = e.thumbh === undefined ? 0 : parseInt(e.thumbh);
                 e.tabhide = e.tabhide === undefined ? 0 : parseInt(e.tabhide);
                 e.thumbhide = e.thumbhide === undefined ? 0 : parseInt(e.thumbhide);
-                e.mh = e.mh === undefined || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
+                e.mh = e.mh === undefinced || e.mh == "" || e.mh === "auto" ? 0 : parseInt(e.mh, 0);
                 if (e.layout === "fullscreen" || e.l === "fullscreen")
                     newh = Math.max(e.mh, window.RSIH);
                 else {
@@ -558,7 +558,7 @@ $con = mysqli_connect("localhost", "root", "", "real_estate");
                                 <ul class="login-register-nav dropdown d-flex align-items-center">
                                     <li>
                                       
-                                            <a href="User/View_approved_property.php"
+                                            <a href="User/"
                                                 class="btn btn-create-listing hidden-xs hidden-sm">Create a Listing</a>
                                     
 
