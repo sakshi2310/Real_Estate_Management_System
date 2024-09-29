@@ -449,3 +449,11 @@ table{
     padding: 0px 10px;
     background: #202947;
 }
+
+.prev-btn svg{
+    color: #00AEFF;
+}
+
+.prev-btn:hover svg{
+    color: #fff !important;
+}
