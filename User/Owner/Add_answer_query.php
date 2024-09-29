@@ -25,7 +25,7 @@ if(isset($_GET['ans_id']))
           $sql_update = "UPDATE property_inquiry SET Answer_inquery='$ans_qur',Ans_date=CURDATE() WHERE id=$ans_id";
      
           mysqli_query($con, $sql_update);
-          header("Location:View_answer_query.php");
+          echo "<script>alert('Successflly updated!');  window.location.href = 'View_answer_query.php';</script>";
      }
 
 

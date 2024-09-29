@@ -10,6 +10,37 @@ if(!isset($_SESSION['user_id']))
   header("location:index.php");
 }
 
+$user_id = $_SESSION['user_id'];
+$sql_all = "SELECT COUNT(*) AS total_records FROM property_register where User_id ='$user_id'";
+$res_all = mysqli_query($con,$sql_all);
+$row_all = mysqli_fetch_assoc($res_all);
+$total_records = $row_all['total_records'];
+
+$sql_approved = "SELECT COUNT(*) AS total_records FROM property_register where User_id ='$user_id' and Approval_status='Approved'";
+$res_approved = mysqli_query($con,$sql_approved);
+$row_approved = mysqli_fetch_assoc($res_approved);
+$approved_records = $row_approved['total_records'];
+
+$sql_Pending = "SELECT COUNT(*) AS total_records FROM property_register where User_id ='$user_id' and Approval_status='Pending'";
+$res_Pending = mysqli_query($con,$sql_Pending);
+$row_Pending = mysqli_fetch_assoc($res_Pending);
+$Pending_records = $row_Pending['total_records'];
+
+$sql_decline = "SELECT COUNT(*) AS total_records FROM property_register where User_id ='$user_id' and Approval_status='Decline'";
+$res_Decline = mysqli_query($con,$sql_decline);
+$row_Decline = mysqli_fetch_assoc($res_Decline);
+$Decline_records = $row_Decline['total_records'];
+
+$sql_rec_inq =  "SELECT COUNT(*) AS total_records FROM property_inquiry where Pro_admin_id ='$user_id'";
+$res_rec_inq = mysqli_query($con,$sql_rec_inq);
+$row_inq = mysqli_fetch_assoc($res_rec_inq);
+$rec_inq_records = $row_inq['total_records'];
+
+$sql_ans_inq =  "SELECT COUNT(*) AS total_records FROM schedual_tour where Pro_admin_id ='$user_id'";
+$res_ans_inq = mysqli_query($con,$sql_ans_inq);
+$row_ans_inq = mysqli_fetch_assoc($res_ans_inq);
+$ans_inq_records = $row_ans_inq['total_records'];
+
 
 
 ?>
@@ -51,7 +82,7 @@ if(!isset($_SESSION['user_id']))
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class="text-info fw-bold">
-                                    24
+                                <?php echo $total_records; ?>
                                 </h4>
                             </div>
                         </div>
@@ -66,7 +97,7 @@ if(!isset($_SESSION['user_id']))
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class=" fw-bold" style="color:#E354D4;">
-                                    14
+                                <?php echo $approved_records; ?>
                                 </h4>
                             </div>
                         </div>
@@ -81,7 +112,7 @@ if(!isset($_SESSION['user_id']))
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class=" fw-bold" style="color:#FF5D9F;">
-                                    4
+                                <?php echo $Pending_records; ?>
                                 </h4>
                             </div>
                         </div>
@@ -96,12 +127,47 @@ if(!isset($_SESSION['user_id']))
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class=" fw-bold" style="color:#FF8E6F;">
-                                    10
+                                <?php echo $Decline_records; ?>
                                 </h4>
                             </div>
                         </div>
                     </div>
               </div>
+              
+      </div>
+
+      <div class="row gap-3">
+              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #48ABF7;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Total Inquery</h6>
+                                <p class="text-muted mb-0">Inquery</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h4 class="text-info fw-bold">
+                                <?php echo $rec_inq_records; ?>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #E354D4;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Total Schedual Tour</h6>
+                                <p class="text-muted mb-0">Property Visit</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h4 class=" fw-bold" style="color:#E354D4;">
+                                <?php echo $ans_inq_records     ; ?>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+             
       </div>
 
 

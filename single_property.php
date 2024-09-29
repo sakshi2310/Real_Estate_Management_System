@@ -7,6 +7,9 @@ if(!isset($_GET['pro_id']))
     header('location:index.php');
 }
 
+$sql = "SELECT * FROM `property_register` WHERE Approval_status='Approved' LIMIT 4";
+$res = mysqli_query($con,$sql);
+$row = mysqli_fetch_assoc($res);
 if(isset($_POST['save']))
 {
     
@@ -40,69 +43,7 @@ $row_year = mysqli_fetch_assoc($property_year_res);
 $features = explode(',', $row['Feature']);
 
 
-// Mortgage Calculator
-if(isset($_POST['Calculate']))
-{
 
-    function calculateMortgage($principal, $annualInterestRate, $years) {
-        // Convert annual interest rate to a monthly interest rate
-        $monthlyInterestRate = $annualInterestRate / 100 / 12;
-        // Convert years to months
-        $months = $years * 12;
-        
-        // Calculate the monthly payment using the formula
-        if ($monthlyInterestRate == 0) {  // If the interest rate is 0
-            $monthlyPayment = $principal / $months;
-        } else {
-            $monthlyPayment = $principal * ($monthlyInterestRate * pow(1 + $monthlyInterestRate, $months)) / (pow(1 + $monthlyInterestRate, $months) - 1);
-        }
-        
-        return $monthlyPayment;
-    }
-    
-
-    $total_amount = $_POST['Total_amount'];
-    $down_payment_percent = $_POST['Down_payment'];
-    $annual_interest_rate = $_POST['Interest_rate'];
-    $year = $_POST['Year'];
-    $property_tax_percent = $_POST['Property_tax'];
-    $home_insurance_annual = $_POST['Home_insurance']; 
-    $monthly_fees = $_POST['Monthly_fees'];
-    $PMI_per = $_POST['PMI'];
-
-    // Calculations
-    $down_payement = $total_amount * ($down_payment_percent / 100);
-    $loan_amount = $total_amount - $down_payement;
-    $monthly_mortgage_payment = calculateMortgage($loan_amount, $annual_interest_rate, $year);
-
-    //  Property Tax Calculation
-    $annual_property_tax = $total_amount * ($property_tax_percent / 100);
-    $monthly_property_tax = $annual_property_tax / 12;
-
-    // Home insurance
-    $monthly_home_insurance = $home_insurance_annual /12;
-
-    // PMI cal
-    $annual_pmi = $loan_amount * ($PMI_per / 100);
-    $monthly_pmi = $annual_pmi /12;
-
-    // total Monthely cost
-    $total_monthly_cost = $monthly_mortgage_payment + $monthly_property_tax + $monthly_home_insurance + $monthly_pmi + $monthly_fees;
-    
-    echo json_encode([
-        'downPayment' => number_format($down_payment, 2),
-        'loanAmount' => number_format($loan_amount, 2),
-        'monthlyMortgagePayment' => number_format($monthly_mortgage_payment, 2),
-        'monthlyPropertyTax' => number_format($monthly_property_tax, 2),
-        'monthlyHomeInsurance' => number_format($monthly_home_insurance, 2),
-        'monthlyPMI' => number_format($monthly_pmi, 2),
-        'monthlyHOA' => number_format($monthly_fees, 2),
-        'totalMonthlyCost' => number_format($total_monthly_cost, 2),
-    ]);
-    exit;
-
-
-}
 
 
 // Property Inquirey
@@ -166,12 +107,13 @@ if(isset($_POST['Schedual_tour']))
     $property_id = $_GET['pro_id'];
     $user_id = $_SESSION['user_id'];
     $admin_id = $Pro_admin_id;
+    $tour_status = 'Pending';
     
 
     $sql_tour = "INSERT INTO schedual_tour (
-       Schedual_date,Time,Name,Phone,Email,Message,Date,Property_id,User_id,Pro_admin_id
+       Schedual_date,Time,Name,Phone,Email,Message,Date,Property_id,User_id,Pro_admin_id,Tour_status
      ) VALUES (
-         '$sechudal_date','$time','$name','$phone','$email','$message',CURDATE(),'$property_id','$user_id','$admin_id'
+         '$sechudal_date','$time','$name','$phone','$email','$message',CURDATE(),'$property_id','$user_id','$admin_id','$tour_status'
      )";
      mysqli_query($con,$sql_tour);
  
@@ -1105,6 +1047,7 @@ if(isset($_POST['Schedual_tour']))
                                     <h2>Similar Listings</h2>
                                 </div>
                                 <div class="listing-view grid-view card-deck">
+                                <?php  while($row=mysqli_fetch_assoc($res)) { ?>
                                 <div class="item-listing-wrap hz-item-gallery-js card col-md-4 col-12"
                                     data-hz-id="hz-282">
                                     <div
@@ -1118,7 +1061,7 @@ if(isset($_POST['Schedual_tour']))
                                                     class="labels-wrap labels-right">
                                                     <a href="#"
                                                         class="label-status label status-color-18">
-                                                        For Sale
+                                                        <?php  echo $row['Status'];?>
                                                     </a>
                                                 </div>
                                                 <ul
@@ -1172,7 +1115,7 @@ if(isset($_POST['Schedual_tour']))
                                                                 decoding="async"
                                                                 width="592"
                                                                 height="444"
-                                                                src="assets/gallary5.jpg"
+                                                                src="User/upload/<?php echo $row['Image1']; ?>"
                                                                 alt srcset
                                                                 sizes="(max-width: 592px) 100vw, 592px" />
                                                         </a>
@@ -1190,46 +1133,40 @@ if(isset($_POST['Schedual_tour']))
                                                 </div>
                                                 <h2 class="item-title">
                                                     <a target="_self"
-                                                        href="#">Renovated
-                                                        studio</a>
+                                                        href="single_property.php?pro_id=<?php echo $row['id'];?>">
+                                                        <?php echo $row['Property_title']; ?></a>
                                                 </h2>
                                                 <ul
                                                     class="item-price-wrap hide-on-list">
-                                                    <li class="item-price"> $540,000
-                                                    </li>
-                                                    <li class="item-sub-price">
-                                                        $3,700/sq ft</li>
+                                                 
                                                 </ul>
-                                                <address class="item-address">194
-                                                    Mercer Street, 627 Broadway, New
-                                                    York, NY 10012, USA</address>
+                                                <address class="item-address"><?php echo $row['Description'];?></address>
                                                 <ul
                                                     class="item-amenities item-amenities-with-icons">
                                                     <li class="h-beds"><i class="las la-bed"></i><span
                                                             class="item-amenities-text">Beds:</span>
                                                         <span
-                                                            class="hz-figure">4</span>
+                                                            class="hz-figure"><?php echo $row['Badrooms']; ?></span>
                                                     </li>
                                                     <li class="h-baths"><i class="las la-bath"></i><span
                                                             class="item-amenities-text">Baths:</span>
                                                         <span
-                                                            class="hz-figure">2</span>
+                                                            class="hz-figure"><?php echo $row['Bathroom']; ?></span>
                                                     </li>
                                                     <li class="h-cars"><i
                                                             class="las la-car mr-1"></i><span
-                                                            class="item-amenities-text">Garage:</span>
+                                                            class="item-amenities-text">Balcony:</span>
                                                         <span
-                                                            class="hz-figure">1</span>
+                                                            class="hz-figure"><?php echo $row['Balcony']; ?></span>
                                                     </li>
                                                     <li class="h-area"><i
                                                             class="las la-ruler-combined mr-1"></i><span
-                                                            class="hz-figure">1200</span>
+                                                            class="hz-figure"><?php echo $row['Land_price']; ?></span>
                                                         <span
-                                                            class="hz-figure area_postfix">Sq
-                                                            Ft</span>
+                                                            class="hz-figure area_postfix"><?php echo $row['Land_postfix']; ?></span>
                                                     </li>
                                                     <li class="h-type">
-                                                        <span>Studio</span>
+                                                        <span><?php echo $row['Type']; ?></span>
                                                     </li>
                                                 </ul> <a
                                                     class="btn btn-primary btn-item "
@@ -1253,339 +1190,21 @@ if(isset($_POST['Schedual_tour']))
                                                 <div class="item-author">
                                                     <i
                                                         class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Michelle
-                                                        Ramirez</a>
+                                                    <a/
+                                                        href="#"><?php   
+                                                                                             echo $row['User_id'];  ?>
+                                                        <a>
                                                 </div>
                                                 <div class="item-date">
                                                     <i
                                                         class="las la-paperclip mr-1"></i>
-                                                    4 years ago
+                                                        <?php echo $row['Pro_date'];?>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="item-listing-wrap hz-item-gallery-js card col-md-4 col-12"
-                                    data-hz-id="hz-282">
-                                    <div
-                                        class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                                        <div
-                                            class="d-flex align-items-center h-100">
-                                            <div class="item-header">
-                                                <span
-                                                    class="label-featured label">Featured</span>
-                                                <div
-                                                    class="labels-wrap labels-right">
-                                                    <a href="#"
-                                                        class="label-status label status-color-18">
-                                                        For Sale
-                                                    </a>
-                                                </div>
-                                                <ul
-                                                    class="item-price-wrap hide-on-list">
-                                                    <li class="item-price"> $540,000
-                                                    </li>
-                                                    <li class="item-sub-price">
-                                                        $3,700/sq ft</li>
-                                                </ul>
-                                                <ul class="item-tools">
-                                                    <li
-                                                        class="item-tool item-preview">
-                                                        <span
-                                                            class="hz-show-lightbox-js"
-                                                            data-listid="282"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Preview">
-                                                            <i class="las la-compress-arrows-alt"></i>
-                                                        </span>
-                                                    </li>
-                                                    <li
-                                                        class="item-tool item-favorite">
-                                                        <span
-                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center d-flex justify-content-center align-items-center"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Favourite"
-                                                            data-listid="282">
-                                                            <i class="las la-heart"></i>
-                                                        </span>
-                                                    </li>
-                                                    <li
-                                                        class="item-tool item-compare">
-                                                        <span
-                                                            class="houzez_compare compare-282 item-tool-compare d-flex justify-content-center align-items-center show-compare-panel"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Add to Compare"
-                                                            data-listing_id="282">
-                                                            <i class="las la-plus-circle"></i>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                                <div class="listing-image-wrap">
-                                                    <div class="listing-thumb">
-                                                        <a target="_self"
-                                                            href="single_property.php"
-                                                            class="listing-featured-thumb hover-effect">
-                                                            <img loading="lazy"
-                                                                decoding="async"
-                                                                width="592"
-                                                                height="444"
-                                                                src="assets/gallary5.jpg"
-                                                                alt srcset
-                                                                sizes="(max-width: 592px) 100vw, 592px" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="preview_loader"></div>
-                                            </div>
-                                            <div class="item-body flex-grow-1">
-                                                <div
-                                                    class="labels-wrap labels-right">
-                                                    <a href="#"
-                                                        class="label-status label status-color-18">
-                                                        For Sale
-                                                    </a>
-                                                </div>
-                                                <h2 class="item-title">
-                                                    <a target="_self"
-                                                        href="#">Renovated
-                                                        studio</a>
-                                                </h2>
-                                                <ul
-                                                    class="item-price-wrap hide-on-list">
-                                                    <li class="item-price"> $540,000
-                                                    </li>
-                                                    <li class="item-sub-price">
-                                                        $3,700/sq ft</li>
-                                                </ul>
-                                                <address class="item-address">194
-                                                    Mercer Street, 627 Broadway, New
-                                                    York, NY 10012, USA</address>
-                                                <ul
-                                                    class="item-amenities item-amenities-with-icons">
-                                                    <li class="h-beds"><i class="las la-bed"></i><span
-                                                            class="item-amenities-text">Beds:</span>
-                                                        <span
-                                                            class="hz-figure">4</span>
-                                                    </li>
-                                                    <li class="h-baths"><i class="las la-bath"></i><span
-                                                            class="item-amenities-text">Baths:</span>
-                                                        <span
-                                                            class="hz-figure">2</span>
-                                                    </li>
-                                                    <li class="h-cars"><i
-                                                            class="las la-car mr-1"></i><span
-                                                            class="item-amenities-text">Garage:</span>
-                                                        <span
-                                                            class="hz-figure">1</span>
-                                                    </li>
-                                                    <li class="h-area"><i
-                                                            class="las la-ruler-combined mr-1"></i><span
-                                                            class="hz-figure">1200</span>
-                                                        <span
-                                                            class="hz-figure area_postfix">Sq
-                                                            Ft</span>
-                                                    </li>
-                                                    <li class="h-type">
-                                                        <span>Studio</span>
-                                                    </li>
-                                                </ul> <a
-                                                    class="btn btn-primary btn-item "
-                                                    target="_self"
-                                                    href="#">
-                                                    Details</a>
-                                                <div class="item-author">
-                                                    <i
-                                                        class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Michelle
-                                                        Ramirez</a>
-                                                </div>
-                                                <div class="item-date">
-                                                    <i
-                                                        class="las la-paperclip mr-1"></i>
-                                                    4 years ago
-                                                </div>
-                                            </div>
-                                            <div class="item-footer clearfix">
-                                                <div class="item-author">
-                                                    <i
-                                                        class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Michelle
-                                                        Ramirez</a>
-                                                </div>
-                                                <div class="item-date">
-                                                    <i
-                                                        class="las la-paperclip mr-1"></i>
-                                                    4 years ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="item-listing-wrap hz-item-gallery-js card col-md-4 col-12"
-                                    data-hz-id="hz-344">
-                                    <div
-                                        class="item-wrap item-wrap-v1 item-wrap-no-frame h-100">
-                                        <div
-                                            class="d-flex align-items-center h-100">
-                                            <div class="item-header">
-                                                <span
-                                                    class="label-featured label">Featured</span>
-                                                <div
-                                                    class="labels-wrap labels-right">
-                                                    <a href="#"
-                                                        class="label-status label status-color-34">
-                                                        For Rent
-                                                    </a>
-                                                </div>
-                                                <ul
-                                                    class="item-price-wrap hide-on-list">
-                                                    <li class="item-price">
-                                                        $11,000/mo</li>
-                                                </ul>
-                                                <ul class="item-tools">
-                                                    <li
-                                                        class="item-tool item-preview">
-                                                        <span
-                                                            class="hz-show-lightbox-js"
-                                                            data-listid="344"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Preview">
-                                                            <i class="las la-compress-arrows-alt"></i>
-                                                        </span>
-                                                    </li>
-                                                    <li
-                                                        class="item-tool item-favorite">
-                                                        <span
-                                                            class="add-favorite-js item-tool-favorite d-flex justify-content-center align-items-center d-flex justify-content-center align-items-center"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Favourite"
-                                                            data-listid="344">
-                                                            <i class="las la-heart"></i>
-                                                        </span>
-                                                    </li>
-                                                    <li
-                                                        class="item-tool item-compare">
-                                                        <span
-                                                            class="houzez_compare compare-344 item-tool-compare d-flex justify-content-center align-items-center show-compare-panel"
-                                                            data-toggle="tooltip"
-                                                            data-placement="top"
-                                                            title="Add to Compare"
-                                                            data-listing_id="344"]>
-                                                            <i class="las la-plus-circle"></i>
-                                                        </span>
-                                                    </li>
-                                                </ul>
-                                                <div class="listing-image-wrap">
-                                                    <div class="listing-thumb">
-                                                        <a target="_self"
-                                                            href="single_property.php"
-                                                            class="listing-featured-thumb hover-effect">
-                                                            <img loading="lazy"
-                                                                decoding="async"
-                                                                width="592"
-                                                                height="444"
-                                                                src="assets/gallary4.jpg"
-                                                                alt srcset
-                                                                sizes="(max-width: 592px) 100vw, 592px" />
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="preview_loader"></div>
-                                            </div>
-                                            <div class="item-body flex-grow-1">
-                                                <div
-                                                    class="labels-wrap labels-right">
-                                                    <a href="#"
-                                                        class="label-status label status-color-34">
-                                                        For Rent
-                                                    </a>
-                                                </div>
-                                                <h2 class="item-title">
-                                                    <a target="_self"
-                                                        href="#">New
-                                                        apartment nice view</a>
-                                                </h2>
-                                                <ul
-                                                    class="item-price-wrap hide-on-list">
-                                                    <li class="item-price">
-                                                        $11,000/mo</li>
-                                                </ul>
-                                                <address class="item-address">8100 S
-                                                    Ashland Ave, Chicago, IL 60620,
-                                                    USA</address>
-                                                <ul
-                                                    class="item-amenities item-amenities-with-icons">
-                                                    <li class="h-beds">
-                                                        <i class="las la-bed"></i><span
-                                                            class="item-amenities-text">Beds:</span>
-                                                        <span
-                                                            class="hz-figure">3</span>
-                                                    </li>
-                                                    <li class="h-baths"><i class="las la-bath"></i><span
-                                                            class="item-amenities-text">Bath:</span>
-                                                        <span
-                                                            class="hz-figure">1</span>
-                                                    </li>
-                                                    <li class="h-cars"><i
-                                                            class="las la-car mr-1"></i><span
-                                                            class="item-amenities-text">Garage:</span>
-                                                        <span
-                                                            class="hz-figure">1</span>
-                                                    </li>
-                                                    <li class="h-area"><i
-                                                            class="las la-ruler-combined mr-1"></i><span
-                                                            class="hz-figure">1789</span>
-                                                        <span
-                                                            class="hz-figure area_postfix">Sq
-                                                            Ft</span>
-                                                    </li>
-                                                    <li class="h-type">
-                                                        <span>Apartment</span>
-                                                    </li>
-                                                </ul> <a
-                                                    class="btn btn-primary btn-item "
-                                                    target="_self"
-                                                    href="#">
-                                                    Details</a>
-                                                <div class="item-author">
-                                                    <i
-                                                        class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Samuel
-                                                        Palmer</a>
-                                                </div>
-                                                <div class="item-date">
-                                                    <i
-                                                        class="las la-paperclip mr-1"></i>
-                                                    4 years ago
-                                                </div>
-                                            </div>
-                                            <div class="item-footer clearfix">
-                                                <div class="item-author">
-                                                    <i
-                                                        class="las la-user mr-1"></i>
-                                                    <a
-                                                        href="#">Samuel
-                                                        Palmer</a>
-                                                </div>
-                                                <div class="item-date">
-                                                    <i
-                                                        class="las la-paperclip mr-1"></i>
-                                                    4 years ago
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
+                                <?php  } ?>
                             </div>
                         </div>
                     </div>

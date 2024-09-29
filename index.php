@@ -426,7 +426,7 @@ $res_area = mysqli_query($con,$property_area);
                                                                                         </li>
                                                                                         <li class="h-cars"><i
                                                                                                 class="las la-car mr-1"></i><span
-                                                                                                class="item-amenities-text">Garage:</span>
+                                                                                                class="item-amenities-text">Balcony:</span>
                                                                                             <span
                                                                                                 class="hz-figure"><?php echo $row['Balcony']; ?></span>
                                                                                         </li>

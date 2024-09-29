@@ -35,9 +35,9 @@ $row = mysqli_fetch_assoc($res);
                
               </a>
               <ul class="dropdown-menu text-small shadow">
-                <li><a class="dropdown-item" href="#">Home</a></li>
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="Dashborad.php">Home</a></li>
+                <li><a class="dropdown-item" href="View_profile.php">Profile</a></li>
+                <li><a class="dropdown-item" href="change_password.php">Change Password</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="../logout.php">Sign out</a></li>
               </ul>
