@@ -245,8 +245,8 @@
                 
               <li class="nav-item">
                 <a href="logout.php">
-                  <i class="fas fa-user-circle"></i>
-                  <p>Logout/p>
+                <i class="fas fa-sign-out-alt"></i>
+                  <p>Logout</p>
                 </a>
               </li>
                 

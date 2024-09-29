@@ -570,10 +570,10 @@ if(isset($_POST['Schedual_tour']))
                                             if (!empty($row[$image_column])) { // Check if the image column is not empty
                                                 // Dynamically generate the HTML for each image
                                                 echo '<a href="#" data-toggle="modal" data-slider-no="' . $i . '" data-target="#property-lightbox"
-                                                        class="houzez-trigger-popup-slider-js gallery-grid-item img-gallary object-fit-cover" style="width:300px; height="192px";">
+                                                        class="houzez-trigger-popup-slider-js gallery-grid-item img-gallary object-fit-cover" style="width:300px; height:192px;">
                                                         <img class="img-fluid"
                                                             src="User/upload/' . $row[$image_column] . '"
-                                                            alt="Property Image ' . $i . '">
+                                                            alt="Property Image ' . $i . ' " style="width:300px; height:192px;">
                                                       </a>';
                                             }
                                         }
