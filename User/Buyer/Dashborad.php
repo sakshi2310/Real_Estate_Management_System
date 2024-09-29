@@ -51,13 +51,19 @@ $ans_inq_records = $row_ans_inq['total_records'];
                     <h5 class="page-title">Edit Profile Info</h5>
                     
             </div>
+</div>
         <div class="row gap-3">
               <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #48ABF7;">
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
+
                                 <h6>All Inquery</h6>
                                 <p class="text-muted mb-0">Inquery</p>
+
+                                <h6>All</h6>
+                                <p class="text-muted mb-0">Property</p>
+
                             </div>
                             <div class="d-flex align-items-center">
                                 <h4 class="text-info fw-bold">
@@ -77,6 +83,44 @@ $ans_inq_records = $row_ans_inq['total_records'];
                             <div class="d-flex align-items-center">
                                 <h4 class=" fw-bold" style="color:#E354D4;">
                                 <?php echo $ans_inq_records; ?>
+
+                                <h6>Approved</h6>
+                                <p class="text-muted mb-0">Property</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h4 class=" fw-bold" style="color:#E354D4;">
+                                    14
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #FF5D9F;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Pending</h6>
+                                <p class="text-muted mb-0">Property</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h4 class=" fw-bold" style="color:#FF5D9F;">
+                                    4
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg row-card-no-pd p-4 py-4 main-Borad bg-white cursor" style="border-bottom: 6px solid #FF8E6F;">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between">
+                            <div>
+                                <h6>Decline</h6>
+                                <p class="text-muted mb-0">Property</p>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <h4 class=" fw-bold" style="color:#FF8E6F;">
+                                    10
+
                                 </h4>
                             </div>
                         </div>
