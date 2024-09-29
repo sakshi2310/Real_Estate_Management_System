@@ -56,9 +56,9 @@ if(isset($_POST['Register']))
                 <input type="text" placeholder="Enter Your Mobile Number" name="M_b_no">
                 <span>Enter Mobile Number</span>
             </div>
-            <div class="forget_link">
+            <!-- <div class="forget_link">
                 <a href="#">Forget Your Password ?</a>
-            </div>
+            </div> -->
            <div class="frm_btn">
                 <button  type="submit" name="Register">Submit</button>
             </div>

@@ -120,9 +120,9 @@ if(isset($_POST['Login']))
                 <input type="password" placeholder="Enter Your Password" name="Password">
                 <span>Enter Password</span>
             </div>
-            <div class="forget_link">
+            <!-- <div class="forget_link">
                 <a href="#">Forget Your Password ?</a>
-            </div>
+            </div> -->
             <div class="frm_btn">
                 <button type="submit" name="Login">Login</button>
             </div>
