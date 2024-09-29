@@ -48,7 +48,7 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>All Property</h6>
+                                <h6>All</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -63,7 +63,7 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Approved Property</h6>
+                                <h6>Approved</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -78,7 +78,7 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Pending Property</h6>
+                                <h6>Pending</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
@@ -93,7 +93,7 @@ if(!isset($_SESSION['user_id']))
                     <div class="card-body">
                         <div class="d-flex justify-content-between">
                             <div>
-                                <h6>Decline Property</h6>
+                                <h6>Decline</h6>
                                 <p class="text-muted mb-0">Property</p>
                             </div>
                             <div class="d-flex align-items-center">
