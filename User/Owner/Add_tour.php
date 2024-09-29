@@ -26,7 +26,7 @@ if(isset($_GET['tour_id']))
           $sql_update = "UPDATE schedual_tour SET Answer_message='$ans_qur',Tour_status='$tour_status' WHERE id=$tour";
      
           mysqli_query($con, $sql_update);
-          header("Location:View_schedual_tour.php");
+          echo "<script>alert('Successflly updated!');  window.location.href = 'View_schedual_tour.php';</script>";
      }
 
 
