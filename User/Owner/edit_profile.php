@@ -26,6 +26,7 @@ if(isset($_POST['edit']))
   $email = $_POST['Email'];
   $password = $_POST['Password'];
   $Mb_num = $_POST['MoblieNo'];
+  $s_des = $_POST['s_des'];
   // $image = $_FILES['Image']['name'];
 
   if (isset($_FILES['Image']) && $_FILES['Image']['error'] === UPLOAD_ERR_OK)
@@ -33,17 +34,17 @@ if(isset($_POST['edit']))
     $image = $_FILES['Image']['name'];
     
     if (!empty($proprty_row['Image'])) {
-      unlink('upload/' . $proprty_row['Image']); // Delete the existing image
+      unlink('../upload/' . $proprty_row['Image']); // Delete the existing image
     }
-    move_uploaded_file($_FILES['Image']['tmp_name'], 'upload/' . $image);
+    move_uploaded_file($_FILES['Image']['tmp_name'], '../8upload/' . $image);
   }else{
     $image = $row['Image']; 
   }
 
 
-    $sql_update = "update users set User_name='$name',Email='$email',Password='$password',Mb_num='$Mb_num',Image='$image' where id =".$user_id;
+    $sql_update = "update users set User_name='$name',Email='$email',Password='$password',Mb_num='$Mb_num',Image='$image' , Self_Des = '$s_des' where id =".$user_id;
     mysqli_query($con,$sql_update);
-    header('location:View_profile.php');
+    echo "<script>alert('Successflly updated!');  window.location.href = 'View_profile.php';</script>";
 }
 
 
@@ -103,6 +104,10 @@ if(isset($_POST['edit']))
                 <div class="col-lg-4 col-md-6 col-12">
                 <label for="exampleInputMob" class="form-label">Mobile No</label>
                 <input type="text" class="form-control" id="exampleInputMob" placeholder="MoblieNo" name="MoblieNo" value="<?php echo @$row['Mb_num']; ?>" >
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                <label for="exampleInputMob" class="form-label">Self Description</label>
+                <input type="text" class="form-control" id="exampleInputMob" placeholder="MoblieNo" name="s_des" value="<?php echo @$row['Self_Des']; ?>" >
                 </div>
             </div>
 
