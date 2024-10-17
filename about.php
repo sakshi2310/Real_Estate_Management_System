@@ -7,9 +7,9 @@ $res  = mysqli_query($con,$sql);
 
 $sql_services = 'select * from website_services';
 $res_services = mysqli_query($con,$sql_services);
-$row_services = mysqli_fetch_assoc($res_services)
-
-
+$records = mysqli_fetch_all($res_services, MYSQLI_ASSOC);
+$agent = "SELECT * FROM users WHERE Self_Des IS NOT NULL AND Self_Des != '' AND Image IS NOT NULL AND Image != '' LIMIT 3";
+$res_agent = mysqli_query($con,$agent);
 
 ?>
        
@@ -143,18 +143,15 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy1.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[0]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
-                                                                href="#">
-                                                                <div class="grid-item-text-wrap">
+                                                            href="#">
+                                                            <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">Services</div>
-                                                                    <div class="grid-item-title">Property Management
+                                                                    <div class="grid-item-title"><?php echo $records[0]['Title'] ?>
                                                                     </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -165,18 +162,15 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy2.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[1]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">Services</div>
-                                                                    <div class="grid-item-title">Financial Reporting
+                                                                    <div class="grid-item-title"><?php echo $records[1]['Title'] ?>
                                                                     </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -192,18 +186,14 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy3.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[2]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">Services</div>
-                                                                    <div class="grid-item-title">Capital Improvements
+                                                                    <div class="grid-item-title"><?php echo $records[2]['Title'] ?>
                                                                     </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -214,18 +204,14 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy4.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[3]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">Services</div>
-                                                                    <div class="grid-item-title">Business Development
+                                                                    <div class="grid-item-title"><?php echo $records[3]['Title'] ?>
                                                                     </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -241,18 +227,14 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(assets/residancy5.jpg)">
+                                                            style="background-image:url(Admin/upload/<?php echo $records[4]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">Services</div>
-                                                                    <div class="grid-item-title">Finance Real Estate
+                                                                    <div class="grid-item-title"><?php echo $records[4]['Title'] ?>
                                                                     </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -268,18 +250,14 @@ $row_services = mysqli_fetch_assoc($res_services)
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(assets/residancy6.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[5]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat" target="_blank"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
                                                                     <div class="grid-item-subtitle">Services</div>
-                                                                    <div class="grid-item-title">Recover Asset Value
+                                                                    <div class="grid-item-title"><?php echo $records[5]['Title'] ?>
                                                                     </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -387,149 +365,65 @@ $row_services = mysqli_fetch_assoc($res_services)
                     </div>
                 </section>
                 <!-- photo gallary end -->
-
-
                 <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-dcb9a9c elementor-section-content-middle elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default"
-                    data-id="dcb9a9c" data-element_type="section"
-                    data-settings="{&quot;stretch_section&quot;:&quot;section-stretched&quot;,&quot;background_background&quot;:&quot;classic&quot;}">
-                    <div class="elementor-background-overlay"></div>
-                    <div class="elementor-container elementor-column-gap-wide">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-e550c9a"
-                            data-id="e550c9a" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-element elementor-element-b526b91 elementor-widget elementor-widget-houzez_elementor_space"
-                                    data-id="b526b91" data-element_type="widget"
-                                    data-widget_type="houzez_elementor_space.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="houzez-spacer">
-                                            <div class="houzez-spacer-inner"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-b2612dc elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                    data-id="b2612dc" data-element_type="section">
+                                    class="elementor-section elementor-inner-section elementor-element elementor-element-afe86ce elementor-section-boxed elementor-section-height-default elementor-section-height-default"
+                                    data-id="afe86ce" data-element_type="section">
                                     <div class="elementor-container elementor-column-gap-extended">
-                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-4328968"
-                                            data-id="4328968" data-element_type="column">
+                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-dedb31d"
+                                            data-id="dedb31d" data-element_type="column">
                                             <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-2752dba animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
-                                                    data-id="2752dba" data-element_type="widget"
+                                                <div class="elementor-element elementor-element-efce673 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
+                                                    data-id="efce673" data-element_type="widget"
                                                     data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
                                                     data-widget_type="houzez_elementor_section_title.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="houzez_section_title_wrap section-title-module">
-                                                            <h2 class="houzez_section_title">Testimonials</h2>
-                                                            <p class="houzez_section_subtitle">Lorem ipsum dolor sit
-                                                                amet, consectetur adipisicing elit</p>
+                                                            <h2 class="houzez_section_title">Meet Our Agents</h2>
+                                                            <p class="houzez_section_subtitle">Connect with Our Expert Agents – Dedicated Professionals Ready to Help You Find Your Perfect Property!</p>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="elementor-element elementor-element-91b1f9e animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_testimonials_v2"
-                                                    data-id="91b1f9e" data-element_type="widget"
-                                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                                    data-widget_type="houzez_elementor_testimonials_v2.default">
+                                                <div class="elementor-element elementor-element-596f295 elementor-widget elementor-widget-houzez_elementor_agents"
+                                                    data-id="596f295" data-element_type="widget"
+                                                    data-widget_type="houzez_elementor_agents.default">
                                                     <div class="elementor-widget-container">
-                                                        <div class="testimonials-module testimonials-module-v2">
-                                                            <div class="row">
-                                                            <div class="col-md-4 col-sm-12">
-                                                                    <div class="testimonial-item testimonial-item-v2">
-                                                                        <div class="testimonial-icon">
-                                                                            <i class="las la-quote-left"></i>
-                                                                        </div>
-                                                                        <div class="testimonial-body">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipiscing elit, sed do eiusmod tempor
-                                                                            incididunt ut labore et dolore magna aliqua.
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center">
-                                                                            <div class="testimonial-thumb">
-                                                                                <img 
-                                                                                    width="70" height="70"
-                                                                                    src="assets/client1.jpg"
-                                                                                    class="img-fluid rounded-circle" />
-                                                                            </div>
-                                                                            <div class="testimonial-info">
-                                                                                by <strong>Roy Bennett</strong><br>
-                                                                                <em>
-                                                                                    Manager, Company Inc. </em>
-                                                                            </div>
-                                                                        </div>
+                                                        <div class="agent-module module-3cols clearfix">
+                                                            <?php while($row_agent = mysqli_fetch_assoc($res_agent)) { ?>
+                                                            <div class="agent-item">
+                                                                <div class="agent-thumb">
+                                                                    <a
+                                                                        href="#">
+                                                                        <img width="150"
+                                                                            height="150"
+                                                                            src="User/upload/<?php echo $row_agent['Image']; ?>"
+                                                                            class="img-fluid rounded-circle"
+                                                                            sizes="(max-width: 150px) 100vw, 150px" />
+                                                                    </a>
+                                                                </div>
+                                                                <div class="agent-info">
+                                                                    <div class="agent-name">
+                                                                        <a
+                                                                            href="#"><strong>
+                                                                                <?php echo $row_agent['User_name']; ?></strong></a>
+                                                                    </div>
+                                                                    <div class="agent-company">
+                                                                        <?php echo $row_agent['Email']; ?>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-4 col-sm-12">
-                                                                    <div class="testimonial-item testimonial-item-v2">
-                                                                        <div class="testimonial-icon">
-                                                                            <i class="las la-quote-left"></i>
-                                                                        </div>
-                                                                        <div class="testimonial-body">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipiscing elit, sed do eiusmod tempor
-                                                                            incididunt ut labore et dolore magna aliqua.
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center">
-                                                                            <div class="testimonial-thumb">
-                                                                            <img 
-                                                                                    width="70" height="70"
-                                                                                    src="assets/client2.jpg"
-                                                                                    class="img-fluid rounded-circle" />
-                                                                            </div>
-                                                                            <div class="testimonial-info">
-                                                                                by <strong>Kenya Soval</strong><br>
-                                                                                <em>
-                                                                                    Realtor, Company Inc. </em>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12">
-                                                                    <div class="testimonial-item testimonial-item-v2">
-                                                                        <div class="testimonial-icon">
-                                                                            <i class="las la-quote-left"></i>
-                                                                        </div>
-                                                                        <div class="testimonial-body">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipiscing elit, sed do eiusmod tempor
-                                                                            incididunt ut labore et dolore magna aliqua.
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center">
-                                                                            <div class="testimonial-thumb">
-                                                                            <img 
-                                                                                    width="70" height="70"
-                                                                                    src="assets/client3.jpg"
-                                                                                    class="img-fluid rounded-circle" />
-                                                                            </div>
-                                                                            <div class="testimonial-info">
-                                                                                by <strong>Kathleen
-                                                                                    Peterson</strong><br>
-                                                                                <em>
-                                                                                    Manager, Company Inc. </em>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
+                                                                <div class="agent-body">
+                                                                  <?php echo $row_agent['Self_Des']; ?></div>
+                                                               
                                                             </div>
+                                                         <?php } ?>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </section>
-                                <div class="elementor-element elementor-element-b8e71c1 elementor-widget elementor-widget-houzez_elementor_space"
-                                    data-id="b8e71c1" data-element_type="widget"
-                                    data-widget_type="houzez_elementor_space.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="houzez-spacer">
-                                            <div class="houzez-spacer-inner"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                                </section>                  
+
+  
             </div>
         </section>
     </main>

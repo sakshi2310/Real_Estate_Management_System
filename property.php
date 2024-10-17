@@ -3,8 +3,29 @@
 
 $con = mysqli_connect("localhost", "root", "", "real_estate");
 
-$sql = "SELECT * FROM `property_register` WHERE Approval_status='Approved' ORDER BY id DESC ";
-$res = mysqli_query($con,$sql);
+// $sql = "SELECT * FROM `property_register` WHERE Approval_status='Approved' ORDER BY id DESC ";
+// $res = mysqli_query($con,$sql);
+
+$sql = "SELECT * FROM property_register WHERE Approval_status='Approved'";
+
+// Handle property type checkboxes
+if (!empty($_POST['propertyTypes'])) {
+    $propertyTypes = $_POST['propertyTypes'];
+    $propertyTypeConditions = [];
+    foreach ($propertyTypes as $type) {
+        $propertyTypeConditions[] = "Type = '$type'";
+        $propertyTypeConditions[] = "Status = '$type'";
+        $propertyTypeConditions[] = "Area_name = '$type'";
+    }
+    // Add the conditions for selected types
+    $sql .= " AND (" . implode(' OR ', $propertyTypeConditions) . ")";
+}
+
+$sql .= " ORDER BY id DESC";
+
+$res = mysqli_query($con, $sql);
+
+// Output the data to be rendered in the table (replace 'data-table' in your HTML)
 
 
 
@@ -14,156 +35,45 @@ $res = mysqli_query($con,$sql);
    
    
    <!-- header start -->
+   <script src="Admin/assets/js/jquery.min.js"></script>
+    <script>
+
+        $(document).ready(function() {
+            // Capture checkbox click events
+            $('.btn-check').change(function() {
+                // Capture selected checkboxes
+                var propertyTypes = [];
+                $('input[type="checkbox"]:checked').each(function() {
+                    propertyTypes.push($(this).val());
+                });
+
+                console.log(propertyTypes); // Log selected property types
+                
+                $.ajax({
+                    type: "POST",
+                    data: { 
+                        propertyTypes: propertyTypes // Send selected property types
+                    },
+                    url: "property.php", 
+                    success: function(response) {
+                        $('#data-table').html($(response).find('#data-table').html()); // Update the table with filtered results
+                    },
+                    error: function(xhr, status, error) {
+                        console.log("Error: " + error); // Log errors if any
+                    }
+                });
+            });
+        });
+
+
+    </script>
+
+
       <?php
         include('header-light.php');
         ?>
       <!-- header end -->
-      <!-- <section id="desktop-header-search" class="advanced-search advanced-search-nav " data-hidden="0"
-          data-sticky="1">
-          <div class="container">
-              <form class="houzez-search-form-js " method="get" autocomplete="off">
-                  <div class="advanced-search-v1 ">
-                      <div class="d-flex">
-                          <div class="flex-search flex-grow-1">
-                              <div class="form-group">
-                                  <div class="search-icon">
-                                      <input name="keyword" type="text"
-                                          class="houzez-keyword-autocomplete form-control" value
-                                          placeholder="Enter Keyword...">
-                                      <div id="auto_complete_ajax" class="auto-complete"></div>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="flex-search fields-width ">
-                              <div class="form-group">
-                                  <select name="status[]" data-size="5"
-                                      class="selectpicker status-js  form-control bs-select-hidden" title="Status"
-                                      data-live-search="false" data-selected-text-format="count > 1"
-                                      data-live-search-normalize="true" data-actions-box="true" multiple
-                                      data-select-all-text="Select All" data-deselect-all-text="Deselect All"
-                                      data-none-results-text="No results matched {0}"
-                                      data-count-selected-text="{0} Statuses" data-container="body">
-                                      <option data-ref="for-rent" value="for-rent">For Rent</option>
-                                      <option data-ref="for-sale" value="for-sale">For Sale</option>
-                                      <option data-ref="foreclosures" value="foreclosures">Foreclosures</option>
-                                      <option data-ref="new-costruction" value="new-costruction">New Costruction
-                                      </option>
-                                      <option data-ref="new-listing" value="new-listing">New Listing</option>
-                                      <option data-ref="open-house" value="open-house">Open House</option>
-                                      <option data-ref="reduced-price" value="reduced-price">Reduced Price</option>
-                                      <option data-ref="resale" value="resale">Resale</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="flex-search fields-width ">
-                              <div class="form-group">
-                                  <select name="type[]" data-size="5"
-                                      class="selectpicker  form-control bs-select-hidden" title="Type"
-                                      data-live-search="true" data-selected-text-format="count > 1"
-                                      data-actions-box="true" multiple data-select-all-text="Select All"
-                                      data-deselect-all-text="Deselect All" data-live-search-normalize="true"
-                                      data-count-selected-text="{0} Types"
-                                      data-none-results-text="No results matched {0}" data-container="body">
-                                      <option data-ref="commercial" value="commercial">Commercial</option>
-                                      <option data-ref="office" value="office"> - Office</option>
-                                      <option data-ref="shop" value="shop"> - Shop</option>
-                                      <option data-ref="residential" value="residential">Residential</option>
-                                      <option data-ref="apartment" value="apartment"> - Apartment</option>
-                                      <option data-ref="condo" value="condo"> - Condo</option>
-                                      <option data-ref="multi-family-home" value="multi-family-home"> - Multi Family
-                                          Home</option>
-                                      <option data-ref="single-family-home" value="single-family-home"> - Single
-                                          Family Home</option>
-                                      <option data-ref="studio" value="studio"> - Studio</option>
-                                      <option data-ref="villa" value="villa"> - Villa</option>
-                                  </select>
-                              </div>
-                          </div>
-                          <div class="flex-search">
-                              <a class="btn advanced-search-btn btn-full-width" data-toggle="collapse"
-                                  href="#advanced-search-filters">
-                                  <i class="las la-cog"></i> Advanced</a>
-                          </div>
-                          <div class="flex-search btn-no-right-padding">
-                              <button type="submit"
-                                  class="btn btn-search btn-secondary btn-full-width ">Search</button>
-                          </div>
-                      </div>
-                  </div>
-                  <div id="advanced-search-filters" class="collapse ">
-                      <div class="advanced-search-filters search-v1-v2">
-                          <div class="d-flex">
-                              <div class="flex-search">
-                                  <div class="form-group">
-                                      <select name="location[]" data-target="houzezFourthList" data-size="5"
-                                          class="houzezSelectFilter houzezCityFilter houzezThirdList selectpicker  houzez-city-js form-control bs-select-hidden"
-                                          title="All Cities" data-selected-text-format="count > 1"
-                                          data-live-search="true" data-actions-box="true"
-                                          data-select-all-text="Select All" data-live-search-normalize="true"
-                                          data-deselect-all-text="Deselect All"
-                                          data-none-results-text="No results matched {0}"
-                                          data-count-selected-text="{0} cities selected" data-container="body">
-                                          <option value>All Cities</option>
-                                          <option data-ref="chicago" data-belong="illinois" data-subtext="Illinois"
-                                              value="chicago">Chicago</option>
-                                          <option data-ref="chivilcoy" data-belong="provincia-de-buenos-aires"
-                                              data-subtext="Provincia de Buenos Aires" value="chivilcoy">Chivilcoy
-                                          </option>
-                                          <option data-ref="los-angeles" data-belong="california"
-                                              data-subtext="California" value="los-angeles">Los Angeles</option>
-                                          <option data-ref="miami" data-belong="florida" data-subtext="Florida"
-                                              value="miami">Miami</option>
-                                          <option data-ref="new-york" data-belong="new-york" data-subtext="New York"
-                                              value="new-york">New York</option>
-                                          <option data-ref="uyo" data-belong="akwa-ibom" data-subtext="AKWA IBOM"
-                                              value="uyo">Uyo</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <div class="flex-search">
-                                  <div class="form-group">
-                                      <select name="bedrooms" data-size="5"
-                                          class="selectpicker  form-control bs-select-hidden" title="Bedrooms"
-                                          data-live-search="false">
-                                          <option value>Bedrooms</option>
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                          <option value="4">4</option>
-                                          <option value="5">5</option>
-                                          <option value="6">6</option>
-                                          <option value="7">7</option>
-                                          <option value="8">8</option>
-                                          <option value="9">9</option>
-                                          <option value="10">10</option>
-                                          <option value="any">Any</option>
-                                      </select>
-                                  </div>
-                              </div>
-                              <div class="flex-search">
-                                  <div class="form-group">
-                                      <input name="min-area" type="text" class="form-control " value
-                                          placeholder="Min. Area ">
-                                  </div>
-                              </div>
-                              <div class="flex-search">
-                                  <div class="form-group">
-                                      <input name="max-area" type="text" class="form-control " value
-                                          placeholder="Max. Area ">
-                                  </div>
-                              </div>
-                              <div class="flex-search">
-                                  <div class="form-group">
-                                      <input name="property_id" type="text" class=" form-control" value
-                                          placeholder="Property ID">
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-              </form>
-          </div>
-      </section> -->
+    
       <section class="listing-wrap listing-v1">
           <div class="container">
               <div class="page-title-wrap">
@@ -190,80 +100,91 @@ $res = mysqli_query($con,$sql);
                               <div class="widget-header">
                                   <h3 class="widget-title">Type of property</h3>
                               </div>
-                              <div class="widget-body">
-                                  <div class="btn-group d-flex flex-wrap gap-4 checkboxs mt-3 property-type" role="group" aria-label="Basic checkbox toggle button group ">
-                                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="Rent">
-                                      <label class="btn btn-outline-primary" for="btncheck1">Rent</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">Farm House</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">Apartment</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">Villa</label>
-                                  </div>
-                              </div>
+                            <div class="widget-body">
+                                <div class="btn-group d-flex flex-wrap gap-4 checkboxs mt-3 property-type" role="group" aria-label="Basic checkbox toggle button group ">
+                                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off" value="Villa">
+                                    <label class="btn btn-outline-primary" for="btncheck1">Villa</label>
+                                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off" value="Plot of Land">
+                                    <label class="btn btn-outline-primary" for="btncheck2">Plot of Land</label>
+                                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off" value="Industrial Property">
+                                    <label class="btn btn-outline-primary" for="btncheck3">Industrial Property</label>
+                                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off" value="Apartment/Flat">
+                                    <label class="btn btn-outline-primary" for="btncheck4">Apartment/Flat</label>
+                                </div>
+                            </div>
+                            <style>
+                                #btncheck1:checked + label , #btncheck2:checked + label , #btncheck3:checked + label , #btncheck4:checked + l   abel
+                                {
+                                    background-color: #00AEEF;
+                                    color: white !important;
+                                }
+                            </style>
                           </div>
                           <div id="houzez_featured_properties-2" class="widget widget-wrap widget-featured-property">
                               <div class="widget-header">
-                                  <h3 class="widget-title">No of Rooms</h3>
+                                  <h3 class="widget-title">Status</h3>
                               </div>
                               <div class="widget-body widget-featured-property-slider-wrap">
                                   <div class="btn-group d-flex flex-wrap gap-4 checkboxs mt-3 property-type" role="group" aria-label="Basic checkbox toggle button group ">
-                                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck1">1 RK / 1 BHK</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">2 BHK</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">3 BHK</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">4 BHK</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">5 BHK</label>
+                                      <input type="checkbox" class="btn-check" id="Sbtn1" autocomplete="off" value="Rent">
+                                      <label class="btn btn-outline-primary" for="Sbtn1">Rent</label>
+                                      <input type="checkbox" class="btn-check" id="Sbtn2" autocomplete="off" value="Sale">
+                                      <label class="btn btn-outline-primary" for="Sbtn2">Sale</label>
                                   </div>
                               </div>
                           </div>
-                          <div id="houzez_property_taxonomies-2" class="widget widget-wrap widget-taxonomy">
+                          <style>
+                                #Sbtn1:checked + label ,  #Sbtn2:checked + label
+                                {
+                                    background-color: #00AEEF;
+                                    color: white !important;
+                                }
+                            </style>
+                         <div id="houzez_featured_properties-2" class="widget widget-wrap widget-featured-property">
                               <div class="widget-header">
-                                  <h3 class="widget-title">Posted By</h3>
+                                  <h3 class="widget-title">Status</h3>
                               </div>
-                              <div class="widget-body">
+                              <div class="widget-body widget-featured-property-slider-wrap">
                                   <div class="btn-group d-flex flex-wrap gap-4 checkboxs mt-3 property-type" role="group" aria-label="Basic checkbox toggle button group ">
-                                      <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck1">Owner</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">Builder</label>
-                                      <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-                                      <label class="btn btn-outline-primary" for="btncheck2">Dealer</label>
+                                      <input type="checkbox" class="btn-check" id="a1" autocomplete="off" value="Pal">
+                                      <label class="btn btn-outline-primary" for="a1">Pal</label>
+                                      <input type="checkbox" class="btn-check" id="a2" autocomplete="off" value="Kamrej">
+                                      <label class="btn btn-outline-primary" for="a2">Kamrej</label>
+                                      <input type="checkbox" class="btn-check" id="a3" autocomplete="off" value="Olpad">
+                                      <label class="btn btn-outline-primary" for="a3">Olpad</label>
+                                      <input type="checkbox" class="btn-check" id="a4" autocomplete="off" value="Katargam">
+                                      <label class="btn btn-outline-primary" for="a4">Katargam</label>
+                                      <input type="checkbox" class="btn-check" id="a5" autocomplete="off" value="Palanpor">
+                                      <label class="btn btn-outline-primary" for="a5">Palanpor</label>
+                                      <input type="checkbox" class="btn-check" id="a6" autocomplete="off" value="Vesu">
+                                      <label class="btn btn-outline-primary" for="a6">Vesu</label>
+                                      <input type="checkbox" class="btn-check" id="a7" autocomplete="off" value="Simada">
+                                      <label class="btn btn-outline-primary" for="a7">Simada</label>
+                                      <input type="checkbox" class="btn-check" id="a8" autocomplete="off" value="Motavarachha">
+                                      <label class="btn btn-outline-primary" for="a8">Motavarachha</label>
+                                      <input type="checkbox" class="btn-check" id="a9" autocomplete="off" value="Utran">
+                                      <label class="btn btn-outline-primary" for="a9">Utran</label>
+                                      <input type="checkbox" class="btn-check" id="a10" autocomplete="off" value="Sarthana">
+                                      <label class="btn btn-outline-primary" for="a10">Sarthana</label>
+
                                   </div>
                               </div>
                           </div>
                       </aside>
+                      <style>
+                                #a1:checked + label ,  #a2:checked + label,  #a3:checked + label,  #a4:checked + label,  #a5:checked + label,  #a6:checked + label,  #a7:checked + label,  #a8:checked + label,  #a9:checked + label,  #a10:checked + label
+                                {
+                                    background-color: #00AEEF;
+                                    color: white !important;
+                                }
+                            </style>
                   </div>
-                  <div class="col-lg-8 col-md-12 bt-content-wrap ">
+                  <div class="col-lg-8 col-md-12 bt-content-wrap " id="data-table">
                       <article class="post-28 page type-page status-publish hentry">
                       </article>
                       <div class="listing-tools-wrap">
                           <div class="d-flex align-items-center mb-2">
-                              <div class="listing-tabs flex-grow-1">
-                                  58 Properties</div>
-                              <div class="sort-by">
-                                  <div class="d-flex align-items-center">
-                                      <div class="sort-by-title">
-                                          Sort by: </div>
-                                      <select id="sort_properties" class="selectpicker form-control bs-select-hidden"
-                                          title="Default Order" data-live-search="false"
-                                          data-dropdown-align-right="auto">
-                                          <option value>Default Order</option>
-                                          <option value="a_price">Price - Low to High</option>
-                                          <option value="d_price">Price - High to Low</option>
-                                          <option value="featured_first">Featured Listings First</option>
-                                          <option value="a_date">Date - Old to New</option>
-                                          <option value="d_date">Date - New to Old</option>
-                                          <option value="a_title">Title - ASC</option>
-                                          <option value="d_title">Title - DESC</option>
-                                      </select>
-                                  </div>
-                              </div>
+                            
                           </div>
                       </div>
                       <div class="listing-view grid-view card-deck">
@@ -326,8 +247,8 @@ $res = mysqli_query($con,$sql);
                                           </ul>
                                           <div class="listing-image-wrap">
                                               <div class="listing-thumb">
-                                                  <a target="_self"
-                                                      href="single_property.php"
+                                                  <a target=""
+                                                      href="single_property.php?pro_id=<?php echo $row['id'];?>"
                                                       class="listing-featured-thumb hover-effect">
                                                       <img loading="lazy"
                                                           decoding="async"
@@ -350,8 +271,8 @@ $res = mysqli_query($con,$sql);
                                               </a>
                                           </div>
                                           <h2 class="item-title">
-                                              <a target="_self"
-                                                  href="single_property.php"><?php echo $row['Property_title']; ?></a>
+                                              <a target=""
+                                                  href="single_property.php?pro_id=<?php echo $row['id'];?>"><?php echo $row['Property_title']; ?></a>
                                           </h2>
                                           <ul
                                               class="item-price-wrap hide-on-list">
@@ -387,12 +308,7 @@ $res = mysqli_query($con,$sql);
                                               <li class="h-type">
                                                   <span><?php echo $row['Type']; ?></span>
                                               </li>
-                                          </ul> <a
-                                              class="btn btn-primary btn-item "
-                                              target="_self"
-                                              href="single_property.php">
-                                              Details</a>
-                                          <div class="item-author">
+                                          </ul>                                           <div class="item-author">
                                               <i
                                                   class="las la-user mr-1"></i>
                                               <a

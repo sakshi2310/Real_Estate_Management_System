@@ -128,6 +128,24 @@ $row = mysqli_fetch_assoc($res);
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-8 col-12 mx-auto d-flex justify-content-center">
+                    <div class="pro-detail d-flex mt-4 w-100">
+                    <div class="pro-icon me-4">
+                            <i class="bi bi-person-circle"></i>
+                        </div>
+                        <div class="pro-info me-5">
+                            <span>Self Description</span>
+                            <p><?php echo $row['Self_Des']; ?></p>
+                        </div>
+                        <a href="edit_profile.php?user_id=<?php echo $row['id'];?>" class="edit-icn ms-auto">
+                            <i class="bi bi-pencil cursor"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+          </div>
+          
           </div>
     </div>
 

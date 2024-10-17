@@ -547,65 +547,7 @@ if(isset($_POST['Schedual_tour']))
                                 </div>
                             </div>
                        
-                            <div class="property-floor-plans-wrap property-section-wrap" id="property-floor-plans-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap d-flex justify-content-between align-items-center">
-                                        <h2>Floor Plans</h2>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <div class="accordion">
-                                            <div class="accordion-tab floor-plan-wrap">
-                                                <div class="accordion-header" data-toggle="collapse"
-                                                    data-target="#floor-1" aria-expanded="false">
-                                                    <div class="d-flex align-items-center" id="floor-plans-1">
-                                                        <div class="accordion-title flex-grow-1">
-                                                            <i class="las la-play-circle mr-1"></i>
-                                                            First Floor </div>
-                                                        <ul class="floor-information list-unstyled list-inline">
-                                                            <li class="list-inline-item fp-size">
-                                                                Size:
-                                                                <strong> 900 Sq Ft</strong>
-                                                            </li>
-                                                            <li class="list-inline-item fp-room">
-                                                                <i class="las la-bed mr-1"></i>
-                                                                <strong>2</strong>
-                                                            </li>
-                                                            <li class="list-inline-item fp-bath">
-                                                                <i class="las la-bath mr-1"></i>
-                                                                <strong>1</strong>
-                                                            </li>
-                                                            <li class="list-inline-item fp-price">
-                                                                Price:
-                                                                <strong>$1,500 / Sq Ft</strong>
-                                                            </li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                                <div id="floor-1" class="collapse " data-parent="#floor-plans-1">
-                                                    <div class="accordion-body">
-                                                        <a target="_blank"
-                                                            href="#"
-                                                            data-lightbox="roadtrip">
-                                                            <img class="img-fluid"
-                                                                src="assets/plan-1.jpg"
-                                                                alt="image">
-                                                        </a>
-                                                        <div class="floor-plan-description">
-                                                            <p><strong>Description:</strong><br>
-                                                                Plan description. Lorem ipsum dolor sit amet,
-                                                                consectetuer adipiscing elit, sed diam nonummy nibh
-                                                                euismod tincidunt ut laoreet dolore magna aliquam erat
-                                                                volutpat. Ut wisi enim ad minim veniam, quis nostrud
-                                                                exerci tation ullamcorper suscipit lobortis nisl ut
-                                                                aliquip ex ea commodo consequat. </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                         
                             <div class="property-schedule-tour-wrap property-schedule-tour-wrap-v2 property-section-wrap"
                                 id="property-schedule-tour-wrap">
                                 <div class="block-wrap">
@@ -735,72 +677,15 @@ if(isset($_POST['Schedual_tour']))
                                 </div>
 
                             </div>
-                            <div class="property-video-wrap property-section-wrap" id="property-video-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap d-flex justify-content-between align-items-center">
-                                        <h2>Video</h2>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <div class="block-video-wrap">
-                                            <iframe title="Dubai Luxury Property Highlight The Glass Penthouse"
-                                                width="1170" height="658"
-                                                src="https://www.youtube.com/embed/-NInBEdSvp8?feature=oembed"
-                                                frameborder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                referrerpolicy="strict-origin-when-cross-origin"
-                                                allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="property-virtual-tour-wrap property-section-wrap"
-                                id="property-virtual-tour-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap d-flex justify-content-between align-items-center">
-                                        <h2>360° Virtual Tour</h2>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <div class="block-virtual-video-wrap">
-                                            <iframe width="853" height="480"
-                                                src="https://my.matterport.com/show/?m=zEWsxhZpGba&play=1&qs=1"
-                                                frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="property-walkscore-wrap property-section-wrap" id="property-walkscore-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap d-flex justify-content-between align-items-center">
-                                        <h2>Walk Score</h2>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <div id="ws-walkscore-tile"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="property-nearby-wrap property-section-wrap" id="property-nearby-wrap">
-                                <div class="block-wrap">
-                                    <div class="block-title-wrap d-flex justify-content-between align-items-center">
-                                        <h2>What's Nearby?</h2>
-                                        <div class="small-text grey nearby-logo">Powered by <i
-                                                class="houzez-icon icon-social-media-yelp"></i> <strong>Yelp</strong>
-                                        </div>
-                                    </div>
-                                    <div class="block-content-wrap">
-                                        <div class="what-nearby">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        
+                          
                             
                             <div class="property-contact-agent-wrap property-section-wrap"
                                 id="property-contact-agent-wrap">
                                 <div class="block-wrap">
                                     <div class="block-title-wrap d-flex justify-content-between align-items-center">
                                         <h2>Contact Information</h2>
-                                        <a class="btn btn-primary btn-slim"
-                                            href="#" target="_blank">View
-                                            Listings</a>
+                                     
                                     </div>
                                     <div class="block-content-wrap">
                                        
@@ -961,26 +846,7 @@ if(isset($_POST['Schedual_tour']))
                                                 <time class="review-date"><i
                                                         class="las la-paperclip mr-1"></i><?php echo $row['Date'];?> </time>
                                                 <p><?php echo $row['Review'];?></p>
-                                                <div class="review-like mt-2">
-                                                    <ul class="likes-container-js list-inline">
-                                                        <li class="list-inline-item"><span class="vote-msg"></span></li>
-                                                        <span class="btn-loader houzez-loader-js"></span>
-                                                        <li class="list-inline-item review-like-button">
-                                                            <a class="hz-like-dislike-js" data-id="17881"
-                                                                data-type="likes" data-msg="You have already voted">
-                                                                <i class="las la-thumbs-up mr-1"></i>
-                                                            </a>
-                                                            <span class="likes-count">0</span>
-                                                        </li>
-                                                        <li class="list-inline-item review-dislike-button">
-                                                            <a class="hz-like-dislike-js" data-id="17881"
-                                                                data-type="dislikes" data-msg="You have already voted">
-                                                                <i class="las la-thumbs-down mr-1"></i>
-                                                            </a>
-                                                            <span class="dislikes-count">0</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
+                                                
                                             </div>
                                         </div>
                                     </li>

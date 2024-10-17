@@ -21,6 +21,14 @@ $res_type = mysqli_query($con,$property_type);
 $property_area = "select * from property_area";
 $res_area = mysqli_query($con,$property_area);
 
+$sql_services = 'select * from website_services';
+$res_services = mysqli_query($con,$sql_services);
+$records = mysqli_fetch_all($res_services, MYSQLI_ASSOC);
+
+$agent = "SELECT * FROM users WHERE Self_Des IS NOT NULL AND Self_Des != '' AND Image IS NOT NULL AND Image != '' LIMIT 3";
+$res_agent = mysqli_query($con,$agent);
+
+
 ?>
 
         <!-- header start -->
@@ -340,7 +348,7 @@ $res_area = mysqli_query($con,$property_area);
                                                                                     </div>
                                                                                     <ul
                                                                                         class="item-price-wrap hide-on-list">
-                                                                                        <li class="item-price">$4,500/mo
+                                                                                        <li class="item-price">
                                                                                         </li>
                                                                                     </ul>
                                                                                     <ul class="item-tools">
@@ -382,7 +390,7 @@ $res_area = mysqli_query($con,$property_area);
                                                                                     <div class="listing-image-wrap">
                                                                                         <div class="listing-thumb">
                                                                                             <a target="_self"
-                                                                                                href=""
+                                                                                                href="single_property.php?pro_id=<?php echo $row['id'];?>"
                                                                                                 class="listing-featured-thumb hover-effect overflow-hidden">
                                                                                                 <img
                                                                                                     src="User/upload/<?php echo $row['Image1']; ?> "
@@ -501,180 +509,7 @@ $res_area = mysqli_query($con,$property_area);
                     </div>
                 </section>
 
-                <!-- 3d section start -->
-                <section
-                    class="elementor-section elementor-top-section elementor-element elementor-element-aac7c5c elementor-section-boxed elementor-section-height-default elementor-section-height-default elementor-invisible"
-                    data-id="aac7c5c" data-element_type="section" id="tour"
-                    data-settings="{&quot;background_background&quot;:&quot;classic&quot;,&quot;animation&quot;:&quot;fadeIn&quot;}">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-3fc292b"
-                            data-id="3fc292b" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-b15f500 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                    data-id="b15f500" data-element_type="section">
-                                    <div class="elementor-container elementor-column-gap-default">
-                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-fd8b393"
-                                            data-id="fd8b393" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-8774f02 elementor-widget elementor-widget-spacer"
-                                                    data-id="8774f02" data-element_type="widget"
-                                                    data-widget_type="spacer.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="elementor-spacer">
-                                                            <div class="elementor-spacer-inner"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-b488bd4 w-100"
-                                                    data-id="b488bd4" data-element_type="column">
-                                                    <div class="elementor-widget-wrap elementor-element-populated">
-                                                        <div class="elementor-element elementor-element-5f1a2d6 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
-                                                            data-id="5f1a2d6" data-element_type="widget"
-                                                            data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                                            data-widget_type="houzez_elementor_section_title.default">
-                                                            <div class="elementor-widget-container">
-                                                                <div
-                                                                    class="houzez_section_title_wrap section-title-module text-center">
-                                                                    <h2 class="houzez_section_title text-dark">3d Tour
-                                                                    </h2>
-                                                                    <p class="houzez_section_subtitle text-dark">Step Inside with Our 3D Virtual Tours</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-8502fb6 elementor-widget elementor-widget-houzez_elementor_space"
-                                                    data-id="8502fb6" data-element_type="widget"
-                                                    data-widget_type="houzez_elementor_space.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="houzez-spacer">
-                                                            <div class="houzez-spacer-inner"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-d90a141 elementor-widget elementor-widget-html"
-                                                    data-id="d90a141" data-element_type="widget"
-                                                    data-widget_type="html.default">
-                                                    <div class="elementor-widget-container">
-                                                        <iframe width="853" height="480"
-                                                            src="https://my.matterport.com/show/?m=zEWsxhZpGba&play=1&qs=1"
-                                                            frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-d320cec elementor-widget elementor-widget-spacer"
-                                                    data-id="d320cec" data-element_type="widget"
-                                                    data-widget_type="spacer.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="elementor-spacer">
-                                                            <div class="elementor-spacer-inner"></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                                <div class="elementor-element elementor-element-4424405 elementor-widget elementor-widget-houzez_elementor_space"
-                                    data-id="4424405" data-element_type="widget"
-                                    data-widget_type="houzez_elementor_space.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="houzez-spacer">
-                                            <div class="houzez-spacer-inner"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- 3d section end -->
-
-                <!-- floor start -->
-                <section
-                    class="elementor-section elementor-inner-section elementor-element elementor-element-279621c elementor-section-boxed elementor-section-height-default elementor-section-height-default my-5"
-                    data-id="279621c" data-element_type="section">
-                    <div class="elementor-container elementor-column-gap-default">
-                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-a104ac4"
-                            data-id="a104ac4" data-element_type="column">
-                            <div class="elementor-widget-wrap elementor-element-populated">
-                                <div class="elementor-column elementor-col-66 elementor-inner-column elementor-element elementor-element-b488bd4 w-100"
-                                data-id="b488bd4" data-element_type="column">
-                                <div class="elementor-widget-wrap elementor-element-populated">
-                                    <div class="elementor-element elementor-element-5f1a2d6 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
-                                        data-id="5f1a2d6" data-element_type="widget"
-                                        data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                        data-widget_type="houzez_elementor_section_title.default">
-                                        <div class="elementor-widget-container">
-                                            <div
-                                                class="houzez_section_title_wrap section-title-module text-center">
-                                                <h2 class="houzez_section_title text-dark">Floor Plans
-                                                </h2>
-                                                <p class="houzez_section_subtitle text-dark">View Detailed Floor Plans for Every Space</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                                <div class="elementor-element elementor-element-fb6fbc5 elementor-widget elementor-widget-houzez_elementor_space"
-                                    data-id="fb6fbc5" data-element_type="widget"
-                                    data-widget_type="houzez_elementor_space.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="houzez-spacer">
-                                            <div class="houzez-spacer-inner"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="elementor-element elementor-element-7cee9da elementor-tabs-view-vertical elementor-widget elementor-widget-tabs"
-                                    data-id="7cee9da" data-element_type="widget" data-widget_type="tabs.default">
-                                    <div class="elementor-widget-container">
-                                        <div class="elementor-tabs">
-                                            <div class="elementor-tabs-wrapper" role="tablist">
-                                                <div id="elementor-tab-title-1311"
-                                                    class="elementor-tab-title elementor-tab-desktop-title"
-                                                    aria-selected="true" data-tab="1" role="tab" tabindex="0"
-                                                    aria-controls="elementor-tab-content-1311" aria-expanded="false">
-                                                    First Floor</div>
-                                                <div id="elementor-tab-title-1312"
-                                                    class="elementor-tab-title elementor-tab-desktop-title"
-                                                    aria-selected="false" data-tab="2" role="tab" tabindex="-1"
-                                                    aria-controls="elementor-tab-content-1312" aria-expanded="false">
-                                                    Second Floor</div>
-                                            </div>
-                                            <div class="elementor-tabs-content-wrapper" role="tablist"
-                                                aria-orientation="vertical">
-                                                <div class="elementor-tab-title elementor-tab-mobile-title"
-                                                    aria-selected="true" data-tab="1" role="tab" tabindex="0"
-                                                    aria-controls="elementor-tab-content-1311" aria-expanded="false">
-                                                    First Floor</div>
-                                                <div id="elementor-tab-content-1311"
-                                                    class="elementor-tab-content elementor-clearfix" data-tab="1"
-                                                    role="tabpanel" aria-labelledby="elementor-tab-title-1311"
-                                                    tabindex="0" hidden="false">
-                                                    <p><img 
-                                                            src="assets/floor1.jpg"
-                                                            sizes="(max-width: 883px) 100vw, 883px" /></p>
-                                                </div>
-                                                <div class="elementor-tab-title elementor-tab-mobile-title"
-                                                    aria-selected="false" data-tab="2" role="tab" tabindex="-1"
-                                                    aria-controls="elementor-tab-content-1312" aria-expanded="false">
-                                                    Second Floor</div>
-                                                <div id="elementor-tab-content-1312"
-                                                    class="elementor-tab-content elementor-clearfix" data-tab="2"
-                                                    role="tabpanel" aria-labelledby="elementor-tab-title-1312"
-                                                    tabindex="0" hidden="hidden">
-                                                    <p><img src="assets/floor2.jpg"
-                                                            sizes="(max-width: 883px) 100vw, 883px" /></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- floor end -->
+              
 
                 <section
                     class="elementor-section elementor-top-section elementor-element elementor-element-995af2 elementor-section-content-middle elementor-section-stretched elementor-section-full_width elementor-section-height-default elementor-section-height-default"
@@ -727,17 +562,13 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy6.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[0]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
-                                                                    <div class="grid-item-subtitle">23 Properties</div>
-                                                                    <div class="grid-item-title">Apartment</div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    <div class="grid-item-subtitle"><?php echo $records[0]['Title']; ?></div>
+                                                                    <div class="grid-item-title"><?php echo $records[0]['Description']; ?></div>
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -754,17 +585,13 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v3"
-                                                            style="background-image: url(assets/residancy4.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[1]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
-                                                                    <div class="grid-item-subtitle">7 Properties</div>
-                                                                    <div class="grid-item-title">Studio</div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    <div class="grid-item-subtitle"><?php echo $records[1]['Title']; ?></div>
+                                                                    <div class="grid-item-title"><?php echo $records[1]['Description']; ?></div>
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -781,18 +608,13 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy5.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[2]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
-                                                                    <div class="grid-item-subtitle">12 Properties</div>
-                                                                    <div class="grid-item-title">Single Family Home
-                                                                    </div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    <div class="grid-item-subtitle"><?php echo $records[2]['Title']; ?></div>
+                                                                    <div class="grid-item-title"><?php echo $records[2]['Description']; ?></div>
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -804,17 +626,13 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy3.jpg)">
+                                                            style="background-image:url(Admin/upload/<?php echo $records[3]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
-                                                                    <div class="grid-item-subtitle">10 Properties</div>
-                                                                    <div class="grid-item-title">Villa</div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    <div class="grid-item-subtitle"><?php echo $records[3]['Title']; ?></div>
+                                                                    <div class="grid-item-title"><?php echo $records[3]['Description']; ?></div>
+                                                                   
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -865,17 +683,13 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy2.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[4]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
-                                                                    <div class="grid-item-subtitle">3 Properties</div>
-                                                                    <div class="grid-item-title">Office</div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    <div class="grid-item-subtitle"><?php echo $records[4]['Title']; ?></div>
+                                                                    <div class="grid-item-title"><?php echo $records[4]['Description']; ?></div>
+                                                                    
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -892,17 +706,13 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="Houzez_elementor_grid_builder.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="grid-item houzez-lazy-bg houzez-lazyload grid-item-v2"
-                                                            style="background-image: url(assets/residancy1.jpg)">
+                                                            style="background-image: url(Admin/upload/<?php echo $records[5]['Image']; ?>)">
                                                             <a class="grid-item-link hover-effect-flat"
                                                                 href="#">
                                                                 <div class="grid-item-text-wrap">
-                                                                    <div class="grid-item-subtitle">3 Properties</div>
-                                                                    <div class="grid-item-title">Shop</div>
-                                                                    <div class="grid-item-text-link">More Details</div>
-                                                                    <div class="grid-item-icon">
-                                                                        <i
-                                                                            class="las la-play"></i>
-                                                                    </div>
+                                                                    <div class="grid-item-subtitle"><?php echo $records[5]['Title']; ?></div>
+                                                                    <div class="grid-item-title"><?php echo $records[5]['Description']; ?></div>
+                                                                    
                                                                 </div>
                                                             </a>
                                                         </div>
@@ -1079,255 +889,7 @@ $res_area = mysqli_query($con,$property_area);
                                         <div class="elementor-column elementor-col-33 elementor-inner-column elementor-element elementor-element-db69370"
                                             data-id="db69370" data-element_type="column"
                                             data-settings="{&quot;background_background&quot;:&quot;classic&quot;}">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-4b2f91d animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
-                                                    data-id="4b2f91d" data-element_type="widget"
-                                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                                    data-widget_type="houzez_elementor_section_title.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="houzez_section_title_wrap section-title-module">
-                                                            <h2 class="houzez_section_title">Real Estate Inquiry Form
-                                                            </h2>
-                                                            <p class="houzez_section_subtitle">Design custom lead
-                                                                capture forms that integrate with the Houzez CRM</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-25a24dc elementor-button-align-stretch elementor-widget elementor-widget-houzez_elementor_inquiry_form"
-                                                    data-id="25a24dc" data-element_type="widget"
-                                                    data-widget_type="houzez_elementor_inquiry_form.default">
-                                                    <div class="elementor-widget-container">
-                                                        <script type="application/javascript">
-                                                            jQuery(document).bind("ready", function () {
-                                                                houzezValidateElementor("#houzez-form-25a24dc");
-                                                            });
-                                                        </script>
-                                                        <form class="elementor-form" id="houzez-form-25a24dc"
-                                                            method="post" name="New Form"
-                                                            action="">
-                                                            <input type="hidden" name="form_id" value="25a24dc" />
-                                                            <input type="hidden" name="action"
-                                                                value="houzez_ele_inquiry_form" />
-                                                            <input type="hidden" name="source_link"
-                                                                value="" />
-                                                            <input type="hidden" name="lead_page_id" value="10" />
-                                                            <input type="hidden" name="is_estimation" value="yes" />
-                                                            <input type="hidden" name="email_to"
-                                                                value="hello@favethemes.com" />
-                                                            <input type="hidden" name="email_subject"
-                                                                value="New message from &quot;Houzez 01&quot;" />
-                                                            <input type="hidden" name="email_to_cc" value />
-                                                            <input type="hidden" name="email_to_bcc" value />
-                                                            <input type="hidden" name="webhook" value="false" />
-                                                            <input type="hidden" name="webhook_url" value />
-                                                            <input type="hidden" name="redirect_to" value />
-                                                            <input type="hidden" name="google_recaptcha" value="yes" />
-                                                            <div
-                                                                class="elementor-form-fields-wrapper elementor-labels-above">
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-ba6c34c elementor-col-100 elementor-field-required">
-                                                                    <label for="form-field-ba6c34c"
-                                                                        class="elementor-field-label">Inquiry
-                                                                        Type</label>
-                                                                    <div
-                                                                        class="elementor-field elementor-select-wrapper">
-                                                                        <select name="enquiry_type"
-                                                                            id="form-field-ba6c34c"
-                                                                            class="elementor-field-textual form-control elementor-size-md"
-                                                                            required="required" title="* Inquiry Type">
-                                                                            <option value>Select</option>
-                                                                            <option value="Purchase">Purchase</value>
-                                                                            <option value="Rent"> Rent</value>
-                                                                            <option value="Sell"> Sell</value>
-                                                                            <option value="Miss"> Miss</value>
-                                                                            <option value="Evaluation"> Evaluation
-                                                                                </value>
-                                                                            <option value="Mortgage"> Mortgage</value>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-b7fe77d elementor-col-100 elementor-field-required">
-                                                                    <label for="form-field-b7fe77d"
-                                                                        class="elementor-field-label">Information</label>
-                                                                    <div
-                                                                        class="elementor-field elementor-select-wrapper">
-                                                                        <select name="user_type" id="form-field-b7fe77d"
-                                                                            class="elementor-field-textual form-control elementor-size-md"
-                                                                            required="required" title="* Information">
-                                                                            <option value>I&#039;m a </option>
-                                                                            <option value="I am a real estate agent">
-                                                                                I&#039;m a real estate agent</option>
-                                                                            <option value="I am a property owner">
-                                                                                I&#039;m a property owner</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-cc6b92f elementor-col-50 elementor-field-required">
-                                                                    <input type="text" name="first_name"
-                                                                        id="form-field-cc6b92f"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="First Name" title="* First Name"
-                                                                        required="required">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-3cc124e elementor-col-50">
-                                                                    <input type="text" name="last_name"
-                                                                        id="form-field-3cc124e"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Last Name" title="* Last Name">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-932d82c elementor-col-100 elementor-field-required">
-                                                                    <input type="email" name="email"
-                                                                        id="form-field-932d82c"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Email Address"
-                                                                        title="* Email Address" required="required">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-2eaf20d elementor-col-50 elementor-field-required">
-                                                                    <label for="form-field-2eaf20d"
-                                                                        class="elementor-field-label">Location</label>
-                                                                    <div
-                                                                        class="elementor-field elementor-select-wrapper">
-                                                                        <select name="e_meta[city]"
-                                                                            id="form-field-2eaf20d"
-                                                                            class="elementor-field-textual form-control elementor-size-md"
-                                                                            required="required" title="* Location">
-                                                                            <option value>Select</option>
-                                                                            <option data-ref="chicago"
-                                                                                data-belong="illinois" value="chicago">
-                                                                                Chicago</option>
-                                                                            <option data-ref="chivilcoy"
-                                                                                data-belong="provincia-de-buenos-aires"
-                                                                                value="chivilcoy"> Chivilcoy</option>
-                                                                            <option data-ref="los-angeles"
-                                                                                data-belong="california"
-                                                                                value="los-angeles"> Los Angeles
-                                                                            </option>
-                                                                            <option data-ref="miami"
-                                                                                data-belong="florida" value="miami">
-                                                                                Miami</option>
-                                                                            <option data-ref="new-york"
-                                                                                data-belong="new-york" value="new-york">
-                                                                                New York</option>
-                                                                            <option data-ref="uyo"
-                                                                                data-belong="akwa-ibom" value="uyo"> Uyo
-                                                                            </option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-f0ee6fc elementor-col-50 elementor-field-required">
-                                                                    <label for="form-field-f0ee6fc"
-                                                                        class="elementor-field-label">&nbsp;</label><input
-                                                                        type="text" name="e_meta[zipcode]"
-                                                                        id="form-field-f0ee6fc"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Zip Code" title="* Zip Code"
-                                                                        required="required">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-3180222 elementor-col-100 elementor-field-required">
-                                                                    <label for="form-field-3180222"
-                                                                        class="elementor-field-label">Property</label>
-                                                                    <div
-                                                                        class="elementor-field elementor-select-wrapper">
-                                                                        <select name="e_meta[property_type]"
-                                                                            id="form-field-3180222"
-                                                                            class="elementor-field-textual form-control elementor-size-md"
-                                                                            required="required" title="* Property">
-                                                                            <option value>Select type</option>
-                                                                            <option value="commercial"> Commercial
-                                                                            </option>
-                                                                            <option value="office">- Office</option>
-                                                                            <option value="shop">- Shop</option>
-                                                                            <option value="residential"> Residential
-                                                                            </option>
-                                                                            <option value="apartment">- Apartment
-                                                                            </option>
-                                                                            <option value="condo">- Condo</option>
-                                                                            <option value="multi-family-home">- Multi
-                                                                                Family Home</option>
-                                                                            <option value="single-family-home">- Single
-                                                                                Family Home</option>
-                                                                            <option value="studio">- Studio</option>
-                                                                            <option value="villa">- Villa</option>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-c549d17 elementor-col-50 elementor-field-required">
-                                                                    <input type="number" name="e_meta[price]"
-                                                                        id="form-field-c549d17"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Max price" title="* Max price"
-                                                                        required="required" min="0">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-e08cbcb elementor-col-50 elementor-field-required">
-                                                                    <input type="number" name="e_meta[area-size]"
-                                                                        id="form-field-e08cbcb"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Minimum size (Sq Ft)"
-                                                                        title="* Minimum size (Sq Ft)"
-                                                                        required="required" min="0">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-66cc0de elementor-col-50 elementor-field-required">
-                                                                    <input type="number" name="e_meta[beds]"
-                                                                        id="form-field-66cc0de"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Number of beds"
-                                                                        title="* Number of beds" required="required"
-                                                                        min="0">
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column form-group elementor-field-group-dea086f elementor-col-50 elementor-field-required">
-                                                                    <input type="number" name="e_meta[baths]"
-                                                                        id="form-field-dea086f"
-                                                                        class="elementor-field form-control elementor-size-md elementor-field-textual"
-                                                                        placeholder="Number of baths"
-                                                                        title="* Number of baths" required="required"
-                                                                        min="0">
-                                                                </div>
-                                                                <div
-                                                                    class="houzez-gdpr-agreement elementor-field-group elementor-col-100">
-                                                                    <label for="gdpr_agreement"
-                                                                        class="elementor-field-label">GDPR
-                                                                        Agreement</label>
-                                                                    <div class="gdpr-agreement-subgroup">
-                                                                        <span class="gdpr-field-option">
-                                                                            <label class="gdpr-text"
-                                                                                for="gdpr_agreement">
-                                                                                <input required type="checkbox"
-                                                                                    title="* GDPR Agreement"
-                                                                                    name="gdpr_agreement"
-                                                                                    id="gdpr_agreement"> I consent to
-                                                                                having this website store my submitted
-                                                                                information </label>
-                                                                        </span>
-                                                                    </div>
-                                                                </div>
-                                                                <div class>
-                                                                </div>
-                                                                <div
-                                                                    class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
-                                                                    <button type="submit"
-                                                                        class="houzez-submit-button houzez-contact-form-js elementor-button elementor-size-md">
-                                                                        <i class="btn-loader houzez-loader-js"></i>
-                                                                        Submit </button>
-                                                                </div>
-                                                            </div>
-                                                            <br />
-                                                            <div class="ele-form-messages"></div>
-                                                            <div class="error-container"></div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                           
                                         </div>
                                     </div>
                                 </section>
@@ -1397,8 +959,8 @@ $res_area = mysqli_query($con,$property_area);
                                                                         class="item-wrap item-wrap-v3 item-wrap-no-frame h-100">
                                                                         <div class="listing-image-wrap">
                                                                             <div class="listing-thumb">
-                                                                                <a target="_self"
-                                                                                    href="#"
+                                                                                <a 
+                                                                                    href="single_property.php?pro_id=<?php echo $row_explore['id'];?>"
                                                                                     class="listing-featured-thumb hover-effect">
                                                                                                 <img src="User/upload/<?php echo $row_explore['Image1']; ?>">
                                                                                 </a>
@@ -1406,7 +968,7 @@ $res_area = mysqli_query($con,$property_area);
                                                                         </div>
                                                                         <h2 class="item-title">
                                                                             <a target="_self"
-                                                                                href="#"><?php echo $row_explore['Property_title'];?></a>
+                                                                                href="single_property.php?pro_id=<?php echo $row_explore['id'];?>"><?php echo $row_explore['Property_title'];?></a>
                                                                         </h2>
                                                                         <ul
                                                                             class="item-amenities item-amenities-with-icons">
@@ -1704,13 +1266,14 @@ $res_area = mysqli_query($con,$property_area);
                                                     data-widget_type="houzez_elementor_agents.default">
                                                     <div class="elementor-widget-container">
                                                         <div class="agent-module module-3cols clearfix">
+                                                            <?php while($row_agent = mysqli_fetch_assoc($res_agent)) { ?>
                                                             <div class="agent-item">
                                                                 <div class="agent-thumb">
                                                                     <a
                                                                         href="#">
                                                                         <img width="150"
                                                                             height="150"
-                                                                            src="assets/agent1.jpg"
+                                                                            src="User/upload/<?php echo $row_agent['Image']; ?>"
                                                                             class="img-fluid rounded-circle"
                                                                             sizes="(max-width: 150px) 100vw, 150px" />
                                                                     </a>
@@ -1718,85 +1281,18 @@ $res_area = mysqli_query($con,$property_area);
                                                                 <div class="agent-info">
                                                                     <div class="agent-name">
                                                                         <a
-                                                                            href="#"><strong>Vincent
-                                                                                Fuller</strong></a>
+                                                                            href="#"><strong>
+                                                                                <?php echo $row_agent['User_name']; ?></strong></a>
                                                                     </div>
                                                                     <div class="agent-company">
-                                                                        Real Estate Agent , Country House Real Estate
+                                                                        <?php echo $row_agent['Email']; ?>
                                                                     </div>
                                                                 </div>
                                                                 <div class="agent-body">
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit. Phasellus porta justo eget risus
-                                                                    consectetur,... </div>
-                                                                <div class="agent-link">
-                                                                    <a
-                                                                        href="#">View
-                                                                        Profile</a>
-                                                                </div>
+                                                                  <?php echo $row_agent['Self_Des']; ?></div>
+                                                               
                                                             </div>
-                                                            <div class="agent-item">
-                                                                <div class="agent-thumb">
-                                                                    <a
-                                                                        href="#">
-                                                                        <img width="150"
-                                                                            height="150"
-                                                                            src="assets/agent2.jpg"
-                                                                            class="img-fluid rounded-circle"
-                                                                            sizes="(max-width: 150px) 100vw, 150px" />
-                                                                    </a>
-                                                                </div>
-                                                                <div class="agent-info">
-                                                                    <div class="agent-name">
-                                                                        <a
-                                                                            href="#"><strong>Brittany
-                                                                                Watkins</strong></a>
-                                                                    </div>
-                                                                    <div class="agent-company">
-                                                                        Company Agent , All American Real Estate
-                                                                    </div>
-                                                                </div>
-                                                                <div class="agent-body">
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit. Phasellus porta justo eget risus
-                                                                    consectetur,... </div>
-                                                                <div class="agent-link">
-                                                                    <a
-                                                                        href="#">View
-                                                                        Profile</a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="agent-item">
-                                                                <div class="agent-thumb">
-                                                                    <a
-                                                                        href="#">
-                                                                        <img width="150"
-                                                                            height="150"
-                                                                            src="assets/agent3.jpg"
-                                                                            class="img-fluid rounded-circle"
-                                                                            sizes="(max-width: 150px) 100vw, 150px" />
-                                                                    </a>
-                                                                </div>
-                                                                <div class="agent-info">
-                                                                    <div class="agent-name">
-                                                                        <a
-                                                                            href="#"><strong>Michelle
-                                                                                Ramirez</strong></a>
-                                                                    </div>
-                                                                    <div class="agent-company">
-                                                                        Company Agent , Modern House Real Estate
-                                                                    </div>
-                                                                </div>
-                                                                <div class="agent-body">
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                                                                    elit. Phasellus porta justo eget risus
-                                                                    consectetur,... </div>
-                                                                <div class="agent-link">
-                                                                    <a
-                                                                        href="#">View
-                                                                        Profile</a>
-                                                                </div>
-                                                            </div>
+                                                         <?php } ?>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1835,115 +1331,7 @@ $res_area = mysqli_query($con,$property_area);
                                         </div>
                                     </div>
                                 </div>
-                                <section
-                                    class="elementor-section elementor-inner-section elementor-element elementor-element-a96c118 elementor-section-boxed elementor-section-height-default elementor-section-height-default"
-                                    data-id="a96c118" data-element_type="section">
-                                    <div class="elementor-container elementor-column-gap-extended">
-                                        <div class="elementor-column elementor-col-100 elementor-inner-column elementor-element elementor-element-17e3e56"
-                                            data-id="17e3e56" data-element_type="column">
-                                            <div class="elementor-widget-wrap elementor-element-populated">
-                                                <div class="elementor-element elementor-element-88c2e66 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_section_title"
-                                                    data-id="88c2e66" data-element_type="widget"
-                                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                                    data-widget_type="houzez_elementor_section_title.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="houzez_section_title_wrap section-title-module">
-                                                            <h2 class="houzez_section_title">Testimonials</h2>
-                                                            <p class="houzez_section_subtitle">Read What Our Clients Are Saying – Genuine Testimonials from Satisfied Homeowners and Investors!</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="elementor-element elementor-element-d8cb588 animated-slow elementor-invisible elementor-widget elementor-widget-houzez_elementor_testimonials_v2"
-                                                    data-id="d8cb588" data-element_type="widget"
-                                                    data-settings="{&quot;_animation&quot;:&quot;fadeIn&quot;}"
-                                                    data-widget_type="houzez_elementor_testimonials_v2.default">
-                                                    <div class="elementor-widget-container">
-                                                        <div class="testimonials-module testimonials-module-v2">
-                                                            <div class="row">
-                                                                <div class="col-md-4 col-sm-12">
-                                                                    <div class="testimonial-item testimonial-item-v2">
-                                                                        <div class="testimonial-icon">
-                                                                            <i class="las la-quote-left"></i>
-                                                                        </div>
-                                                                        <div class="testimonial-body">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipiscing elit, sed do eiusmod tempor
-                                                                            incididunt ut labore et dolore magna aliqua.
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center">
-                                                                            <div class="testimonial-thumb">
-                                                                                <img 
-                                                                                    width="70" height="70"
-                                                                                    src="assets/client1.jpg"
-                                                                                    class="img-fluid rounded-circle" />
-                                                                            </div>
-                                                                            <div class="testimonial-info">
-                                                                                by <strong>Roy Bennett</strong><br>
-                                                                                <em>
-                                                                                    Manager, Company Inc. </em>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12">
-                                                                    <div class="testimonial-item testimonial-item-v2">
-                                                                        <div class="testimonial-icon">
-                                                                            <i class="las la-quote-left"></i>
-                                                                        </div>
-                                                                        <div class="testimonial-body">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipiscing elit, sed do eiusmod tempor
-                                                                            incididunt ut labore et dolore magna aliqua.
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center">
-                                                                            <div class="testimonial-thumb">
-                                                                            <img 
-                                                                                    width="70" height="70"
-                                                                                    src="assets/client2.jpg"
-                                                                                    class="img-fluid rounded-circle" />
-                                                                            </div>
-                                                                            <div class="testimonial-info">
-                                                                                by <strong>Kenya Soval</strong><br>
-                                                                                <em>
-                                                                                    Realtor, Company Inc. </em>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-4 col-sm-12">
-                                                                    <div class="testimonial-item testimonial-item-v2">
-                                                                        <div class="testimonial-icon">
-                                                                            <i class="las la-quote-left"></i>
-                                                                        </div>
-                                                                        <div class="testimonial-body">
-                                                                            Lorem ipsum dolor sit amet, consectetur
-                                                                            adipiscing elit, sed do eiusmod tempor
-                                                                            incididunt ut labore et dolore magna aliqua.
-                                                                        </div>
-                                                                        <div class="d-flex align-items-center">
-                                                                            <div class="testimonial-thumb">
-                                                                            <img 
-                                                                                    width="70" height="70"
-                                                                                    src="assets/client3.jpg"
-                                                                                    class="img-fluid rounded-circle" />
-                                                                            </div>
-                                                                            <div class="testimonial-info">
-                                                                                by <strong>Kathleen
-                                                                                    Peterson</strong><br>
-                                                                                <em>
-                                                                                    Manager, Company Inc. </em>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
+                          
                                 <div class="elementor-element elementor-element-7a8fd05 elementor-widget elementor-widget-houzez_elementor_space"
                                     data-id="7a8fd05" data-element_type="widget"
                                     data-widget_type="houzez_elementor_space.default">
